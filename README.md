@@ -5,4 +5,4 @@
 	<br>
 </h1>
 
->   The wonderful things of desktop Linux
+>   The wonderful things of desktop and configuration Linux
