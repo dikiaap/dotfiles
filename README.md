@@ -1,3 +1,8 @@
-![image](http://i.imgur.com/qaCNgA8.png)
+<h1 align="center">
+	<br>
+	<img width="400" src="http://i.imgur.com/QD9AENa.png">
+	<br>
+	<br>
+</h1>
 
 >   The wonderful things of desktop Linux
