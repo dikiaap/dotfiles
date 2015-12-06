@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<!-- little modified - dikiaap -->
 <dict>
   <key>name</key>
   <string>Afterglow</string>
@@ -9,19 +10,21 @@
     <dict>
       <key>settings</key>
       <dict>
+        <!-- background editor -->
         <key>background</key>
         <string>#222222</string>
+        <!-- place when typing -->
         <key>caret</key>
         <string>#FFFFFF</string>
         <key>foreground</key>
-<!--         <string>#E6E1DC</string>
- -->        <string>#CBCBCB</string>
+        <string>#CBCBCB</string>
         <key>invisibles</key>
         <string>#404040</string>
         <key>lineHighlight</key>
         <string>#333435</string>
+        <!-- when block some word -->
         <key>selection</key>
-        <string>#5A647E</string>
+        <string>#3B3939</string>
       </dict>
     </dict>
     <dict>
@@ -32,9 +35,10 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#cc7832</string>
+        <string>#CC5832</string>
       </dict>
     </dict>
+    <!-- comment code -->
     <dict>
       <key>name</key>
       <string>Comment</string>
@@ -58,7 +62,7 @@
         <key>fontStyle</key>
         <string></string>
         <key>foreground</key>
-        <string>#CC7833</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
     <dict>
@@ -71,9 +75,10 @@
         <key>fontStyle</key>
         <string></string>
         <key>foreground</key>
-        <string>#B46A87</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
+    <!-- function -->
     <dict>
       <key>name</key>
       <string>Function (definition)</string>
@@ -84,9 +89,10 @@
         <key>fontStyle</key>
         <string></string>
         <key>foreground</key>
-        <string>#FFC66D</string>
+        <string>#CC5832</string>
       </dict>
     </dict>
+    <!-- class -->
     <dict>
       <key>name</key>
       <string>Class (definition)</string>
@@ -95,9 +101,10 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#7698B7</string>
+        <string>#CC5832</string>
       </dict>
     </dict>
+    <!-- number in code, this available on css -->
     <dict>
       <key>name</key>
       <string>Number</string>
@@ -108,9 +115,10 @@
         <key>fontStyle</key>
         <string></string>
         <key>foreground</key>
-        <string>#b4c973</string>
+        <string>#BF985A</string>
       </dict>
     </dict>
+    <!-- highlight for variable -->
     <dict>
       <key>name</key>
       <string>Variable</string>
@@ -121,7 +129,7 @@
         <key>fontStyle</key>
         <string></string>
         <key>foreground</key>
-        <string>#6fc48f</string>
+        <string>#BF865A</string>
       </dict>
     </dict>
     <dict>
@@ -145,7 +153,7 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#c45837</string>
+        <string>#CBCBCB</string>
       </dict>
     </dict>
     <dict>
@@ -171,7 +179,7 @@
         <key>fontStyle</key>
         <string></string>
         <key>foreground</key>
-        <string>#b4c973</string>
+        <string>#BF985A</string>
       </dict>
     </dict>
     <dict>
@@ -184,7 +192,7 @@
         <key>fontStyle</key>
         <string></string>
         <key>foreground</key>
-        <string>#c45837</string>
+        <string>#CC5832</string>
       </dict>
     </dict>
     <dict>
@@ -206,22 +214,38 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#b4c973</string>
+        <string>#BF985A</string>
       </dict>
     </dict>
+    <!-- in markup tag -->
     <dict>
       <key>name</key>
       <string>Markup tag</string>
       <key>scope</key>
-      <string>meta.tag, declaration.tag, entity.name.tag</string>
+      <string>meta.tag, declaration.tag</string>
       <key>settings</key>
       <dict>
         <key>fontStyle</key>
         <string></string>
         <key>foreground</key>
-        <string>#E8BF6A</string>
+        <string>#CBCBCB</string>
       </dict>
     </dict>
+    <!-- open and close tag -->
+    <dict>
+      <key>name</key>
+      <string>Markup tag entity.name</string>
+      <key>scope</key>
+      <string>entity.name.tag</string>
+      <key>settings</key>
+      <dict>
+        <key>fontStyle</key>
+        <string></string>
+        <key>foreground</key>
+        <string>#CD6848</string>
+      </dict>
+    </dict>
+    <!-- display error -->
     <dict>
       <key>name</key>
       <string>Invalid</string>
@@ -230,9 +254,9 @@
       <key>settings</key>
       <dict>
         <key>background</key>
-        <string>#990000</string>
+        <string>#99001A</string>
         <key>foreground</key>
-        <string>#FFFFFF</string>
+        <string>#D1D1D1</string>
       </dict>
     </dict>
     <dict>
@@ -245,7 +269,7 @@
         <key>fontStyle</key>
         <string></string>
         <key>foreground</key>
-        <string>#B46A87</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
     <dict>
@@ -256,9 +280,9 @@
       <key>settings</key>
       <dict>
         <key>background</key>
-        <string>#144212</string>
+        <string>#189859</string>
         <key>foreground</key>
-        <string>#6fc48f</string>
+        <string>#BF985A</string>
       </dict>
     </dict>
     <dict>
@@ -269,9 +293,9 @@
       <key>settings</key>
       <dict>
         <key>background</key>
-        <string>#660000</string>
+        <string>#99001A</string>
         <key>foreground</key>
-        <string>#6fc48f</string>
+        <string>#BF985A</string>
       </dict>
     </dict>
     <dict>
@@ -282,11 +306,12 @@
       <key>settings</key>
       <dict>
         <key>background</key>
-        <string>#2F33AB</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
 
 <!--  LESS, SASS and CSS -->
+<!-- I not configure this -->
     <dict>
       <key>name</key>
       <string>CSS: units</string>
@@ -295,7 +320,7 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#b4c973</string>
+        <string>#BF985A</string>
       </dict>
     </dict>
     <dict>
@@ -306,7 +331,7 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#cc7732</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
     <dict>
@@ -317,7 +342,7 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#cc7732</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
     <dict>
@@ -328,7 +353,7 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#B46A87</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
     <dict>
@@ -339,7 +364,7 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#cc7732</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
     <dict>
@@ -361,7 +386,7 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#cc7732</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
     <dict>
@@ -372,11 +397,12 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#B46A87</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
 
 <!-- GIT GUTTER -->
+<!-- not yet configuration this section -->
     <dict>
       <key>name</key>
       <string>GitGutter deleted</string>
@@ -396,7 +422,7 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#b4c973</string>
+        <string>#BF985A</string>
       </dict>
     </dict>
     <dict>
@@ -407,7 +433,7 @@
       <key>settings</key>
       <dict>
         <key>foreground</key>
-        <string>#cc7732</string>
+        <string>#93ABC1</string>
       </dict>
     </dict>
     <dict>

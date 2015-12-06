@@ -274,7 +274,7 @@
     {
         "class": "scroll_bar_control",
         "layer0.texture": "",
-        "layer0.tint": [38, 38, 38], // -01
+        "layer0.tint": [34, 34, 34], // -01
         "layer0.opacity": 1,
         "layer0.inner_margin": [0,0],
         "blur": true
@@ -284,7 +284,7 @@
         "class": "scroll_bar_control",
         "attributes": ["horizontal"],
         "layer0.texture": "",
-        "layer0.tint": [38, 38, 38], // -01
+        "layer0.tint": [34, 34, 34], // -01
         "layer0.inner_margin": [0,0],
         "blur": true
     },
@@ -292,7 +292,7 @@
     {
         "class": "scroll_corner_control",
         "layer0.texture": "",
-        "layer0.tint": [38, 38, 38], // -01
+        "layer0.tint": [34, 34, 34], // -01
         "layer0.inner_margin": [0,0],
         "layer0.opacity": 1
     },
@@ -300,19 +300,19 @@
     {
         "class": "puck_control",
         "layer0.texture": "",
-        "layer0.tint": [60, 60, 60],
+        "layer0.tint": [50, 50, 50],
         "layer0.opacity": 1,
         "layer0.inner_margin": [0,0],
-        "content_margin": [6,0],
+        "content_margin": [5,0],
         "blur": false
     },
     // Standard horizontal scroll puck
     {
         "class": "puck_control",
         "attributes": ["horizontal"],
-        "layer0.tint": [57, 57, 57], // 01
+        "layer0.tint": [50, 50, 50], // 01
         "layer0.inner_margin": [0,0],
-        "content_margin": [12,6],
+        "content_margin": [5,5],
         "blur": false
     },
 
