@@ -5,15 +5,15 @@
     //  ------------------------------------------------------
     {
         "class": "tabset_control",
-        "layer0.texture": "Theme - Afterglow/Afterglow/tab-background.png",
-        // "layer0.tint": [46, 46, 46], // -00
+        "layer0.texture": [15, 15, 15],
+        "layer0.tint": [35, 35, 35], // -00
         "layer0.inner_margin": 0,
         "layer0.opacity": 1,
-        "content_margin": [0, 0, 0, 8],
+        "content_margin": [0, 0, 0, 0],
         "tab_overlap": 0,
         "tab_width": 128,
         "tab_min_width": 48,
-        "tab_height": 65,
+        "tab_height": 35,
         "mouse_wheel_switch": false
     },
     {
@@ -25,13 +25,13 @@
         "class": "tabset_control",
         "settings": ["tabs_small"],
         "layer0.texture": "Theme - Afterglow/Afterglow/tab-background-small.png",
-        "tab_height": 30
+        "tab_height": 35
     },
     {
         "class": "tabset_control",
         "settings": ["tabs_medium"],
         "layer0.texture": "Theme - Afterglow/Afterglow/tab-background-medium.png",
-        "tab_height": 45
+        "tab_height": 35
     },
 
     //  - Tab element
@@ -122,7 +122,7 @@
     //  - Inactive tab label
     {
         "class": "tab_label",
-        "fg": [116, 116, 116], // 03
+        "fg": [160, 160, 160], // 03
         "shadow_color": [0, 0, 0, 200],
         "shadow_offset": [0, 1]
     },
@@ -492,7 +492,7 @@
     {
         "class": "sidebar_container",
         "layer0.opacity": 1,
-        "layer0.tint": [38, 38, 38], // -01
+        "layer0.tint": [34, 34, 34], // -01
         "layer0.inner_margin": [1,5,2,1],
         "content_margin": [0,4,0,0]
     },
@@ -557,7 +557,7 @@
     {
         "class": "sidebar_label",
         // "font.size": 13,
-        "color": [116, 116, 116] // 03
+        "color": [190, 190, 190] // 03
     },
     // Sidebar entry font size 12
     {
@@ -585,7 +585,7 @@
         "class": "sidebar_label",
         "parents": [{"class": "tree_row","attributes": ["expandable"]}],
         // "font.bold": true,
-        "color": [160, 160, 160] // 03
+        "color": [190, 190, 190] // 03
     },
     {
         "class": "sidebar_label",
