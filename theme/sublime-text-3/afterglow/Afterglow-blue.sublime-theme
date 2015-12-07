@@ -274,7 +274,7 @@
     {
         "class": "scroll_bar_control",
         "layer0.texture": "",
-        "layer0.tint": [34, 34, 34], // -01
+        "layer0.tint": [33, 33, 33], // -01
         "layer0.opacity": 1,
         "layer0.inner_margin": [0,0],
         "blur": true
@@ -492,7 +492,7 @@
     {
         "class": "sidebar_container",
         "layer0.opacity": 1,
-        "layer0.tint": [34, 34, 34], // -01
+        "layer0.tint": [33, 33, 33], // -01
         "layer0.inner_margin": [1,5,2,1],
         "content_margin": [0,4,0,0]
     },
