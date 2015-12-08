@@ -14,20 +14,25 @@ fi
 ## laravel mind
 alias laravel='/home/vu/.composer/vendor/bin/laravel'
 alias lumen='/home/vu/.composer/vendor/bin/lumen'
+alias artisan='php artisan'
 
 ## editor support
 alias sublime-text='/opt/sublime_text/sublime_text'
-alias nginx-configuration='sublime-text /etc/nginx/sites-available/default'
+alias nginx-configuration='vim /etc/nginx/sites-available/default'
+alias nginx-restart='service nginx restart'
 
 ## project
-alias project-laravel='cd /home/vu/LibsCode/Laravel; c; ls -l'
-alias project-git='cd /home/vu/LibsCode/Git; c; ls -l'
+alias code='cd /home/vu/Code; clear; ls -l'
+alias project-laravel='cd /home/vu/Code/laravel; clear; ls -l'
+alias project-git='cd /home/vu/Code/git; clear; ls -l'
 
 ## cleaner your system
-alias cleaner='/home/vu/.ihavesys/clean.sh'
-alias c='clear'
+alias cleaner='/home/vu/.ihavesys/exec/clean.sh'
+alias quit='clear;/home/vu/.ihavesys/exec/quit'
 
 ## more
-alias pentest='/home/vu/.ihavesys/pentest'
 alias node='nodejs'
+alias nano='clear; /home/vu/.ihavesys/exec/nano'
 
+## support
+alias speed-test='speedtest-cli --simple'
