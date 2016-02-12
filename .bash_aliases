@@ -23,8 +23,10 @@ alias nginx-restart='service nginx restart'
 
 ## project
 alias code='cd /home/vu/Code; clear; ls -l'
-alias project-laravel='cd /home/vu/Code/laravel; clear; ls -l'
-alias project-git='cd /home/vu/Code/git; clear; ls -l'
+alias project-laravel='cd /home/vu/Code/laravel/project; clear; ls -l'
+alias project-github='cd /home/vu/Code/git/github; clear; ls -l'
+alias project-gitlab='cd /home/vu/Code/git/gitlab; clear; ls -l'
+alias project-bitbucket='cd /home/vu/Code/git/bitbucket; clear; ls -l'
 
 ## cleaner your system
 alias cleaner='/home/vu/.ihavesys/exec/clean.sh'
@@ -35,4 +37,6 @@ alias node='nodejs'
 alias nano='clear; /home/vu/.ihavesys/exec/nano'
 
 ## support
-alias speed-test='speedtest-cli --simple'
+alias ..='cd ..'
+alias python='python3.4'
+alias usetor='proxychains'

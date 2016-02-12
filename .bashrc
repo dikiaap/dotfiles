@@ -147,6 +147,9 @@ xterm*|rxvt*)
 esac
 
 # Ruby Version Manager Configuration
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+#[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
