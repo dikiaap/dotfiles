@@ -5,4 +5,4 @@
 	<br>
 </h1>
 
->   The wonderful things of desktop and configuration Linux.
+>   The wonderful things of dotfiles and desktop.
