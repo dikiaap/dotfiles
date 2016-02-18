@@ -1,4 +1,5 @@
 [alias]
+	a = !"git add -u; git add ."
 	c = commit -am
 	s = status -s
 	co = checkout

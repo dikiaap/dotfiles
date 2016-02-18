@@ -7,9 +7,6 @@ alias artisan='php artisan'
 alias laravel='~/.composer/vendor/bin/laravel'
 alias lumen='~/.composer/vendor/bin/lumen'
 
-## git
-alias gitadd='git add -u; git add .'
-
 ## editor, server & config
 alias sublime-text='/opt/sublime_text/sublime_text'
 alias nginx-configuration='sudo subl /etc/nginx/sites-available/default'
