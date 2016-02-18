@@ -4,7 +4,7 @@
 	s = status -s
 	co = checkout
 	df = diff --color --color-words --abbrev
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	d = "!git diff --color $@ | diff-so-fancy"
 
 [user]
 	email = diki1aap@gmail.com
@@ -42,3 +42,7 @@
 	added = yellow
 	changed = cyan
 	untracked = red
+	
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
