@@ -1,9 +1,11 @@
-" Make vim more useful. [
+" Make vim useful. [
+" =======================
 set nocompatible
 filetype off
 " ]
 
 " Default vim. [
+" =======================
 " Vundle setup.
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -23,7 +25,6 @@ filetype plugin indent on
 
 " Themes. [
 " =======================
-" Plugin 'flazz/vim-colorschemes'
 Plugin 'jordwalke/flatlandia'
 colorscheme flatlandia
 " ]

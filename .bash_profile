@@ -1,5 +1,5 @@
 # Load our dotfiles.
-for file in ~/.{bash_aliases,bash_aliases_private}; do
+for file in ~/.{aliases,aliases_private}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -7,7 +7,7 @@ unset file;
 # Autocorrect typos in path names when using `cd`.
 shopt -s cdspell;
 
-# Case-insensitive globbing (used in pathname expansion)
+# Case-insensitive globbing (used in pathname expansion).
 shopt -s nocaseglob;
 
 # Bash attempts to save all lines of a multiple-line command in the same history entry.
@@ -15,10 +15,10 @@ shopt -s nocaseglob;
 shopt -s cmdhist;
 
 # Check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+# update the values of lines and columns.
 shopt -s checkwinsize
 
-# Shell scheme
+# Shell scheme.
 if [ "$color_prompt" = yes ]; then
     PS1='\[\e[1;36m\]\w \[\e[1;35m\]$(__git_ps1 "(%s) ")\[\033[00m\]» \[\e[1;33m\]\u\[\033[00m\] » '
 else
@@ -39,7 +39,7 @@ which shopt > /dev/null && shopt -s histappend  # append to history, don't overw
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
 
-# Completion
+# Completion.
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
