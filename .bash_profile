@@ -16,15 +16,15 @@ shopt -s cmdhist;
 
 # Check the window size after each command and, if necessary,
 # update the values of lines and columns.
-shopt -s checkwinsize
+shopt -s checkwinsize;
 
 # Shell scheme.
 if [ "$color_prompt" = yes ]; then
     PS1='\[\e[1;36m\]\w \[\e[1;35m\]$(__git_ps1 "(%s) ")\[\033[00m\]» \[\e[1;33m\]\u\[\033[00m\] » '
 else
     PS1='\[\e[1;36m\]\w \[\e[1;35m\]$(__git_ps1 "(%s) ")\[\033[00m\]» \[\e[1;33m\]\u\[\033[00m\] » '
-fi 
-unset color_prompt force_color_prompt
+fi;
+unset color_prompt force_color_prompt;
 
 # Gotta tune that bash_history.
 # from paulirish.
@@ -45,8 +45,8 @@ if ! shopt -oq posix; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
-  fi
-fi
+  fi;
+fi;
 
 # Highlighting inside manpages and elsewhere.
 # from paulirish.
