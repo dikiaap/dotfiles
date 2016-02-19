@@ -1,4 +1,5 @@
-# Introduction 
+![image](http://i.imgur.com/FmnOulb.png)
+
 In this configuration, I use pantheon terminal and elementaryOS freya.
 
 ## Configuration with dConf editor
