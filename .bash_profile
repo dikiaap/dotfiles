@@ -10,6 +10,10 @@ shopt -s cdspell;
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
+# Bash attempts to save all lines of a multiple-line command in the same history entry.
+# This allows easy re-editing of multi-line commands.
+shopt -s cmdhist;
+
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
