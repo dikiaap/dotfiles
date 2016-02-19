@@ -40,6 +40,8 @@ alias nano='clear; ~/.ihavesys/exec/nano'
 ## more to minify
 alias ..='cd ..'
 alias usetor='proxychains'
+alias l='ls'
+alias ln='ln -s'
 alias lsd='ls -l | grep "^d"'
 alias disk-report='df -P -kHl'
 alias update-dev='echo -e "\n Updating Composer ... \n"; sudo composer self-update; echo -e "\n Updating Gem System ... \n"; sudo gem update --system; echo -e "\n Updating Gem ... \n"; sudo gem update; echo -e "\n Updating PHP-CS-FIXER ... \n"; sudo php-cs-fixer self-update; echo -e "\n Updating Symfony Installer ... \n"; sudo symfony self-update; echo -e "\n Updating NPM ... \n"; sudo npm install npm -g;'
