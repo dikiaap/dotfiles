@@ -1,0 +1,10 @@
+#!/bin/bash
+
+magenta='\e[1;35m'
+white='\e[0;37m'
+
+echo -e $magenta"\n Updating ElementaryOS List Package ... \n"$white
+sudo apt-get update
+
+echo -e $magenta"\n Updating Youtube Downloader ... \n"$white
+sudo youtube-dl -U

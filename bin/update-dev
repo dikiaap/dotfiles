@@ -1,0 +1,32 @@
+#!/bin/bash
+
+magenta='\e[1;35m'
+white='\e[0;37m'
+
+echo -e $magenta"\n Updating Composer ... \n"$white
+sudo composer self-update
+
+echo -e $magenta"\n Updating Composer Package ... \n"$white
+sudo composer global update
+
+echo -e $magenta"\n Updating PIP ... \n"$white
+sudo pip3 install --upgrade pip
+sudo pip2 install --upgrade pip
+
+echo -e $magenta"\n Updating Gem System ... \n"$white
+sudo gem update --system
+
+echo -e $magenta"\n Updating Gem ... \n"$white
+sudo gem update
+
+echo -e $magenta"\n Updating PHP-CS-FIXER ... \n"$white
+sudo php-cs-fixer self-update
+
+echo -e $magenta"\n Updating Symfony Installer ... \n"$white
+sudo symfony self-update
+
+echo -e $magenta"\n Updating NPM ... \n"$white
+sudo npm install npm -g
+
+echo -e $magenta"\n Updating NPM Package ... \n"$white
+sudo npm update -g
