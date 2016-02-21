@@ -12,6 +12,7 @@
 
 [core]
 	editor = vim
+	autocrlf = false
 
 [push]
 	default = simple
