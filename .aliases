@@ -64,8 +64,8 @@ alias mysql-stop='sudo service mysql stop'
 alias mysql-status='sudo service mysql status'
 
 ## update and clean update
-alias update-dev='~/.ihavesys/exec/update-dev'
-alias update-sys='~/.ihavesys/exec/update-sys'
-alias cleanup-dev='~/.ihavesys/exec/cleanup-dev'
-alias cleanup-sys='~/.ihavesys/exec/cleanup-sys'
+alias update-dev='clear; ~/.ihavesys/exec/update-dev'
+alias update-sys='clear; ~/.ihavesys/exec/update-sys'
+alias cleanup-dev='clear; ~/.ihavesys/exec/cleanup-dev'
+alias cleanup-sys='clear; ~/.ihavesys/exec/cleanup-sys'
 # ]]]
