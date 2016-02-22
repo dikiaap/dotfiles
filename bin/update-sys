@@ -8,3 +8,6 @@ sudo apt-get update
 
 echo -e $magenta"\n Updating Youtube Downloader ... \n"$white
 sudo youtube-dl -U
+
+echo -e $magenta"\n List ElementaryOS Package ... \n"$white
+~/.ihavesys/exec/list-package-sys
