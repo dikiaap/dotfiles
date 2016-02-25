@@ -11,14 +11,14 @@ alias project-bitbucket='cd ~/Code/git/bitbucket; clear; ls -l'
 
 ## links
 alias cleaner='sudo ~/.ihavesys/exec/cleaner'
-alias dl='cd ~/Downloads'
+alias dl='cd ~/Downloads; ls -la'
 alias laravel='~/.composer/vendor/bin/laravel'
 alias lumen='~/.composer/vendor/bin/lumen'
 alias nano='clear; ~/.ihavesys/exec/nano'
 alias node='nodejs'
 alias python='python3.4'
 alias quit='clear; ~/.ihavesys/exec/quit'
-alias tmp='cd ~/Temporary'
+alias tmp='cd ~/Temporary; ls -la'
 alias usetor='proxychains'
 
 ## easy to navigation
