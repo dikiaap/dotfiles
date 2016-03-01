@@ -5,6 +5,7 @@
 	co = checkout
 	df = diff --color --color-words --abbrev
 	d = "!git diff --color $@ | diff-so-fancy"
+	lg = log --color --graph --pretty=format:'%C(auto)%h%Creset » %d%s %Cgreen(%cr) %C(bold magenta)<%an>%Creset' --abbrev-commit
 
 [user]
 	email = diki1aap@gmail.com
