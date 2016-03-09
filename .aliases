@@ -19,7 +19,6 @@ alias node='nodejs'
 alias python='python3.4'
 alias quit='clear; ~/.ihavesys/exec/quit'
 alias tmp='cd ~/Temporary; ls -la'
-alias usetor='proxychains'
 
 ## easy to navigation
 alias ..='cd ..'
