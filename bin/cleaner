@@ -1,16 +1,16 @@
 #!/bin/bash
 
-echo >/var/log/wtmp
+echo > /var/log/wtmp
 
-echo >/var/log/lastlog
+echo > /var/log/lastlog
 
-echo >/var/log/messages
+echo > /var/log/messages
 
-echo >/var/log/secure
+echo > /var/log/secure
 
-echo >/var/log/maillog
+echo > /var/log/maillog
 
-echo >/var/log/xferlog
+echo > /var/log/xferlog
 
 
 rm -rf /var/log/*.old &> /dev/null
@@ -77,6 +77,7 @@ rm -rf /var/log/cups/*.3 &> /dev/null
 
 rm -rf /var/log/cups/*.gz &> /dev/null
 
+
 history -c
 
-echo >/root/.bash_history
+echo > /root/.bash_history
