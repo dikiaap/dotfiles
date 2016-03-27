@@ -10,7 +10,7 @@ alias project-gitlab='cd ~/Code/git/gitlab; clear; ls -l'
 alias project-bitbucket='cd ~/Code/git/bitbucket; clear; ls -l'
 
 ## links
-alias cleaner='sudo ~/.ihavesys/exec/cleaner'
+alias cleaner='sudo ~/.ihavesys/exec/cleaner; echo > ~/.bash_history'
 alias dl='cd ~/Downloads; ls -la'
 alias laravel='~/.composer/vendor/bin/laravel'
 alias lumen='~/.composer/vendor/bin/lumen'
