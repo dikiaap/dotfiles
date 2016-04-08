@@ -15,7 +15,7 @@ sudo apt-get autoremove
 echo -e $magenta"\n Cleaning Gem ... \n"$white
 sudo gem cleanup
 
-echo -e $magenta"\n Cleaning Cache Composer ... \n"$white
+echo -e $magenta"\n Cleaning Composer Installer ... \n"$white
 sudo rm ~/.composer/2016*
 
 echo -e $magenta"\n Cleaning Log System ... \n"$white

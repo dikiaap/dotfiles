@@ -6,11 +6,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ~='cd ~'
 
-# dev
-alias artisan='php artisan'
-alias laravel='~/.composer/vendor/bin/laravel'
-alias lumen='~/.composer/vendor/bin/lumen'
-
 # shortcuts
 alias ch='history -c && > ~/.bash_history'
 alias dl='cd ~/Downloads; ls -la'
@@ -18,10 +13,15 @@ alias g='git'
 alias ln='ln -s'
 alias tmp='cd ~/Temporary; ls -la'
 
-# minify & typo
-alias nano='use-vim && vim'
+# minify
+alias artisan='php artisan'
+alias laravel='~/.composer/vendor/bin/laravel'
+alias lumen='~/.composer/vendor/bin/lumen'
 alias node='nodejs'
 alias python='python3.4'
+
+# typos
+alias nano='use-vim && vim'
 alias quit='exit'
 
 # enable color support of ls and also add handy aliases
@@ -40,4 +40,4 @@ alias lsd='ls -l | grep "^d"'
 alias disk-report='df -P -kHl'
 
 # editor, server & config
-alias nginx-configuration='sudo vim /etc/nginx/sites-available/default'
+alias nginx-conf='sudo vim /etc/nginx/sites-available/default'

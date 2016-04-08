@@ -5,7 +5,7 @@ cyan='\e[0;36m'
 cyan_italic='\e[3;36m'
 orange='\e[0;33m'
 
-echo -e $cyan '
+echo -e '
 
 		'$orange'Use'$cyan_italic' vim '$cyan'!
 
