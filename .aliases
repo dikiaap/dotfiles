@@ -1,36 +1,30 @@
-# MINIFY [[[
-## most use
-alias artisan='php artisan'
-
-## go to project
-alias code='cd ~/Code; clear; ls -l'
-alias project-laravel='cd ~/Code/laravel/project; clear; ls -l'
-alias project-github='cd ~/Code/git/github; clear; ls -l'
-alias project-gitlab='cd ~/Code/git/gitlab; clear; ls -l'
-alias project-bitbucket='cd ~/Code/git/bitbucket; clear; ls -l'
-
-## links
-alias cleaner='sudo ~/.ihavesys/exec/cleaner; echo > ~/.bash_history'
-alias dl='cd ~/Downloads; ls -la'
-alias laravel='~/.composer/vendor/bin/laravel'
-alias lumen='~/.composer/vendor/bin/lumen'
-alias nano='clear; ~/.ihavesys/exec/nano'
-alias node='nodejs'
-alias python='python3.4'
-alias quit='clear; ~/.ihavesys/exec/quit'
-alias tmp='cd ~/Temporary; ls -la'
-
-## easy to navigation
+# easy to navigation
 alias ..='cd ..'
 alias cd..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ~='cd ~'
-# ]]]
 
-# REPORT [[[
-## enable color support of ls and also add handy aliases
+# dev
+alias artisan='php artisan'
+alias laravel='~/.composer/vendor/bin/laravel'
+alias lumen='~/.composer/vendor/bin/lumen'
+
+# shortcuts
+alias ch='history -c && > ~/.bash_history'
+alias dl='cd ~/Downloads; ls -la'
+alias g='git'
+alias ln='ln -s'
+alias tmp='cd ~/Temporary; ls -la'
+
+# minify & typo
+alias nano='use-vim && vim'
+alias node='nodejs'
+alias python='python3.4'
+alias quit='exit'
+
+# enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -39,37 +33,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-## easy report
+# easy report
 alias l='ls'
 alias la='ls -la'
-alias ln='ln -s'
 alias lsd='ls -l | grep "^d"'
 alias disk-report='df -P -kHl'
-# ]]]
 
-# DEV [[[
-## editor, server & config
-alias sublime-text='/opt/sublime_text/sublime_text'
-alias nginx-configuration='sudo subl /etc/nginx/sites-available/default'
-alias nginx-restart='sudo service nginx restart'
-alias nginx-start='sudo service nginx start'
-alias nginx-stop='sudo service nginx stop'
-alias nginx-status='sudo service nginx status'
-alias fpm-restart='sudo service php5-fpm restart'
-alias fpm-start='sudo service php5-fpm start'
-alias fpm-stop='sudo service php5-fpm stop'
-alias fpm-status='sudo service php5-fpm status'
-alias mysql-restart='sudo service mysql restart'
-alias mysql-start='sudo service mysql start'
-alias mysql-stop='sudo service mysql stop'
-alias mysql-status='sudo service mysql status'
-
-## update and clean update
-alias update-sys='clear; ~/.ihavesys/exec/update-sys'
-alias update-dev='clear; ~/.ihavesys/exec/update-dev'
-alias cleanup-sys='clear; ~/.ihavesys/exec/cleanup-sys'
-alias cleanup-dev='clear; ~/.ihavesys/exec/cleanup-dev'
-
-## bundling
-alias bundling-update='update-sys; update-dev; cleanup-sys; cleanup-dev'
-# ]]]
+# editor, server & config
+alias nginx-configuration='sudo vim /etc/nginx/sites-available/default'

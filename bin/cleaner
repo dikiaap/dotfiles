@@ -1,83 +1,100 @@
 #!/bin/bash
 
-echo > /var/log/wtmp
+magenta='\e[1;35m'
+white='\e[0;37m'
 
-echo > /var/log/lastlog
+echo -e $magenta"\n Cleaning Package ... \n"$white
+sudo apt-get clean
 
-echo > /var/log/messages
+echo -e $magenta"\n Autoleaning Package ... \n"$white
+sudo apt-get autoclean
 
-echo > /var/log/secure
+echo -e $magenta"\n Autoremoving Package ... \n"$white
+sudo apt-get autoremove
 
-echo > /var/log/maillog
+echo -e $magenta"\n Cleaning Gem ... \n"$white
+sudo gem cleanup
 
-echo > /var/log/xferlog
+echo -e $magenta"\n Cleaning Cache Composer ... \n"$white
+sudo rm ~/.composer/2016*
 
+echo -e $magenta"\n Cleaning Log System ... \n"$white
+sudo sh -c "echo > /var/log/wtmp"
 
-rm -rf /var/log/*.old &> /dev/null
+sudo sh -c "echo > /var/log/lastlog"
 
-rm -rf /var/log/*.0 &> /dev/null
+sudo sh -c "echo > /var/log/messages"
 
-rm -rf /var/log/*.1 &> /dev/null
+sudo sh -c "echo > /var/log/secure"
 
-rm -rf /var/log/*.2 &> /dev/null
+sudo sh -c "echo > /var/log/maillog"
 
-rm -rf /var/log/*.3 &> /dev/null
-
-rm -rf /var/log/*.gz &> /dev/null
-
-
-rm -rf /var/log/samba/*.old &> /dev/null
-
-rm -rf /var/log/samba/*.0 &> /dev/null
-
-rm -rf /var/log/samba/*.1 &> /dev/null
-
-rm -rf /var/log/samba/*.2 &> /dev/null
-
-rm -rf /var/log/samba/*.3 &> /dev/null
-
-rm -rf /var/log/samba/*.gz &> /dev/null
+sudo sh -c "echo > /var/log/xferlog"
 
 
-rm -rf /var/log/apt/*.old &> /dev/null
+sudo rm -rf /var/log/*.old &> /dev/null
 
-rm -rf /var/log/apt/*.0 &> /dev/null
+sudo rm -rf /var/log/*.0 &> /dev/null
 
-rm -rf /var/log/apt/*.1 &> /dev/null
+sudo rm -rf /var/log/*.1 &> /dev/null
 
-rm -rf /var/log/apt/*.2 &> /dev/null
+sudo rm -rf /var/log/*.2 &> /dev/null
 
-rm -rf /var/log/apt/*.3 &> /dev/null
+sudo rm -rf /var/log/*.3 &> /dev/null
 
-rm -rf /var/log/apt/*.gz &> /dev/null
-
-
-rm -rf /var/log/gdm/*.old &> /dev/null
-
-rm -rf /var/log/gdm/*.0 &> /dev/null
-
-rm -rf /var/log/gdm/*.1 &> /dev/null
-
-rm -rf /var/log/gdm/*.2 &> /dev/null
-
-rm -rf /var/log/gdm/*.3 &> /dev/null
-
-rm -rf /var/log/gdm/*.gz &> /dev/null
+sudo rm -rf /var/log/*.gz &> /dev/null
 
 
-rm -rf /var/log/cups/*.old &> /dev/null
+sudo rm -rf /var/log/samba/*.old &> /dev/null
 
-rm -rf /var/log/cups/*.0 &> /dev/null
+sudo rm -rf /var/log/samba/*.0 &> /dev/null
 
-rm -rf /var/log/cups/*.1 &> /dev/null
+sudo rm -rf /var/log/samba/*.1 &> /dev/null
 
-rm -rf /var/log/cups/*.2 &> /dev/null
+sudo rm -rf /var/log/samba/*.2 &> /dev/null
 
-rm -rf /var/log/cups/*.3 &> /dev/null
+sudo rm -rf /var/log/samba/*.3 &> /dev/null
 
-rm -rf /var/log/cups/*.gz &> /dev/null
+sudo rm -rf /var/log/samba/*.gz &> /dev/null
 
 
-history -c
+sudo rm -rf /var/log/apt/*.old &> /dev/null
 
-echo > /root/.bash_history
+sudo rm -rf /var/log/apt/*.0 &> /dev/null
+
+sudo rm -rf /var/log/apt/*.1 &> /dev/null
+
+sudo rm -rf /var/log/apt/*.2 &> /dev/null
+
+sudo rm -rf /var/log/apt/*.3 &> /dev/null
+
+sudo rm -rf /var/log/apt/*.gz &> /dev/null
+
+
+sudo rm -rf /var/log/gdm/*.old &> /dev/null
+
+sudo rm -rf /var/log/gdm/*.0 &> /dev/null
+
+sudo rm -rf /var/log/gdm/*.1 &> /dev/null
+
+sudo rm -rf /var/log/gdm/*.2 &> /dev/null
+
+sudo rm -rf /var/log/gdm/*.3 &> /dev/null
+
+sudo rm -rf /var/log/gdm/*.gz &> /dev/null
+
+
+sudo rm -rf /var/log/cups/*.old &> /dev/null
+
+sudo rm -rf /var/log/cups/*.0 &> /dev/null
+
+sudo rm -rf /var/log/cups/*.1 &> /dev/null
+
+sudo rm -rf /var/log/cups/*.2 &> /dev/null
+
+sudo rm -rf /var/log/cups/*.3 &> /dev/null
+
+sudo rm -rf /var/log/cups/*.gz &> /dev/null
+
+
+history -c && > ~/.bash_history

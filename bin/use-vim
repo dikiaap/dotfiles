@@ -7,6 +7,6 @@ orange='\e[0;33m'
 
 echo -e $cyan '
 
-		Hi, '$orange'you must use'$cyan_italic' vim '$cyan':)
+		'$orange'Use'$cyan_italic' vim '$cyan'!
 
 	'

@@ -1,3 +1,0 @@
-#!/bin/bash
-
-sudo apt-get dist-upgrade --assume-no | grep -v -E 'Reading*|Building*|Calculating*|Need*|After*|Do you*|Abort'
