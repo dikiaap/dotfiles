@@ -1,0 +1,7 @@
+# Bash prompt.
+if [ "$color_prompt" = yes ]; then
+    PS1='\[\e[1;36m\]\w \[\e[1;35m\]$(__git_ps1 "(%s) ")\[\033[00m\]» \[\e[1;33m\]\u\[\033[00m\] » '
+else
+    PS1='\[\e[1;36m\]\w \[\e[1;35m\]$(__git_ps1 "(%s) ")\[\033[00m\]» \[\e[1;33m\]\u\[\033[00m\] » '
+fi;
+unset color_prompt force_color_prompt;

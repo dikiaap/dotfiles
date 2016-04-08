@@ -1,5 +1,5 @@
 # Load our dotfiles.
-for file in ~/.{aliases,aliases_private}; do
+for file in ~/.{aliases,aliases_private,bash_prompt}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -17,14 +17,6 @@ shopt -s cmdhist;
 # Check the window size after each command and, if necessary,
 # update the values of lines and columns.
 shopt -s checkwinsize;
-
-# Shell scheme.
-if [ "$color_prompt" = yes ]; then
-    PS1='\[\e[1;36m\]\w \[\e[1;35m\]$(__git_ps1 "(%s) ")\[\033[00m\]» \[\e[1;33m\]\u\[\033[00m\] » '
-else
-    PS1='\[\e[1;36m\]\w \[\e[1;35m\]$(__git_ps1 "(%s) ")\[\033[00m\]» \[\e[1;33m\]\u\[\033[00m\] » '
-fi;
-unset color_prompt force_color_prompt;
 
 # Gotta tune that bash_history.
 # from paulirish.
