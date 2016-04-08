@@ -1,1 +1,0 @@
-**Modification Afterglow color scheme**

@@ -1,3 +1,0 @@
-v. 2.0.5
-
-Add go icon, haskell icon and .gitkeep file in git icon.

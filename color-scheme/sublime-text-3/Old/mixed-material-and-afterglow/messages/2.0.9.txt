@@ -1,3 +1,0 @@
-v. 2.0.9
-
-Fix #73 and #67. Thanks to Max Riveiro (@kavu)

@@ -1,1 +1,0 @@
-**Collaboration afterglow and material theme**
