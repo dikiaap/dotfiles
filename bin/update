@@ -7,7 +7,7 @@ echo -e $magenta"\n Updating ElementaryOS List Packages ... \n"$white
 sudo apt-get update
 
 echo -e $magenta"\n List ElementaryOS Packages ... \n"$white
-sudo apt-get dist-upgrade | grep -v -E 'Reading*|Building*|Calculating*|Need*|After*|Do you*|Abort'
+sudo apt-get dist-upgrade
 
 echo -e $magenta"\n Updating Youtube Downloader ... \n"$white
 sudo youtube-dl -U
