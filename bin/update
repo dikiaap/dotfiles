@@ -3,10 +3,10 @@
 magenta='\e[1;35m'
 white='\e[0;37m'
 
-echo -e $magenta"\n Updating ElementaryOS List Packages ... \n"$white
+echo -e $magenta"\n Updating List System Packages ... \n"$white
 sudo apt-get update
 
-echo -e $magenta"\n List ElementaryOS Packages ... \n"$white
+echo -e $magenta"\n List System Packages ... \n"$white
 sudo apt-get dist-upgrade
 
 echo -e $magenta"\n Updating Youtube Downloader ... \n"$white
