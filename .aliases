@@ -18,6 +18,7 @@ alias artisan='php artisan'
 alias laravel='~/.composer/vendor/bin/laravel'
 alias lumen='~/.composer/vendor/bin/lumen'
 alias node='nodejs'
+alias phpunit='vendor/bin/phpunit'
 alias python='python3.4'
 
 # typos
