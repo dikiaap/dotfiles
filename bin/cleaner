@@ -97,4 +97,4 @@ sudo rm -rf /var/log/cups/*.3 &> /dev/null
 sudo rm -rf /var/log/cups/*.gz &> /dev/null
 
 
-history -c && > ~/.bash_history
+history -c && > ~/.bash_history && > ~/.zsh_history
