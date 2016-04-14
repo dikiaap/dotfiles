@@ -52,3 +52,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Added path heroku.
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
