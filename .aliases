@@ -22,6 +22,7 @@ alias phpunit='vendor/bin/phpunit'
 alias python='python3.4'
 
 # typos
+alias :q!='exit'
 alias nano='use-vim && vim'
 alias quit='exit'
 
