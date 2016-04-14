@@ -22,7 +22,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Plugins.
 plugins=(git)
 
-export ZSH=/home/vu/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:$HOME/.rvm/bin"
 export LANG=en_US.UTF-8
 
