@@ -19,6 +19,8 @@ echo -e $magenta"\n Cleaning Composer Installer ... \n"$white
 sudo rm ~/.composer/2016*
 
 echo -e $magenta"\n Cleaning Log System ... \n"$white
+sudo sh -c "echo > /var/log/dpkg.log"
+
 sudo sh -c "echo > /var/log/wtmp"
 
 sudo sh -c "echo > /var/log/lastlog"
@@ -30,6 +32,19 @@ sudo sh -c "echo > /var/log/secure"
 sudo sh -c "echo > /var/log/maillog"
 
 sudo sh -c "echo > /var/log/xferlog"
+
+
+sudo rm -rf /var/log/upstart/*1.gz
+
+sudo rm -rf /var/log/apt/*.log
+
+sudo rm -rf /var/log/mysql/*.log
+
+sudo rm -rf /var/log/mysql/*.gz
+
+sudo rm -rf /var/log/lightdm/*.log
+
+sudo rm -rf /var/log/lightdm/*.old
 
 
 sudo rm -rf /var/log/*.old &> /dev/null
