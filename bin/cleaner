@@ -16,100 +16,67 @@ echo -e $magenta"\n Cleaning Gem ... \n"$white
 sudo gem cleanup
 
 echo -e $magenta"\n Cleaning Composer Installer ... \n"$white
-sudo rm ~/.composer/2016*
+sudo rm -fv ~/.composer/2016*
+
+echo -e $magenta"\n Cleaning Junk in Home ... \n"$white
+rm -rfv ~/.cache/thumbnails/*
+rm -rfv ~/.thumbnails/*
+rm -rfv ~/.local/share/Trash/*
+
+rm -rfv ~/.vim/backups/*
+rm -rfv ~/.vim/swaps/*
+rm -rfv ~/.vim/undo/*
 
 echo -e $magenta"\n Cleaning Log System ... \n"$white
 sudo sh -c "echo > /var/log/dpkg.log"
-
 sudo sh -c "echo > /var/log/wtmp"
-
 sudo sh -c "echo > /var/log/lastlog"
-
 sudo sh -c "echo > /var/log/messages"
-
 sudo sh -c "echo > /var/log/secure"
-
 sudo sh -c "echo > /var/log/maillog"
-
 sudo sh -c "echo > /var/log/xferlog"
 
+sudo rm -rfv /var/log/upstart/*1.gz
+sudo rm -rfv /var/log/apt/*.log
+sudo rm -rfv /var/log/mysql/*.log
+sudo rm -rfv /var/log/mysql/*.gz
+sudo rm -rfv /var/log/lightdm/*.log
+sudo rm -rfv /var/log/lightdm/*.old
 
-sudo rm -rf /var/log/upstart/*1.gz
+sudo rm -rfv /var/log/*.old &> /dev/null
+sudo rm -rfv /var/log/*.0 &> /dev/null
+sudo rm -rfv /var/log/*.1 &> /dev/null
+sudo rm -rfv /var/log/*.2 &> /dev/null
+sudo rm -rfv /var/log/*.3 &> /dev/null
+sudo rm -rfv /var/log/*.gz &> /dev/null
 
-sudo rm -rf /var/log/apt/*.log
+sudo rm -rfv /var/log/samba/*.old &> /dev/null
+sudo rm -rfv /var/log/samba/*.0 &> /dev/null
+sudo rm -rfv /var/log/samba/*.1 &> /dev/null
+sudo rm -rfv /var/log/samba/*.2 &> /dev/null
+sudo rm -rfv /var/log/samba/*.3 &> /dev/null
+sudo rm -rfv /var/log/samba/*.gz &> /dev/null
 
-sudo rm -rf /var/log/mysql/*.log
+sudo rm -rfv /var/log/apt/*.old &> /dev/null
+sudo rm -rfv /var/log/apt/*.0 &> /dev/null
+sudo rm -rfv /var/log/apt/*.1 &> /dev/null
+sudo rm -rfv /var/log/apt/*.2 &> /dev/null
+sudo rm -rfv /var/log/apt/*.3 &> /dev/null
+sudo rm -rfv /var/log/apt/*.gz &> /dev/null
 
-sudo rm -rf /var/log/mysql/*.gz
+sudo rm -rfv /var/log/gdm/*.old &> /dev/null
+sudo rm -rfv /var/log/gdm/*.0 &> /dev/null
+sudo rm -rfv /var/log/gdm/*.1 &> /dev/null
+sudo rm -rfv /var/log/gdm/*.2 &> /dev/null
+sudo rm -rfv /var/log/gdm/*.3 &> /dev/null
+sudo rm -rfv /var/log/gdm/*.gz &> /dev/null
 
-sudo rm -rf /var/log/lightdm/*.log
+sudo rm -rfv /var/log/cups/*.old &> /dev/null
+sudo rm -rfv /var/log/cups/*.0 &> /dev/null
+sudo rm -rfv /var/log/cups/*.1 &> /dev/null
+sudo rm -rfv /var/log/cups/*.2 &> /dev/null
+sudo rm -rfv /var/log/cups/*.3 &> /dev/null
+sudo rm -rfv /var/log/cups/*.gz &> /dev/null
 
-sudo rm -rf /var/log/lightdm/*.old
-
-
-sudo rm -rf /var/log/*.old &> /dev/null
-
-sudo rm -rf /var/log/*.0 &> /dev/null
-
-sudo rm -rf /var/log/*.1 &> /dev/null
-
-sudo rm -rf /var/log/*.2 &> /dev/null
-
-sudo rm -rf /var/log/*.3 &> /dev/null
-
-sudo rm -rf /var/log/*.gz &> /dev/null
-
-
-sudo rm -rf /var/log/samba/*.old &> /dev/null
-
-sudo rm -rf /var/log/samba/*.0 &> /dev/null
-
-sudo rm -rf /var/log/samba/*.1 &> /dev/null
-
-sudo rm -rf /var/log/samba/*.2 &> /dev/null
-
-sudo rm -rf /var/log/samba/*.3 &> /dev/null
-
-sudo rm -rf /var/log/samba/*.gz &> /dev/null
-
-
-sudo rm -rf /var/log/apt/*.old &> /dev/null
-
-sudo rm -rf /var/log/apt/*.0 &> /dev/null
-
-sudo rm -rf /var/log/apt/*.1 &> /dev/null
-
-sudo rm -rf /var/log/apt/*.2 &> /dev/null
-
-sudo rm -rf /var/log/apt/*.3 &> /dev/null
-
-sudo rm -rf /var/log/apt/*.gz &> /dev/null
-
-
-sudo rm -rf /var/log/gdm/*.old &> /dev/null
-
-sudo rm -rf /var/log/gdm/*.0 &> /dev/null
-
-sudo rm -rf /var/log/gdm/*.1 &> /dev/null
-
-sudo rm -rf /var/log/gdm/*.2 &> /dev/null
-
-sudo rm -rf /var/log/gdm/*.3 &> /dev/null
-
-sudo rm -rf /var/log/gdm/*.gz &> /dev/null
-
-
-sudo rm -rf /var/log/cups/*.old &> /dev/null
-
-sudo rm -rf /var/log/cups/*.0 &> /dev/null
-
-sudo rm -rf /var/log/cups/*.1 &> /dev/null
-
-sudo rm -rf /var/log/cups/*.2 &> /dev/null
-
-sudo rm -rf /var/log/cups/*.3 &> /dev/null
-
-sudo rm -rf /var/log/cups/*.gz &> /dev/null
-
-
+echo -e $magenta"\n Cleaning History ... \n"$white
 history -c && > ~/.bash_history && > ~/.zsh_history
