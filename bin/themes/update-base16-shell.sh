@@ -6,4 +6,5 @@ cd ~/.config/base16-shell
 # Pull from GitHub.
 git pull
 
+# Test base16-shell color.
 ./colortest
