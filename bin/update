@@ -34,4 +34,4 @@ echo -e $magenta"\n Updating NPM Packages ... \n"$white
 sudo npm update -g
 
 echo -e $magenta"\n Oh My Zsh... \n"$white
-upgrade_oh_my_zsh
+/bin/sh ~/.oh-my-zsh/tools/upgrade.sh
