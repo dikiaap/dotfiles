@@ -39,6 +39,7 @@ fi
 alias l='ls'
 alias la='ls -la'
 alias lsd='ls -l | grep "^d"'
+alias lsdir='ls -l | grep "^d"'
 alias disk-report='df -P -kHl'
 
 # editor, server & config

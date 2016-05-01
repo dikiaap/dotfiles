@@ -1,50 +1,50 @@
 [alias]
-	a = !"git add -u; git add ."
-	c = commit -am
-	s = status -s
-	co = checkout
-	df = diff --color --color-words --abbrev
-	d = "!git diff --color $@ | diff-so-fancy"
-	lg = log --color --graph --pretty=format:'%C(auto)%h%Creset » %d%s %Cgreen(%cr) %C(bold magenta)<%an>%Creset' --abbrev-commit
+    a = !"git add -u; git add ."
+    c = commit -am
+    s = status -s
+    co = checkout
+    df = diff --color --color-words --abbrev
+    d = "!git diff --color $@ | diff-so-fancy"
+    lg = log --color --graph --pretty=format:'%C(auto)%h%Creset » %d%s %Cgreen(%cr) %C(bold magenta)<%an>%Creset' --abbrev-commit
 
 [user]
-	email = diki1aap@gmail.com
-	name = Diki Andriansyah
+    email = diki1aap@gmail.com
+    name = Diki Andriansyah
 
 [core]
-	editor = vim
-	autocrlf = false
+    editor = vim
+    autocrlf = false
 
 [push]
-	default = simple
+    default = simple
 
 [color]
-	ui = always
+    ui = always
 
 [color "diff"]
-	meta = yellow bold
-	commit = cyan bold
-	frag = magenta bold
-	old = red bold
-	new = cyan bold
-	whitespace = red reverse
+    meta = yellow bold
+    commit = cyan bold
+    frag = magenta bold
+    old = red bold
+    new = cyan bold
+    whitespace = red reverse
 
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = "red bold 52"
-	newNormal = "green bold"
-	newHighlight = "green bold 22"
+    oldNormal = red bold
+    oldHighlight = "red bold 52"
+    newNormal = "green bold"
+    newHighlight = "green bold 22"
 
 [color "branch"]
-	current = cyan reverse
-	local = yellow
-	remote = green
+    current = cyan reverse
+    local = yellow
+    remote = green
 
 [color "status"]
-	added = yellow
-	changed = cyan
-	untracked = red
-	
+    added = yellow
+    changed = cyan
+    untracked = red
+
 [pager]
-	diff = diff-so-fancy | less --tabs=1,5 -RFX
-	show = diff-so-fancy | less --tabs=1,5 -RFX
+    diff = diff-so-fancy | less --tabs=1,5 -RFX
+    show = diff-so-fancy | less --tabs=1,5 -RFX
