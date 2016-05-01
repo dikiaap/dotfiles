@@ -6,6 +6,9 @@ white='\e[0;37m'
 echo -e $magenta"\n Oh My Zsh... \n"$white
 /bin/sh ~/.oh-my-zsh/tools/upgrade.sh
 
+echo -e $magenta"\n Updating .dircolors... \n"$white
+wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-light -O ~/.dircolors
+
 echo -e $magenta"\n Updating Arc Theme... \n"$white
 /bin/sh /usr/local/bin/themes/update-arc-theme.sh
 
