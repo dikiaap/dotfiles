@@ -15,9 +15,6 @@ sudo youtube-dl -U
 echo -e $magenta"\n Updating PHP-CS-FIXER ... \n"$white
 sudo php-cs-fixer self-update
 
-echo -e $magenta"\n Updating Symfony Installer ... \n"$white
-sudo symfony self-update
-
 echo -e $magenta"\n Updating Composer Installer ... \n"$white
 sudo composer self-update
 
@@ -35,3 +32,6 @@ sudo npm install npm -g
 
 echo -e $magenta"\n Updating NPM Packages ... \n"$white
 sudo npm update -g
+
+echo -e $magenta"\n Oh My Zsh... \n"$white
+upgrade_oh_my_zsh
