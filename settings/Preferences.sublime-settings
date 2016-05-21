@@ -74,6 +74,7 @@
 	"theme": "Material-Theme-Darker.sublime-theme",
 	"tree_animation_enabled": true,
 	"trim_automatic_white_space": true,
+	"update_check": false,
 	"word_wrap": true,
 	"wrap_width": 0
 }
