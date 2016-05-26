@@ -5,6 +5,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ~='cd ~'
+alias -- -='cd -'
 
 # shortcuts
 alias ch='history -c && > ~/.bash_history'
