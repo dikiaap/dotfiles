@@ -15,7 +15,7 @@ rm -rf ~/.themes/{Arc,Arc-Darker,Arc-Dark}
 git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
 
 # Configuration for elementary OS.
-./autogen.sh --prefix=/usr --disable-darker --disable-dark --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm --disable-xfce-notify
+./autogen.sh --prefix=/usr --disable-darker --disable-dark --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm
 
 # Installation.
 sudo make install
