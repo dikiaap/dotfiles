@@ -9,12 +9,6 @@ sudo apt-get update
 echo -e $magenta"\n List System Packages ... \n"$white
 sudo apt-get dist-upgrade
 
-echo -e $magenta"\n Updating Youtube Downloader ... \n"$white
-sudo youtube-dl -U
-
-echo -e $magenta"\n Updating PHP-CS-FIXER ... \n"$white
-sudo php-cs-fixer self-update
-
 echo -e $magenta"\n Updating Composer Installer ... \n"$white
 sudo composer self-update
 
