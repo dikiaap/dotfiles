@@ -1,6 +1,7 @@
 [alias]
     a = !"git add -u; git add ."
     c = commit -am
+    cs = commit -S -am
     s = status -s
     co = checkout
     df = diff --color --color-words --abbrev
@@ -10,6 +11,7 @@
 [user]
     email = diki1aap@gmail.com
     name = Diki Andriansyah
+    signingkey = EE6B7E9CE5A36876
 
 [core]
     editor = vim
@@ -48,3 +50,6 @@
 [pager]
     diff = diff-so-fancy | less --tabs=1,5 -RFX
     show = diff-so-fancy | less --tabs=1,5 -RFX
+
+[gpg]
+    program = gpg2
