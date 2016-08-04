@@ -1,8 +1,9 @@
 <snippet>
     <content><![CDATA[
+<!-- ${1:} Form Input -->
 <div class="form-group">
-    {!! Form::label('${1:}', '${2:}:') !!}
-    {!! Form::text('${3:}', null, ['class' => 'form-control']) !!}
+    {!! Form::label('${2:}', '${3:}:') !!}
+    {!! Form::text('${4:}', null, ['class' => 'form-control']) !!}
 </div>
         ]]></content>
 
