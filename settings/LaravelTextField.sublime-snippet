@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+<div class="form-group">
+    {!! Form::label('${1:}', '${2:}:') !!}
+    {!! Form::text('${3:}', null, ['class' => 'form-control']) !!}
+</div>
+        ]]></content>
+
+    <tabTrigger>textfield</tabTrigger>
+    <scope>text.html</scope>
+    <description>TextField Laravel Snippet</description>
+
+</snippet>
+
