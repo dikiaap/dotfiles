@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+<!-- ${1:} Form Input -->
+<div class="form-group">
+    {!! Form::submit('${2:}', ['class' => 'btn btn-primary form-control']) !!}
+</div>
+        ]]></content>
+
+    <tabTrigger>submitfield</tabTrigger>
+    <scope>text.html</scope>
+    <description>SubmitField Laravel Snippet</description>
+</snippet>
