@@ -11,10 +11,10 @@
 	"enable_tab_scrolling": false,
 	"enable_telemetry": "disabled",
 	"fade_fold_buttons": false,
-    "file_exclude_patterns":
-    [
-        "composer.lock"
-    ],
+	"file_exclude_patterns":
+	[
+		"composer.lock"
+	],
 	"folder_exclude_patterns":
 	[
 		".git",
@@ -67,6 +67,7 @@
 	"material_theme_accent_red": true,
 	"material_theme_compact_sidebar": true,
 	"material_theme_disable_folder_animation": true,
+	"material_theme_small_statusbar": true,
 	"overlay_scroll_bars": "enabled",
 	"preview_on_click": false,
 	"scroll_speed": 1,
