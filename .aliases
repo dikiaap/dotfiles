@@ -10,6 +10,7 @@ alias -- -='cd -'
 # shortcuts
 alias ch='history -c && > ~/.bash_history'
 alias dl='cd ~/Downloads; ls -la'
+alias doc='cd ~/Documents; ls -la'
 alias docs='cd ~/Documents/Documentation; ls -la'
 alias g='git'
 alias ln='ln -s'
