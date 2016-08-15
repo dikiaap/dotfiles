@@ -18,7 +18,6 @@ alias tmp='cd ~/Temporary; ls -la'
 # minify
 alias artisan='php artisan'
 alias laravel='~/.composer/vendor/bin/laravel'
-alias lumen='~/.composer/vendor/bin/lumen'
 alias phpunit='vendor/bin/phpunit'
 alias python='python3.4'
 
