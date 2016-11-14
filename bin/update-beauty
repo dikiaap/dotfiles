@@ -9,8 +9,8 @@ echo -e $magenta"\n Oh My Zsh... \n"$white
 echo -e $magenta"\n Updating .dircolors... \n"$white
 wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-light -O ~/.dircolors
 
-echo -e $magenta"\n Updating Arc Theme... \n"$white
-/bin/sh /usr/local/bin/themes/update-arc-theme.sh
+#echo -e $magenta"\n Updating Arc Theme... \n"$white
+#/bin/sh /usr/local/bin/themes/update-arc-theme.sh
 
 echo -e $magenta"\n Updating base16-shell... \n"$white
 /bin/sh /usr/local/bin/themes/update-base16-shell.sh

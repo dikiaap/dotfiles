@@ -15,6 +15,9 @@ sudo composer self-update
 echo -e $magenta"\n Updating Composer Packages ... \n"$white
 sudo composer global update
 
+echo -e $magenta"\n Updating PHP-CS-FIXER ... \n"$white
+sudo php-cs-fixer self-update
+
 echo -e $magenta"\n Updating Gem System ... \n"$white
 sudo gem update --system
 

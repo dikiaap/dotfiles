@@ -3,8 +3,8 @@
 magenta='\e[1;35m'
 white='\e[0;37m'
 
-echo -e $magenta"\n Stop PHP5-FPM... \n"$white
-sudo service php5-fpm stop
+echo -e $magenta"\n Stop PHP7-FPM... \n"$white
+sudo service php7.0-fpm stop
 
 echo -e $magenta"\n Stop MySQL... \n"$white
 sudo service mysql stop

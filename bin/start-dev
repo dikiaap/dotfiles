@@ -3,8 +3,8 @@
 magenta='\e[1;35m'
 white='\e[0;37m'
 
-echo -e $magenta"\n Start PHP5-FPM... \n"$white
-sudo service php5-fpm start
+echo -e $magenta"\n Start PHP7-FPM... \n"$white
+sudo service php7.0-fpm start
 
 echo -e $magenta"\n Start NGINX... \n"$white
 sudo service nginx start
