@@ -1,6 +1,6 @@
-# --------------
-# Dark Turquoise
-# --------------
+# ----------
+# Royal Sky
+# ----------
 # Diki Andriansyah
 # e: diki1aap@gmail.com
 # dikiaap @ freenode & github
@@ -29,7 +29,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#222222' -sb '#0C838E' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
 
 # change focus
 bindsym $mod+$left  focus left
@@ -207,7 +207,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  backgr. text    indicator
-client.focused          #0C838E #0C838E #FFFFFF #DDDDDD
+client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD
 client.focused_inactive #212121 #212121 #888888 #292D2E
 client.unfocused        #212121 #212121 #888888 #292D2E
 client.urgent           #2F343A #D64E4E #FFFFFF #D64E4E
@@ -224,10 +224,10 @@ bar {
     workspace_buttons       yes
 
     colors {
-            background  #222222
+            background  #212121
             statusline  #DDDDDD
             separator   #666666
-            focused_workspace   #0C838E #0C838E #FFFFFF
+            focused_workspace   #2B83A6 #2B83A6 #FFFFFF
             active_workspace    #212121 #212121 #FFFFFF
             inactive_workspace  #212121 #212121 #888888
             urgent_workspace    #2F343A #D64E4E #FFFFFF
