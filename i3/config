@@ -105,10 +105,13 @@ bindsym Mod4+y border pixel     3
 bindsym Mod4+u border none
 
 # set border when applications started with floating enable
-for_window [class="Audacious"]      floating enable border pixel 3
-for_window [class="Galculator"]     floating enable border pixel 3
-for_window [class="Gcolor2"]        floating enable border pixel 3
-for_window [class="Gkamus"]         floating enable border pixel 3
+for_window [class="GParted"]                        floating enable border normal 0
+for_window [class="Lightdm-gtk-greeter-settings"]   floating enable border normal 0
+for_window [class="Lxappearance"]                   floating enable border normal 0
+for_window [class="Audacious"]                      floating enable border pixel 3
+for_window [class="Galculator"]                     floating enable border pixel 3
+for_window [class="Gcolor2"]                        floating enable border pixel 3
+for_window [class="Gkamus"]                         floating enable border pixel 3
 
 # customize workspace name
 set $WS1   1:dev
