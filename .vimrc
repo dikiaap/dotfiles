@@ -1,22 +1,21 @@
-" Make vim useful. [
-" =======================
-set encoding=utf-8
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Make vim useful.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set number
-" =======================
-" ]
 
-" Directories. [
-" =======================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Directories.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
-" =======================
-" ]
 
-" More junk. [
-" =======================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent " Copy indent from last line when starting new line
+set autoread " Set to auto read when a file is changed from the outside
 set backspace=indent,eol,start
 set cursorline " Highlight current line
 set esckeys " Allow cursor keys in insert mode
@@ -38,7 +37,7 @@ set formatoptions+=l " Don't break lines that are already long
 set formatoptions+=1 " Break before 1-letter words
 set gdefault " By default add g flag to search/replace. Add g to toggle
 set hidden " When a buffer is brought to foreground, remember undo history and marks
-set history=1000 " Increase history from 20 default to 1000
+set history=500 " Increase history from 20 default to 1000
 set hlsearch " Highlight searches
 set ignorecase
 set incsearch " Highlight dynamically as pattern is typed
@@ -61,19 +60,17 @@ set report=0 " Show all changes
 set ruler " Show the cursor position
 set scrolloff=3 " Start scrolling three lines before horizontal border of window
 set shell=/bin/sh " Use /bin/sh for executing shell commands
-set shiftwidth=2 " The # of spaces for indenting
+set shiftwidth=4 " The # of spaces for indenting
 set softtabstop=4
 set shortmess=atI " Don't show the intro message when starting vim
 set showtabline=2 " Always show tab bar
 set sidescrolloff=3 " Start scrolling three columns before vertical border of window
 set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces
-set softtabstop=2 " Tab key results in 2 spaces
 set splitbelow " New window goes below
 set splitright " New windows goes right
 set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
 set switchbuf=""
-set title " Show the filename in the window titlebar
 set ttyfast " Send more characters at a given time
 set ttymouse=xterm " Set mouse type to xterm
 set undofile " Persistent Undo
@@ -87,17 +84,15 @@ set wildmenu " Hitting TAB in command mode will show possible completions above 
 set wildmode=list:longest " Complete only until point of ambiguity
 set winminheight=0 " Allow splits to be reduced to a single line
 set wrapscan " Searches wrap around end of file
-filetype off
 " thanks to paulirish/dotfiles
-" =======================
-" ]
 
-" Plugin. [
-" =======================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'bling/vim-airline'
+Plugin 'dikiaap/minimalist'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'L9'
@@ -112,32 +107,38 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wincent/command-t.git'
-
 call vundle#end()
-filetype plugin indent on
-" =======================
-" ]
+filetype plugin indent on " Enable filetype plugins
 
-" Syntax highlighting. [
-" =======================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors and Fonts.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 syntax on
-colorscheme monokai
-" =======================
-" ]
+set encoding=utf-8
+colorscheme minimalist
 
-" Config plugin. [
-" =======================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='papercolor'
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -151,5 +152,3 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" =======================
-" ]
