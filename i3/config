@@ -23,13 +23,14 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -bg "#222222" -hlbg "#2B83A6" -opacity "100" -width 100 -padding 340 -bw 0 -font "Source Sans Pro 11" -separator-style none -hide-scrollbar -fg "#FFFFFF"
 
 # change focus
 bindsym $mod+$left  focus left
@@ -90,10 +91,6 @@ popup_during_fullscreen smart
 # automatic back and forth when switching to the current workspace
 workspace_auto_back_and_forth yes
 
-# startup applications
-exec_always --no-startup-id nm-applet
-exec_always --no-startup-id feh --bg-fill ~/Public/desktop/wp-i3.png
-
 # window border settings
 new_window pixel    3
 new_float normal    0
@@ -104,26 +101,17 @@ bindsym Mod4+t border normal    0
 bindsym Mod4+y border pixel     3
 bindsym Mod4+u border none
 
-# set border when applications started with floating enable
-for_window [class="GParted"]                        floating enable border normal 0
-for_window [class="Lightdm-gtk-greeter-settings"]   floating enable border normal 0
-for_window [class="Lxappearance"]                   floating enable border normal 0
-for_window [class="Audacious"]                      floating enable border pixel 3
-for_window [class="Galculator"]                     floating enable border pixel 3
-for_window [class="Gcolor2"]                        floating enable border pixel 3
-for_window [class="Gkamus"]                         floating enable border pixel 3
-
 # customize workspace name
-set $WS1   1:dev
-set $WS2   2:design
-set $WS3   3:media
-set $WS4   4:
-set $WS5   5:
-set $WS6   6:
-set $WS7   7:
-set $WS8   8:
-set $WS9   9:
-set $WS0   10:
+set $WS1   "1:   ZSH "
+set $WS2   "2:   Code "
+set $WS3   "3:   Chromium "
+set $WS4   "4:   Files "
+set $WS5   "5:   Documents "
+set $WS6   "6:   Media "
+set $WS7   "7:   Design "
+set $WS8   "8:   Chat "
+set $WS9   "9:   General "
+set $WS0   "10:   Settings "
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -149,41 +137,94 @@ bindsym $mod+Shift+8 move container to workspace $WS8
 bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $WS0
 
+# startup applications
+exec_always --no-startup-id xautolock -time 10 -locker "i3lock --color 4D5254"
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id feh --bg-fill ~/Public/desktop/wp-i3.png
+exec_always --no-startup-id rofi -key-window mod4+Tab -lines 3 -eh 2 -bg "#222222" -hlbg "#2B83A6" -bc "#2B83A6" -opacity "100" -bw 3 -font "Source Sans Pro 11" -separator-style none -hide-scrollbar -fg "#FFFFFF" -hlbg-active "#2B83A6" -hlfg-active "#FFFFFF"
+
+# set border when applications started
+for_window [class="GParted"]                        floating enable border normal 0
+for_window [class="Lightdm-gtk-greeter-settings"]   floating enable border normal 0
+for_window [class="Lxappearance"]                   floating enable border normal 0
+for_window [class="Software-properties-gtk"]        floating enable border normal 0
+for_window [class="Galculator"]                     floating enable border pixel 3
+for_window [class="Gcolor2"]                        floating enable border pixel 3
+for_window [class="Gkamus"]                         floating enable border pixel 3
+for_window [class="Menu"]                           floating enable border pixel 3
+for_window [class="vlc"]                            floating disable border pixel 0
+for_window [class="Gimp"]                           border normal 0
+
 # shortcut applications
 bindsym $mod+F1                 exec gkamus
-bindsym $mod+F4 workspace $WS1; exec subl
-bindsym $mod+F5 workspace $WS1; exec chromium-browser
+bindsym $mod+F2 workspace $WS2; exec subl
+bindsym $mod+F3 workspace $WS3; exec chromium-browser
+bindsym $mod+F4                 exec nautilus
+bindsym $mod+F5 workspace $WS3; exec chromium-browser
+bindsym $mod+F6 workspace $WS6; exec audacious
+bindsym $mod+F7 workspace $WS7; exec gcolor2
+bindsym $mod+F8 workspace $WS8; exec hexchat
 bindsym Print                   exec gnome-screenshot
-bindsym $mod+Shift+f            exec nautilus
+bindsym $mod+Shift+x            exec i3lock --color 4D5254
+
+# volume
+bindsym XF86AudioLowerVolume    exec amixer -q set Master 3%- unmute
+bindsym XF86AudioRaiseVolume    exec amixer -q set Master 3%+ unmute
+bindsym XF86AudioMute           exec amixer -q set Master toggle
 
 # assign program to workspace
-assign [class="chromium"]           → $WS1
-assign [class="Hexchat"]            → $WS1
-assign [class="(?i)sublime"]        → $WS1
+assign [class="URxvt"]              → $WS1
 assign [class="terminal"]           → $WS1
-assign [class="Gimp"]               → $WS2
-assign [class="Inkscape"]           → $WS2
-assign [class="transmission-gtk"]   → $WS2
-assign [class="Audacious"]          → $WS3
+assign [class="(?i)sublime"]        → $WS2
+assign [class="Leafpad"]            → $WS2
+assign [class="chromium"]           → $WS3
+assign [class="firefox"]            → $WS3
+assign [class="Nautilus"]           → $WS4
+assign [class="Pcmanfm"]            → $WS4
+assign [class="Evince"]             → $WS5
+assign [class="Audacious"]          → $WS6
+assign [class="vlc"]                → $WS6
+assign [class="Gimp"]               → $WS7
+assign [class="Inkscape"]           → $WS7
+assign [class="Hexchat"]            → $WS8
+assign [class="Skype"]              → $WS8
+assign [class="Upwork"]             → $WS8
+assign [class="Galculator"]         → $WS9
+assign [class="Gnome-font-viewer"]  → $WS9
+assign [class="Transmission-gtk"]   → $WS9
+assign [class="Bum"]                → $WS0
+assign [class="Bleachbit"]          → $WS0
+assign [class="Dconf-editor"]       → $WS0
+assign [class="Gnome-disks"]        → $WS0
+assign [class="GParted"]            → $WS0
+assign [class="Hardinfo"]           → $WS0
+assign [class="Lxappearance"]       → $WS0
+assign [class="Lxinput"]            → $WS0
+assign [class="Lxrandr"]            → $WS0
+assign [class="Lxtask"]             → $WS0
+assign [class="Menu"]               → $WS0
+assign [class="Obconf"]             → $WS0
+assign [class="Lightdm-gtk-greeter-settings"]   → $WS0
+assign [class="Software-properties-gtk"]        → $WS0
 
 # resize window: 1/4
 bindsym $mod+Shift+u floating enable; resize set 660 px 350 px; sticky enable; move window to position 15 px 15 px
-bindsym $mod+Shift+i floating enable; resize set 660 px 350 px; sticky enable; move window to position 690 px 15 px
-bindsym $mod+Shift+o floating enable; resize set 660 px 350 px; sticky enable; move window to position 15 px 380 px
+bindsym $mod+Shift+i floating enable; resize set 660 px 350 px; sticky enable; move window to position 15 px 380 px
+bindsym $mod+Shift+o floating enable; resize set 660 px 350 px; sticky enable; move window to position 690 px 15 px
 bindsym $mod+Shift+p floating enable; resize set 660 px 350 px; sticky enable; move window to position 690 px 380 px
 
 # resize window: 1/2
 bindsym $mod+Shift+v floating enable; resize set 660 px 715 px; sticky enable; move window to position 15 px 15 px
-bindsym $mod+Shift+b floating enable; resize set 660 px 715 px; sticky enable; move window to position 690 px 15 px
+bindsym $mod+Shift+b floating enable; resize set 1335 px 350 px; sticky enable; move window to position 15 px 380 px
 bindsym $mod+Shift+n floating enable; resize set 1335 px 350 px; sticky enable; move window to position 15 px 15 px
-bindsym $mod+Shift+m floating enable; resize set 1335 px 350 px; sticky enable; move window to position 15 px 380 px
+bindsym $mod+Shift+m floating enable; resize set 660 px 715 px; sticky enable; move window to position 690 px 15 px
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Exit i3 ' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -206,7 +247,6 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # class                 border  backgr. text    indicator
@@ -230,6 +270,7 @@ bar {
             background  #212121
             statusline  #DDDDDD
             separator   #666666
+            # class             border  backgr. text
             focused_workspace   #2B83A6 #2B83A6 #FFFFFF
             active_workspace    #212121 #212121 #FFFFFF
             inactive_workspace  #212121 #212121 #888888
