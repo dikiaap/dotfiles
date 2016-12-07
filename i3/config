@@ -160,7 +160,7 @@ bindsym $mod+F1                 exec gkamus
 bindsym $mod+F2 workspace $WS2; exec subl
 bindsym $mod+F3 workspace $WS3; exec chromium-browser
 bindsym $mod+F4                 exec nautilus
-bindsym $mod+F5 workspace $WS3; exec chromium-browser
+bindsym $mod+F5 workspace $WS3; exec evince
 bindsym $mod+F6 workspace $WS6; exec audacious
 bindsym $mod+F7 workspace $WS7; exec gcolor2
 bindsym $mod+F8 workspace $WS8; exec hexchat
