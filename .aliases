@@ -8,7 +8,7 @@ alias ~='cd ~'
 alias -- -='cd -'
 
 # shortcuts
-alias ch='history -c && > ~/.bash_history'
+alias ch='echo "" > ~/.bash_history && echo "" > ~/.zsh_history'
 alias dl='cd ~/Downloads; ls -la'
 alias doc='cd ~/Documents; ls -la'
 alias g='git'
