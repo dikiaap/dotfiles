@@ -23,7 +23,7 @@ alias python='python3.4'
 
 # typos
 alias :q!='exit'
-alias nano='use-vim && vim'
+alias nano='vim'
 alias quit='exit'
 
 # enable color support of ls and also add handy aliases
