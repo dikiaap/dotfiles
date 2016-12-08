@@ -79,4 +79,4 @@ sudo rm -rfv /var/log/cups/*.3 &> /dev/null
 sudo rm -rfv /var/log/cups/*.gz &> /dev/null
 
 echo -e $magenta"\n Cleaning History ... \n"$white
-history -c && > ~/.bash_history && > ~/.zsh_history
+echo "" > ~/.bash_history && echo "" > ~/.zsh_history
