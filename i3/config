@@ -23,7 +23,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -159,10 +159,10 @@ for_window [class="Gimp"]                           border normal 0
 bindsym $mod+F1                 exec gkamus
 bindsym $mod+F2 workspace $WS2; exec subl
 bindsym $mod+F3 workspace $WS3; exec chromium-browser
-bindsym $mod+F4                 exec nautilus
-bindsym $mod+F5 workspace $WS3; exec evince
+bindsym $mod+F4 workspace $WS4; exec nautilus
+bindsym $mod+F5 workspace $WS5; exec evince
 bindsym $mod+F6 workspace $WS6; exec audacious
-bindsym $mod+F7 workspace $WS7; exec gimp
+bindsym $mod+F7 workspace $WS7; exec gcolor2
 bindsym $mod+F8 workspace $WS8; exec hexchat
 bindsym Print                   exec gnome-screenshot
 bindsym $mod+Shift+x            exec i3lock --color 4D5254
