@@ -7,17 +7,18 @@ alias .....='cd ../../../..'
 alias ~='cd ~'
 alias -- -='cd -'
 
-# shortcuts
-alias ch='echo "" > ~/.bash_history && echo "" > ~/.zsh_history'
+# bookmarks
 alias dl='cd ~/Downloads; ls -la'
 alias doc='cd ~/Documents; ls -la'
-alias g='git'
-alias ln='ln -s'
 alias tmp='cd ~/Temporary; ls -la'
 
-# minify
+# shortcuts
 alias artisan='php artisan'
+alias cat='ccat'
+alias ch='echo "" > ~/.bash_history && echo "" > ~/.zsh_history'
+alias g='git'
 alias laravel='~/.config/composer/vendor/bin/laravel'
+alias ln='ln -s'
 alias phpunit='vendor/bin/phpunit'
 alias python='python3.4'
 
