@@ -94,12 +94,14 @@ call vundle#begin()
 Plugin 'bling/vim-airline'
 Plugin 'dikiaap/minimalist'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'garbas/vim-snipmate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'L9'
 Plugin 'mattn/emmet-vim'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'stanangeloff/php.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -132,8 +134,8 @@ let g:airline#extensions#hunks#non_zero_only = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
