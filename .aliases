@@ -7,10 +7,26 @@ alias .....='cd ../../../..'
 alias ~='cd ~'
 alias -- -='cd -'
 
+# easy report
+alias l='ls -lFh'
+alias la='ls -lAFh'
+alias lr='ls -tRFh'
+alias ll='ls -l'
+alias lsd='ls -lFh | grep "^d"'
+alias ldot='ls -ld .*'
+alias lS='ls -1FSsh'
+alias lart='ls -1Fcart'
+alias lrt='ls -1Fcrt'
+alias disk-report='df -P -kHl'
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
 # bookmarks
-alias dl='cd ~/Downloads; ls -la'
-alias doc='cd ~/Documents; ls -la'
-alias tmp='cd ~/Temporary; ls -la'
+alias dl='cd ~/Downloads; la'
+alias doc='cd ~/Documents; la'
+alias tmp='cd ~/Temporary; la'
 
 # shortcuts
 alias artisan='php artisan'
@@ -18,10 +34,16 @@ alias cat='ccat'
 alias ch='echo "" > ~/.bash_history && echo "" > ~/.zsh_history'
 alias g='git'
 alias git-pull-subdir='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;'
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+alias help='man'
 alias laravel='~/.config/composer/vendor/bin/laravel'
 alias ln='ln -s'
+alias p='ps axo pid,user,pcpu,comm'
 alias phpunit='vendor/bin/phpunit'
 alias python='python3.4'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
+alias zshrc='$EDITOR ~/.zshrc'
 
 # typos
 alias :q!='exit'
@@ -36,13 +58,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# easy report
-alias l='ls'
-alias la='ls -la'
-alias lsd='ls -l | grep "^d"'
-alias lsdir='ls -l | grep "^d"'
-alias disk-report='df -P -kHl'
 
 # editor, server & config
 alias nginx-conf='sudo vim /etc/nginx/sites-available/default'

@@ -25,6 +25,7 @@ plugins=(git)
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:$HOME/.rvm/bin"
 export LANG=en_US.UTF-8
+export EDITOR=subl
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_profile # Load default dotfiles.
