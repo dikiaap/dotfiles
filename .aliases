@@ -22,6 +22,11 @@ alias dud='du -d 1 -h'
 alias duf='du -sh *'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+alias help='man'
+alias p='ps axo pid,user,pcpu,comm'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
 
 # bookmarks
 alias dl='cd ~/Downloads; la'
@@ -34,15 +39,10 @@ alias cat='ccat'
 alias ch='echo "" > ~/.bash_history && echo "" > ~/.zsh_history'
 alias g='git'
 alias git-pull-subdir='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;'
-alias h='history'
-alias hgrep="fc -El 0 | grep"
-alias help='man'
 alias laravel='~/.config/composer/vendor/bin/laravel'
 alias ln='ln -s'
-alias p='ps axo pid,user,pcpu,comm'
 alias phpunit='vendor/bin/phpunit'
 alias python='python3.4'
-alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
 alias zshrc='$EDITOR ~/.zshrc'
 
 # typos

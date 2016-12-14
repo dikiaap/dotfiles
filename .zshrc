@@ -20,7 +20,7 @@ SAVEHIST=1000
 HIST_STAMPS="mm/dd/yyyy"
 
 # Plugins.
-plugins=(git)
+plugins=(git extract archive)
 
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:$HOME/.rvm/bin"
