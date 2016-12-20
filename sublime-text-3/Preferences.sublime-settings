@@ -43,7 +43,6 @@
 		"Groovy",
 		"Haskell",
 		"Java",
-		"LaTeX",
 		"Lisp",
 		"Lua",
 		"Matlab",
@@ -57,7 +56,6 @@
 		"Scala",
 		"TCL",
 		"Vintage",
-		"YAML"
 	],
 	"indent_subsequent_lines": true,
 	"line_numbers": true,
