@@ -163,7 +163,7 @@ bindsym $mod+F4 workspace $WS4; exec nautilus
 bindsym $mod+F5 workspace $WS5; exec evince
 bindsym $mod+F6 workspace $WS6; exec audacious
 bindsym $mod+F7 workspace $WS7; exec gcolor2
-bindsym $mod+F8 workspace $WS8; exec hexchat
+bindsym $mod+F8 workspace $WS8; exec telegram
 bindsym Print                   exec gnome-screenshot
 bindsym $mod+Shift+x            exec i3lock --color 4D5254
 
@@ -188,6 +188,7 @@ assign [class="Gimp"]               → $WS7
 assign [class="Inkscape"]           → $WS7
 assign [class="Hexchat"]            → $WS8
 assign [class="Skype"]              → $WS8
+assign [class="Telegram"]           → $WS8
 assign [class="Upwork"]             → $WS8
 assign [class="Galculator"]         → $WS9
 assign [class="Gnome-font-viewer"]  → $WS9
