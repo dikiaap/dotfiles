@@ -88,9 +88,6 @@ bindsym $mod+minus scratchpad show
 # set popups during fullscreen mode
 popup_during_fullscreen smart
 
-# automatic back and forth when switching to the current workspace
-workspace_auto_back_and_forth yes
-
 # window border settings
 new_window pixel    3
 new_float normal    0
