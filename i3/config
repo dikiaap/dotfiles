@@ -23,7 +23,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return workspace $WS1; exec i3-sensible-terminal
+bindsym $mod+Return workspace $WS1; exec lxterminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -89,13 +89,13 @@ bindsym $mod+minus scratchpad show
 popup_during_fullscreen smart
 
 # window border settings
-new_window pixel    3
+new_window pixel    0
 new_float normal    0
 hide_edge_borders   none
 
 # shortcut to change window border
 bindsym Mod4+t border normal    0
-bindsym Mod4+y border pixel     3
+bindsym Mod4+y border pixel     1
 bindsym Mod4+u border none
 
 # customize workspace name
@@ -145,11 +145,13 @@ for_window [class="GParted"]                        floating enable border norma
 for_window [class="Lightdm-gtk-greeter-settings"]   floating enable border normal 0
 for_window [class="Lxappearance"]                   floating enable border normal 0
 for_window [class="Software-properties-gtk"]        floating enable border normal 0
-for_window [class="Galculator"]                     floating enable border pixel 3
-for_window [class="Gcolor2"]                        floating enable border pixel 3
-for_window [class="Gkamus"]                         floating enable border pixel 3
-for_window [class="Menu"]                           floating enable border pixel 3
-for_window [class="vlc"]                            floating disable border pixel 0
+for_window [class="Galculator"]                     floating enable border pixel 1
+for_window [class="Gcolor2"]                        floating enable border pixel 1
+for_window [class="Gkamus"]                         floating enable border pixel 1
+for_window [class="Menu"]                           floating enable border pixel 1
+for_window [class="File-roller"]                    floating disable border pixel 1
+for_window [class="Gpicview"]                       floating disable border pixel 1
+for_window [class="Lxterminal"]                     floating disable border pixel 1
 for_window [class="Gimp"]                           border normal 0
 
 # shortcut applications
@@ -173,7 +175,6 @@ bindsym XF86AudioMute           exec amixer -q set Master toggle
 assign [class="URxvt"]              → $WS1
 assign [class="terminal"]           → $WS1
 assign [class="(?i)sublime"]        → $WS2
-assign [class="Leafpad"]            → $WS2
 assign [class="chromium"]           → $WS3
 assign [class="firefox"]            → $WS3
 assign [class="Nautilus"]           → $WS4
