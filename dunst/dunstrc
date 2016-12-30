@@ -42,8 +42,3 @@
     background = "#D64E4E"
     foreground = "#F5F5F5"
     timeout = 0
-
-[signed_on]
-    appname = hexchat
-    summary = "*signed on*"
-    urgency = low
