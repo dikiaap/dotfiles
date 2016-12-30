@@ -139,7 +139,7 @@ exec --no-startup-id xautolock -time 10 -locker "i3lock --color 4D5254"
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/Public/desktop/wp-i3.png
 exec --no-startup-id rofi -key-window mod4+Tab -lines 3 -eh 2 -bg "#222222" -hlbg "#2B83A6" -bc "#2B83A6" -opacity "100" -bw 3 -font "Source Sans Pro 11" -separator-style none -hide-scrollbar -fg "#FFFFFF" -hlbg-active "#2B83A6" -hlfg-active "#FFFFFF"
-exec --no-startup-id compton -cCGb
+exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
 
 # set border when applications started
 for_window [class="GParted"]                        floating enable border normal 0
