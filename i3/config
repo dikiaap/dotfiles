@@ -139,19 +139,17 @@ exec --no-startup-id xautolock -time 10 -locker "i3lock --color 4D5254"
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/Public/desktop/wp-i3.png
 exec --no-startup-id rofi -key-window mod4+Tab -lines 3 -eh 2 -bg "#222222" -hlbg "#2B83A6" -bc "#2B83A6" -opacity "100" -bw 3 -font "Source Sans Pro 11" -separator-style none -hide-scrollbar -fg "#FFFFFF" -hlbg-active "#2B83A6" -hlfg-active "#FFFFFF"
+exec --no-startup-id compton -cCGb
 
 # set border when applications started
 for_window [class="GParted"]                        floating enable border normal 0
 for_window [class="Lightdm-gtk-greeter-settings"]   floating enable border normal 0
 for_window [class="Lxappearance"]                   floating enable border normal 0
 for_window [class="Software-properties-gtk"]        floating enable border normal 0
-for_window [class="Galculator"]                     floating enable border pixel 1
-for_window [class="Gcolor2"]                        floating enable border pixel 1
-for_window [class="Gkamus"]                         floating enable border pixel 1
-for_window [class="Menu"]                           floating enable border pixel 1
-for_window [class="File-roller"]                    floating disable border pixel 1
-for_window [class="Gpicview"]                       floating disable border pixel 1
-for_window [class="Lxterminal"]                     floating disable border pixel 1
+for_window [class="Galculator"]                     floating enable
+for_window [class="Gcolor2"]                        floating enable
+for_window [class="Gkamus"]                         floating enable
+for_window [class="Menu"]                           floating enable
 for_window [class="Gimp"]                           border normal 0
 
 # shortcut applications
