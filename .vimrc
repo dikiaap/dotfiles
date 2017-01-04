@@ -72,7 +72,6 @@ set splitright " New windows goes right
 set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
 set switchbuf=""
 set ttyfast " Send more characters at a given time
-set ttymouse=xterm " Set mouse type to xterm
 set undofile " Persistent Undo
 set visualbell " Use visual bell instead of audible bell (annnnnoying)
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion)
@@ -114,11 +113,20 @@ call vundle#end()
 filetype plugin indent on " Enable filetype plugins
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Neobundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"call neobundle#begin(expand('$HOME/.config/nvim/bundle'))
+"NeoBundleFetch 'Shougo/neobundle.vim'
+"NeoBundle 'scrooloose/nerdtree'
+"call neobundle#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 syntax on
 set encoding=utf-8
+set guifont=Hack
 colorscheme minimalist
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
