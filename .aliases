@@ -27,6 +27,7 @@ alias hgrep="fc -El 0 | grep"
 alias help='man'
 alias p='ps axo pid,user,pcpu,comm'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
+alias uptime='uptime -p'
 
 # bookmarks
 alias dl='cd ~/Downloads; la'
