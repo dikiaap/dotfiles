@@ -7,6 +7,9 @@
     df = diff --color --color-words --abbrev
     d = "!git diff --color $@ | diff-so-fancy"
     lg = log --color --graph --pretty=format:'%C(auto)%h%Creset » %d%s %Cgreen(%cr) %C(bold magenta)<%an>%Creset' --abbrev-commit
+    fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+    fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+    contributors = shortlog -n -s
 
 [user]
     email = diki1aap@gmail.com
