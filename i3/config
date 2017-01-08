@@ -149,6 +149,7 @@ for_window [class="Software-properties-gtk"]        floating enable border norma
 for_window [class="Galculator"]                     floating enable
 for_window [class="Gcolor2"]                        floating enable
 for_window [class="Gkamus"]                         floating enable
+for_window [class="Go-for-it"]                      floating enable
 for_window [class="Menu"]                           floating enable
 for_window [class="Gimp"]                           border normal 0
 
@@ -188,6 +189,7 @@ assign [class="Telegram"]           → $WS8
 assign [class="Upwork"]             → $WS8
 assign [class="Galculator"]         → $WS9
 assign [class="Gnome-font-viewer"]  → $WS9
+assign [class="Go-for-it"]          → $WS9
 assign [class="Transmission-gtk"]   → $WS9
 assign [class="Bum"]                → $WS0
 assign [class="Bleachbit"]          → $WS0
