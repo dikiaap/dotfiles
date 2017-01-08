@@ -14,7 +14,7 @@
 [user]
     email = diki1aap@gmail.com
     name = Diki Andriansyah
-    signingkey = EE6B7E9CE5A36876
+    signingkey = AC15359D17527F76
 
 [core]
     editor = vim
