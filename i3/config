@@ -173,7 +173,7 @@ bindsym XF86AudioMute           exec amixer -q set Master toggle
 assign [class="URxvt"]              → $WS1
 assign [class="terminal"]           → $WS1
 assign [class="(?i)sublime"]        → $WS2
-assign [class="chromium"]           → $WS3
+assign [class="Chromium"]           → $WS3
 assign [class="firefox"]            → $WS3
 assign [class="Nautilus"]           → $WS4
 assign [class="Pcmanfm"]            → $WS4
