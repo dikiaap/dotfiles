@@ -1,5 +1,5 @@
 # Load our dotfiles.
-for file in ~/.{aliases,aliases_private}; do
+for file in ~/.{aliases,aliases_private,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
