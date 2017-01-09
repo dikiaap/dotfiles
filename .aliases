@@ -17,7 +17,6 @@ alias ldot='ls -ld .*'
 alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
-alias disk-report='df -P -kHl'
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
 alias fd='find . -type d -name'
@@ -28,6 +27,13 @@ alias help='man'
 alias p='ps axo pid,user,pcpu,comm'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
 alias uptime='uptime -p'
+alias df='df -h | grep sd |\
+    sed -e "s_/dev/sda[1-9]_\x1b[34m&\x1b[0m_" |\
+    sed -e "s_/dev/sd[b-z][1-9]_\x1b[33m&\x1b[0m_" |\
+    sed -e "s_[,0-9]*[MG]_\x1b[36m&\x1b[0m_" |\
+    sed -e "s_[0-9]*%_\x1b[32m&\x1b[0m_" |\
+    sed -e "s_9[0-9]%_\x1b[31m&\x1b[0m_" |\
+    sed -e "s_/mnt/[-_A-Za-z0-9]*_\x1b[34;1m&\x1b[0m_"'
 
 # bookmarks
 alias dl='cd ~/Downloads; la'
@@ -36,6 +42,7 @@ alias tmp='cd ~/Temporary; la'
 
 # shortcuts
 alias artisan='php artisan'
+alias c='clear'
 alias cat='ccat'
 alias ch='echo "" > ~/.bash_history && echo "" > ~/.zsh_history'
 alias g='git'
