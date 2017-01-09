@@ -26,3 +26,6 @@ sudo npm install npm -g
 
 echo -e $magenta"\n Updating NPM Packages ... \n"$white
 sudo npm update -g
+
+echo -e $magenta"\n Updating youtube-dl ... \n"$white
+sudo youtube-dl -U
