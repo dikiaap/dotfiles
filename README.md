@@ -5,4 +5,4 @@
 	<br>
 </h1>
 
->   The wonderful things of dotfiles and desktop.
+>   Get ready for a dotfiles.
