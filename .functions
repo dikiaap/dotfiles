@@ -1,0 +1,7 @@
+#!/bin/bash
+
+function phpserver() {
+    local ip=localhost;
+    local port="${1:-4000}";
+    php -S "${ip}:${port}";
+}
