@@ -3,29 +3,130 @@
 magenta='\e[1;35m'
 white='\e[0;37m'
 
-echo -e $magenta"\n Updating List System Packages ... \n"$white
-sudo apt-get update
+CMD="$1"
 
-echo -e $magenta"\n List System Packages ... \n"$white
-sudo apt-get dist-upgrade
+printusage() {
+    prog=$(basename "$0")
+    echo "Usage: $prog [-option]" >&2
+    echo "" >&2
+    echo "Options:" >&2
+    echo "    --help    Print this message" >&2
+    echo "    -a        Update all packages" >&2
+}
 
-echo -e $magenta"\n Updating Composer Installer ... \n"$white
-sudo composer self-update
+apt() {
+    echo -e $magenta"\n Updating List System Packages ... \n"$white
+    sudo apt-get update
 
-echo -e $magenta"\n Updating Composer Packages ... \n"$white
-sudo composer global update
+    echo -e $magenta"\n List System Packages ... \n"$white
+    sudo apt-get dist-upgrade
+}
 
-echo -e $magenta"\n Updating Gem System ... \n"$white
-sudo gem update --system
+composer() {
+    echo -e $magenta"\n Updating Composer Installer ... \n"$white
+    sudo composer self-update
 
-echo -e $magenta"\n Updating Gem ... \n"$white
-sudo gem update
+    echo -e $magenta"\n Updating Composer Packages ... \n"$white
+    sudo composer global update
+}
 
-echo -e $magenta"\n Updating NPM ... \n"$white
-sudo npm install npm -g
+gem() {
+    echo -e $magenta"\n Updating Gem System ... \n"$white
+    sudo gem update --system
 
-echo -e $magenta"\n Updating NPM Packages ... \n"$white
-sudo npm update -g
+    echo -e $magenta"\n Updating Gem ... \n"$white
+    sudo gem update
+}
 
-echo -e $magenta"\n Updating youtube-dl ... \n"$white
-sudo youtube-dl -U
+npm() {
+    echo -e $magenta"\n Updating NPM ... \n"$white
+    sudo npm install npm -g
+
+    echo -e $magenta"\n Updating NPM Packages ... \n"$white
+    sudo npm update -g
+}
+
+youtube-dl() {
+    echo -e $magenta"\n Updating youtube-dl ... \n"$white
+    sudo youtube-dl -U
+}
+
+# Print help message.
+if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+    printusage
+    exit 1
+fi
+
+# Update one by one.
+if [[ -z "$1" ]]; then
+    echo
+    read -r -p "Do you want to upgrade debian packages? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            apt
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to upgrade composer packages? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            composer
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to upgrade gem packages? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            gem
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to upgrade npm packages? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            npm
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to upgrade youtube-dl? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            youtube-dl
+            ;;
+        *)
+            echo "Cancelled."
+            exit 0;
+            ;;
+    esac
+fi
+
+# Update all packages.
+case "$CMD" in
+    -a)
+        apt
+        composer
+        gem
+        npm
+        youtube-dl
+        exit 1
+        ;;
+    *)
+        exit 1
+        ;;
+esac

@@ -3,17 +3,118 @@
 magenta='\e[1;35m'
 white='\e[0;37m'
 
-echo -e $magenta"\n Oh My Zsh... \n"$white
-/bin/sh ~/.oh-my-zsh/tools/upgrade.sh
+CMD="$1"
 
-echo -e $magenta"\n Updating .dircolors... \n"$white
-wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-light -O ~/.dircolors
+printusage() {
+    prog=$(basename "$0")
+    echo "Usage: $prog [-option]" >&2
+    echo "" >&2
+    echo "Options:" >&2
+    echo "    --help    Print this message" >&2
+    echo "    -a        Update all packages" >&2
+}
 
-echo -e $magenta"\n Updating Arc Theme... \n"$white
-/bin/sh /usr/local/bin/themes/update-arc-theme.sh
+oh-my-zsh() {
+    echo -e $magenta"\n Updating Oh My Zsh... \n"$white
+    /bin/sh ~/.oh-my-zsh/tools/upgrade.sh
+}
 
-echo -e $magenta"\n Updating base16-shell... \n"$white
-/bin/sh /usr/local/bin/themes/update-base16-shell.sh
+dircolors() {
+    echo -e $magenta"\n Updating .dircolors... \n"$white
+    wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-light -O ~/.dircolors
+}
 
-echo -e $magenta"\n Updating i3lock-fancy... \n"$white
-/bin/sh /usr/local/bin/themes/update-i3lock-fancy.sh
+arc-theme() {
+    echo -e $magenta"\n Updating Arc Theme... \n"$white
+    /bin/sh /usr/local/bin/themes/update-arc-theme.sh
+}
+
+base16-shell() {
+    echo -e $magenta"\n Updating base16-shell... \n"$white
+    /bin/sh /usr/local/bin/themes/update-base16-shell.sh
+}
+
+i3lock-fancy() {
+    echo -e $magenta"\n Updating i3lock-fancy... \n"$white
+    /bin/sh /usr/local/bin/themes/update-i3lock-fancy.sh
+}
+
+# Print help message.
+if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+    printusage
+    exit 1
+fi
+
+# Update one by one.
+if [[ -z "$1" ]]; then
+    echo
+    read -r -p "Do you want to update oh-my-zsh? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            oh-my-zsh
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to update .dircolors? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            dircolors
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to update arc-theme? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            arc-theme
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to update base16-shell? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            base16-shell
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to update i3lock-fancy? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            i3lock-fancy
+            ;;
+        *)
+            echo "Cancelled."
+            exit 0;
+            ;;
+    esac
+fi
+
+# Update all packages.
+case "$CMD" in
+    -a)
+        oh-my-zsh
+        dircolors
+        arc-theme
+        base16-shell
+        i3lock-fancy
+        exit 1
+        ;;
+    *)
+        exit 1
+        ;;
+esac
