@@ -22,11 +22,15 @@ alias duf='du -sh *'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias h='history'
+alias cp='cp -i -v'
+alias mv='mv -i -v'
+alias rm='rm -i'
 alias hgrep="fc -El 0 | grep"
 alias help='man'
 alias p='ps axo pid,user,pcpu,comm'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
 alias uptime='uptime -p'
+alias free='free -h'
 alias df='df -h | grep sd |\
     sed -e "s_/dev/sda[1-9]_\x1b[34m&\x1b[0m_" |\
     sed -e "s_/dev/sd[b-z][1-9]_\x1b[33m&\x1b[0m_" |\
@@ -45,8 +49,10 @@ alias artisan='php artisan'
 alias c='clear'
 alias cat='ccat'
 alias ch='echo "" > ~/.bash_history && echo "" > ~/.zsh_history'
+alias fresh='cd; clear'
 alias g='git'
 alias git-pull-subdir='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;'
+alias incognito='unset HISTFILE'
 alias laravel='~/.config/composer/vendor/bin/laravel'
 alias ln='ln -s'
 alias mp3-dl='youtube-dl --audio-quality 1 --extract-audio --audio-format mp3'
@@ -69,4 +75,4 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # editor, server & config
-alias nginx-conf='sudo vim /etc/nginx/sites-available/default'
+alias nginx-conf='$EDITOR /etc/nginx/sites-available/default'
