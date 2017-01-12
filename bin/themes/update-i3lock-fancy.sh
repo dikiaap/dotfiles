@@ -7,6 +7,7 @@ cd ~/.config/i3lock-color
 git pull
 
 # Installation.
+make clean
 make
 sudo make install
 
