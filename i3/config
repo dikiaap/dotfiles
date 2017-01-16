@@ -174,7 +174,6 @@ bindsym XF86AudioMute           exec amixer -q set Master toggle
 assign [class="URxvt"]              → $WS1
 assign [class="terminal"]           → $WS1
 assign [class="(?i)sublime"]        → $WS2
-assign [class="Gvim"]               → $WS2
 assign [class="Chromium"]           → $WS3
 assign [class="firefox"]            → $WS3
 assign [class="Nautilus"]           → $WS4
@@ -193,6 +192,7 @@ assign [class="Upwork"]             → $WS8
 assign [class="Galculator"]         → $WS9
 assign [class="Gnome-font-viewer"]  → $WS9
 assign [class="Go-for-it"]          → $WS9
+assign [class="Keepassx"]           → $WS9
 assign [class="Transmission-gtk"]   → $WS9
 assign [class="Bum"]                → $WS0
 assign [class="Bleachbit"]          → $WS0
