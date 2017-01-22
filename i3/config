@@ -179,6 +179,7 @@ assign [class="firefox"]            → $WS3
 assign [class="Nautilus"]           → $WS4
 assign [class="Pcmanfm"]            → $WS4
 assign [class="Evince"]             → $WS5
+assign [class="ghostwriter"]        → $WS5
 assign [class="(?i)libreoffice"]    → $WS5
 assign [class="Audacious"]          → $WS6
 assign [class="vlc"]                → $WS6
