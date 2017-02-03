@@ -16,7 +16,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # History.
 setopt inc_append_history
 setopt share_history
-SAVEHIST=1000
+SAVEHIST=2000
 HIST_STAMPS="mm/dd/yyyy"
 
 # Plugins.
