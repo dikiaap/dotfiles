@@ -39,6 +39,11 @@ i3lock-fancy() {
     /bin/sh /usr/local/bin/themes/update-i3lock-fancy.sh
 }
 
+dunst() {
+    echo -e $magenta"\n Updating dunst... \n"$white
+    /bin/sh /usr/local/bin/themes/update-dunst.sh
+}
+
 # Print help message.
 if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
     printusage
@@ -99,6 +104,17 @@ if [[ -z "$1" ]]; then
             ;;
         *)
             echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to update dunst? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            dunst
+            ;;
+        *)
+            echo "Cancelled."
             exit 0;
             ;;
     esac
@@ -112,6 +128,7 @@ case "$CMD" in
         arc-theme
         base16-shell
         i3lock-fancy
+        dunst
         exit 1
         ;;
     *)
