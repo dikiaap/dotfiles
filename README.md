@@ -6,3 +6,5 @@
 </h1>
 
 >   Get ready for a dotfiles.
+
+![preview](http://dotshare.it/public/images/uploads/1398.png)
