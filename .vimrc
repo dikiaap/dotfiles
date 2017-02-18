@@ -18,7 +18,6 @@ set autoindent " Copy indent from last line when starting new line
 set autoread " Set to auto read when a file is changed from the outside
 set backspace=indent,eol,start
 set cursorline " Highlight current line
-set esckeys " Allow cursor keys in insert mode
 set expandtab " Expand tabs to spaces
 set foldcolumn=0 " Column to show folds
 set foldenable " Enable folding
