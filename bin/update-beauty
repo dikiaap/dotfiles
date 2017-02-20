@@ -34,6 +34,11 @@ base16-shell() {
     /bin/sh /usr/local/bin/themes/update-base16-shell.sh
 }
 
+i3blocks() {
+    echo -e $magenta"\n Updating i3blocks... \n"$white
+    /bin/sh /usr/local/bin/themes/update-i3blocks.sh
+}
+
 i3lock-fancy() {
     echo -e $magenta"\n Updating i3lock-fancy... \n"$white
     /bin/sh /usr/local/bin/themes/update-i3lock-fancy.sh
@@ -97,6 +102,17 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
+    read -r -p "Do you want to update i3blocks? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            i3blocks
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
     read -r -p "Do you want to update i3lock-fancy? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
@@ -127,6 +143,7 @@ case "$CMD" in
         dircolors
         arc-theme
         base16-shell
+        i3blocks
         i3lock-fancy
         dunst
         exit 1
