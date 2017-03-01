@@ -27,6 +27,7 @@ alias mv='mv -i -v'
 alias rm='rm -i'
 alias rmf='rm -rf'
 alias hgrep="fc -El 0 | grep"
+alias lgrep="ls -lFh | grep"
 alias help='man'
 alias p='ps axo pid,user,pcpu,comm'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
