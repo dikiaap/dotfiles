@@ -40,7 +40,7 @@ i3blocks() {
 }
 
 i3lock-fancy() {
-    echo -e $magenta"\n Updating i3lock-fancy... \n"$white
+    echo -e $magenta"\n Updating i3lock & i3lock-fancy... \n"$white
     /bin/sh /usr/local/bin/themes/update-i3lock-fancy.sh
 }
 
@@ -113,7 +113,7 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
-    read -r -p "Do you want to update i3lock-fancy? [y/n] " response
+    read -r -p "Do you want to update i3lock & i3lock-fancy? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
             i3lock-fancy
