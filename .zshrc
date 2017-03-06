@@ -13,6 +13,11 @@ DISABLE_AUTO_TITLE="true"
 # Disable marking untracked files under VCS as dirty.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Set option.
+setopt PROMPT_CR
+setopt PROMPT_SP
+export PROMPT_EOL_MARK=""
+
 # History.
 setopt inc_append_history
 setopt share_history
