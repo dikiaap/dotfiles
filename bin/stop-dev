@@ -11,6 +11,3 @@ sudo service mysql stop
 
 echo -e $magenta"\n Stop NGINX... \n"$white
 sudo service nginx stop
-
-echo -e $magenta"\n Stop Memcached... \n"$white
-sudo service memcached stop
