@@ -28,7 +28,7 @@ HIST_STAMPS="mm/dd/yyyy"
 plugins=(git extract archive)
 
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.local/bin"
 export BASE16_SHELL="$HOME/.config/base16-shell"
 export LANG="en_US.UTF-8"
 export EDITOR="subl"
