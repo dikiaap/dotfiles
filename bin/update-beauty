@@ -26,27 +26,27 @@ dircolors() {
 
 arc-theme() {
     echo -e $magenta"\n Updating Arc Theme... \n"$white
-    /bin/sh /usr/local/bin/themes/update-arc-theme.sh
+    /bin/sh ~/.local/bin/themes/update-arc-theme.sh
 }
 
 base16-shell() {
     echo -e $magenta"\n Updating base16-shell... \n"$white
-    /bin/sh /usr/local/bin/themes/update-base16-shell.sh
+    /bin/sh ~/.local/bin/themes/update-base16-shell.sh
 }
 
 i3blocks() {
     echo -e $magenta"\n Updating i3blocks... \n"$white
-    /bin/sh /usr/local/bin/themes/update-i3blocks.sh
+    /bin/sh ~/.local/bin/themes/update-i3blocks.sh
 }
 
 i3lock-fancy() {
     echo -e $magenta"\n Updating i3lock & i3lock-fancy... \n"$white
-    /bin/sh /usr/local/bin/themes/update-i3lock-fancy.sh
+    /bin/sh ~/.local/bin/themes/update-i3lock-fancy.sh
 }
 
 dunst() {
     echo -e $magenta"\n Updating dunst... \n"$white
-    /bin/sh /usr/local/bin/themes/update-dunst.sh
+    /bin/sh ~/.local/bin/themes/update-dunst.sh
 }
 
 # Print help message.
