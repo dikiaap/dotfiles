@@ -19,7 +19,8 @@
     [
         ".git",
         "node_modules",
-        ".sass-cache"
+        ".sass-cache",
+        "_site"
     ],
     "font_face": "Hack",
     "font_size": 10,
