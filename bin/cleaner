@@ -30,7 +30,7 @@ safecleaner() {
     sudo gem cleanup
 
     echo -e $magenta"\n Cleaning Composer Installer ... \n"$white
-    sudo rm -fv ~/.composer/2016*
+    sudo rm -fv ~/.composer/20*
 
     echo -e $magenta"\n Cleaning Shell History ... \n"$white
     echo "" > ~/.bash_history && echo "" > ~/.zsh_history
