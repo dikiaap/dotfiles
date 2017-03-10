@@ -48,6 +48,7 @@ alias doc='cd ~/Documents; la'
 alias tmp='cd ~/Temporary; la'
 
 # shortcuts
+alias art='php artisan'
 alias artisan='php artisan'
 alias c='clear'
 alias cat='ccat'
