@@ -61,6 +61,7 @@ alias ln='ln -s'
 alias mp3-dl='youtube-dl --audio-quality 1 --extract-audio --audio-format mp3'
 alias phpunit='vendor/bin/phpunit'
 alias python='python3.4'
+alias weather='curl -s wttr.in/Ponorogo | sed -n "1,17p"'
 alias zshrc='$EDITOR ~/.zshrc'
 
 # typos
