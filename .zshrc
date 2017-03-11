@@ -37,4 +37,6 @@ export TERM="xterm-256color"
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_profile
 
+. $HOME/.config/z/z.sh
+
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
