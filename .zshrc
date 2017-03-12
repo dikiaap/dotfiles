@@ -25,7 +25,7 @@ SAVEHIST=2000
 HIST_STAMPS="mm/dd/yyyy"
 
 # Plugins.
-plugins=(git extract archive)
+plugins=(archive extract git ubuntu)
 
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.local/bin"

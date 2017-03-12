@@ -210,16 +210,16 @@ assign [class="Lightdm-gtk-greeter-settings"]   → $WS0
 assign [class="Software-properties-gtk"]        → $WS0
 
 # resize window: 1/4
-bindsym $mod+Shift+u floating enable; resize set 660 px 350 px; sticky enable; move window to position 15 px 15 px
-bindsym $mod+Shift+i floating enable; resize set 660 px 350 px; sticky enable; move window to position 15 px 380 px
-bindsym $mod+Shift+o floating enable; resize set 660 px 350 px; sticky enable; move window to position 690 px 15 px
-bindsym $mod+Shift+p floating enable; resize set 660 px 350 px; sticky enable; move window to position 690 px 380 px
+bindsym $mod+Shift+u floating enable; resize set 660 px 350 px; move window to position 15 px 15 px
+bindsym $mod+Shift+i floating enable; resize set 660 px 350 px; move window to position 15 px 380 px
+bindsym $mod+Shift+o floating enable; resize set 660 px 350 px; move window to position 690 px 15 px
+bindsym $mod+Shift+p floating enable; resize set 660 px 350 px; move window to position 690 px 380 px
 
 # resize window: 1/2
-bindsym $mod+Shift+v floating enable; resize set 660 px 715 px; sticky enable; move window to position 15 px 15 px
-bindsym $mod+Shift+b floating enable; resize set 1335 px 350 px; sticky enable; move window to position 15 px 380 px
-bindsym $mod+Shift+n floating enable; resize set 1335 px 350 px; sticky enable; move window to position 15 px 15 px
-bindsym $mod+Shift+m floating enable; resize set 660 px 715 px; sticky enable; move window to position 690 px 15 px
+bindsym $mod+Shift+v floating enable; resize set 660 px 715 px; move window to position 15 px 15 px
+bindsym $mod+Shift+b floating enable; resize set 1335 px 350 px; move window to position 15 px 380 px
+bindsym $mod+Shift+n floating enable; resize set 1335 px 350 px; move window to position 15 px 15 px
+bindsym $mod+Shift+m floating enable; resize set 660 px 715 px; move window to position 690 px 15 px
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
