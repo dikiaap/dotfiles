@@ -1,6 +1,7 @@
 #!/bin/bash
 
 magenta='\e[1;35m'
+green='\e[1;32m'
 white='\e[0;37m'
 
 CMD="$1"
@@ -43,7 +44,7 @@ base16-shell() {
 }
 
 i3-gaps() {
-    echo -e $magenta"\n Updating i3-gaps... \n"$white
+    echo -e $magenta"\n Updating & compiling i3-gaps... \n"$white
     cd ~/.local/src/i3-gaps
     git pull
     autoreconf --force --install
@@ -52,35 +53,71 @@ i3-gaps() {
     cd build
     ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
     make
+    echo -e $green"\n Previous version: \n"$white
+    echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+    /usr/bin/i3 --version
+    echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+    echo -e $magenta"\n Installing i3-gaps... \n"$white
     sudo make install
+    echo -e $green"\n Current version: \n"$white
+    echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+    /usr/bin/i3 --version
+    echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
 }
 
 i3blocks() {
-    echo -e $magenta"\n Updating i3blocks... \n"$white
+    echo -e $magenta"\n Updating & compiling i3blocks... \n"$white
     cd ~/.local/src/i3blocks
     git pull
     make clean all
+    echo -e $green"\n Previous version: \n"$white
+    echo "───────────────────────────────────────────────────────────────────"
+    /usr/bin/i3blocks -V
+    echo "───────────────────────────────────────────────────────────────────"
+    echo -e $magenta"\n Installing i3blocks... \n"$white
     sudo make PREFIX=/usr install
+    echo -e $green"\n Current version: \n"$white
+    echo "───────────────────────────────────────────────────────────────────"
+    /usr/bin/i3blocks -V
+    echo "───────────────────────────────────────────────────────────────────"
 }
 
 i3lock-fancy() {
-    echo -e $magenta"\n Updating i3lock & i3lock-fancy... \n"$white
+    echo -e $magenta"\n Updating & compiling i3lock & i3lock-fancy... \n"$white
     cd ~/.local/src/i3lock-color
     git pull
     make clean
     make
+    echo -e $green"\n Previous version: \n"$white
+    echo "───────────────────────────────────────────────────────────────────────────"
+    /usr/bin/i3lock --version
+    echo "───────────────────────────────────────────────────────────────────────────"
+    echo -e $magenta"\n Installing i3lock & i3lock-fancy... \n"$white
     sudo make install
+    echo -e $green"\n Current version: \n"$white
+    echo "───────────────────────────────────────────────────────────────────────────"
+    /usr/bin/i3lock --version
+    echo "───────────────────────────────────────────────────────────────────────────"
     cd ~/.local/src/i3lock-fancy
     git pull
 }
 
 dunst() {
-    echo -e $magenta"\n Updating dunst... \n"$white
+    echo -e $magenta"\n Updating & compiling dunst... \n"$white
     cd ~/.local/src/dunst
     git pull
     make clean
     make
+    echo -e $green"\n Previous version: \n"$white
+    echo "──────────────────────────────────────────────────────────────────────────────────"
+    /usr/bin/dunst --version
+    echo "──────────────────────────────────────────────────────────────────────────────────"
+    echo -e $magenta"\n Installing dunst... \n"$white
     sudo make PREFIX=/usr install
+    echo -e $green"\n Current version: \n"$white
+    echo "──────────────────────────────────────────────────────────────────────────────────"
+    /usr/bin/dunst --version
+    echo "──────────────────────────────────────────────────────────────────────────────────"
 }
 
 # Print help message.
