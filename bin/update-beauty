@@ -16,7 +16,7 @@ printusage() {
 }
 
 oh-my-zsh() {
-    echo -e $magenta"\n Updating Oh My Zsh... \n"$white
+    echo -e $magenta"\n Updating oh-my-zsh... \n"$white
     /bin/sh ~/.oh-my-zsh/tools/upgrade.sh
 }
 
@@ -26,7 +26,7 @@ dircolors() {
 }
 
 arc-theme() {
-    echo -e $magenta"\n Updating Arc Theme... \n"$white
+    echo -e $magenta"\n Updating & compiling arc-theme... \n"$white
     cd ~/Temporary
     sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
     git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
@@ -53,13 +53,13 @@ i3-gaps() {
     cd build
     ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
     make
-    echo -e $green"\n Previous version: \n"$white
+    echo -e $green"\n Previous i3-gaps version: \n"$white
     echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
     /usr/bin/i3 --version
     echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Installing i3-gaps... \n"$white
     sudo make install
-    echo -e $green"\n Current version: \n"$white
+    echo -e $green"\n Current i3-gaps version: \n"$white
     echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
     /usr/bin/i3 --version
     echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
@@ -70,13 +70,13 @@ i3blocks() {
     cd ~/.local/src/i3blocks
     git pull
     make clean all
-    echo -e $green"\n Previous version: \n"$white
+    echo -e $green"\n Previous i3blocks version: \n"$white
     echo "───────────────────────────────────────────────────────────────────"
     /usr/bin/i3blocks -V
     echo "───────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Installing i3blocks... \n"$white
     sudo make PREFIX=/usr install
-    echo -e $green"\n Current version: \n"$white
+    echo -e $green"\n Current i3blocks version: \n"$white
     echo "───────────────────────────────────────────────────────────────────"
     /usr/bin/i3blocks -V
     echo "───────────────────────────────────────────────────────────────────"
@@ -88,13 +88,13 @@ i3lock-fancy() {
     git pull
     make clean
     make
-    echo -e $green"\n Previous version: \n"$white
+    echo -e $green"\n Previous i3lock version: \n"$white
     echo "───────────────────────────────────────────────────────────────────────────"
     /usr/bin/i3lock --version
     echo "───────────────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Installing i3lock & i3lock-fancy... \n"$white
     sudo make install
-    echo -e $green"\n Current version: \n"$white
+    echo -e $green"\n Current i3lock version: \n"$white
     echo "───────────────────────────────────────────────────────────────────────────"
     /usr/bin/i3lock --version
     echo "───────────────────────────────────────────────────────────────────────────"
@@ -108,13 +108,13 @@ dunst() {
     git pull
     make clean
     make
-    echo -e $green"\n Previous version: \n"$white
+    echo -e $green"\n Previous dunst version: \n"$white
     echo "──────────────────────────────────────────────────────────────────────────────────"
     /usr/bin/dunst --version
     echo "──────────────────────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Installing dunst... \n"$white
     sudo make PREFIX=/usr install
-    echo -e $green"\n Current version: \n"$white
+    echo -e $green"\n Current dunst version: \n"$white
     echo "──────────────────────────────────────────────────────────────────────────────────"
     /usr/bin/dunst --version
     echo "──────────────────────────────────────────────────────────────────────────────────"
