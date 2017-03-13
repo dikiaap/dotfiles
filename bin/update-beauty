@@ -111,13 +111,12 @@ dunst() {
 
 arc-theme() {
     echo -e $magenta"\n Updating & compiling arc-theme... \n"$white
-    cd ~/Temporary
+    cd ~/.local/src/arc-theme
+    git pull
+    rm -rvf aclocal.m4 autom4te.cache build-aux compile config.status config.log configure install-sh missing .idea Makefile Makefile.in common/Makefile common/Makefile.in extra/Makefile extra/Makefile.in
     sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
-    git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
     ./autogen.sh --prefix=/usr --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm
     sudo make install
-    cd ~/Temporary
-    rm -rf arc-theme
 }
 
 # Print help message.
