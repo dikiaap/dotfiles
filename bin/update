@@ -27,7 +27,7 @@ composer() {
     sudo composer self-update
 
     echo -e $magenta"\n Updating Composer Packages ... \n"$white
-    sudo composer global update
+    composer global update
 }
 
 gem() {
