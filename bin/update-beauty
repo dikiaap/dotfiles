@@ -26,27 +26,61 @@ dircolors() {
 
 arc-theme() {
     echo -e $magenta"\n Updating Arc Theme... \n"$white
-    /bin/sh ~/.local/bin/themes/update-arc-theme.sh
+    cd ~/Temporary
+    sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
+    git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
+    ./autogen.sh --prefix=/usr --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm
+    sudo make install
+    cd ~/Temporary
+    rm -rf arc-theme
 }
 
 base16-shell() {
     echo -e $magenta"\n Updating base16-shell... \n"$white
-    /bin/sh ~/.local/bin/themes/update-base16-shell.sh
+    cd ~/.config/base16-shell
+    git pull
+    ./colortest
+}
+
+i3-gaps() {
+    echo -e $magenta"\n Updating i3-gaps... \n"$white
+    cd ~/.local/src/i3-gaps
+    git pull
+    autoreconf --force --install
+    rm -rf build
+    mkdir build
+    cd build
+    ../configure --prefix=/usr --sysconfdir=/etc
+    make
+    sudo make install
 }
 
 i3blocks() {
     echo -e $magenta"\n Updating i3blocks... \n"$white
-    /bin/sh ~/.local/bin/themes/update-i3blocks.sh
+    cd ~/.local/src/i3blocks
+    git pull
+    make clean all
+    sudo make PREFIX=/usr install
 }
 
 i3lock-fancy() {
     echo -e $magenta"\n Updating i3lock & i3lock-fancy... \n"$white
-    /bin/sh ~/.local/bin/themes/update-i3lock-fancy.sh
+    cd ~/.local/src/i3lock-color
+    git pull
+    make clean
+    make
+    sudo make install
+    cd ~/.local/src/i3lock-fancy
+    git pull
 }
 
 dunst() {
     echo -e $magenta"\n Updating dunst... \n"$white
-    /bin/sh ~/.local/bin/themes/update-dunst.sh
+    cd ~/.local/src/dunst
+    git pull
+    make clean
+    make
+    sudo make PREFIX=/usr install
 }
 
 # Print help message.
@@ -102,6 +136,17 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
+    read -r -p "Do you want to update i3-gaps? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            i3-gaps
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
     read -r -p "Do you want to update i3blocks? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
@@ -143,6 +188,7 @@ case "$CMD" in
         dircolors
         arc-theme
         base16-shell
+        i3-gaps
         i3blocks
         i3lock-fancy
         dunst
