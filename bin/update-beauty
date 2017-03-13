@@ -25,17 +25,6 @@ dircolors() {
     wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-light -O ~/.dircolors
 }
 
-arc-theme() {
-    echo -e $magenta"\n Updating & compiling arc-theme... \n"$white
-    cd ~/Temporary
-    sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
-    git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
-    ./autogen.sh --prefix=/usr --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm
-    sudo make install
-    cd ~/Temporary
-    rm -rf arc-theme
-}
-
 base16-shell() {
     echo -e $magenta"\n Updating base16-shell... \n"$white
     cd ~/.config/base16-shell
@@ -120,6 +109,17 @@ dunst() {
     echo "──────────────────────────────────────────────────────────────────────────────────"
 }
 
+arc-theme() {
+    echo -e $magenta"\n Updating & compiling arc-theme... \n"$white
+    cd ~/Temporary
+    sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
+    git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
+    ./autogen.sh --prefix=/usr --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm
+    sudo make install
+    cd ~/Temporary
+    rm -rf arc-theme
+}
+
 # Print help message.
 if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
     printusage
@@ -144,17 +144,6 @@ if [[ -z "$1" ]]; then
     case $response in
         [yY][eE][sS]|[yY])
             dircolors
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to update arc-theme? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            arc-theme
             ;;
         *)
             echo "Cancelled."
@@ -213,6 +202,17 @@ if [[ -z "$1" ]]; then
             ;;
         *)
             echo "Cancelled."
+            ;;
+    esac
+
+    echo
+    read -r -p "Do you want to update arc-theme? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            arc-theme
+            ;;
+        *)
+            echo "Cancelled."
             exit 0;
             ;;
     esac
@@ -223,12 +223,12 @@ case "$CMD" in
     -a)
         oh-my-zsh
         dircolors
-        arc-theme
         base16-shell
         i3-gaps
         i3blocks
         i3lock-fancy
         dunst
+        arc-theme
         exit 1
         ;;
     *)
