@@ -13,14 +13,15 @@
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
-		"composer.lock"
+		"composer.lock",
+		"yarn.lock"
 	],
 	"folder_exclude_patterns":
 	[
+		"_site",
 		".git",
-		"node_modules",
 		".sass-cache",
-		"_site"
+		"node_modules"
 	],
 	"font_face": "Hack",
 	"font_size": 10,
