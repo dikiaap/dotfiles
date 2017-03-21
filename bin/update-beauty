@@ -18,6 +18,17 @@ printusage() {
 oh-my-zsh() {
     echo -e $magenta"\n Updating oh-my-zsh... \n"$white
     /bin/sh ~/.oh-my-zsh/tools/upgrade.sh
+    echo -e $magenta"\n Updating zsh plugins... \n"$white
+    echo -e $green"Updating z..."$white
+    cd ~/.local/src/z
+    git pull
+    echo -e $green"Updating zsh-autosuggestions..."$white
+    cd ~/.local/src/zsh-autosuggestions
+    git pull
+    echo -e $green"Updating zsh-syntax-highlighting..."$white
+    cd ~/.local/src/zsh-syntax-highlighting
+    git pull
+
 }
 
 dircolors() {
@@ -128,7 +139,7 @@ fi
 # Update one by one.
 if [[ -z "$1" ]]; then
     echo
-    read -r -p "Do you want to update oh-my-zsh? [y/n] " response
+    read -r -p "Do you want to update oh-my-zsh & zsh plugins? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
             oh-my-zsh
