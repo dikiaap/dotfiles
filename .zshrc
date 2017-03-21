@@ -36,6 +36,8 @@ export TERM="xterm-256color"
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_profile
+source $HOME/.local/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.local/src/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 . $HOME/.local/src/z/z.sh
 
