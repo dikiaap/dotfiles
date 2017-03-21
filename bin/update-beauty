@@ -22,10 +22,6 @@ oh-my-zsh() {
     echo -e $green"Updating z..."$white
     cd ~/.local/src/z
     git pull
-    echo -e $green"Updating zsh-syntax-highlighting..."$white
-    cd ~/.local/src/zsh-syntax-highlighting
-    git pull
-
 }
 
 dircolors() {
