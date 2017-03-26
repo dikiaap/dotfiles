@@ -23,12 +23,12 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return workspace $WS1; exec lxterminal
+bindsym $mod+Return workspace $WS1; exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
 bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/royal-sky.theme -font "Source Sans Pro 12" -lines 11
 
@@ -65,7 +65,7 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# change container layout
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -140,17 +140,15 @@ exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/Public/desktop/wp-i3.png
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 
-# set border when applications started
-for_window [class="GParted"]                        floating enable border normal 0
-for_window [class="Lightdm-gtk-greeter-settings"]   floating enable border normal 0
-for_window [class="Lxappearance"]                   floating enable border normal 0
-for_window [class="Software-properties-gtk"]        floating enable border normal 0
+# set floating mode when applications started
 for_window [class="Galculator"]                     floating enable
 for_window [class="Gcolor2"]                        floating enable
 for_window [class="Gkamus"]                         floating enable
 for_window [class="Go-for-it"]                      floating enable
+for_window [class="Lightdm-gtk-greeter-settings"]   floating enable
+for_window [class="Lxappearance"]                   floating enable
 for_window [class="Menu"]                           floating enable
-for_window [class="Gimp"]                           border normal 0
+for_window [class="Software-properties-gtk"]        floating enable
 
 # shortcut applications
 bindsym $mod+F1                 exec gkamus
@@ -213,15 +211,13 @@ assign [class="Software-properties-gtk"]        → $WS0
 bindsym $mod+Shift+c reload
 # restart i3 inplace
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Exit i3 ' 'i3-msg exit'"
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -f 'pango:Hack 8' -m 'Do you really want to exit?' -b ' Exit  ' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# resize window
 mode "  " {
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # Pressing left and up will shrink the window’s width.
+        # Pressing right and down will grow the window’s width.
         bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
@@ -235,7 +231,6 @@ mode "  " {
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
-        bindsym Escape mode "default"
 }
 bindsym $mod+r mode "  "
 
@@ -269,10 +264,10 @@ bar {
 }
 
 # i3-gaps
-for_window [class="^.*"] border pixel 0
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [title="Preferences$"] floating enable
+for_window [class="^.*"]                border pixel 0
+for_window [window_role="pop-up"]       floating enable
+for_window [window_role="task_dialog"]  floating enable
+for_window [title="Preferences$"]       floating enable
 
 smart_gaps on
 gaps inner 8
