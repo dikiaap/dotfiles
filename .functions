@@ -1,5 +1,9 @@
 #!/bin/bash
 
+function mkd() {
+    mkdir -p "$@" && cd "$@"
+}
+
 function phpserver() {
     local ip=localhost;
     local port="${1:-4000}";
