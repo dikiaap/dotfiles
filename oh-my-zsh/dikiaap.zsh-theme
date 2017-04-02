@@ -1,5 +1,6 @@
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+#!/usr/bin/env zsh
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('%F{blue}`basename $VIRTUAL_ENV`%f') '
 }
@@ -33,12 +34,6 @@ zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*:prompt:*' check-for-changes true
 
 # set formats
-# %b - branchname
-# %u - unstagedstr (see below)
-# %c - stagedstr (see below)
-# %a - action (e.g. rebase-i)
-# %R - repository path
-# %S - path in the repository
 PR_RST="%f"
 FMT_BRANCH="(%{$turquoise%}%b%u%c${PR_RST})"
 FMT_ACTION="(%{$limegreen%}%a${PR_RST})"
@@ -51,8 +46,7 @@ zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
-
-function ceprius_preexec {
+function dikiaap_preexec {
     case "$(history $HISTCMD)" in
         *git*)
             PR_GIT_UPDATE=1
@@ -62,14 +56,14 @@ function ceprius_preexec {
             ;;
     esac
 }
-add-zsh-hook preexec ceprius_preexec
+add-zsh-hook preexec dikiaap_preexec
 
-function ceprius_chpwd {
+function dikiaap_chpwd {
     PR_GIT_UPDATE=1
 }
-add-zsh-hook chpwd ceprius_chpwd
+add-zsh-hook chpwd dikiaap_chpwd
 
-function ceprius_precmd {
+function dikiaap_precmd {
     if [[ -n "$PR_GIT_UPDATE" ]] ; then
         # check for untracked files or updated submodules, since vcs_info doesn't
         if git ls-files --other --exclude-standard 2> /dev/null | grep -q "."; then
@@ -84,7 +78,7 @@ function ceprius_precmd {
         PR_GIT_UPDATE=
     fi
 }
-add-zsh-hook precmd ceprius_precmd
+add-zsh-hook precmd dikiaap_precmd
 
 PROMPT=$'
 %{$limegreen%}%~${PR_RST} $vcs_info_msg_0_$(virtualenv_info)

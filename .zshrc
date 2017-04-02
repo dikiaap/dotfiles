@@ -1,5 +1,5 @@
 # Themes.
-ZSH_THEME="ceprius"
+ZSH_THEME="dikiaap"
 
 # Case-sensitive completion.
 CASE_SENSITIVE="true"
