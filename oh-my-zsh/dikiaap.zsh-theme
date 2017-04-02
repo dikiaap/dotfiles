@@ -11,7 +11,7 @@ setopt prompt_subst
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
-#use extended color pallete if available
+# use extended color pallete if available.
 if [[ $terminfo[colors] -ge 256 ]]; then
     turquoise="%F{73}"
     orange="%F{179}"
@@ -26,14 +26,14 @@ else
     limegreen="%F{green}"
 fi
 
-# enable VCS systems you use
+# enable VCS systems you use.
 zstyle ':vcs_info:*' enable git svn
 
 # check-for-changes can be really slow.
-# you should disable it, if you work with large repositories
+# you should disable it, if you work with large repositories.
 zstyle ':vcs_info:*:prompt:*' check-for-changes true
 
-# set formats
+# set formats.
 PR_RST="%f"
 FMT_BRANCH="(%{$turquoise%}%b%u%c${PR_RST})"
 FMT_ACTION="(%{$limegreen%}%a${PR_RST})"
@@ -65,7 +65,7 @@ add-zsh-hook chpwd dikiaap_chpwd
 
 function dikiaap_precmd {
     if [[ -n "$PR_GIT_UPDATE" ]] ; then
-        # check for untracked files or updated submodules, since vcs_info doesn't
+        # check for untracked files or updated submodules, since vcs_info doesn't.
         if git ls-files --other --exclude-standard 2> /dev/null | grep -q "."; then
             PR_GIT_UPDATE=1
             FMT_BRANCH="on %{$turquoise%} %b%u%c%F{red} ● ${PR_RST}"
