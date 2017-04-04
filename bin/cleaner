@@ -13,7 +13,7 @@ printusage() {
     echo "Options:" >&2
     echo "    --help    Print this message" >&2
     echo "    -s        Safe cleaner, except browser and image thumbnails" >&2
-    echo "    -a        Clean all unnecessary files" >&2
+    echo "    -a        Clean all junk folders and files" >&2
 }
 
 safecleaner() {
