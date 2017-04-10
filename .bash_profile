@@ -1,6 +1,6 @@
 # Load our dotfiles.
 for file in ~/.{aliases,aliases_private,bash_prompt,functions}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
@@ -19,25 +19,23 @@ shopt -s cmdhist;
 shopt -s checkwinsize;
 
 # Gotta tune that bash_history.
-# from paulirish.
 export HISTTIMEFORMAT='%F %T '
-# keep history up to date, across sessions, in realtime
-# http://unix.stackexchange.com/a/48113
+# Keep history up to date, across sessions, and in realtime.
 export HISTCONTROL=ignoredups:erasedups         # no duplicate entries
 export HISTSIZE=2000                         	# big history (default is 1000)
 export HISTFILESIZE=$HISTSIZE                   # big history
 which shopt > /dev/null && shopt -s histappend  # append to history, don't overwrite it
-# Save and reload the history after each command finishes
+# Save and reload the history after each command finishes.
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
 
 # Completion.
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi;
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi;
 fi;
 
 # Highlighting inside manpages and elsewhere.

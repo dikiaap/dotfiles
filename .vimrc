@@ -1,19 +1,13 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make vim useful.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set number
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Directories.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent " Copy indent from last line when starting new line
 set autoread " Set to auto read when a file is changed from the outside
 set backspace=indent,eol,start
@@ -84,9 +78,7 @@ set winminheight=0 " Allow splits to be reduced to a single line
 set wrapscan " Searches wrap around end of file
 " thanks to paulirish/dotfiles
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'bling/vim-airline'
@@ -105,37 +97,28 @@ Plugin 'stanangeloff/php.vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wincent/command-t.git'
 call vundle#end()
 filetype plugin indent on " Enable filetype plugins
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Neobundle
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Neobundle.
 "call neobundle#begin(expand('$HOME/.config/nvim/bundle'))
 "NeoBundleFetch 'Shougo/neobundle.vim'
 "NeoBundle 'scrooloose/nerdtree'
 "call neobundle#end()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 syntax on
 set encoding=utf-8
 set guifont=Hack
 colorscheme minimalist
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Neovim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Neovim.
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Airline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline.
 let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -143,17 +126,13 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic.
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
