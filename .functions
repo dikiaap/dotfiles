@@ -9,3 +9,11 @@ function phpserver() {
     local port="${1:-4000}";
     php -S "${ip}:${port}";
 }
+
+function readme() {
+    for readme in README.md README.MD readme.md README.markdown README.txt README.TXT readme.txt README README.mkd; do
+        if [[ -f "$readme" ]]; then
+            cat $readme
+        fi
+    done
+}
