@@ -33,7 +33,7 @@ safecleaner() {
     sudo rm -fv ~/.composer/20*
 
     echo -e $magenta"\n Cleaning Shell History ... \n"$white
-    echo "" > ~/.bash_history && echo "" > ~/.zsh_history
+    echo "" > ~/.bash_history && echo "" > ~/.zsh_history && echo "" > ~/.z
 
     echo -e $magenta"\n Cleaning Junk Files ... \n"$white
     rm -rfv ~/.local/share/recently-used.xbel
