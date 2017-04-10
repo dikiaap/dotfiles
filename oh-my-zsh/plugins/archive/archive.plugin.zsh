@@ -12,8 +12,8 @@ archive() {
             continue
         fi
 
-		case "$1" in
-			(*.7z) 7z l "$1" ;;
+        case "$1" in
+            (*.7z) 7z l "$1" ;;
             (*.rar) unrar l "$1" ;;
             (*.tar|*.tar.bz2|*.tar.gz|*.tar.lzma|*.tar.xz) tar tf "$1" ;;
             (*.zip) unzip -l "$1" ;;
