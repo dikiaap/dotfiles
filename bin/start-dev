@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 magenta='\e[1;35m'
 white='\e[0;37m'
