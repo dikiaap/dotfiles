@@ -1,6 +1,6 @@
 # dotfiles ❤ ~/
 
-![preview](http://dotshare.it/public/images/uploads/1398.png)
+![dikiaap dotfiles](http://dotshare.it/public/images/uploads/1398.png)
 >   Get ready for dotfiles.
 
 ## Links
