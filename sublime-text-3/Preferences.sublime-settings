@@ -9,7 +9,6 @@
 	"draw_indent_guides": true,
 	"draw_white_space": true,
 	"enable_tab_scrolling": false,
-	"enable_telemetry": "disabled",
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
@@ -20,7 +19,10 @@
 	[
 		"_site",
 		".git",
+		".hg",
 		".sass-cache",
+		".svn",
+		"CVS",
 		"node_modules"
 	],
 	"font_face": "Hack",
@@ -28,6 +30,7 @@
 	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
+	"hot_exit": true,
 	"ignored_packages":
 	[
 		"ActionScript",
@@ -60,6 +63,12 @@
 		"Vintage"
 	],
 	"indent_subsequent_lines": true,
+	"index_exclude_patterns":
+	[
+		"*.log"
+	],
+	"index_files": true,
+	"index_workers": 0,
 	"line_numbers": true,
 	"line_padding_bottom": 4,
 	"line_padding_top": 4,
