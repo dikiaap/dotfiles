@@ -8,7 +8,7 @@
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "310x5-20+20"
+    geometry = "300x5-20+20"
     shrink = no
     idle_threshold = 0
     monitor = 0
