@@ -4,7 +4,7 @@
     format = "<b>%s %p</b>\n%b"
     sort = yes
     indicate_hidden = yes
-    alignment = center
+    alignment = left
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
@@ -20,6 +20,9 @@
     horizontal_padding = 10
     separator_color = frame
     startup_notification = false
+    icon_position = left
+    max_icon_size = 32
+    icon_folders = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/
 
 [frame]
     width = 1
@@ -47,3 +50,4 @@
     foreground = "#F5F5F5"
     frame_color = "#D64E4E"
     timeout = 0
+    icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
