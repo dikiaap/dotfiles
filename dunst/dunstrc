@@ -27,7 +27,7 @@
     startup_notification = false
     icon_position = left
     max_icon_size = 32
-    icon_folders = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/
+    icon_folders = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
     always_run_script = true
 
 [frame]
