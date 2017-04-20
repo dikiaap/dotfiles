@@ -3,7 +3,7 @@
 ! Copyright: 2017 dikiaap
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.separator-style: none
+rofi.lines: 11
 
 !                  bg       fg       bg-alt   hl-bg    hl-fg
 rofi.color-normal: #212121, #C4CBD4, #2D2D2D, #2B83A6, #F9F9F9
@@ -12,3 +12,6 @@ rofi.color-active: #212121, #278DB6, #2D2D2D, #278DB6, #F9F9F9
 
 !                  bg       border   separator
 rofi.color-window: #212121, #212121, #2D2D2D
+
+rofi.separator-style: none
+rofi.scrollbar-width: 5
