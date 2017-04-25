@@ -57,7 +57,6 @@ alias git-pull-dir='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {
 alias incognito='unset HISTFILE'
 alias ln='ln -s'
 alias mp3-dl='youtube-dl --audio-quality 1 --extract-audio --audio-format mp3'
-alias phpunit='vendor/bin/phpunit'
 alias python='python3.5'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date "+%a, %d %b %H:%M:%S" && time cat && date "+%a, %d %b %H:%M:%S"'
 alias v='nvim'
