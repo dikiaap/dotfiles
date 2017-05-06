@@ -17,13 +17,10 @@
     location:   center;
     anchor:     center;
     border:     0;
-    foreground: @foreground;
-    background: @background;
     padding:    8;
 }
 #window.box {
     foreground: @background;
-    background: @background;
 }
 #window.mainbox {
     border:  0;
@@ -36,7 +33,6 @@
     border: none;
 }
 #window.mainbox.inputbar.normal {
-    foreground: @foreground;
 }
 #window.mainbox.listview {
     fixed-height: 0;
@@ -48,16 +44,12 @@
     border: 0;
 }
 #window.mainbox.listview.element.normal.normal {
-    foreground: @foreground;
-    background: @background;
 }
 #window.mainbox.listview.element.normal.urgent {
     foreground: @lightred;
-    background: @background;
 }
 #window.mainbox.listview.element.normal.active {
     foreground: @lightblue;
-    background: @background;
 }
 #window.mainbox.listview.element.selected.normal {
     foreground: @white;
@@ -72,7 +64,6 @@
     background: @lightblue;
 }
 #window.mainbox.listview.element.alternate.normal {
-    foreground: @foreground;
     background: @dark;
 }
 #window.mainbox.listview.element.alternate.urgent {
@@ -92,7 +83,6 @@
     foreground: @dark;
 }
 #window.mainbox.message.normal {
-    foreground: @foreground;
 }
 #window.mainbox.sidebar.box {
     border: 1px dash 0px 0px;
