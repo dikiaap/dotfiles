@@ -21,7 +21,7 @@
     padding:    8;
 }
 #window.box {
-    foreground: @background;
+    foreground: @dark;
 }
 #window.mainbox {
     border:     0;
@@ -31,11 +31,11 @@
     spacing:    0;
 }
 #window.mainbox.inputbar.box {
-    border:     none;
+    border:     0;
 }
 #window.mainbox.listview {
     fixed-height:   0;
-    border:         none;
+    border:         0;
     columns:        1;
     padding:        1px 0px 1px 0px;
 }
@@ -76,9 +76,9 @@
     padding:    0;
 }
 #window.mainbox.message.box {
-    border:     none;
+    border:     0;
     foreground: @dark;
 }
 #window.mainbox.sidebar.box {
-    border:     1px dash 0px 0px;
+    border:     0;
 }
