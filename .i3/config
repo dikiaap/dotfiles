@@ -32,7 +32,7 @@ bindsym $mod+Shift+q kill
 
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
-bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/royal-sky.theme -font "Source Sans Pro 12"
+bindsym $mod+d exec --no-startup-id rofi -show run -theme royal-sky
 
 # change focus
 bindsym $mod+$left  focus left
@@ -170,7 +170,7 @@ bindsym XF86AudioRaiseVolume    exec amixer -q set Master 3%+ unmute
 bindsym XF86AudioMute           exec amixer -q set Master toggle
 
 # switching window with tab
-bindsym $mod+Tab exec --no-startup-id rofi -show window -config ~/.config/rofi/royal-sky.theme -font "Source Sans Pro 12"
+bindsym $mod+Tab exec --no-startup-id rofi -show window -theme royal-sky
 
 # assign program to workspace
 assign [class="terminal"]           → $WS1
