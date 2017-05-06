@@ -4,14 +4,15 @@
  * Copyright: Diki Ananta
  */
 * {
-    foreground:     #FFC4CAD4;
-    background:     #FF212121;
-    dark:           #FF2D2D2D;
-    red:            #FFC24141;
-    lightred:       #FFD64E4E;
-    blue:           #FF2B83A6;
-    lightblue:      #FF278DB6;
-    white:          #FFF9F9F9;
+    foreground: #FFC4CAD4;
+    background: #FF212121;
+    dark:       #FF2D2D2D;
+    red:        #FFC24141;
+    lightred:   #FFD64E4E;
+    blue:       #FF2B83A6;
+    lightblue:  #FF278DB6;
+    white:      #FFF9F9F9;
+    highlight:  bold #FFF9F9F9;
 }
 #window {
     location:   center;
@@ -23,27 +24,23 @@
     foreground: @background;
 }
 #window.mainbox {
-    border:  0;
-    padding: 0;
+    border:     0;
+    padding:    0;
 }
 #window.mainbox.inputbar {
-    spacing: 0;
+    spacing:    0;
 }
 #window.mainbox.inputbar.box {
-    border: none;
-}
-#window.mainbox.inputbar.normal {
+    border:     none;
 }
 #window.mainbox.listview {
-    fixed-height: 0;
-    border:       none;
-    columns:      1;
-    padding:      1px 0px 1px 0px;
+    fixed-height:   0;
+    border:         none;
+    columns:        1;
+    padding:        1px 0px 1px 0px;
 }
 #window.mainbox.listview.element {
-    border: 0;
-}
-#window.mainbox.listview.element.normal.normal {
+    border:     0;
 }
 #window.mainbox.listview.element.normal.urgent {
     foreground: @lightred;
@@ -75,15 +72,13 @@
     background: @dark;
 }
 #window.mainbox.listview.scrollbar {
-    border:  0;
-    padding: 0;
+    border:     0;
+    padding:    0;
 }
 #window.mainbox.message.box {
     border:     none;
     foreground: @dark;
 }
-#window.mainbox.message.normal {
-}
 #window.mainbox.sidebar.box {
-    border: 1px dash 0px 0px;
+    border:     1px dash 0px 0px;
 }
