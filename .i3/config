@@ -4,7 +4,9 @@
 # Diki Ananta
 # e: diki1aap@gmail.com
 # dikiaap @ freenode & github
+# i3 config file (v4)
 
+# font for window titles and bar
 font pango:Source Sans Pro 10
 
 # use win key
