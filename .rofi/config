@@ -1,0 +1,3 @@
+! Rofi config file
+rofi.lines: 11
+rofi.font: Source Sans Pro 12
