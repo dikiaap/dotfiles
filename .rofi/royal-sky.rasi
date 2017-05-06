@@ -6,7 +6,7 @@
 * {
     foreground:     #FFC4CAD4;
     background:     #FF212121;
-    lightdark:      #FF2D2D2D;
+    dark:           #FF2D2D2D;
     red:            #FFC24141;
     lightred:       #FFD64E4E;
     blue:           #FF2B83A6;
@@ -18,7 +18,7 @@
     anchor:     center;
     border:     0;
     foreground: @foreground;
-    background: #00000000;
+    background: @background;
     padding:    8;
 }
 #window.box {
@@ -29,11 +29,13 @@
     border:  0;
     padding: 0;
 }
-#window.mainbox.message.box {
-    border:     none;
-    foreground: @lightdark;
+#window.mainbox.inputbar {
+    spacing: 0;
 }
-#window.mainbox.message.normal {
+#window.mainbox.inputbar.box {
+    border: none;
+}
+#window.mainbox.inputbar.normal {
     foreground: @foreground;
 }
 #window.mainbox.listview {
@@ -54,12 +56,12 @@
     background: @background;
 }
 #window.mainbox.listview.element.normal.active {
-    foreground: @blue;
+    foreground: @lightblue;
     background: @background;
 }
 #window.mainbox.listview.element.selected.normal {
     foreground: @white;
-    background: @lightblue;
+    background: @blue;
 }
 #window.mainbox.listview.element.selected.urgent {
     foreground: @white;
@@ -71,29 +73,27 @@
 }
 #window.mainbox.listview.element.alternate.normal {
     foreground: @foreground;
-    background: @lightdark;
+    background: @dark;
 }
 #window.mainbox.listview.element.alternate.urgent {
     foreground: @lightred;
-    background: @lightdark;
+    background: @dark;
 }
 #window.mainbox.listview.element.alternate.active {
     foreground: @lightblue;
-    background: @lightdark;
+    background: @dark;
 }
 #window.mainbox.listview.scrollbar {
     border:  0;
     padding: 0;
 }
-#window.mainbox.sidebar.box {
-    border: 1px dash 0px 0px ;
+#window.mainbox.message.box {
+    border:     none;
+    foreground: @dark;
 }
-#window.mainbox.inputbar {
-    spacing: 0;
-}
-#window.mainbox.inputbar.box {
-    border: 0px ;
-}
-#window.mainbox.inputbar.normal {
+#window.mainbox.message.normal {
     foreground: @foreground;
+}
+#window.mainbox.sidebar.box {
+    border: 1px dash 0px 0px;
 }
