@@ -27,6 +27,7 @@ alias rm='rm -i'
 alias rmf='rm -rf'
 alias p='ps axo pid,user,pcpu,comm'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
+alias sizeof='wget --no-config --spider'
 alias uptime='uptime -p'
 alias free='free -h'
 alias df='df -h | grep sd |\
