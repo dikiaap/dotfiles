@@ -25,7 +25,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return workspace $WS1; exec i3-sensible-terminal
+bindsym $mod+Return workspace $WS1; exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -214,7 +214,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace
 bindsym $mod+Shift+r restart
 # exit i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -f 'pango:Hack 8' -m 'Do you really want to exit?' -b ' Exit   ' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -f 'pango:Hack 8' -m 'Do you really want to exit?' -b ' Exit   ' 'i3-msg exit'"
 
 # resize window
 mode "  " {
