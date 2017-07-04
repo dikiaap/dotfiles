@@ -1,38 +1,36 @@
 [global]
-    font = Open Sans 8
-    markup = full
-    format = "<b>%s %p</b>\n%b"
-    sort = yes
-    indicate_hidden = yes
-    alignment = left
-    show_age_threshold = 60
-    word_wrap = yes
-    ignore_newline = no
-    geometry = "300x5-20+20"
-    shrink = no
-    idle_threshold = 0
     monitor = 0
     follow = mouse
-    stack_duplicates = true
-    hide_duplicate_count = false
-    sticky_history = yes
-    history_length = 15
-    show_indicators = yes
-    line_height = 0
+    geometry = "300x5-20+20"
+    indicate_hidden = yes
+    shrink = no
     notification_height = 0
     separator_height = 2
     padding = 10
     horizontal_padding = 10
+    frame_width = 1
+    frame_color = "#2B83A6"
     separator_color = frame
-    startup_notification = false
+    sort = yes
+    idle_threshold = 0
+    font = Open Sans 8
+    line_height = 0
+    markup = full
+    format = "<b>%s %p</b>\n%b"
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
     icon_position = left
     max_icon_size = 32
     icon_folders = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
+    sticky_history = yes
+    history_length = 15
     always_run_script = true
-
-[frame]
-    width = 1
-    color = "#2B83A6"
+    startup_notification = false
 
 [shortcuts]
     close = ctrl+space
