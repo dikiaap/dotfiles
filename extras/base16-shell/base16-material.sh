@@ -33,7 +33,6 @@ color20="A7/AD/BA" # Base 04
 color21="CD/D3/DE" # Base 06
 color_foreground="C0/C5/CE" # Base 05
 color_background="21/21/21" # Base 00
-color_cursor="C0/C5/CE" # Base 05
 
 if [ -n "$TMUX" ]; then
   # Tell tmux to pass the escape sequences through
@@ -81,7 +80,7 @@ printf $printf_template 21 $color21
 # foreground / background / cursor color
 if [ -n "$ITERM_SESSION_ID" ]; then
   # iTerm2 proprietary escape codes
-  printf $printf_template_custom Pg C0C5CE # forground
+  printf $printf_template_custom Pg C0C5CE # foreground
   printf $printf_template_custom Ph 1B2B34 # background
   printf $printf_template_custom Pi C0C5CE # bold color
   printf $printf_template_custom Pj 4F5B66 # selection color
@@ -126,4 +125,3 @@ unset color20
 unset color21
 unset color_foreground
 unset color_background
-unset color_cursor
