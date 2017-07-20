@@ -161,13 +161,13 @@ bindsym $mod+F5 workspace $WS5; exec evince
 bindsym $mod+F6 workspace $WS6; exec audacious
 bindsym $mod+F7 workspace $WS7; exec gcolor2
 bindsym $mod+F8 workspace $WS8; exec telegram
-bindsym Print                   exec gnome-screenshot
-bindsym $mod+Shift+x            exec i3lock-fancy -f Source-Sans-Pro
+bindsym Print                   exec --no-startup-id gnome-screenshot
+bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
 
 # volume
-bindsym XF86AudioLowerVolume    exec amixer -q set Master 3%- unmute
-bindsym XF86AudioRaiseVolume    exec amixer -q set Master 3%+ unmute
-bindsym XF86AudioMute           exec amixer -q set Master toggle
+bindsym XF86AudioLowerVolume    exec --no-startup-id amixer -q set Master 3%- unmute
+bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer -q set Master 3%+ unmute
+bindsym XF86AudioMute           exec --no-startup-id amixer -q set Master toggle
 
 # switching window with tab
 bindsym $mod+Tab exec --no-startup-id rofi -show window -theme royal-sky
