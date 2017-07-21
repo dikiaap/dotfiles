@@ -13,7 +13,7 @@
 	"file_exclude_patterns":
 	[
 		"composer.lock",
-        "package-lock.json",
+		"package-lock.json",
 		"yarn.lock"
 	],
 	"folder_exclude_patterns":
