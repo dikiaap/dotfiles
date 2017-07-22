@@ -105,13 +105,13 @@ dunst() {
     make
     echo -e $green"\n Previous dunst version: \n"$white
     echo "──────────────────────────────────────────────────────────────────────────────────"
-    /usr/bin/dunst --version
+    /usr/local/bin/dunst --version
     echo "──────────────────────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Installing dunst... \n"$white
-    sudo make PREFIX=/usr install
+    sudo make install
     echo -e $green"\n Current dunst version: \n"$white
     echo "──────────────────────────────────────────────────────────────────────────────────"
-    /usr/bin/dunst --version
+    /usr/local/bin/dunst --version
     echo "──────────────────────────────────────────────────────────────────────────────────"
 }
 
