@@ -29,6 +29,7 @@ set formatoptions+=2 " Use indent from 2nd line of a paragraph
 set formatoptions+=l " Don't break lines that are already long
 set formatoptions+=1 " Break before 1-letter words
 set gdefault " By default add g flag to search/replace. Add g to toggle
+set guicursor=
 set hidden " When a buffer is brought to foreground, remember undo history and marks
 set history=500 " Increase history from 20 default to 1000
 set hlsearch " Highlight searches
@@ -114,9 +115,6 @@ syntax on
 set encoding=utf-8
 set guifont=Hack
 colorscheme minimalist
-
-" Neovim.
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
 
 " Airline.
 let g:airline_theme='minimalist'
