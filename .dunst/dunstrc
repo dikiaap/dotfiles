@@ -26,7 +26,7 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 32
-    icon_folders = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
+    icon_path = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
     sticky_history = yes
     history_length = 15
     always_run_script = true
