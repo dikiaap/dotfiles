@@ -101,7 +101,7 @@ dunst() {
     echo -e $magenta"\n Updating & compiling dunst... \n"$white
     cd ~/.local/src/dunst
     git pull
-    make clean
+    make distclean
     make
     echo -e $green"\n Previous dunst version: \n"$white
     echo "──────────────────────────────────────────────────────────────────────────────────"
