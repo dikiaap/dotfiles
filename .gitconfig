@@ -32,7 +32,7 @@
     commit = cyan bold
     frag = magenta bold
     old = red bold
-    new = cyan bold
+    new = green bold
     whitespace = red reverse
 
 [color "diff-highlight"]
@@ -42,13 +42,13 @@
     newHighlight = "green bold 22"
 
 [color "branch"]
-    current = cyan reverse
+    current = yellow reverse
     local = yellow
     remote = green
 
 [color "status"]
-    added = yellow
-    changed = cyan
+    added = green
+    changed = yellow
     untracked = red
 
 [pager]
