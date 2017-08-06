@@ -20,7 +20,6 @@
 [core]
     editor = vim
     autocrlf = false
-    pager = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
     default = simple
@@ -51,6 +50,10 @@
     added = green
     changed = yellow
     untracked = red
+
+[pager]
+    diff = diff-so-fancy | less --tabs=4 -RFX
+    show = diff-so-fancy | less --tabs=4 -RFX
 
 [gpg]
     program = gpg2
