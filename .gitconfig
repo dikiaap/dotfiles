@@ -20,6 +20,7 @@
 [core]
     editor = vim
     autocrlf = false
+    pager = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
     default = simple
@@ -37,9 +38,9 @@
 
 [color "diff-highlight"]
     oldNormal = red bold
-    oldHighlight = "red bold 52"
-    newNormal = "green bold"
-    newHighlight = "green bold 22"
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 
 [color "branch"]
     current = yellow reverse
@@ -50,10 +51,6 @@
     added = green
     changed = yellow
     untracked = red
-
-[pager]
-    diff = diff-so-fancy | less --tabs=1,5 -RFX
-    show = diff-so-fancy | less --tabs=1,5 -RFX
 
 [gpg]
     program = gpg2
