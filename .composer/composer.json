@@ -2,7 +2,7 @@
     "require": {
         "cpriego/valet-linux": "^2.0",
         "laravel/installer": "dev-master",
-        "phpunit/phpunit": "^6.2"
+        "phpunit/phpunit": "^6.3"
     },
     "require-dev": {
     }
