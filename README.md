@@ -7,7 +7,7 @@
 ## Details
 
 - CLI
-    - [Zsh](http://www.zsh.org/) - A shell designed for interactive use, although it is also a powerful scripting language.
+    - [Zsh](http://www.zsh.org) - A shell designed for interactive use, although it is also a powerful scripting language.
         - [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) - An open source, community-driven framework for managing your ZSH configuration.
         - [z](https://github.com/rupa/z) - Tracks your most used directories, based on frecency.
     - [Bash](https://www.gnu.org/software/bash/) - A Unix shell and command language.
@@ -27,6 +27,8 @@
     - [Rofi](https://github.com/DaveDavenport/rofi) - A window switcher, application launcher and dmenu replacement.
     - [Compton](https://github.com/chjj/compton) - A compositor for X11.
     - [LXTerminal](https://github.com/lxde/lxterminal) - A VTE-based terminal emulator with support for multiple tabs.
+    - [Arc Theme](https://github.com/horst3180/arc-theme) - A flat theme with transparent elements for GTK 3, GTK 2 and GNOME Shell.
+    - [Paper Icon Theme](https://github.com/snwh/paper-icon-theme) - An open source FreeDesktop icon theme and inspired by Material Design.
     - [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) - User Interface font.
     - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - Iconic font.
     - [Dark Planet](https://www.opendesktop.org/p/1163924/) - Wallpaper.
