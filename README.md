@@ -16,14 +16,16 @@
         - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Colorscheme Darker for Vim and inspired by Material Theme.
         - [Vim Airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for vim that's light as air.
         - [More config](https://github.com/dikiaap/dotfiles/blob/master/.vimrc).
+    - [Solarized dircolors](https://github.com/seebi/dircolors-solarized) - Themes for GNU ls.
+    - [htop](https://github.com/hishamhm/htop) - An interactive text-mode process viewer.
     - [Hack](https://sourcefoundry.org/hack/) - Terminal font.
 - GUI
     - [i3](https://github.com/i3/i3) - A tiling window manager.
     - [i3blocks](https://github.com/vivien/i3blocks) - A flexible scheduler for your i3bar blocks.
+    - [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) - A script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
     - [Dunst](https://github.com/dunst-project/dunst) - A highly configurable and lightweight notification daemon.
     - [Rofi](https://github.com/DaveDavenport/rofi) - A window switcher, application launcher and dmenu replacement.
     - [Compton](https://github.com/chjj/compton) - A compositor for X11.
-    - [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) - A script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
     - [LXTerminal](https://github.com/lxde/lxterminal) - A VTE-based terminal emulator with support for multiple tabs.
     - [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) - User Interface font.
     - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - Iconic font.
