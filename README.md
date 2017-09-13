@@ -17,7 +17,12 @@
         - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Colorscheme Darker for Vim and inspired by Material Theme.
         - [Vim Airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for vim that's light as air.
         - [More config](https://github.com/dikiaap/dotfiles/blob/master/.vimrc).
+    - [Git](https://git-scm.com) - A free and open source distributed version control system.
+    - [Composer](https://github.com/composer/composer) - Dependency Manager for PHP.
+    - [npm](https://github.com/npm/npm) - A package manager for JavaScript.
+    - [RubyGems](https://github.com/rubygems/rubygems) - A package manager for Ruby.
     - [htop](https://github.com/hishamhm/htop) - An interactive text-mode process viewer.
+    - [Wget](https://www.gnu.org/software/wget/) - A free software package for retrieving files using HTTP, HTTPS, FTP and FTPS.
     - [Hack](https://sourcefoundry.org/hack/) - Terminal font.
 - GUI
     - [i3](https://github.com/i3/i3) - A tiling window manager.
