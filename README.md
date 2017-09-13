@@ -37,4 +37,4 @@
 ## Links
 
 [DotShare.it](http://dotshare.it/~dikiaap/) ·
-[DeviantArt](http://dikiaap.deviantart.com/)
+[DeviantArt](https://dikiaap.deviantart.com)
