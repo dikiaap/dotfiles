@@ -20,6 +20,7 @@
     alignment = left
     show_age_threshold = 60
     word_wrap = yes
+    ellipsize = middle
     ignore_newline = no
     stack_duplicates = true
     hide_duplicate_count = false
