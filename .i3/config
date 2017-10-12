@@ -176,6 +176,7 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -theme royal-sky
 assign [class="terminal"]           → $WS1
 assign [class="(?i)sublime"]        → $WS2
 assign [class="Chromium"]           → $WS3
+assign [class="Firefox"]            → $WS3
 assign [class="Nautilus"]           → $WS4
 assign [class="Evince"]             → $WS5
 assign [class="ghostwriter"]        → $WS5
