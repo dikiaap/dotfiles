@@ -115,6 +115,29 @@ dunst() {
     echo "──────────────────────────────────────────────────────────────────────────────────"
 }
 
+rofi() {
+    echo -e $magenta"\n Updating & compiling rofi... \n"$white
+    cd ~/.local/src/rofi
+    git pull
+    git submodule update --init
+    autoreconf -i
+    rm -rf build
+    mkdir build
+    cd build
+    ../configure
+    make
+    echo -e $green"\n Previous rofi version: \n"$white
+    echo "───────────────────────────────────────"
+    /usr/local/bin/rofi -v
+    echo "───────────────────────────────────────"
+    echo -e $magenta"\n Installing rofi... \n"$white
+    sudo make install
+    echo -e $green"\n Current rofi version: \n"$white
+    echo "───────────────────────────────────────"
+    /usr/local/bin/rofi -v
+    echo "───────────────────────────────────────"
+}
+
 arc-theme() {
     echo -e $magenta"\n Updating & compiling arc-theme... \n"$white
     cd ~/.local/src/arc-theme
@@ -215,6 +238,17 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
+    read -r -p "Do you want to update rofi? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            rofi
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
     read -r -p "Do you want to update arc-theme? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
@@ -237,6 +271,7 @@ case "$CMD" in
         i3blocks
         i3lock-fancy
         dunst
+        rofi
         arc-theme
         exit 1
         ;;
