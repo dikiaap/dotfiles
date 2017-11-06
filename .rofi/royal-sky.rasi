@@ -1,84 +1,143 @@
 /**
- * Royal Sky color scheme
+ * Royal Sky Color theme
  * User: dikiaap
  * Copyright: Diki Ananta
- */
+ **/
 * {
-    foreground: #FFC4CAD4;
-    background: #FF212121;
-    dark:       #FF2D2D2D;
-    red:        #FFC24141;
-    lightred:   #FFD64E4E;
-    blue:       #FF2B83A6;
-    lightblue:  #FF278DB6;
-    white:      #FFF9F9F9;
-    highlight:  bold #FFF9F9F9;
+    selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
+    foreground:                  rgba ( 196, 202, 212, 100 % );
+    normal-foreground:           @foreground;
+    alternate-normal-background: rgba ( 42, 42, 42, 100 % );
+    red:                         rgba ( 194, 65, 65, 100 % );
+    selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
+    blue:                        rgba ( 43, 131, 166, 100 % );
+    urgent-foreground:           rgba ( 249, 249, 249, 100 % );
+    alternate-urgent-background: rgba ( 194, 65, 65, 100 % );
+    active-foreground:           rgba ( 249, 249, 249, 100 % );
+    lightbg:                     rgba ( 196, 202, 212, 100 % );
+    selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
+    alternate-active-background: rgba ( 43, 131, 166, 100 % );
+    background:                  rgba ( 33, 33, 33, 100 % );
+    alternate-normal-foreground: @foreground;
+    normal-background:           rgba ( 33, 33, 33, 100 % );
+    lightfg:                     rgba ( 249, 249, 249, 100 % );
+    selected-normal-background:  rgba ( 90, 90, 90, 100 % );
+    border-color:                @foreground;
+    spacing:                     2;
+    separatorcolor:              rgba ( 183, 183, 183, 100 % );
+    urgent-background:           rgba ( 194, 65, 65, 100 % );
+    selected-urgent-background:  rgba ( 214, 78, 78, 100 % );
+    alternate-urgent-foreground: @urgent-foreground;
+    background-color:            rgba ( 0, 0, 0, 0 % );
+    alternate-active-foreground: @active-foreground;
+    active-background:           rgba ( 43, 131, 166, 100 % );
+    selected-active-background:  rgba ( 39, 141, 182, 100 % );
 }
 #window {
-    location:   center;
-    anchor:     center;
-    border:     0;
-    padding:    8;
+    background-color: @background;
+    border:           0;
+    padding:          8;
 }
-#window.box {
-    foreground: @dark;
+#mainbox {
+    border:  0;
+    padding: 0;
 }
-#window.mainbox {
-    border:     0;
-    padding:    0;
+#message {
+    border:       2px dash 0px 0px;
+    border-color: @separatorcolor;
+    padding:      1px;
 }
-#window.mainbox.inputbar {
+#textbox {
+    text-color: @foreground;
+}
+#listview {
+    fixed-height: 0;
+    border:       0;
+    border-color: @separatorcolor;
+    spacing:      2px;
+    scrollbar:    true;
+    padding:      2px 0px 0px;
+}
+#element {
+    border:  0;
+    padding: 1px;
+}
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+#scrollbar {
+    width:        4px;
+    border:       0;
+    handle-color: rgba ( 85, 85, 85, 100 % );
+    handle-width: 8px;
+    padding:      0;
+}
+#sidebar {
+    border:       2px dash 0px 0px;
+    border-color: @separatorcolor;
+}
+#button {
     spacing:    0;
+    text-color: @normal-foreground;
 }
-#window.mainbox.inputbar.box {
-    border:     0;
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
 }
-#window.mainbox.listview {
-    fixed-height:   0;
-    border:         0;
-    columns:        1;
-    padding:        1px 0px 1px 0px;
+#inputbar {
+    spacing:    0px;
+    text-color: @normal-foreground;
+    padding:    1px;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
-#window.mainbox.listview.element {
-    border:     0;
+#case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
 }
-#window.mainbox.listview.element.normal.urgent {
-    foreground: @lightred;
+#entry {
+    spacing:    0;
+    text-color: @normal-foreground;
 }
-#window.mainbox.listview.element.normal.active {
-    foreground: @lightblue;
+#prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
 }
-#window.mainbox.listview.element.selected.normal {
-    foreground: @white;
-    background: @blue;
-}
-#window.mainbox.listview.element.selected.urgent {
-    foreground: @white;
-    background: @red;
-}
-#window.mainbox.listview.element.selected.active {
-    foreground: @white;
-    background: @lightblue;
-}
-#window.mainbox.listview.element.alternate.normal {
-    background: @dark;
-}
-#window.mainbox.listview.element.alternate.urgent {
-    foreground: @lightred;
-    background: @dark;
-}
-#window.mainbox.listview.element.alternate.active {
-    foreground: @lightblue;
-    background: @dark;
-}
-#window.mainbox.listview.scrollbar {
-    border:     0;
-    padding:    0;
-}
-#window.mainbox.message.box {
-    border:     0;
-    foreground: @dark;
-}
-#window.mainbox.sidebar.box {
-    border:     0;
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3000em 0.0000em 0.0000em ;
+    text-color: inherit;
 }
