@@ -62,7 +62,6 @@ alias python='python3.5'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date "+%a, %d %b %H:%M:%S" && time cat && date "+%a, %d %b %H:%M:%S"'
 alias v='nvim'
 alias weather='curl -s wttr.in/Ponorogo | sed -n "1,17p"'
-alias zshrc='$EDITOR ~/.zshrc'
 
 # typos
 alias :q='exit'
