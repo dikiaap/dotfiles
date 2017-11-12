@@ -1,0 +1,27 @@
+# Main exports.
+export ZSH="$HOME/.oh-my-zsh"
+export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.local/bin"
+export BASE16_SHELL="$HOME/.config/base16-shell"
+export LANG="en_US.UTF-8"
+export EDITOR="subl"
+export TERM="xterm-256color"
+export PROMPT_EOL_MARK=""
+
+# Gotta tune that bash_history.
+export HISTTIMEFORMAT='%F %T '
+# Keep history up to date, across sessions, and in realtime.
+export HISTCONTROL=ignoredups:erasedups         # no duplicate entries
+export HISTSIZE=2000                            # big history (default is 1000)
+export HISTFILESIZE=$HISTSIZE                   # big history
+# Save and reload the history after each command finishes.
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
+
+# Highlighting inside manpages and elsewhere.
+export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+export LESS_TERMCAP_me=$'\E[0m'           # end mode
+export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
