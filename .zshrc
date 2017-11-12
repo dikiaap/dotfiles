@@ -22,7 +22,7 @@ export PROMPT_EOL_MARK=""
 setopt inc_append_history
 setopt share_history
 SAVEHIST=2000
-HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins.
 plugins=(
