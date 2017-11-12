@@ -13,15 +13,7 @@ DISABLE_AUTO_TITLE="true"
 # Disable marking untracked files under VCS as dirty.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Set option.
-setopt PROMPT_CR
-setopt PROMPT_SP
-export PROMPT_EOL_MARK=""
-
 # History.
-setopt inc_append_history
-setopt share_history
-SAVEHIST=2000
 HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins.
@@ -32,15 +24,8 @@ plugins=(
     ubuntu
 )
 
-export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.local/bin"
-export BASE16_SHELL="$HOME/.config/base16-shell"
-export LANG="en_US.UTF-8"
-export EDITOR="subl"
-export TERM="xterm-256color"
-
-source $ZSH/oh-my-zsh.sh
 source ~/.zsh_profile
+source $ZSH/oh-my-zsh.sh
 
 . $HOME/.local/src/z/z.sh
 
