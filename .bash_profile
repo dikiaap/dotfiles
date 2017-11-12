@@ -1,5 +1,5 @@
 # Load our dotfiles.
-for file in ~/.{aliases,aliases_private,bash_prompt,functions,functions_private}; do
+for file in ~/.{aliases,aliases_private,bash_prompt,exports,functions,functions_private}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -18,17 +18,6 @@ shopt -s cmdhist;
 # update the values of lines and columns.
 shopt -s checkwinsize;
 
-# Gotta tune that bash_history.
-export HISTTIMEFORMAT='%F %T '
-# Keep history up to date, across sessions, and in realtime.
-export HISTCONTROL=ignoredups:erasedups         # no duplicate entries
-export HISTSIZE=2000                         	# big history (default is 1000)
-export HISTFILESIZE=$HISTSIZE                   # big history
-which shopt > /dev/null && shopt -s histappend  # append to history, don't overwrite it
-# Save and reload the history after each command finishes.
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-# ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
-
 # Bash completion.
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -37,16 +26,6 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
     fi
 fi
-
-# Highlighting inside manpages and elsewhere.
-# from paulirish.
-export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
-export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
-export LESS_TERMCAP_me=$'\E[0m'           # end mode
-export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # Base16 Shell
 export BASE16_SHELL="$HOME/.config/base16-shell"
