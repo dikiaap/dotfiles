@@ -24,9 +24,14 @@ plugins=(
     ubuntu
 )
 
+# Zsh config.
 source ~/.zsh_profile
+
+# Oh My Zsh time!
 source $ZSH/oh-my-zsh.sh
 
+# Tracks your most used directories, based on frecency with z.
 . $HOME/.local/src/z/z.sh
 
+# Base16 Shell.
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
