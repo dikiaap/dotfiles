@@ -169,7 +169,7 @@ bindsym XF86AudioLowerVolume    exec --no-startup-id amixer -D pulse sset Master
 bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer -D pulse sset Master 3%+ unmute
 bindsym XF86AudioMute           exec --no-startup-id amixer -D pulse sset Master toggle
 
-# switching window with tab
+# switching window with win+tab
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # assign program to workspace
@@ -232,7 +232,7 @@ mode "  " {
         bindsym Up          resize shrink height 10 px or 10 ppt
         bindsym Right       resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
+        # back to normal: Enter
         bindsym Return mode "default"
 }
 bindsym $mod+r mode "  "
