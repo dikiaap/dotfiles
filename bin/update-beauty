@@ -42,7 +42,7 @@ i3-gaps() {
     echo -e $magenta"\n Updating & compiling i3-gaps... \n"$white
     cd ~/.local/src/i3-gaps
     git pull
-    autoreconf --force --install
+    autoreconf -fi
     rm -rf build
     mkdir build
     cd build
@@ -81,17 +81,21 @@ i3lock-fancy() {
     echo -e $magenta"\n Updating & compiling i3lock & i3lock-fancy... \n"$white
     cd ~/.local/src/i3lock-color
     git pull
-    make clean
+    autoreconf -i
+    rm -rf build
+    mkdir build
+    cd build
+    ../configure
     make
     echo -e $green"\n Previous i3lock version: \n"$white
     echo "───────────────────────────────────────────────────────────────────────────"
-    /usr/bin/i3lock --version
+    /usr/local/bin/i3lock --version
     echo "───────────────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Installing i3lock & i3lock-fancy... \n"$white
     sudo make install
     echo -e $green"\n Current i3lock version: \n"$white
     echo "───────────────────────────────────────────────────────────────────────────"
-    /usr/bin/i3lock --version
+    /usr/local/bin/i3lock --version
     echo "───────────────────────────────────────────────────────────────────────────"
     cd ~/.local/src/i3lock-fancy
     git pull
