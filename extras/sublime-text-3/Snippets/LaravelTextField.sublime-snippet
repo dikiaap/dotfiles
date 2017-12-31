@@ -1,13 +1,12 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 <!-- ${1:} Form Input -->
 <div class="form-group">
-    {!! Form::label('${2:}', '${3:}:') !!}
-    {!! Form::text('${4:}', null, ['class' => 'form-control']) !!}
+	{!! Form::label('${2:}', '${3:}:') !!}
+	{!! Form::text('${4:}', null, ['class' => 'form-control']) !!}
 </div>
-        ]]></content>
-
-    <tabTrigger>textfield</tabTrigger>
-    <scope>text.html</scope>
-    <description>TextField Laravel Snippet</description>
+]]></content>
+	<tabTrigger>textfield</tabTrigger>
+	<scope>text.html</scope>
+	<description>TextField Laravel Snippet</description>
 </snippet>
