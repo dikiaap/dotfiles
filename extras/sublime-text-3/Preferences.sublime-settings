@@ -62,6 +62,7 @@
 	"material_theme_small_statusbar": true,
 	"overlay_scroll_bars": "enabled",
 	"preview_on_click": false,
+	"show_encoding": true,
 	"theme": "Material-Theme-Darker.sublime-theme",
 	"word_wrap": true
 }
