@@ -55,9 +55,12 @@
 	"line_padding_bottom": 4,
 	"line_padding_top": 4,
 	"material_theme_accent_red": true,
+	"material_theme_compact_panel": true,
 	"material_theme_compact_sidebar": true,
 	"material_theme_disable_folder_animation": true,
+	"material_theme_panel_separator": true,
 	"material_theme_small_statusbar": true,
+	"overlay_scroll_bars": "enabled",
 	"preview_on_click": false,
 	"theme": "Material-Theme-Darker.sublime-theme",
 	"word_wrap": true
