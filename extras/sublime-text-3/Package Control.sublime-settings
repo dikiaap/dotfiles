@@ -1,0 +1,30 @@
+{
+	"auto_upgrade": false,
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"Blade Snippets",
+		"Bootstrap 3 Snippets",
+		"Color Highlighter",
+		"CSS3",
+		"DocBlockr",
+		"EditorConfig",
+		"Emmet",
+		"HTML5",
+		"HTMLAttributes",
+		"HTMLBeautify",
+		"Laravel 5 Snippets",
+		"Laravel Blade Highlighter",
+		"Laravel Blade Spacer",
+		"Material Theme",
+		"Package Control",
+		"Sass",
+		"SASS Snippets",
+		"SideBarEnhancements"
+	],
+	"submit_usage": false
+}
