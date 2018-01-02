@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "300x5-20+20"
+    geometry = "320x5-15+15"
     indicate_hidden = yes
     shrink = no
     notification_height = 0
@@ -52,7 +52,7 @@
 
 [urgency_critical]
     background = "#D64E4E"
-    foreground = "#F3F4F5"
+    foreground = "#F0E0E0"
     frame_color = "#D64E4E"
     timeout = 0
     icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
