@@ -1,45 +1,52 @@
-#define base00 #1D1F21
-#define base01 #282828
-#define base02 #383838
-#define base03 #585858
-#define base04 #B8B8B8
-#define base05 #D8D8D8
-#define base06 #E8E8E8
-#define base07 #F8F8F8
-#define base08 #AB4642
-#define base09 #DC9656
-#define base0A #F7CA88
-#define base0B #A1B56C
-#define base0C #86C1B9
-#define base0D #7CAFC2
-#define base0E #BA8BAF
-#define base0F #A16946
+! Base16 dikiaap
+! Scheme: Diki Ananta (https://dikiaap.id)
 
-*.foreground:   base05
-*.background:   base00
-*.cursorColor:  base05
+#define base00 #212121
+#define base01 #343D46
+#define base02 #4F5B66
+#define base03 #65737E
+#define base04 #A7ADBA
+#define base05 #C0C5CE
+#define base06 #CDD3DE
+#define base07 #D8DEE9
+#define base08 #E57373
+#define base09 #F99157
+#define base0A #FAC863
+#define base0B #A6BC69
+#define base0C #5FB3B3
+#define base0D #6699CC
+#define base0E #C594C5
+#define base0F #AB7967
 
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
 
-*.color8:       base03
-*.color9:       base08
-*.color10:      base0B
-*.color11:      base0A
-*.color12:      base0D
-*.color13:      base0E
-*.color14:      base0C
-*.color15:      base07
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
 
-*.color16:      base09
-*.color17:      base0F
-*.color18:      base01
-*.color19:      base02
-*.color20:      base04
-*.color21:      base06
+*color8:       base03
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
+
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
