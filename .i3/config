@@ -31,7 +31,7 @@ bindsym $mod+Return workspace $WS1; exec --no-startup-id lxterminal
 bindsym $mod+Shift+q kill
 
 # start a program launcher
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF'"
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # change focus
