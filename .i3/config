@@ -25,7 +25,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return workspace $WS1; exec --no-startup-id lxterminal
+bindsym $mod+Return workspace $ws1; exec --no-startup-id lxterminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -100,41 +100,41 @@ bindsym Mod4+t border normal    0
 bindsym Mod4+y border pixel     1
 bindsym Mod4+u border none
 
-# customize workspace name
-set $WS1   "1:   ZSH "
-set $WS2   "2:   Code "
-set $WS3   "3:   Chromium "
-set $WS4   "4:   Files "
-set $WS5   "5:   Documents "
-set $WS6   "6:   Media "
-set $WS7   "7:   Design "
-set $WS8   "8:   Chat "
-set $WS9   "9:   General "
-set $WS0   "10:   Settings "
+# define names for workspaces
+set $ws1   "1:   ZSH "
+set $ws2   "2:   Code "
+set $ws3   "3:   Chromium "
+set $ws4   "4:   Files "
+set $ws5   "5:   Documents "
+set $ws6   "6:   Media "
+set $ws7   "7:   Design "
+set $ws8   "8:   Chat "
+set $ws9   "9:   General "
+set $ws10  "10:   Settings "
 
 # switch to workspace
-bindsym $mod+1 workspace $WS1
-bindsym $mod+2 workspace $WS2
-bindsym $mod+3 workspace $WS3
-bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5
-bindsym $mod+6 workspace $WS6
-bindsym $mod+7 workspace $WS7
-bindsym $mod+8 workspace $WS8
-bindsym $mod+9 workspace $WS9
-bindsym $mod+0 workspace $WS0
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $WS1
-bindsym $mod+Shift+2 move container to workspace $WS2
-bindsym $mod+Shift+3 move container to workspace $WS3
-bindsym $mod+Shift+4 move container to workspace $WS4
-bindsym $mod+Shift+5 move container to workspace $WS5
-bindsym $mod+Shift+6 move container to workspace $WS6
-bindsym $mod+Shift+7 move container to workspace $WS7
-bindsym $mod+Shift+8 move container to workspace $WS8
-bindsym $mod+Shift+9 move container to workspace $WS9
-bindsym $mod+Shift+0 move container to workspace $WS0
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # startup applications
 exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
@@ -155,13 +155,13 @@ for_window [class="Software-properties-gtk"]        floating enable
 
 # shortcut applications
 bindsym $mod+F1                 exec gkamus
-bindsym $mod+F2 workspace $WS2; exec subl
-bindsym $mod+F3 workspace $WS3; exec chromium-browser
-bindsym $mod+F4 workspace $WS4; exec nautilus
-bindsym $mod+F5 workspace $WS5; exec evince
-bindsym $mod+F6 workspace $WS6; exec audacious
-bindsym $mod+F7 workspace $WS7; exec gcolor2
-bindsym $mod+F8 workspace $WS8; exec telegram
+bindsym $mod+F2 workspace $ws2; exec subl
+bindsym $mod+F3 workspace $ws3; exec chromium-browser
+bindsym $mod+F4 workspace $ws4; exec nautilus
+bindsym $mod+F5 workspace $ws5; exec evince
+bindsym $mod+F6 workspace $ws6; exec audacious
+bindsym $mod+F7 workspace $ws7; exec gcolor2
+bindsym $mod+F8 workspace $ws8; exec telegram
 bindsym Print                   exec --no-startup-id gnome-screenshot
 bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
 
@@ -174,42 +174,42 @@ bindsym XF86AudioMute           exec --no-startup-id amixer -D pulse sset Master
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # assign program to workspace
-assign [class="terminal"]           → $WS1
-assign [class="(?i)sublime"]        → $WS2
-assign [class="Chromium"]           → $WS3
-assign [class="Firefox"]            → $WS3
-assign [class="Nautilus"]           → $WS4
-assign [class="Evince"]             → $WS5
-assign [class="ghostwriter"]        → $WS5
-assign [class="(?i)libreoffice"]    → $WS5
-assign [class="Audacious"]          → $WS6
-assign [class="vlc"]                → $WS6
-assign [class="Gimp"]               → $WS7
-assign [class="Inkscape"]           → $WS7
-assign [class="Hexchat"]            → $WS8
-assign [class="Skype"]              → $WS8
-assign [class="Telegram"]           → $WS8
-assign [class="Upwork"]             → $WS8
-assign [class="Galculator"]         → $WS9
-assign [class="Gnome-font-viewer"]  → $WS9
-assign [class="Go-for-it"]          → $WS9
-assign [class="Keepassx"]           → $WS9
-assign [class="Lxtask"]             → $WS9
-assign [class="Transmission-gtk"]   → $WS9
-assign [class="Bum"]                → $WS0
-assign [class="Bleachbit"]          → $WS0
-assign [class="Dconf-editor"]       → $WS0
-assign [class="Gnome-disks"]        → $WS0
-assign [class="GParted"]            → $WS0
-assign [class="Grub-customizer"]    → $WS0
-assign [class="Hardinfo"]           → $WS0
-assign [class="Lxappearance"]       → $WS0
-assign [class="Lxinput"]            → $WS0
-assign [class="Lxrandr"]            → $WS0
-assign [class="Menu"]               → $WS0
-assign [class="Obconf"]             → $WS0
-assign [class="Lightdm-gtk-greeter-settings"]   → $WS0
-assign [class="Software-properties-gtk"]        → $WS0
+assign [class="terminal"]           → $ws1
+assign [class="(?i)sublime"]        → $ws2
+assign [class="Chromium"]           → $ws3
+assign [class="Firefox"]            → $ws3
+assign [class="Nautilus"]           → $ws4
+assign [class="Evince"]             → $ws5
+assign [class="ghostwriter"]        → $ws5
+assign [class="(?i)libreoffice"]    → $ws5
+assign [class="Audacious"]          → $ws6
+assign [class="vlc"]                → $ws6
+assign [class="Gimp"]               → $ws7
+assign [class="Inkscape"]           → $ws7
+assign [class="Hexchat"]            → $ws8
+assign [class="Skype"]              → $ws8
+assign [class="Telegram"]           → $ws8
+assign [class="Upwork"]             → $ws8
+assign [class="Galculator"]         → $ws9
+assign [class="Gnome-font-viewer"]  → $ws9
+assign [class="Go-for-it"]          → $ws9
+assign [class="Keepassx"]           → $ws9
+assign [class="Lxtask"]             → $ws9
+assign [class="Transmission-gtk"]   → $ws9
+assign [class="Bum"]                → $ws10
+assign [class="Bleachbit"]          → $ws10
+assign [class="Dconf-editor"]       → $ws10
+assign [class="Gnome-disks"]        → $ws10
+assign [class="GParted"]            → $ws10
+assign [class="Grub-customizer"]    → $ws10
+assign [class="Hardinfo"]           → $ws10
+assign [class="Lxappearance"]       → $ws10
+assign [class="Lxinput"]            → $ws10
+assign [class="Lxrandr"]            → $ws10
+assign [class="Menu"]               → $ws10
+assign [class="Obconf"]             → $ws10
+assign [class="Lightdm-gtk-greeter-settings"]   → $ws10
+assign [class="Software-properties-gtk"]        → $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
