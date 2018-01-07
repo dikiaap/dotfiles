@@ -93,7 +93,7 @@ set encoding=utf-8
 set guifont=Hack
 colorscheme minimalist
 
-" Load directories.
+" Directories.
 set backupdir=~/.local/share/nvim/backup
 set directory=~/.local/share/nvim/swap
 set undodir=~/.local/share/nvim/undo
