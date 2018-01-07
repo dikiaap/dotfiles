@@ -1,13 +1,6 @@
-" Make vim useful.
+" General.
 set nocompatible
 set number
-
-" Directories.
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-set undodir=~/.vim/undo
-
-" Configuration.
 set autoindent " Copy indent from last line when starting new line
 set autoread " Set to auto read when a file is changed from the outside
 set backspace=indent,eol,start
@@ -29,7 +22,7 @@ set formatoptions+=2 " Use indent from 2nd line of a paragraph
 set formatoptions+=l " Don't break lines that are already long
 set formatoptions+=1 " Break before 1-letter words
 set gdefault " By default add g flag to search/replace. Add g to toggle
-set guicursor=
+set guicursor= " Disable cursor style changes in Neovim
 set hidden " When a buffer is brought to foreground, remember undo history and marks
 set history=500 " Increase history from 20 default to 1000
 set hlsearch " Highlight searches
@@ -77,44 +70,33 @@ set wildmenu " Hitting TAB in command mode will show possible completions above 
 set wildmode=list:longest " Complete only until point of ambiguity
 set winminheight=0 " Allow splits to be reduced to a single line
 set wrapscan " Searches wrap around end of file
-" thanks to paulirish/dotfiles
 
 " Plugin.
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'bling/vim-airline'
-Plugin 'dikiaap/minimalist'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'L9'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'mattn/emmet-vim'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'stanangeloff/php.vim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'wincent/command-t.git'
-call vundle#end()
-filetype plugin indent on " Enable filetype plugins
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dikiaap/minimalist'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/vim-plug'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'
+call plug#end()
 
-" Neobundle.
-"call neobundle#begin(expand('$HOME/.config/nvim/bundle'))
-"NeoBundleFetch 'Shougo/neobundle.vim'
-"NeoBundle 'scrooloose/nerdtree'
-"call neobundle#end()
-
-" Colors and Fonts.
+" Colors, Fonts, and Syntax.
+filetype plugin indent on
+syntax enable
 set t_Co=256
-syntax on
 set encoding=utf-8
 set guifont=Hack
 colorscheme minimalist
+
+" Load directories.
+set backupdir=~/.local/share/nvim/backup
+set directory=~/.local/share/nvim/swap
+set undodir=~/.local/share/nvim/undo
 
 " Airline.
 let g:airline_theme='minimalist'
