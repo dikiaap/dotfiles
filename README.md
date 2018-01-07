@@ -16,7 +16,7 @@
     - [Neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability.
         - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Colorscheme Darker for Vim and inspired by Material Theme.
         - [Vim Airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for vim that's light as air.
-        - [More config](https://github.com/dikiaap/dotfiles/blob/master/.vimrc).
+        - [More config](https://github.com/dikiaap/dotfiles/blob/master/init.vim).
     - [Git](https://git-scm.com) - A free and open source distributed version control system.
     - [Composer](https://github.com/composer/composer) - Dependency Manager for PHP.
     - [npm](https://github.com/npm/npm) - A package manager for JavaScript.
