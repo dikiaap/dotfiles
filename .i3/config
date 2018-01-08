@@ -220,8 +220,8 @@ bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 8"
 
 # resize window
 mode "  " {
-        # pressing left and up will shrink the window’s width
-        # pressing right and down will grow the window’s width
+        # pressing left and up will shrink the window's width and height
+        # pressing right and down will grow the window's width and height
         bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
