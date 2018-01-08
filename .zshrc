@@ -24,14 +24,25 @@ plugins=(
     ubuntu
 )
 
-# Zsh config.
-source ~/.zsh_profile
+# Environment variables.
+source ~/.exports
 
 # Oh My Zsh time!
 source $ZSH/oh-my-zsh.sh
 
+# User config.
+source $ZDOTDIR/setopt.zsh
+
+# Aliases.
+source ~/.aliases
+source ~/.aliases_private
+
+# Functions.
+source ~/.functions
+source ~/.functions_private
+
 # Tracks your most used directories, based on frecency with z.
-. $HOME/.local/src/z/z.sh
+source $ZDOTDIR/plugins/z/z.sh
 
 # Base16 Shell.
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
