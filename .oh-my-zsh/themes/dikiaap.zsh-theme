@@ -9,7 +9,7 @@ setopt prompt_subst
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
-# use extended color pallete if available.
+# use extended color palette if available.
 if [[ $terminfo[colors] -ge 256 ]]; then
     turquoise="%F{73}"
     orange="%F{179}"
