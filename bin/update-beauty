@@ -20,8 +20,8 @@ oh-my-zsh() {
     /bin/sh ~/.oh-my-zsh/tools/upgrade.sh
     echo -e $magenta"\n Updating zsh plugins... \n"$white
     echo -e $green"Updating z..."$white
-    cd ~/.local/src/z
-    git pull
+    cd ~/.zsh/plugins
+    find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
 }
 
 dircolors() {
