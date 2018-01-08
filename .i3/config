@@ -175,13 +175,13 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # assign program to workspace
 assign [class="terminal"]           → $ws1
-assign [class="(?i)sublime"]        → $ws2
+assign [class="Sublime"]            → $ws2
 assign [class="Chromium"]           → $ws3
 assign [class="Firefox"]            → $ws3
 assign [class="Nautilus"]           → $ws4
 assign [class="Evince"]             → $ws5
 assign [class="ghostwriter"]        → $ws5
-assign [class="(?i)libreoffice"]    → $ws5
+assign [class="libreoffice"]        → $ws5
 assign [class="Audacious"]          → $ws6
 assign [class="vlc"]                → $ws6
 assign [class="Gimp"]               → $ws7
