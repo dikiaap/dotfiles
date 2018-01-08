@@ -167,9 +167,9 @@ bindsym Print                   exec --no-startup-id gnome-screenshot
 bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
 
 # volume
-bindsym XF86AudioLowerVolume    exec --no-startup-id amixer -D pulse sset Master 5%- unmute
-bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer -D pulse sset Master 5%+ unmute
-bindsym XF86AudioMute           exec --no-startup-id amixer -D pulse sset Master toggle
+bindsym XF86AudioLowerVolume    exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
+bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
+bindsym XF86AudioMute           exec --no-startup-id amixer -q -D pulse sset Master toggle
 
 # switching window with win+tab
 bindsym $mod+Tab exec --no-startup-id rofi -show window
