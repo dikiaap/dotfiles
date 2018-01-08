@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 # base16-shell (https://github.com/chriskempson/base16-shell)
 # Base16 Shell template by Chris Kempson (http://chriskempson.com)
-# Based on OceanicNext scheme by https://github.com/voronianski/oceanic-next-color-scheme
-# dikiaap scheme by https://github.com/dikiaap
+# Oxide scheme by Diki Ananta (https://github.com/dikiaap)
 
 color00="21/21/21" # Base 00 - Black
 color01="E5/73/73" # Base 08 - Red
@@ -94,7 +93,7 @@ else
       put_template_var 708 $color_background # internal border (rxvt)
     fi
   fi
-  put_template_var 12 ";7" # cursor (reverse video)
+  put_template_custom 12 ";7" # cursor (reverse video)
 fi
 
 # clean up
