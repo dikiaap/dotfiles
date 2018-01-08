@@ -11,7 +11,10 @@ do `archive <filename>` and the function takes care of the rest.
 To use it, add `archive` to the plugins array in your zshrc file:
 
 ```zsh
-plugins=(... archive)
+plugins=(
+    ...
+    archive
+)
 ```
 
 ## Supported file extensions
