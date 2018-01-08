@@ -2,4 +2,4 @@
 rofi.lines: 12
 rofi.font: Source Sans Pro 12
 rofi.show-icons: true
-rofi.theme: ~/.config/rofi/royal-sky.rasi
+rofi.theme: ~/.config/rofi/oxide.rasi
