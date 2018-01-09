@@ -1,3 +1,9 @@
+# --------------------------
+# Oxide theme for Oh My Zsh
+# --------------------------
+# Diki Ananta
+# https://github.com/dikiaap
+
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('%F{blue}`basename $VIRTUAL_ENV`%f') '
@@ -44,7 +50,7 @@ zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
-function dikiaap_preexec {
+function oxide_preexec {
     case "$(history $HISTCMD)" in
         *git*)
             PR_GIT_UPDATE=1
@@ -54,14 +60,14 @@ function dikiaap_preexec {
             ;;
     esac
 }
-add-zsh-hook preexec dikiaap_preexec
+add-zsh-hook preexec oxide_preexec
 
-function dikiaap_chpwd {
+function oxide_chpwd {
     PR_GIT_UPDATE=1
 }
-add-zsh-hook chpwd dikiaap_chpwd
+add-zsh-hook chpwd oxide_chpwd
 
-function dikiaap_precmd {
+function oxide_precmd {
     if [[ -n "$PR_GIT_UPDATE" ]] ; then
         # check for untracked files or updated submodules, since vcs_info doesn't.
         if git ls-files --other --exclude-standard 2> /dev/null | grep -q "."; then
@@ -76,7 +82,7 @@ function dikiaap_precmd {
         PR_GIT_UPDATE=
     fi
 }
-add-zsh-hook precmd dikiaap_precmd
+add-zsh-hook precmd oxide_precmd
 
 PROMPT=$'
 %{$limegreen%}%~${PR_RST} $vcs_info_msg_0_$(virtualenv_info)
