@@ -24,13 +24,6 @@ oh-my-zsh() {
     find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
 }
 
-dircolors() {
-    echo -e $magenta"\n Updating .dircolors... \n"$white
-    wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-light -O ~/dircolors
-    grep -v '^$\|^\s*\#' ~/dircolors > ~/.dircolors
-    rm -rf ~/dircolors
-}
-
 base16-shell() {
     echo -e $magenta"\n Updating base16-shell... \n"$white
     cd ~/.config/base16-shell
@@ -176,17 +169,6 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
-    read -r -p "Do you want to update .dircolors? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            dircolors
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
     read -r -p "Do you want to update base16-shell? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
@@ -269,7 +251,6 @@ fi
 case "$CMD" in
     -a)
         oh-my-zsh
-        dircolors
         base16-shell
         i3-gaps
         i3blocks
