@@ -1,5 +1,5 @@
 # Themes.
-ZSH_THEME="dikiaap"
+ZSH_THEME="oxide"
 
 # Case-sensitive completion.
 CASE_SENSITIVE="true"
