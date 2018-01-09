@@ -100,16 +100,19 @@ EXEC 01;31
 .txt 32
 
 # Programming & Stuff
+.aspx 32
 .c 32
 .C 32
 .cc 32
 .cl 32
+.class 32
 .coffee 32
 .cpp 32
 .csh 32
 .css 32
 .csv 32
 .cxx 32
+.db 32
 .el 32
 .erb 32
 .f90 32
@@ -127,6 +130,7 @@ EXEC 01;31
 .less 32
 .lock 32
 .lua 32
+.m 32
 .man 32
 .n 32
 .p 32
@@ -160,8 +164,10 @@ EXEC 01;31
 .3des 34
 .aes 34
 .asc 34
+.cer 34
 .cfg 34
 .conf 34
+.csr 34
 .desktop 34
 .enc 34
 .gpg 34
@@ -170,7 +176,15 @@ EXEC 01;31
 .pgp 34
 .ttf 34
 
+# Executable
+.apk 31
+.app 31
+.bat 31
+.com 31
+.exe 31
+
 # Image
+.ai 33
 .bmp 33
 .cgm 33
 .dl 33
@@ -214,8 +228,6 @@ EXEC 01;31
 .mka 33
 .mp3 33
 .mpa 33
-.mpeg 33
-.mpg 33
 .ogg 33
 .opus 33
 .ra 33
@@ -238,6 +250,8 @@ EXEC 01;31
 .mp4 33
 .MP4 33
 .mp4v 33
+.mpeg 33
+.mpg 33
 .nuv 33
 .ogm 33
 .ogv 33
@@ -245,6 +259,7 @@ EXEC 01;31
 .qt 33
 .rm 33
 .rmvb 33
+.srt 33
 .swf 33
 .vob 33
 .webm 33
@@ -268,12 +283,13 @@ EXEC 01;31
 .ppt 31
 .pptx 31
 .rtf 31
+.vcf 31
+.wps 31
 .xls 31
 .xlsx 31
 
 # Archives
 .7z 01;35
-.apk 01;35
 .arj 01;35
 .bin 01;35
 .bz 01;35
@@ -287,6 +303,7 @@ EXEC 01;31
 .iso 01;35
 .jar 01;35
 .msi 01;35
+.pkg 01;35
 .rar 01;35
 .rpm 01;35
 .tar 01;35
@@ -302,13 +319,20 @@ EXEC 01;31
 .zip 01;35
 
 # Miscellaneous
+.torrent 34
+.crdownload 37
+
+# Backup, Temporary, & Stuff
 *~ 01;34
 *# 01;34
 .log 01;34
 .bak 01;36
 .BAK 01;36
+.dat 01;36
+.DAT 01;36
 .dist 01;36
 .DIST 01;36
+.dll 01;36
 .off 01;36
 .OFF 01;36
 .old 01;36
@@ -318,3 +342,4 @@ EXEC 01;31
 .ORIG 01;36
 .swo 01;36
 .swp 01;36
+.tmp 01;36
