@@ -1,8 +1,8 @@
-# --------------------------
 # Oxide theme for Oh My Zsh
-# --------------------------
-# Diki Ananta
-# https://github.com/dikiaap
+#
+# Author: Diki Ananta <diki1aap@gmail.com>
+# Repository: https://github.com/dikiaap/dotfiles
+# License: MIT
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 function virtualenv_info {
