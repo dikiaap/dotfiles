@@ -1,9 +1,8 @@
-# ------------
 # Oxide theme
-# ------------
-# Diki Ananta
-# e: diki1aap@gmail.com
-# dikiaap @ freenode & github
+#
+# Author: Diki Ananta <diki1aap@gmail.com>
+# Repository: https://github.com/dikiaap/dotfiles
+# License: MIT
 # i3 config file (v4)
 
 # font for window titles and bar
