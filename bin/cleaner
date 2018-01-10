@@ -17,36 +17,36 @@ printusage() {
 }
 
 safecleaner() {
-    echo -e $magenta"\n Cleaning Debian Packages ... \n"$white
+    echo -e $magenta"\n Cleaning Debian Packages... \n"$white
     sudo apt-get clean
 
-    echo -e $magenta"\n Autocleaning Debian Packages ... \n"$white
+    echo -e $magenta"\n Autocleaning Debian Packages... \n"$white
     sudo apt-get autoclean
 
-    echo -e $magenta"\n Autoremoving Debian Packages ... \n"$white
+    echo -e $magenta"\n Autoremoving Debian Packages... \n"$white
     sudo apt-get autoremove
 
-    echo -e $magenta"\n Cleaning Gem ... \n"$white
-    sudo gem cleanup
-
-    echo -e $magenta"\n Cleaning Composer Installer ... \n"$white
+    echo -e $magenta"\n Cleaning Composer Installer... \n"$white
     sudo rm -fv ~/.composer/20*
 
-    echo -e $magenta"\n Cleaning Shell History ... \n"$white
+    echo -e $magenta"\n Cleaning Gems... \n"$white
+    sudo gem cleanup
+
+    echo -e $magenta"\n Cleaning Shell History... \n"$white
     echo > ~/.bash_history && echo > ~/.zsh_history && echo > ~/.z
 
-    echo -e $magenta"\n Cleaning Junk Files ... \n"$white
+    echo -e $magenta"\n Cleaning Junk Files... \n"$white
     rm -rfv ~/.local/share/recently-used.xbel
     rm -rfv ~/.xsession-errors*
     rm -rfv ~/.local/share/Trash/*
 
-    echo -e $magenta"\n Cleaning Vim ... \n"$white
+    echo -e $magenta"\n Cleaning Vim... \n"$white
     rm -rfv ~/.local/share/nvim/backup/*
     rm -rfv ~/.local/share/nvim/swap/*
     rm -rfv ~/.local/share/nvim/undo/*
     rm -rfv ~/.viminfo
 
-    echo -e $magenta"\n Cleaning Log System ... \n"$white
+    echo -e $magenta"\n Cleaning Log System... \n"$white
     sudo sh -c "echo > /var/log/dpkg.log"
     sudo sh -c "echo > /var/log/wtmp"
     sudo sh -c "echo > /var/log/lastlog"
@@ -91,7 +91,7 @@ case "$CMD" in
     -a)
         sudo echo -e $red"\n Executing a whole cleaner. \n"$white
         safecleaner
-        echo -e $magenta"\n Cleaning Thumbnails ... \n"$white
+        echo -e $magenta"\n Cleaning Thumbnails... \n"$white
         rm -rfv ~/.cache/thumbnails/*
         rm -rfv ~/.thumbnails/*
         ;;

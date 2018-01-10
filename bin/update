@@ -15,45 +15,40 @@ printusage() {
 }
 
 apt() {
-    echo -e $magenta"\n Updating List System Packages ... \n"$white
+    echo -e $magenta"\n Updating List System Packages... \n"$white
     sudo apt-get update
 
-    echo -e $magenta"\n List System Packages ... \n"$white
+    echo -e $magenta"\n List System Packages... \n"$white
     sudo apt-get dist-upgrade
 }
 
 composer() {
-    echo -e $magenta"\n Updating Composer Installer ... \n"$white
+    echo -e $magenta"\n Updating Composer Installer... \n"$white
     sudo composer self-update --snapshot
 
-    echo -e $magenta"\n Updating Composer Packages ... \n"$white
+    echo -e $magenta"\n Updating Composer Packages... \n"$white
     /usr/local/bin/composer global update
 }
 
-gem() {
-    echo -e $magenta"\n Updating Gem System ... \n"$white
-    sudo gem update --system
-
-    echo -e $magenta"\n Updating Gem ... \n"$white
-    sudo gem update
-}
-
 npm() {
-    echo -e $magenta"\n Updating NPM ... \n"$white
+    echo -e $magenta"\n Updating npm... \n"$white
     sudo npm install npm -g
 
-    echo -e $magenta"\n Updating NPM Packages ... \n"$white
+    echo -e $magenta"\n Updating npm Packages... \n"$white
     sudo npm update -g
 }
 
-vim() {
-    echo -e $magenta"\n Updating Vim Packages ... \n"$white
-    /usr/bin/nvim +PlugUpdate +qall
+gem() {
+    echo -e $magenta"\n Updating Gem System... \n"$white
+    sudo gem update --system
+
+    echo -e $magenta"\n Updating Gems... \n"$white
+    sudo gem update
 }
 
-youtube-dl() {
-    echo -e $magenta"\n Updating youtube-dl ... \n"$white
-    sudo youtube-dl -U
+vim() {
+    echo -e $magenta"\n Updating Vim Plugins... \n"$white
+    /usr/bin/nvim +PlugUpdate +qall
 }
 
 # Print help message.
@@ -87,17 +82,6 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
-    read -r -p "Do you want to upgrade gem packages? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            gem
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
     read -r -p "Do you want to upgrade npm packages? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
@@ -109,10 +93,10 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
-    read -r -p "Do you want to upgrade vim packages? [y/n] " response
+    read -r -p "Do you want to upgrade gem packages? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
-            vim
+            gem
             ;;
         *)
             echo "Cancelled."
@@ -120,10 +104,10 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
-    read -r -p "Do you want to upgrade youtube-dl? [y/n] " response
+    read -r -p "Do you want to upgrade vim plugins? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
-            youtube-dl
+            vim
             ;;
         *)
             echo "Cancelled."
@@ -137,10 +121,9 @@ case "$CMD" in
     -a)
         apt
         composer
-        gem
         npm
+        gem
         vim
-        youtube-dl
         exit 1
         ;;
     *)

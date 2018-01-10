@@ -16,23 +16,22 @@ printusage() {
 }
 
 oh-my-zsh() {
-    echo -e $magenta"\n Updating oh-my-zsh ... \n"$white
+    echo -e $magenta"\n Updating oh-my-zsh... \n"$white
     /bin/sh ~/.oh-my-zsh/tools/upgrade.sh
-    echo -e $magenta"\n Updating zsh plugins ... \n"$white
-    echo -e $green"Updating z ..."$white
+    echo -e $magenta"\n Updating zsh plugins... \n"$white
     cd ~/.zsh/plugins
     find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
 }
 
 base16-shell() {
-    echo -e $magenta"\n Updating base16-shell ... \n"$white
+    echo -e $magenta"\n Updating base16-shell... \n"$white
     cd ~/.config/base16-shell
     git pull
     ./colortest
 }
 
 i3-gaps() {
-    echo -e $magenta"\n Updating & compiling i3-gaps ... \n"$white
+    echo -e $magenta"\n Updating & compiling i3-gaps... \n"$white
     cd ~/.local/src/i3-gaps
     git pull
     autoreconf -fi
@@ -43,18 +42,18 @@ i3-gaps() {
     make
     echo -e $green"\n Previous i3-gaps version: \n"$white
     echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
-    /usr/bin/i3 --version
+    /usr/bin/i3 -v
     echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
-    echo -e $magenta"\n Installing i3-gaps ... \n"$white
+    echo -e $magenta"\n Installing i3-gaps... \n"$white
     sudo make install
     echo -e $green"\n Current i3-gaps version: \n"$white
     echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
-    /usr/bin/i3 --version
+    /usr/bin/i3 -v
     echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
 }
 
 i3blocks() {
-    echo -e $magenta"\n Updating & compiling i3blocks ... \n"$white
+    echo -e $magenta"\n Updating & compiling i3blocks... \n"$white
     cd ~/.local/src/i3blocks
     git pull
     make clean all
@@ -62,7 +61,7 @@ i3blocks() {
     echo "───────────────────────────────────────────────────────────────────"
     /usr/bin/i3blocks -V
     echo "───────────────────────────────────────────────────────────────────"
-    echo -e $magenta"\n Installing i3blocks ... \n"$white
+    echo -e $magenta"\n Installing i3blocks... \n"$white
     sudo make PREFIX=/usr install
     echo -e $green"\n Current i3blocks version: \n"$white
     echo "───────────────────────────────────────────────────────────────────"
@@ -71,7 +70,7 @@ i3blocks() {
 }
 
 i3lock-fancy() {
-    echo -e $magenta"\n Updating & compiling i3lock & i3lock-fancy ... \n"$white
+    echo -e $magenta"\n Updating & compiling i3lock & i3lock-fancy... \n"$white
     cd ~/.local/src/i3lock-color
     git pull
     autoreconf -i
@@ -82,38 +81,38 @@ i3lock-fancy() {
     make
     echo -e $green"\n Previous i3lock version: \n"$white
     echo "───────────────────────────────────────────────────────────────────────────"
-    /usr/local/bin/i3lock --version
+    /usr/local/bin/i3lock -v
     echo "───────────────────────────────────────────────────────────────────────────"
-    echo -e $magenta"\n Installing i3lock & i3lock-fancy ... \n"$white
+    echo -e $magenta"\n Installing i3lock & i3lock-fancy... \n"$white
     sudo make install
     echo -e $green"\n Current i3lock version: \n"$white
     echo "───────────────────────────────────────────────────────────────────────────"
-    /usr/local/bin/i3lock --version
+    /usr/local/bin/i3lock -v
     echo "───────────────────────────────────────────────────────────────────────────"
     cd ~/.local/src/i3lock-fancy
     git pull
 }
 
 dunst() {
-    echo -e $magenta"\n Updating & compiling dunst ... \n"$white
+    echo -e $magenta"\n Updating & compiling dunst... \n"$white
     cd ~/.local/src/dunst
     git pull
     make clean
     make
     echo -e $green"\n Previous dunst version: \n"$white
     echo "──────────────────────────────────────────────────────────────────────────────────"
-    /usr/local/bin/dunst --version
+    /usr/local/bin/dunst -v
     echo "──────────────────────────────────────────────────────────────────────────────────"
-    echo -e $magenta"\n Installing dunst ... \n"$white
+    echo -e $magenta"\n Installing dunst... \n"$white
     sudo make install
     echo -e $green"\n Current dunst version: \n"$white
     echo "──────────────────────────────────────────────────────────────────────────────────"
-    /usr/local/bin/dunst --version
+    /usr/local/bin/dunst -v
     echo "──────────────────────────────────────────────────────────────────────────────────"
 }
 
 rofi() {
-    echo -e $magenta"\n Updating & compiling rofi ... \n"$white
+    echo -e $magenta"\n Updating & compiling rofi... \n"$white
     cd ~/.local/src/rofi
     git pull
     git submodule update --init
@@ -127,7 +126,7 @@ rofi() {
     echo "───────────────────────────────────────"
     /usr/local/bin/rofi -v
     echo "───────────────────────────────────────"
-    echo -e $magenta"\n Installing rofi ... \n"$white
+    echo -e $magenta"\n Installing rofi... \n"$white
     sudo make install
     echo -e $green"\n Current rofi version: \n"$white
     echo "───────────────────────────────────────"
@@ -136,14 +135,14 @@ rofi() {
 }
 
 arc-theme() {
-    echo -e $magenta"\n Updating & compiling arc-theme ... \n"$white
+    echo -e $magenta"\n Updating & compiling arc-theme... \n"$white
     cd ~/.local/src/arc-theme
     git pull
     rm -rfv .idea autom4te.cache build-aux common/Makefile common/Makefile.in extra/Makefile extra/Makefile.in aclocal.m4 compile config.log config.status configure install-sh Makefile Makefile.in missing
     sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
     ./autogen.sh --prefix=/usr --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm
     sudo make install
-    echo -e $magenta"\n Updating arc-openbox ... \n"$white
+    echo -e $magenta"\n Updating arc-openbox... \n"$white
     cd ~/.local/src/arc-openbox
     git pull
     cp -rfv Arc* ~/.themes
