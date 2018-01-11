@@ -239,12 +239,12 @@ mode "  " {
 }
 bindsym $mod+r mode "  "
 
-# class                 border  backgr. text    indicator
-client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD
-client.focused_inactive #212121 #212121 #86888C #292D2E
-client.unfocused        #212121 #212121 #86888C #292D2E
-client.urgent           #2F343A #D64E4E #FFFFFF #D64E4E
-client.placeholder      #212121 #0C0C0C #FFFFFF #212121
+# class                 border  backgr. text    indicator child_border
+client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD   #2B83A6
+client.focused_inactive #212121 #212121 #86888C #292D2E   #5A5A5A
+client.unfocused        #212121 #212121 #86888C #292D2E   #5A5A5A
+client.urgent           #2F343A #D64E4E #FFFFFF #D64E4E   #D64E4E
+client.placeholder      #212121 #0C0C0C #FFFFFF #212121   #262626
 client.background       #212121
 
 # start i3bar to display a workspace bar
