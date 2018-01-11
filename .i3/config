@@ -257,6 +257,8 @@ client.background       #212121
 # start i3bar to display a workspace bar
 bar {
     status_command          i3blocks
+    bindsym button4         nop
+    bindsym button5         nop
     tray_output             primary
     position                bottom
     strip_workspace_numbers yes
