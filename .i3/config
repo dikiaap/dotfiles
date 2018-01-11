@@ -90,9 +90,16 @@ bindsym $mod+minus scratchpad show
 popup_during_fullscreen smart
 
 # window border settings
-new_window pixel    0
-new_float normal    0
-hide_edge_borders   none
+new_window  none
+new_float   none
+
+# hiding borders adjacent to the screen edges
+hide_edge_borders none
+
+# set specific windows to floating or to change their border style
+for_window [window_role="pop-up"]       floating enable
+for_window [window_role="task_dialog"]  floating enable
+for_window [title="Preferences$"]       floating enable
 
 # shortcut to change window border
 bindsym Mod4+t border normal    0
@@ -100,16 +107,16 @@ bindsym Mod4+y border pixel     1
 bindsym Mod4+u border none
 
 # define names for workspaces
-set $ws1   "1:   ZSH "
-set $ws2   "2:   Code "
-set $ws3   "3:   Chromium "
-set $ws4   "4:   Files "
-set $ws5   "5:   Documents "
-set $ws6   "6:   Media "
-set $ws7   "7:   Design "
-set $ws8   "8:   Chat "
-set $ws9   "9:   General "
-set $ws10  "10:   Settings "
+set $ws1    "1:   ZSH "
+set $ws2    "2:   Code "
+set $ws3    "3:   Chromium "
+set $ws4    "4:   Files "
+set $ws5    "5:   Documents "
+set $ws6    "6:   Media "
+set $ws7    "7:   Design "
+set $ws8    "8:   Chat "
+set $ws9    "9:   General "
+set $ws10   "10:   Settings "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -220,22 +227,22 @@ bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 9"
 
 # resize window
 mode "  " {
-        # pressing left and up will shrink the window's width and height
-        # pressing right and down will grow the window's width and height
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
+    # pressing left and up will shrink the window's width and height
+    # pressing right and down will grow the window's width and height
+    bindsym $left   resize shrink width 10 px or 10 ppt
+    bindsym $down   resize grow height 10 px or 10 ppt
+    bindsym $up     resize shrink height 10 px or 10 ppt
+    bindsym $right  resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left    resize shrink width 10 px or 10 ppt
+    bindsym Down    resize grow height 10 px or 10 ppt
+    bindsym Up      resize shrink height 10 px or 10 ppt
+    bindsym Right   resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or win+r
-        bindsym Return mode "default"
-        bindsym $mod+r mode "default"
+    # back to normal: Enter or win+r
+    bindsym Return mode "default"
+    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "  "
 
@@ -257,23 +264,18 @@ bar {
     workspace_buttons       yes
 
     colors {
-            background  #212121
-            statusline  #DDDDDD
-            separator   #666666
-            # class             border  backgr. text
-            focused_workspace   #2B83A6 #2B83A6 #FFFFFF
-            active_workspace    #212121 #212121 #FFFFFF
-            inactive_workspace  #212121 #212121 #86888C
-            urgent_workspace    #2F343A #D64E4E #FFFFFF
-      }
+        background  #212121
+        statusline  #DDDDDD
+        separator   #666666
+        # class             border  backgr. text
+        focused_workspace   #2B83A6 #2B83A6 #FFFFFF
+        active_workspace    #212121 #212121 #FFFFFF
+        inactive_workspace  #212121 #212121 #86888C
+        urgent_workspace    #2F343A #D64E4E #FFFFFF
+    }
 }
 
 # i3-gaps
-for_window [class="^.*"]                border pixel 0
-for_window [window_role="pop-up"]       floating enable
-for_window [window_role="task_dialog"]  floating enable
-for_window [title="Preferences$"]       floating enable
-
 smart_gaps on
 gaps inner 8
 gaps outer 2
