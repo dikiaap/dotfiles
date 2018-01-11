@@ -250,7 +250,7 @@ bindsym $mod+r mode "  "
 client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD   #2B83A6
 client.focused_inactive #212121 #212121 #86888C #292D2E   #5A5A5A
 client.unfocused        #212121 #212121 #86888C #292D2E   #5A5A5A
-client.urgent           #2F343A #D64E4E #FFFFFF #D64E4E   #D64E4E
+client.urgent           #D64E4E #D64E4E #FFFFFF #D64E4E   #D64E4E
 client.placeholder      #212121 #0C0C0C #FFFFFF #212121   #262626
 client.background       #212121
 
@@ -273,7 +273,7 @@ bar {
         focused_workspace   #2B83A6 #2B83A6 #FFFFFF
         active_workspace    #212121 #212121 #FFFFFF
         inactive_workspace  #212121 #212121 #86888C
-        urgent_workspace    #2F343A #D64E4E #FFFFFF
+        urgent_workspace    #D64E4E #D64E4E #FFFFFF
     }
 }
 
