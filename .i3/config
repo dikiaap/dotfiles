@@ -259,11 +259,11 @@ bar {
     status_command          i3blocks
     bindsym button4         nop
     bindsym button5         nop
-    tray_output             primary
     position                bottom
-    strip_workspace_numbers yes
+    tray_output             primary
     separator_symbol        "·"
     workspace_buttons       yes
+    strip_workspace_numbers yes
 
     colors {
         background  #212121
