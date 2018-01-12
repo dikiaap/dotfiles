@@ -227,6 +227,7 @@ assign [class="Upwork"]             → $ws8
 assign [class="Galculator"]         → $ws9
 assign [class="Gnome-font-viewer"]  → $ws9
 assign [class="Go-for-it"]          → $ws9
+assign [class="Gucharmap"]          → $ws9
 assign [class="Keepassx"]           → $ws9
 assign [class="Transmission-gtk"]   → $ws9
 assign [class="Bleachbit"]          → $ws10
