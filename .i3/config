@@ -17,21 +17,46 @@ set $down   k
 set $up     l
 set $right  semicolon
 
-# use Mouse+$mod to drag floating windows to their wanted position
+# define names for workspaces
+set $ws1    "1:   ZSH "
+set $ws2    "2:   Code "
+set $ws3    "3:   Chromium "
+set $ws4    "4:   Files "
+set $ws5    "5:   Documents "
+set $ws6    "6:   Media "
+set $ws7    "7:   Design "
+set $ws8    "8:   Chat "
+set $ws9    "9:   General "
+set $ws10   "10:   Settings "
+
+# use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
 
 # control focused window when follows the mouse movements
 focus_follows_mouse no
 
+# window border settings
+new_window  none
+new_float   none
+
+# hiding borders adjacent to the screen edges
+hide_edge_borders none
+
+# set popups during fullscreen mode
+popup_during_fullscreen smart
+
 # start a terminal
 bindsym $mod+Return workspace $ws1; exec --no-startup-id lxterminal
-
-# kill focused window
-bindsym $mod+Shift+q kill
 
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF'"
 bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# switching window with win+tab
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+
+# kill focused window
+bindsym $mod+Shift+q kill
 
 # change focus
 bindsym $mod+$left  focus left
@@ -89,32 +114,13 @@ bindsym $mod+Shift+minus move scratchpad
 # show the next scratchpad window or hide the focused scratchpad window
 bindsym $mod+minus scratchpad show
 
-# set popups during fullscreen mode
-popup_during_fullscreen smart
-
-# window border settings
-new_window  none
-new_float   none
-
-# hiding borders adjacent to the screen edges
-hide_edge_borders none
+# set a window to stick to the glass
+bindsym $mod+Shift+s sticky toggle
 
 # shortcut to change window border
 bindsym Mod4+t border normal    0
 bindsym Mod4+y border pixel     1
 bindsym Mod4+u border none
-
-# define names for workspaces
-set $ws1    "1:   ZSH "
-set $ws2    "2:   Code "
-set $ws3    "3:   Chromium "
-set $ws4    "4:   Files "
-set $ws5    "5:   Documents "
-set $ws6    "6:   Media "
-set $ws7    "7:   Design "
-set $ws8    "8:   Chat "
-set $ws9    "9:   General "
-set $ws10   "10:   Settings "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -140,26 +146,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# startup applications
-exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
-exec --no-startup-id nm-applet
-exec --no-startup-id pulseaudio --start
-exec --no-startup-id feh --bg-fill ~/Public/desktop/wp-i3.png
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
-
-# set specific windows to floating mode
-for_window [window_role="pop-up"]                   floating enable
-for_window [window_role="task_dialog"]              floating enable
-for_window [window_role="Preferences"]              floating enable
-for_window [class="Galculator"]                     floating enable
-for_window [class="Gcolor2"]                        floating enable
-for_window [class="Gkamus"]                         floating enable
-for_window [class="Go-for-it"]                      floating enable
-for_window [class="Lightdm-gtk-greeter-settings"]   floating enable
-for_window [class="Lxappearance"]                   floating enable
-for_window [class="Menu"]                           floating enable
-for_window [class="Software-properties-gtk"]        floating enable
-
 # shortcut applications
 bindsym $mod+F1                 exec gkamus
 bindsym $mod+F2 workspace $ws2; exec subl
@@ -178,8 +164,48 @@ bindsym XF86AudioLowerVolume    exec --no-startup-id amixer -q -D pulse sset Mas
 bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
 bindsym XF86AudioMute           exec --no-startup-id amixer -q -D pulse sset Master toggle
 
-# switching window with win+tab
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# exit i3
+bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 9" -m "Do you really want to exit?" -b " Exit   " "i3-msg exit"
+
+# resize window
+bindsym $mod+r mode "  "
+mode "  " {
+    # pressing left and up will shrink the window's width and height
+    # pressing right and down will grow the window's width and height
+    bindsym $left   resize shrink width 10 px or 10 ppt
+    bindsym $down   resize grow height 10 px or 10 ppt
+    bindsym $up     resize shrink height 10 px or 10 ppt
+    bindsym $right  resize grow width 10 px or 10 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left    resize shrink width 10 px or 10 ppt
+    bindsym Down    resize grow height 10 px or 10 ppt
+    bindsym Up      resize shrink height 10 px or 10 ppt
+    bindsym Right   resize grow width 10 px or 10 ppt
+
+    # back to normal: Enter or win+r
+    bindsym Return mode "default"
+    bindsym $mod+r mode "default"
+}
+
+# set specific windows to floating mode
+for_window [window_role="pop-up"]                   floating enable
+for_window [window_role="task_dialog"]              floating enable
+for_window [window_role="Preferences"]              floating enable
+for_window [class="Galculator"]                     floating enable
+for_window [class="Gcolor2"]                        floating enable
+for_window [class="Gkamus"]                         floating enable
+for_window [class="Go-for-it"]                      floating enable
+for_window [class="Lightdm-gtk-greeter-settings"]   floating enable
+for_window [class="Lxappearance"]                   floating enable
+for_window [class="Menu"]                           floating enable
+for_window [class="Software-properties-gtk"]        floating enable
 
 # assign program to workspace
 assign [class="terminal"]           → $ws1
@@ -219,34 +245,6 @@ assign [class="Obconf"]             → $ws10
 assign [class="Lightdm-gtk-greeter-settings"]   → $ws10
 assign [class="Software-properties-gtk"]        → $ws10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace
-bindsym $mod+Shift+r restart
-# exit i3
-bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 9" -m "Do you really want to exit?" -b " Exit   " "i3-msg exit"
-
-# resize window
-mode "  " {
-    # pressing left and up will shrink the window's width and height
-    # pressing right and down will grow the window's width and height
-    bindsym $left   resize shrink width 10 px or 10 ppt
-    bindsym $down   resize grow height 10 px or 10 ppt
-    bindsym $up     resize shrink height 10 px or 10 ppt
-    bindsym $right  resize grow width 10 px or 10 ppt
-
-    # same bindings, but for the arrow keys
-    bindsym Left    resize shrink width 10 px or 10 ppt
-    bindsym Down    resize grow height 10 px or 10 ppt
-    bindsym Up      resize shrink height 10 px or 10 ppt
-    bindsym Right   resize grow width 10 px or 10 ppt
-
-    # back to normal: Enter or win+r
-    bindsym Return mode "default"
-    bindsym $mod+r mode "default"
-}
-bindsym $mod+r mode "  "
-
 # class                 border  backgr. text    indicator child_border
 client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD   #2B83A6
 client.focused_inactive #212121 #212121 #86888C #292D2E   #5A5A5A
@@ -282,3 +280,10 @@ bar {
 smart_gaps on
 gaps inner 8
 gaps outer 2
+
+# startup applications
+exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
+exec --no-startup-id nm-applet
+exec --no-startup-id pulseaudio --start
+exec --no-startup-id feh --bg-fill ~/Public/desktop/wp-i3.png
+exec --no-startup-id compton --config ~/.config/compton/compton.conf
