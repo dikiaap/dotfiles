@@ -27,7 +27,7 @@ set $ws6    "6:   Media "
 set $ws7    "7:   Design "
 set $ws8    "8:   Chat "
 set $ws9    "9:   General "
-set $ws10   "10:   Settings "
+set $ws10   "10:   Settings "
 
 # use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
