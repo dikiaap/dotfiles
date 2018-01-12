@@ -18,7 +18,7 @@ set $up     l
 set $right  semicolon
 
 # define names for workspaces
-set $ws1    "1:   ZSH "
+set $ws1    "1:   Terminal "
 set $ws2    "2:   Code "
 set $ws3    "3:   Chromium "
 set $ws4    "4:   Files "
