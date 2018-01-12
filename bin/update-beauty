@@ -67,10 +67,13 @@ i3blocks() {
     echo "───────────────────────────────────────────────────────────────────"
     /usr/bin/i3blocks -V
     echo "───────────────────────────────────────────────────────────────────"
+    echo -e $magenta"\n Updating i3blocks-contrib... \n"$white
+    cd ~/.local/bin/i3blocks
+    git pull
 }
 
-i3lock-fancy() {
-    echo -e $magenta"\n Updating & compiling i3lock & i3lock-fancy... \n"$white
+i3lock() {
+    echo -e $magenta"\n Updating & compiling i3lock... \n"$white
     cd ~/.local/src/i3lock-color
     git pull
     autoreconf -i
@@ -83,12 +86,13 @@ i3lock-fancy() {
     echo "───────────────────────────────────────────────────────────────────────────"
     /usr/local/bin/i3lock -v
     echo "───────────────────────────────────────────────────────────────────────────"
-    echo -e $magenta"\n Installing i3lock & i3lock-fancy... \n"$white
+    echo -e $magenta"\n Installing i3lock... \n"$white
     sudo make install
     echo -e $green"\n Current i3lock version: \n"$white
     echo "───────────────────────────────────────────────────────────────────────────"
     /usr/local/bin/i3lock -v
     echo "───────────────────────────────────────────────────────────────────────────"
+    echo -e $magenta"\n Updating i3lock-fancy... \n"$white
     cd ~/.local/src/i3lock-fancy
     git pull
 }
@@ -201,10 +205,10 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
-    read -r -p "Do you want to update i3lock & i3lock-fancy? [y/n] " response
+    read -r -p "Do you want to update i3lock? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
-            i3lock-fancy
+            i3lock
             ;;
         *)
             echo "Cancelled."
@@ -253,7 +257,7 @@ case "$CMD" in
         base16-shell
         i3-gaps
         i3blocks
-        i3lock-fancy
+        i3lock
         dunst
         rofi
         arc-theme
