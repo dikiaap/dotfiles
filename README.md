@@ -29,8 +29,8 @@
     - [i3blocks](https://github.com/vivien/i3blocks) - A flexible scheduler for your i3bar blocks.
         - [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib) - A set of scripts for i3blocks, contributed by the community.
     - [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) - A script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
-    - [Dunst](https://github.com/dunst-project/dunst) - A highly configurable and lightweight notification daemon.
     - [Rofi](https://github.com/DaveDavenport/rofi) - A window switcher, application launcher and dmenu replacement.
+    - [Dunst](https://github.com/dunst-project/dunst) - A highly configurable and lightweight notification daemon.
     - [Compton](https://github.com/chjj/compton) - A compositor for X11.
     - [LXTerminal](https://github.com/lxde/lxterminal) - A VTE-based terminal emulator with support for multiple tabs.
     - [Sublime Text](https://www.sublimetext.com) - The text editor you'll fall in love with.
