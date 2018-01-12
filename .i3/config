@@ -118,9 +118,9 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+s sticky toggle
 
 # shortcut to change window border
-bindsym Mod4+t border normal    0
-bindsym Mod4+y border pixel     1
-bindsym Mod4+u border none
+bindsym $mod+t border normal    0
+bindsym $mod+y border pixel     1
+bindsym $mod+u border none
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
