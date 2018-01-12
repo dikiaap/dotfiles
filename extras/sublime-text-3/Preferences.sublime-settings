@@ -19,7 +19,7 @@
 		"node_modules"
 	],
 	"font_face": "Hack",
-	"font_size": 10,
+	"font_size": 9.5,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
