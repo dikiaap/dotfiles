@@ -82,6 +82,9 @@ bindsym $mod+Shift+Down     move down
 bindsym $mod+Shift+Up       move up
 bindsym $mod+Shift+Right    move right
 
+# move focused floating window to the center of all outputs
+bindsym $mod+Shift+h move absolute position center
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
