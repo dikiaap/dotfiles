@@ -4,7 +4,7 @@ color=#F3F4F5
 markup=none
 
 [volume-pulseaudio]
-command=~/.local/bin/i3blocks/volume-pulseaudio/volume-pulseaudio -F 3 -f 3 -a -C '#F3F4F5'
+command=~/.local/bin/i3blocks/volume-pulseaudio/volume-pulseaudio -F 3 -f 3 -a -C '#F3F4F5' -m pulse -s Master
 interval=1
 signal=10
 
