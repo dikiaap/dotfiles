@@ -8,7 +8,7 @@
 
 - CLI
     - [Zsh](http://www.zsh.org) - A shell designed for interactive use, although it is also a powerful scripting language.
-        - [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) - An open source, community-driven framework for managing your ZSH configuration.
+        - [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) - An open source, community-driven framework for managing your Zsh configuration.
         - [z](https://github.com/rupa/z) - Tracks your most used directories, based on frecency.
     - [Bash](https://www.gnu.org/software/bash/) - A Unix shell and command language.
     - [Base16 Shell](https://github.com/chriskempson/base16-shell) - Syntax highlighting for hackers.
