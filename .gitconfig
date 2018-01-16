@@ -2,15 +2,15 @@
     a = !"git add -u; git add ."
     c = commit -am
     cs = commit -S -am
-    s = status -s
-    sclone = clone --depth 1
     co = checkout
-    df = diff --patch-with-stat --color --color-words --abbrev
+    contributors = shortlog -n -s
     d = "!git diff --patch-with-stat --color $@ | diff-so-fancy"
-    lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    df = diff --patch-with-stat --color --color-words --abbrev
     fc = "!f() { git log --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%cn>%Creset' --decorate --date=relative --grep=$1; }; f"
     fs = "!f() { git log --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%cn>%Creset' --decorate --date=relative -S$1; }; f"
-    contributors = shortlog -n -s
+    lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    s = status -s
+    sclone = clone --depth 1
     remotes = remote -v
 
 [user]
