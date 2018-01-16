@@ -25,6 +25,9 @@
 [push]
     default = simple
 
+[merge]
+    tool = vimdiff
+
 [color]
     ui = always
 
