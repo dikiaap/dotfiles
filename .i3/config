@@ -82,12 +82,6 @@ bindsym $mod+Shift+Down     move down
 bindsym $mod+Shift+Up       move up
 bindsym $mod+Shift+Right    move right
 
-# move focused floating window to the center of all outputs
-bindsym $mod+Shift+h move absolute position center
-
-# move focused floating window to the current position of the cursor
-bindsym $mod+Shift+m move position mouse
-
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -119,6 +113,12 @@ bindsym $mod+Shift+minus move scratchpad
 
 # show the next scratchpad window or hide the focused scratchpad window
 bindsym $mod+minus scratchpad show
+
+# move focused floating window to the center of all outputs
+bindsym $mod+Shift+h move absolute position center
+
+# move focused floating window to the current position of the cursor
+bindsym $mod+Shift+m move position mouse
 
 # set a window to stick to the glass
 bindsym $mod+Shift+s sticky toggle
