@@ -1,6 +1,6 @@
 # dotfiles ❤ ~/
 
-![dikiaap dotfiles](https://i.imgur.com/cs6ugLx.png)
+![dikiaap dotfiles](https://i.imgur.com/IHjTPZ1.png)
 >   Get ready for dotfiles.
 
 
