@@ -17,7 +17,7 @@
 [user]
     email = diki1aap@gmail.com
     name = Diki Ananta
-    signingkey = AC15359D17527F76
+    signingKey = 833E0D264B13927C
 
 [core]
     editor = vim
@@ -28,6 +28,9 @@
 
 [merge]
     tool = vimdiff
+
+[commit]
+    gpgSign = true
 
 [color]
     ui = always
