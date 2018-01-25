@@ -201,6 +201,7 @@ mode "  " {
 }
 
 # set specific windows to floating mode
+for_window [window_role="app"]                      floating enable
 for_window [window_role="pop-up"]                   floating enable
 for_window [window_role="task_dialog"]              floating enable
 for_window [title="Preferences$"]                   floating enable
@@ -218,6 +219,7 @@ assign [class="terminal"]           → $ws1
 assign [class="Sublime"]            → $ws2
 assign [class="Chromium"]           → $ws3
 assign [class="Firefox"]            → $ws3
+assign [class="Authy"]              → $ws3
 assign [class="Nautilus"]           → $ws4
 assign [class="Evince"]             → $ws5
 assign [class="ghostwriter"]        → $ws5
