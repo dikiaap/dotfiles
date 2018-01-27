@@ -229,7 +229,6 @@ assign [class="vlc"]                → $ws6
 assign [class="Gimp"]               → $ws7
 assign [class="Inkscape"]           → $ws7
 assign [class="Hexchat"]            → $ws8
-assign [class="Skype"]              → $ws8
 assign [class="Telegram"]           → $ws8
 assign [class="Upwork"]             → $ws8
 assign [class="Galculator"]         → $ws9
