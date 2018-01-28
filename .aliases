@@ -57,6 +57,8 @@ alias gpg='gpg2'
 alias incognito='unset HISTFILE'
 alias ln='ln -s'
 alias mp3-dl='youtube-dl --audio-quality 1 --extract-audio --audio-format mp3'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date "+%a, %d %b %H:%M:%S" && time cat && date "+%a, %d %b %H:%M:%S"'
 alias weather='curl -s wttr.in/Ponorogo | sed -n "1,17p"'
 
