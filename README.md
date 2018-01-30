@@ -15,7 +15,7 @@
     - [Solarized dircolors](https://github.com/seebi/dircolors-solarized) - Themes for GNU ls.
     - [Neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability.
         - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Colorscheme Darker for Vim and inspired by Material Theme.
-        - [Vim Airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for Vim that's light as air.
+        - [vim-airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for Vim that's light as air.
         - [More config](https://github.com/dikiaap/dotfiles/blob/master/init.vim).
     - [Git](https://git-scm.com) - A free and open source distributed version control system.
         - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - Make your diff's human readable instead of machine readable.
