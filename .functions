@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-function mkd() {
-    mkdir -p "$@" && cd "$@"
+function apt-clean() {
+    sudo apt-get clean
+    sudo apt-get autoclean
+    sudo apt-get autoremove
 }
 
-function phpserver() {
-    local ip=localhost;
-    local port="${1:-4000}";
-    php -S "${ip}:${port}";
+function mkd() {
+    mkdir -p "$@" && cd "$@"
 }
 
 function readme() {
@@ -16,4 +16,11 @@ function readme() {
             cat $readme
         fi
     done
+}
+
+# Developer functions.
+function phpserver() {
+    local ip=localhost
+    local port="${1:-4000}"
+    php -S "${ip}:${port}"
 }
