@@ -13,6 +13,7 @@
     - [Bash](https://www.gnu.org/software/bash/) - A Unix shell and command language.
     - [Base16 Shell](https://github.com/chriskempson/base16-shell) - Syntax highlighting for hackers.
     - [Solarized dircolors](https://github.com/seebi/dircolors-solarized) - Themes for GNU ls.
+    - [tmux](https://github.com/tmux/tmux) - A terminal multiplexer.
     - [Neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability.
         - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Colorscheme Darker for Vim and inspired by Material Theme.
         - [vim-airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for Vim that's light as air.
