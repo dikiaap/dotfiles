@@ -34,7 +34,7 @@
     - [Rofi](https://github.com/DaveDavenport/rofi) - A window switcher, application launcher and dmenu replacement.
     - [Dunst](https://github.com/dunst-project/dunst) - A highly configurable and lightweight notification daemon.
     - [Compton](https://github.com/chjj/compton) - A compositor for X11.
-    - [LXTerminal](https://github.com/lxde/lxterminal) - A VTE-based terminal emulator with support for multiple tabs.
+    - [Alacritty](https://github.com/jwilm/alacritty) - A cross-platform, GPU-accelerated terminal emulator.
     - [Sublime Text](https://www.sublimetext.com) - A sophisticated text editor for code, markup and prose.
     - [Arc Theme](https://github.com/horst3180/arc-theme) - A flat theme with transparent elements for GTK 3, GTK 2, and GNOME Shell.
     - [Paper Icon Theme](https://github.com/snwh/paper-icon-theme) - An open source FreeDesktop icon theme and inspired by Material Design.
