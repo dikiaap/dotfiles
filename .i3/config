@@ -215,6 +215,7 @@ for_window [class="Menu"]                           floating enable
 for_window [class="Software-properties-gtk"]        floating enable
 
 # assign program to workspace
+assign [class="alacritty"]          → $ws1
 assign [class="terminal"]           → $ws1
 assign [class="Sublime"]            → $ws2
 assign [class="Chromium"]           → $ws3
