@@ -89,9 +89,9 @@ i3lock() {
     echo -e $magenta"\n Installing i3lock... \n"$white
     sudo make install
     echo -e $green"\n Current i3lock version: \n"$white
-    echo "───────────────────────────────────────────────────────────────────────────"
+    echo "───────────────────────────────────────────────────────────────────────────────────────────────"
     /usr/local/bin/i3lock -v
-    echo "───────────────────────────────────────────────────────────────────────────"
+    echo "───────────────────────────────────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Updating i3lock-fancy... \n"$white
     cd ~/.local/src/i3lock-fancy
     git pull
