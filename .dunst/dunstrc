@@ -33,6 +33,7 @@
     history_length = 20
     always_run_script = true
     startup_notification = false
+    verbosity = mesg
     force_xinerama = false
 
 [shortcuts]
