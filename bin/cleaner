@@ -87,6 +87,7 @@ case "$CMD" in
     -s)
         sudo echo -e $red"\n Executing a safe cleaner. \n"$white
         safecleaner
+        exit 0
         ;;
     -a)
         sudo echo -e $red"\n Executing a whole cleaner. \n"$white
@@ -94,6 +95,7 @@ case "$CMD" in
         echo -e $magenta"\n Cleaning Thumbnails... \n"$white
         rm -rfv ~/.cache/thumbnails/*
         rm -rfv ~/.thumbnails/*
+        exit 0
         ;;
     *)
         echo "Command not found"

@@ -108,10 +108,11 @@ if [[ -z "$1" ]]; then
     case $response in
         [yY][eE][sS]|[yY])
             vim
+            exit 0
             ;;
         *)
             echo "Cancelled."
-            exit 1;
+            exit 1
             ;;
     esac
 fi
