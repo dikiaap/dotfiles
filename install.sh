@@ -48,7 +48,7 @@ install() {
         # Output.
         echo -e $blue"Your config is backed up in "$backupdir"\n" >&2
         echo -e $red"Please do not delete check-backup.txt in .dotfiles.orig folder."$white >&2
-        echo -e "It used for backup and restoring your old config.\n" >&2
+        echo -e "It's used to backup and restore your old config.\n" >&2
     fi
 
     # Install config.
@@ -97,9 +97,9 @@ uninstall() {
     fi
 
     if ! [ -f $backupdir/check-backup.txt ]; then
-        echo -e $red"You didn't install this dotfiles yet."$white >&2
+        echo -e $red"You have not installed this dotfiles yet."$white >&2
     else
-        echo -e $blue"Your old config is restored!\n"$white >&2
+        echo -e $blue"Your old config has been restored!\n"$white >&2
         echo "Thanks for using my dotfiles." >&2
         echo "Enjoy your next journey!" >&2
     fi
