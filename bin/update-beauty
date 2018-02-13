@@ -155,7 +155,7 @@ arc-theme() {
 # Print help message.
 if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
     printusage
-    exit 1
+    exit 0
 fi
 
 # Update one by one.
@@ -245,7 +245,7 @@ if [[ -z "$1" ]]; then
             ;;
         *)
             echo "Cancelled."
-            exit 0;
+            exit 1;
             ;;
     esac
 fi
@@ -261,7 +261,7 @@ case "$CMD" in
         rofi
         dunst
         arc-theme
-        exit 1
+        exit 0
         ;;
     *)
         exit 1

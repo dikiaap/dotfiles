@@ -80,7 +80,7 @@ safecleaner() {
 
 if [[ -z "$1" ]] || [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
     printusage
-    exit 1
+    exit 0
 fi
 
 case "$CMD" in
@@ -97,5 +97,6 @@ case "$CMD" in
         ;;
     *)
         echo "Command not found"
+        exit 1
         ;;
 esac
