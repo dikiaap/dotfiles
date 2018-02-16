@@ -8,7 +8,8 @@
     <a href="https://dikiaap.id/extras/dotfiles/dunst.png">Dunst</a>&nbsp;&nbsp;&nbsp;
     <a href="https://dikiaap.id/extras/dotfiles/zsh.png">Zsh</a>&nbsp;&nbsp;&nbsp;
     <a href="https://dikiaap.id/extras/dotfiles/tmux.png">tmux</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://dikiaap.id/extras/dotfiles/colors.png">Colors</a>
+    <a href="https://dikiaap.id/extras/dotfiles/colors.png">Colors</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.id/extras/dotfiles/dircolors.png">dircolors</a>
 </p>
 
 
