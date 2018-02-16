@@ -1,4 +1,4 @@
-# dotfiles ❤ ~/
+<h1 align="center">dotfiles ❤ ~/</h1>
 
 ![dikiaap's dotfiles](https://dikiaap.id/extras/dotfiles/i3.png)
 
