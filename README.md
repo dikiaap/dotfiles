@@ -6,9 +6,9 @@
     <b>Screenshots</b><br>
     <a href="https://i.imgur.com/XEi6P3D.png">Rofi</a>&nbsp;&nbsp;&nbsp;
     <a href="https://i.imgur.com/69bnEZ1.png">Dunst</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://i.imgur.com/Kd90nji.png">Zsh</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://i.imgur.com/nfhVvXN.png">tmux</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://i.imgur.com/r1LOR5q.png">Colors</a>
+    <a href="https://i.imgur.com/f0j0t7z.png">Zsh</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://i.imgur.com/MBQ9zYz.png">tmux</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://i.imgur.com/OCNraI4.png">Colors</a>
 </p>
 
 
