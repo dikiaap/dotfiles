@@ -1,14 +1,14 @@
 # dotfiles ❤ ~/
 
-![dikiaap's dotfiles](https://i.imgur.com/IHjTPZ1.png)
+![dikiaap's dotfiles](https://dikiaap.id/extras/dotfiles/i3.png)
 
 <p align="center">
     <b>Screenshots</b><br>
-    <a href="https://i.imgur.com/XEi6P3D.png">Rofi</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://i.imgur.com/69bnEZ1.png">Dunst</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://i.imgur.com/f0j0t7z.png">Zsh</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://i.imgur.com/MBQ9zYz.png">tmux</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://i.imgur.com/OCNraI4.png">Colors</a>
+    <a href="https://dikiaap.id/extras/dotfiles/rofi.png">Rofi</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.id/extras/dotfiles/dunst.png">Dunst</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.id/extras/dotfiles/zsh.png">Zsh</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.id/extras/dotfiles/tmux.png">tmux</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.id/extras/dotfiles/colors.png">Colors</a>
 </p>
 
 
