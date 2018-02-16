@@ -1,7 +1,15 @@
 # dotfiles ❤ ~/
 
 ![dikiaap dotfiles](https://i.imgur.com/IHjTPZ1.png)
->   Get ready for dotfiles.
+
+<p align="center">
+    Screenshots:
+    <a href="https://dikiaap.id/dotfiles/rofi.png">Rofi</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.id/dotfiles/dunst.png">Dunst</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.id/dotfiles/zsh.png">Zsh</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.id/dotfiles/tmux.png">tmux</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.id/dotfiles/colors.png">Colors</a>&nbsp;&nbsp;&nbsp;
+</p>
 
 
 ## Details
