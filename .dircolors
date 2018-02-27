@@ -73,14 +73,14 @@ TERM xterm-debian
 TERM xterm-new
 TERM xterm-termite
 
-# Attribute codes: 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Attribute codes: 0=none 1=bold 2=dim 4=underline 5=blink 7=reverse 8=hidden
 # Foreground color codes: 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # Background color codes: 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 
 # General
 EIGHTBIT 1
-NORMAL 00
-FILE 00
+NORMAL 0
+FILE 0
 DIR 36
 OTHER_WRITABLE 30;43
 LINK 35
@@ -89,9 +89,9 @@ SOCK 35;44
 DOOR 35;44
 BLK 33;44
 CHR 37;44
-ORPHAN 05;37;41
-MISSING 05;37;41
-EXEC 01;31
+ORPHAN 5;37;41
+MISSING 5;37;41
+EXEC 1;31
 
 # Text
 .md 32
@@ -289,57 +289,57 @@ EXEC 01;31
 .xlsx 31
 
 # Archives
-.7z 01;35
-.arj 01;35
-.bin 01;35
-.bz 01;35
-.bz2 01;35
-.cab 01;35
-.crx 01;35
-.deb 01;35
-.dmg 01;35
-.gem 01;35
-.gz 01;35
-.iso 01;35
-.jar 01;35
-.msi 01;35
-.pkg 01;35
-.rar 01;35
-.rpm 01;35
-.tar 01;35
-.tbz 01;35
-.tbz2 01;35
-.tgz 01;35
-.tx 01;35
-.war 01;35
-.xpi 01;35
-.xz 01;35
-.z 01;35
-.Z 01;35
-.zip 01;35
+.7z 1;35
+.arj 1;35
+.bin 1;35
+.bz 1;35
+.bz2 1;35
+.cab 1;35
+.crx 1;35
+.deb 1;35
+.dmg 1;35
+.gem 1;35
+.gz 1;35
+.iso 1;35
+.jar 1;35
+.msi 1;35
+.pkg 1;35
+.rar 1;35
+.rpm 1;35
+.tar 1;35
+.tbz 1;35
+.tbz2 1;35
+.tgz 1;35
+.tx 1;35
+.war 1;35
+.xpi 1;35
+.xz 1;35
+.z 1;35
+.Z 1;35
+.zip 1;35
 
 # Miscellaneous
 .torrent 34
 .crdownload 37
 
 # Backup, Temporary, & Stuff
-*~ 01;34
-*# 01;34
-.log 01;34
-.bak 01;36
-.BAK 01;36
-.dat 01;36
-.DAT 01;36
-.dist 01;36
-.DIST 01;36
-.dll 01;36
-.off 01;36
-.OFF 01;36
-.old 01;36
-.OLD 01;36
-.org_archive 01;36
-.orig 01;36
-.ORIG 01;36
-.swo 01;36
-.swp 01;36
-.tmp 01;36
+*~ 1;34
+*# 1;34
+.log 1;34
+.bak 1;36
+.BAK 1;36
+.dat 1;36
+.DAT 1;36
+.dist 1;36
+.DIST 1;36
+.dll 1;36
+.off 1;36
+.OFF 1;36
+.old 1;36
+.OLD 1;36
+.org_archive 1;36
+.orig 1;36
+.ORIG 1;36
+.swo 1;36
+.swp 1;36
+.tmp 1;36
