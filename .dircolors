@@ -1,3 +1,6 @@
+# Oxide dircolors by Diki Ananta (https://github.com/dikiaap/dotfiles)
+# Modification from Solarized dircolors (https://github.com/seebi/dircolors-solarized)
+
 COLOR tty
 TERM ansi
 TERM color_xterm
@@ -93,11 +96,27 @@ ORPHAN 5;37;41
 MISSING 5;37;41
 EXEC 1;31
 
-# Text
+# Documentation & Stuff
 .md 32
 .mkd 32
 .org 32
 .txt 32
+*AUTHORS 1;32
+*CHANGELOG.md 1;32
+*CHANGES 1;32
+*CONTRIBUTORS 1;32
+*COPYING 1;32
+*COPYRIGHT 1;32
+*HISTORY 1;32
+*INSTALL 1;32
+*INSTALL.md 1;32
+*LICENSE 1;32
+*NOTICE 1;32
+*PATENTS 1;32
+*README 1;32
+*README.md 1;32
+*README.rst 1;32
+*VERSION 1;32
 
 # Programming & Stuff
 .aspx 32
@@ -159,6 +178,9 @@ EXEC 1;31
 .yaml 32
 .yml 32
 .zsh 32
+.gitignore 38;5;245
+.gitattributes 38;5;245
+.gitmodules 38;5;245
 
 # Unix & Stuff
 .3des 34
@@ -186,6 +208,7 @@ EXEC 1;31
 # Image
 .ai 33
 .bmp 33
+.cdr 33
 .cgm 33
 .dl 33
 .dvi 33
@@ -232,8 +255,11 @@ EXEC 1;31
 .opus 33
 .ra 33
 .wav 33
+.wma 33
 
 # Video
+.3g2 33
+.3gp 33
 .anx 33
 .asf 33
 .avi 33
@@ -302,10 +328,14 @@ EXEC 1;31
 .gz 1;35
 .iso 1;35
 .jar 1;35
+.lz 1;35
+.lzma 1;35
 .msi 1;35
 .pkg 1;35
 .rar 1;35
 .rpm 1;35
+.s7z 1;35
+.sz 1;35
 .tar 1;35
 .tbz 1;35
 .tbz2 1;35
@@ -317,6 +347,7 @@ EXEC 1;31
 .z 1;35
 .Z 1;35
 .zip 1;35
+.zipx 1;35
 
 # Miscellaneous
 .torrent 34
@@ -333,6 +364,7 @@ EXEC 1;31
 .dist 1;36
 .DIST 1;36
 .dll 1;36
+.o 1;36
 .off 1;36
 .OFF 1;36
 .old 1;36
@@ -340,6 +372,10 @@ EXEC 1;31
 .org_archive 1;36
 .orig 1;36
 .ORIG 1;36
+.pid 1;36
+.rlib 1;36
+.sassc 1;36
 .swo 1;36
 .swp 1;36
 .tmp 1;36
+*lockfile 1;36
