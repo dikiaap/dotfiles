@@ -15,10 +15,10 @@ export HISTSIZE=2000                # big history (default is 500)
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # Highlighting inside manpages and elsewhere.
-export LESS_TERMCAP_mb=$'\E[01;31m'         # start blinking
-export LESS_TERMCAP_md=$'\E[01;38;5;74m'    # start bold mode
-export LESS_TERMCAP_me=$'\E[0m'             # end all mode
-export LESS_TERMCAP_so=$'\E[38;5;215m'      # start standout mode
-export LESS_TERMCAP_se=$'\E[0m'             # end standout mode
-export LESS_TERMCAP_us=$'\E[04;38;5;146m'   # start underline
-export LESS_TERMCAP_ue=$'\E[0m'             # end underline
+export LESS_TERMCAP_mb=$'\e[01;31m'         # start blinking
+export LESS_TERMCAP_md=$'\e[01;34m'         # start bold mode
+export LESS_TERMCAP_me=$'\e[0m'             # end all mode
+export LESS_TERMCAP_so=$'\e[38;5;215m'      # start standout mode
+export LESS_TERMCAP_se=$'\e[0m'             # end standout mode
+export LESS_TERMCAP_us=$'\e[04;35m'         # start underline
+export LESS_TERMCAP_ue=$'\e[0m'             # end underline
