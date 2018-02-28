@@ -26,6 +26,7 @@ TERM eterm-color
 TERM fbterm
 TERM gnome
 TERM gnome-256color
+TERM hurd
 TERM jfbterm
 TERM konsole
 TERM konsole-256color
@@ -33,6 +34,7 @@ TERM kterm
 TERM linux
 TERM linux-c
 TERM mach-color
+TERM mach-gnu-color
 TERM mlterm
 TERM nxterm
 TERM putty
@@ -85,17 +87,24 @@ TERM xterm-termite
 EIGHTBIT 1
 NORMAL 0
 FILE 0
+RESET 0
 DIR 36
 LINK 4;35
-ORPHAN 5;38;5;255;41
-MISSING 5;38;5;255;41
+MULTIHARDLINK 4;32
 FIFO 30;44
-SOCK 38;5;224;44
+SOCK 38;5;125;44
 DOOR 30;45
 BLK 38;5;221;44
 CHR 38;5;255;44
+ORPHAN 5;38;5;255;41
+MISSING 5;38;5;255;41
+SETUID 30;41
+SETGID 30;43
+CAPABILITY 30;42
+STICKY_OTHER_WRITABLE 38;5;161;46
+OTHER_WRITABLE 30;46
+STICKY 38;5;54;44
 EXEC 1;31
-OTHER_WRITABLE 30;43
 
 # Documentation & Stuff
 .info 34
@@ -234,6 +243,7 @@ OTHER_WRITABLE 30;43
 .ini 34
 .otf 34
 .pgp 34
+.pid 34
 .ttf 34
 
 # Executable
@@ -409,7 +419,6 @@ OTHER_WRITABLE 30;43
 .org_archive 38;5;246
 .orig 38;5;246
 .ORIG 38;5;246
-.pid 38;5;246
 .rlib 38;5;246
 .sassc 38;5;246
 .swo 38;5;246
