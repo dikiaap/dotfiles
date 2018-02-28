@@ -102,14 +102,24 @@ OTHER_WRITABLE 30;43
 .log 34
 .markdown 34
 .md 34
+.MD 34
 .mkd 34
 .org 34
 .rst 34
 .txt 34
+.TXT 34
 *AUTHORS 1;34
+*Changelog 1;34
 *ChangeLog 1;34
+*CHANGELOG 1;34
 *CHANGELOG.md 1;34
 *CHANGES 1;34
+*CHANGES.md 1;34
+*code-of-conduct.md 1;34
+*CODE_OF_CONDUCT.md 1;34
+*CONTRIBUTING 1;34
+*contributing.md 1;34
+*CONTRIBUTING.md 1;34
 *CONTRIBUTORS 1;34
 *COPYING 1;34
 *COPYRIGHT 1;34
@@ -118,11 +128,15 @@ OTHER_WRITABLE 30;43
 *INSTALL 1;34
 *INSTALL.md 1;34
 *LICENSE 1;34
+*LICENSE.md 1;34
+*LICENSE.MD 1;34
 *NEWS 1;34
 *NOTICE 1;34
 *PATENTS 1;34
 *README 1;34
+*readme.md 1;34
 *README.md 1;34
+*README.MD 1;34
 *README.rst 1;34
 *THANKS 1;34
 *TODO 1;34
@@ -374,8 +388,8 @@ OTHER_WRITABLE 30;43
 .crdownload 37
 
 # Backup, Temporary, & Stuff
-*~ 34
-*# 34
+*~ 1;34
+*# 1;34
 .bak 38;5;246
 .BAK 38;5;246
 .dat 38;5;246
