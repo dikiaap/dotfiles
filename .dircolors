@@ -200,6 +200,7 @@ OTHER_WRITABLE 30;43
 .svh 32
 .tex 32
 .toml 32
+.ts 32
 .v 32
 .vh 32
 .vhd 32
@@ -211,6 +212,9 @@ OTHER_WRITABLE 30;43
 .am 38;5;246
 .in 38;5;246
 .m4 38;5;246
+.editorconfig 38;5;246
+.env 38;5;246
+.env.example 38;5;246
 .gitignore 38;5;246
 .gitattributes 38;5;246
 .gitmodules 38;5;246
