@@ -32,10 +32,10 @@ composer() {
 
 npm() {
     echo -e $magenta"\n Updating npm... \n"$white
-    sudo npm install npm -g
+    npm install npm -g
 
     echo -e $magenta"\n Updating npm Packages... \n"$white
-    sudo npm update -g
+    npm update -g
 }
 
 gem() {
