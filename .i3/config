@@ -36,8 +36,8 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # window border settings
-new_window  none
-new_float   none
+default_border          none
+default_floating_border none
 
 # hiding borders adjacent to the screen edges
 hide_edge_borders none
