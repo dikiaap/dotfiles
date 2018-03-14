@@ -29,12 +29,12 @@ font:
   size: 9.5
 
   offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 
   glyph_offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 
   use_thin_strokes: false
 
