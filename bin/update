@@ -38,6 +38,14 @@ npm() {
     ~/.npm-global/bin/npm update -g
 }
 
+rustup() {
+    echo -e $magenta"\n Updating rustup... \n"$white
+    ~/.cargo/bin/rustup self update
+
+    echo -e $magenta"\n Updating Rust... \n"$white
+    ~/.cargo/bin/rustup update
+}
+
 gem() {
     echo -e $magenta"\n Updating Gem System... \n"$white
     sudo gem update --system
@@ -93,6 +101,17 @@ if [[ -z "$1" ]]; then
     esac
 
     echo
+    read -r -p "Do you want to upgrade rustup packages? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            rustup
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+
+    echo
     read -r -p "Do you want to upgrade gem packages? [y/n] " response
     case $response in
         [yY][eE][sS]|[yY])
@@ -123,6 +142,7 @@ case "$CMD" in
         apt
         composer
         npm
+        rustup
         gem
         vim
         exit 0
