@@ -144,12 +144,8 @@ arc-theme() {
     git pull
     rm -rfv .idea autom4te.cache build-aux common/Makefile common/Makefile.in extra/Makefile extra/Makefile.in aclocal.m4 compile config.log config.status configure install-sh Makefile Makefile.in missing
     sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
-    ./autogen.sh --prefix=/usr --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm
+    ./autogen.sh --prefix=/usr --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm --disable-plank
     sudo make install
-    echo -e $magenta"\n Updating arc-openbox... \n"$white
-    cd ~/.local/src/arc-openbox
-    git pull
-    cp -rfv Arc* ~/.themes
 }
 
 # Print help message.
