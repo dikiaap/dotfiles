@@ -6,7 +6,7 @@
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('%F{blue}`basename $VIRTUAL_ENV`%f') '
+    [ "$VIRTUAL_ENV" ] && echo '('"%F{blue}$(basename "$VIRTUAL_ENV")"%f') '
 }
 PR_GIT_UPDATE=1
 
@@ -16,7 +16,7 @@ autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
 # use extended color palette if available.
-if [[ $terminfo[colors] -ge 256 ]]; then
+if [[ "${terminfo[colors]}" -ge 256 ]]; then
     turquoise="%F{73}"
     orange="%F{179}"
     purple="%F{140}"
