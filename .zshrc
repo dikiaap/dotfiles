@@ -28,7 +28,7 @@ plugins=(
 source ~/.exports
 
 # Oh My Zsh time!
-source $ZSH/oh-my-zsh.sh
+source "$ZSH"/oh-my-zsh.sh
 
 # User config.
 source ~/.zsh/setopt.zsh
@@ -46,11 +46,11 @@ source ~/.zsh/plugins/z/z.sh
 
 # Manage SSH with Keychain.
 if [ -x "$(command -v keychain)" ]; then
-    eval `keychain --eval --quiet id_rsa_github id_rsa_gitlab`
+    eval "$(keychain --eval --quiet id_rsa_github id_rsa_gitlab)"
 fi
 
 # Base16 Shell.
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+[ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Start tmux.
 if [[ -x "$(command -v tmux)" && "$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))" = "alacritty" ]]; then
