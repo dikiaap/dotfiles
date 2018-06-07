@@ -36,6 +36,8 @@ font:
     x: 0
     y: 0
 
+  scale_with_dpi: false
+
   use_thin_strokes: false
 
 render_timer: false
