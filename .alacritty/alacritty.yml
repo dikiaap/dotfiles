@@ -107,6 +107,8 @@ hide_cursor_when_typing: false
 
 cursor_style: Block
 
+unfocused_hollow_cursor: true
+
 live_config_reload: false
 
 key_bindings:
