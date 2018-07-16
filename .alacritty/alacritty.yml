@@ -49,6 +49,7 @@ colors:
   primary:
     background: '0x212121'
     foreground: '0xC0C5CE'
+    bright_foreground: '0xF3F4F5'
 
   cursor:
     text: '0x212121'
