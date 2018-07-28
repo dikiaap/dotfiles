@@ -57,7 +57,7 @@ alias gpg='gpg2'
 alias incognito='unset HISTFILE'
 alias ln='ln -s'
 alias mp3-dl='youtube-dl --ignore-config --extract-audio \
-    --audio-format "mp3" --audio-quality 1 --embed-thumbnail \
+    --audio-format "mp3" --audio-quality 0 --embed-thumbnail \
     --add-metadata --metadata-from-title "%(artist)s - %(title)s" \
     --output "%(title)s.%(ext)s"'
 alias pbcopy='xclip -selection clipboard'
