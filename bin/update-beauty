@@ -95,6 +95,7 @@ i3lock() {
     echo -e $magenta"\n Updating i3lock-fancy... \n"$white
     cd ~/.local/src/i3lock-fancy
     git pull
+    sudo make install
 }
 
 rofi() {
