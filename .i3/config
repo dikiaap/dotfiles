@@ -156,7 +156,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+F1                 exec gkamus
 bindsym $mod+F2 workspace $ws2; exec subl
 bindsym $mod+F3 workspace $ws3; exec chromium-browser
-bindsym $mod+F4 workspace $ws4; exec thunar
+bindsym $mod+F4 workspace $ws4; exec pcmanfm
 bindsym $mod+F5 workspace $ws5; exec evince
 bindsym $mod+F6 workspace $ws6; exec audacious
 bindsym $mod+F7 workspace $ws7; exec gcolor2
@@ -221,7 +221,7 @@ assign [class="Sublime"]            → $ws2
 assign [class="Chromium"]           → $ws3
 assign [class="Firefox"]            → $ws3
 assign [class="Authy"]              → $ws3
-assign [class="Thunar"]             → $ws4
+assign [class="Pcmanfm"]            → $ws4
 assign [class="Evince"]             → $ws5
 assign [class="ghostwriter"]        → $ws5
 assign [class="libreoffice"]        → $ws5
