@@ -24,3 +24,22 @@ function phpserver() {
     local port="${1:-4000}"
     php -S "${ip}:${port}"
 }
+
+git-remove-all-commit() {
+    branch=$(git symbolic-ref --short HEAD)
+    echo -e "\\nDo you want to remove all your commit in \\033[1m$branch\\033[0m branch? [Y/n] "
+    read -r response
+    case "$response" in
+        [yY][eE][sS]|[yY]|"")
+            git checkout --orphan latest_branch
+            git add -A
+            git commit -am "Initial commit"
+            git branch -D "$branch"
+            git branch -m "$branch"
+            echo -e "\\nTo force update your repository, run this command:\\n\\n    git push -fu origin $branch"
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
+}
