@@ -24,10 +24,10 @@ apt() {
 
 composer() {
     echo -e $magenta"\n Updating Composer Installer... \n"$white
-    sudo composer self-update --snapshot
+    ~/.local/bin/composer self-update --snapshot
 
     echo -e $magenta"\n Updating Composer Packages... \n"$white
-    /usr/local/bin/composer global update
+    ~/.local/bin/composer global update
 }
 
 npm() {
@@ -51,7 +51,7 @@ gem() {
     sudo gem update --system
 
     echo -e $magenta"\n Updating Gems... \n"$white
-    sudo gem update
+    /usr/bin/gem update
 }
 
 vim() {
