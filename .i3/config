@@ -213,6 +213,7 @@ for_window [class="Go-for-it"]                      floating enable
 for_window [class="Lightdm-gtk-greeter-settings"]   floating enable
 for_window [class="Lxappearance"]                   floating enable
 for_window [class="Menu"]                           floating enable
+for_window [class="Nm-connection-editor"]           floating enable
 for_window [class="Software-properties-gtk"]        floating enable
 
 # assign program to workspace
