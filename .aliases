@@ -50,7 +50,7 @@ alias tmp='cd ~/Temporary; la'
 
 # shortcuts
 alias c='clear'
-alias cat='ccat'
+alias cat='bat --theme Material-Theme-Darker'
 alias ch='echo > ~/.bash_history && echo > ~/.zsh_history'
 alias cz='echo > ~/.z'
 alias e='exit'
