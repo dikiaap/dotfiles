@@ -4,8 +4,11 @@ export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.npm-global/bin:$HOME/.cargo
 export LANG="en_US.UTF-8"
 export EDITOR="subl"
 export TERM="xterm-256color"
-export BASE16_SHELL="$HOME/.config/base16-shell"
 export PROMPT_EOL_MARK=""
+
+# User settings.
+export BASE16_SHELL="$HOME/.config/base16-shell"
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Bash history settings.
 export HISTTIMEFORMAT="%F %T "      # the format is from date command
