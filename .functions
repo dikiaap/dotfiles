@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-function apt-clean() {
+apt-clean() {
     sudo apt-get clean
     sudo apt-get autoclean
     sudo apt-get autoremove
 }
 
-function mkd() {
+mkd() {
     mkdir -p "$@" && cd "$@"
 }
 
-function readme() {
+readme() {
     for readme in {readme,README}.{md,MD,markdown,txt,TXT,mkd}; do
         if [[ -f "$readme" ]]; then
             cat $readme
@@ -19,7 +19,7 @@ function readme() {
 }
 
 # Developer functions.
-function phpserver() {
+phpserver() {
     local ip=localhost
     local port="${1:-4000}"
     php -S "${ip}:${port}"
