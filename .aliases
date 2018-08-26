@@ -54,7 +54,6 @@ alias cat='bat --theme Material-Theme-Darker'
 alias ch='echo > ~/.bash_history && echo > ~/.zsh_history'
 alias cz='echo > ~/.z'
 alias e='exit'
-alias fresh='cd . && lxterminal && quit'
 alias incognito='unset HISTFILE'
 alias ln='ln -s'
 alias mp3-dl='youtube-dl --ignore-config --extract-audio \
