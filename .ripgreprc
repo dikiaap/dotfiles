@@ -11,7 +11,7 @@
 --glob=!{.git,.svn,.tldr,node_modules,Trash,vendor}
 
 # Exclude file types.
---glob=!*{.lock}
+--glob=!*.{lock}
 
 # Exclude files.
 --glob=!{package-lock.json}
