@@ -30,8 +30,11 @@
         - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - Make your diff's human readable instead of machine readable.
     - [Composer](https://github.com/composer/composer) - Dependency Manager for PHP.
     - [npm](https://github.com/npm/npm) - A package manager for JavaScript.
+    - [Cargo](https://github.com/rust-lang/cargo) - A package manager for Rust.
     - [RubyGems](https://github.com/rubygems/rubygems) - A package manager for Ruby.
     - [htop](https://github.com/hishamhm/htop) - An interactive text-mode process viewer.
+    - [bat](https://github.com/sharkdp/bat) - A cat(1) clone with syntax highlighting and Git integration.
+    - [ripgrep](https://github.com/BurntSushi/ripgrep) - A line-oriented search tool that recursively searches directories for a regex pattern.
     - [Wget](https://www.gnu.org/software/wget/) - A free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS.
     - [Hack](https://sourcefoundry.org/hack/) - Terminal font.
 - GUI
