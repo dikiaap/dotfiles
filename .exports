@@ -4,6 +4,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.npm-global/bin:$HOME/.cargo
 export LANG="en_US.UTF-8"
 export EDITOR="subl"
 export TERM="xterm-256color"
+export COLORTERM="truecolor"
 export PROMPT_EOL_MARK=""
 
 # User settings.
