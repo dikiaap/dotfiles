@@ -1,13 +1,13 @@
 root = true
 
 [*]
-indent_style = space
-end_of_line = lf
 charset = utf-8
+indent_style = space
 trim_trailing_whitespace = true
+end_of_line = lf
 insert_final_newline = true
 
-[*.{json,yml}]
+[*.{css,html,json,yml}]
 indent_style = space
 indent_size = 2
 
