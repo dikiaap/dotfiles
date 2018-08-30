@@ -49,7 +49,7 @@ popup_during_fullscreen smart
 bindsym $mod+Return workspace $ws1; exec --no-startup-id alacritty
 
 # start a program launcher
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF'"
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2b83a6' -sf '#ffffff'"
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # switching window with win+tab
@@ -258,11 +258,11 @@ assign [class="Lightdm-gtk-greeter-settings"]   → $ws10
 assign [class="Software-properties-gtk"]        → $ws10
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD   #2B83A6
-client.focused_inactive #212121 #212121 #86888C #292D2E   #5A5A5A
-client.unfocused        #212121 #212121 #86888C #292D2E   #5A5A5A
-client.urgent           #D64E4E #D64E4E #FFFFFF #D64E4E   #D64E4E
-client.placeholder      #212121 #0C0C0C #FFFFFF #212121   #262626
+client.focused          #2b83a6 #2b83a6 #ffffff #dddddd   #2b83a6
+client.focused_inactive #212121 #212121 #86888c #292d2e   #5a5a5a
+client.unfocused        #212121 #212121 #86888c #292d2e   #5a5a5a
+client.urgent           #d64e4e #d64e4e #ffffff #d64e4e   #d64e4e
+client.placeholder      #212121 #0c0c0c #ffffff #212121   #262626
 client.background       #212121
 
 # start i3bar to display a workspace bar
@@ -278,13 +278,13 @@ bar {
 
     colors {
         background  #212121
-        statusline  #DDDDDD
+        statusline  #dddddd
         separator   #666666
         # class             border  backgr. text
-        focused_workspace   #2B83A6 #2B83A6 #FFFFFF
-        active_workspace    #212121 #212121 #FFFFFF
-        inactive_workspace  #212121 #212121 #86888C
-        urgent_workspace    #D64E4E #D64E4E #FFFFFF
+        focused_workspace   #2b83a6 #2b83a6 #ffffff
+        active_workspace    #212121 #212121 #ffffff
+        inactive_workspace  #212121 #212121 #86888c
+        urgent_workspace    #d64e4e #d64e4e #ffffff
     }
 }
 
