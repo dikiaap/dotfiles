@@ -48,32 +48,32 @@ custom_cursor_colors: false
 colors:
   primary:
     background: '0x212121'
-    foreground: '0xC0C5CE'
-    bright_foreground: '0xF3F4F5'
+    foreground: '0xc0c5ce'
+    bright_foreground: '0xf3f4f5'
 
   cursor:
     text: '0x212121'
-    cursor: '0xC0C5CE'
+    cursor: '0xc0c5ce'
 
   normal:
     black:   '0x212121'
-    red:     '0xE57373'
-    green:   '0xA6BC69'
-    yellow:  '0xFAC863'
-    blue:    '0x6699CC'
-    magenta: '0xC594C5'
-    cyan:    '0x5FB3B3'
-    white:   '0xC0C5CE'
+    red:     '0xe57373'
+    green:   '0xa6bc69'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xc0c5ce'
 
   bright:
-    black:   '0x65737E'
-    red:     '0xE57373'
-    green:   '0xA6BC69'
-    yellow:  '0xFAC863'
-    blue:    '0x6699CC'
-    magenta: '0xC594C5'
-    cyan:    '0x5FB3B3'
-    white:   '0xD8DEE9'
+    black:   '0x65737e'
+    red:     '0xe57373'
+    green:   '0xa6bc69'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xd8dee9'
 
   dim:
     black:   '0x333333'
