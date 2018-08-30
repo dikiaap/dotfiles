@@ -4,28 +4,28 @@
 # Oxide scheme by Diki Ananta (https://github.com/dikiaap)
 
 color00="21/21/21" # Base 00 - Black
-color01="E5/73/73" # Base 08 - Red
-color02="A6/BC/69" # Base 0B - Green
-color03="FA/C8/63" # Base 0A - Yellow
-color04="66/99/CC" # Base 0D - Blue
-color05="C5/94/C5" # Base 0E - Magenta
-color06="5F/B3/B3" # Base 0C - Cyan
-color07="C0/C5/CE" # Base 05 - White
-color08="65/73/7E" # Base 03 - Bright Black
+color01="e5/73/73" # Base 08 - Red
+color02="a6/bc/69" # Base 0B - Green
+color03="fa/c8/63" # Base 0A - Yellow
+color04="66/99/cc" # Base 0D - Blue
+color05="c5/94/c5" # Base 0E - Magenta
+color06="5f/b3/b3" # Base 0C - Cyan
+color07="c0/c5/ce" # Base 05 - White
+color08="65/73/7e" # Base 03 - Bright Black
 color09=$color01 # Base 08 - Bright Red
 color10=$color02 # Base 0B - Bright Green
 color11=$color03 # Base 0A - Bright Yellow
 color12=$color04 # Base 0D - Bright Blue
 color13=$color05 # Base 0E - Bright Magenta
 color14=$color06 # Base 0C - Bright Cyan
-color15="F3/F4/F5" # Base 07 - Bright White
-color16="F9/91/57" # Base 09
-color17="AB/79/67" # Base 0F
-color18="34/3D/46" # Base 01
-color19="4F/5B/66" # Base 02
-color20="A7/AD/BA" # Base 04
-color21="CD/D3/DE" # Base 06
-color_foreground="C0/C5/CE" # Base 05
+color15="f3/f4/f5" # Base 07 - Bright White
+color16="f9/91/57" # Base 09
+color17="ab/79/67" # Base 0F
+color18="34/3d/46" # Base 01
+color19="4f/5b/66" # Base 02
+color20="a7/ad/ba" # Base 04
+color21="cd/d3/de" # Base 06
+color_foreground="c0/c5/ce" # Base 05
 color_background="21/21/21" # Base 00
 
 if [ -n "$TMUX" ]; then
@@ -78,13 +78,13 @@ put_template 21 $color21
 # foreground / background / cursor color
 if [ -n "$ITERM_SESSION_ID" ]; then
   # iTerm2 proprietary escape codes
-  put_template_custom Pg C0C5CE # foreground
-  put_template_custom Ph 1B2B34 # background
-  put_template_custom Pi C0C5CE # bold color
-  put_template_custom Pj 4F5B66 # selection color
-  put_template_custom Pk C0C5CE # selected text color
-  put_template_custom Pl C0C5CE # cursor
-  put_template_custom Pm 1B2B34 # cursor text
+  put_template_custom Pg c0c5ce # foreground
+  put_template_custom Ph 1b2b34 # background
+  put_template_custom Pi c0c5ce # bold color
+  put_template_custom Pj 4f5b66 # selection color
+  put_template_custom Pk c0c5ce # selected text color
+  put_template_custom Pl c0c5ce # cursor
+  put_template_custom Pm 1b2b34 # cursor text
 else
   put_template_var 10 $color_foreground
   if [ "$BASE16_SHELL_SET_BACKGROUND" != false ]; then
