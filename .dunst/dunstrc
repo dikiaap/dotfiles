@@ -17,7 +17,7 @@
     font = Source Sans Pro 10
     line_height = 0
     markup = full
-    format = "<span foreground='#F3F4F5'><b>%s %p</b></span>\n%b"
+    format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
     alignment = left
     show_age_threshold = 60
     word_wrap = yes
@@ -48,17 +48,17 @@
 
 [urgency_low]
     background = "#232323"
-    foreground = "#A8A8A8"
+    foreground = "#a8a8a8"
     timeout = 10
 
 [urgency_normal]
     background = "#232323"
-    foreground = "#A8A8A8"
+    foreground = "#a8a8a8"
     timeout = 10
 
 [urgency_critical]
-    background = "#D64E4E"
-    foreground = "#F0E0E0"
-    frame_color = "#D64E4E"
+    background = "#d64e4e"
+    foreground = "#f0e0e0"
+    frame_color = "#d64e4e"
     timeout = 0
     icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
