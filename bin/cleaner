@@ -33,19 +33,19 @@ safecleaner() {
     /usr/bin/gem cleanup
 
     echo -e $magenta"\n Cleaning Shell History... \n"$white
-    echo > ~/.bash_history && echo > ~/.zsh_history && echo > ~/.z
+    echo > ~/.bash_history && echo > ~/.zsh_history && echo > ~/.z && rm -fv ~/.z.*
 
     echo -e $magenta"\n Cleaning Junk Files... \n"$white
     rm -rfv ~/.local/share/Trash/*
-    rm -rfv ~/.local/share/recently-used.xbel
-    rm -rfv ~/.lesshst
-    rm -rfv ~/.xsession-errors*
+    rm -fv ~/.local/share/recently-used.xbel
+    rm -fv ~/.lesshst
+    rm -fv ~/.xsession-errors*
 
     echo -e $magenta"\n Cleaning Vim... \n"$white
     rm -rfv ~/.local/share/nvim/backup/*
     rm -rfv ~/.local/share/nvim/swap/*
     rm -rfv ~/.local/share/nvim/undo/*
-    rm -rfv ~/.viminfo
+    rm -fv ~/.viminfo
 
     echo -e $magenta"\n Cleaning Log System... \n"$white
     sudo sh -c "echo > /var/log/dpkg.log"
