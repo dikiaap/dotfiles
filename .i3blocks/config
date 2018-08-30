@@ -1,10 +1,10 @@
 command=/usr/libexec/i3blocks/$BLOCK_NAME
 separator_block_width=15
-color=#F3F4F5
+color=#f3f4f5
 markup=none
 
 [volume-pulseaudio]
-command=~/.local/bin/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio -F 3 -f 3 -a -C '#F3F4F5' -m pulse -s Master
+command=~/.local/bin/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio -F 3 -f 3 -a -C '#f3f4f5' -m pulse -s Master
 interval=1
 signal=10
 
