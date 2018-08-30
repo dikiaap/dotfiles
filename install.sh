@@ -7,7 +7,7 @@ white='\e[0;37m'
 CMD="$1"
 dotfilesdir=$(pwd)
 backupdir=~/.dotfiles.orig
-dotfiles=(.i3 .zsh .aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .tmux.conf .wgetrc .Xresources .zshrc)
+dotfiles=(.i3 .zsh .aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .ripgreprc .tmux.conf .wgetrc .Xresources .zshrc)
 dotfiles_config=(.alacritty .compton .dunst .htop .i3blocks .rofi)
 
 printusage() {
