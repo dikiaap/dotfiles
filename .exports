@@ -9,6 +9,11 @@ export PROMPT_EOL_MARK=""
 
 # User settings.
 export BASE16_SHELL="$HOME/.config/base16-shell"
+export BAT_THEME="Material-Theme-Darker"
+export FZF_DEFAULT_OPTS="
+    --color=fg:#c0c5ce,bg:#212121,hl:#808080,fg+:#e6e6e6,bg+:#3b3b3b,hl+:#f7c662
+    --color=info:#f7c662,prompt:#6699cc,pointer:#a6bc69,marker:#a6bc69,spinner:#f7c662,header:#6699cc
+"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Bash history settings.
