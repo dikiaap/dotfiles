@@ -298,5 +298,5 @@ exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
-exec --no-startup-id feh --bg-fill ~/Public/desktop/dark-planet-minimalist.png
+exec --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
