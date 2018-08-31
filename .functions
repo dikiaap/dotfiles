@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 
+# Clean Debian packages
 apt-clean() {
     sudo apt-get clean
     sudo apt-get autoclean
     sudo apt-get autoremove
 }
 
+# Create a new directory and enter it
 mkd() {
     mkdir -p "$@" && cd "$@"
 }
 
+# Print README file
 readme() {
     for readme in {readme,README}.{md,MD,markdown,txt,TXT,mkd}; do
         if [[ -f "$readme" ]]; then
@@ -18,13 +21,7 @@ readme() {
     done
 }
 
-# Developer functions.
-phpserver() {
-    local ip=localhost
-    local port="${1:-4000}"
-    php -S "${ip}:${port}"
-}
-
+# Remove all commit in Git
 git-remove-all-commit() {
     branch=$(git symbolic-ref --short HEAD)
     echo -e "\\nDo you want to remove all your commit in \\033[1m$branch\\033[0m branch? [Y/n] "
@@ -42,4 +39,11 @@ git-remove-all-commit() {
             echo "Cancelled."
             ;;
     esac
+}
+
+# Start PHP server
+phpserver() {
+    local ip=localhost
+    local port="${1:-4000}"
+    php -S "${ip}:${port}"
 }
