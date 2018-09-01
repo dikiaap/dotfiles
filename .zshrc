@@ -44,6 +44,9 @@ source ~/.functions_private
 # Tracks your most used directories, based on frecency with z.
 source ~/.zsh/plugins/z/z.sh
 
+# fzf key bindings.
+source ~/.fzf/shell/key-bindings.zsh
+
 # Manage SSH with Keychain.
 if [ -x "$(command -v keychain)" ]; then
     eval "$(keychain --eval --quiet id_rsa_github id_rsa_gitlab)"
