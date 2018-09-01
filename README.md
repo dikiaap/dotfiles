@@ -34,6 +34,7 @@
     - [RubyGems](https://github.com/rubygems/rubygems) - A package manager for Ruby.
     - [htop](https://github.com/hishamhm/htop) - An interactive text-mode process viewer.
     - [bat](https://github.com/sharkdp/bat) - A cat(1) clone with syntax highlighting and Git integration.
+    - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder.
     - [ripgrep](https://github.com/BurntSushi/ripgrep) - A line-oriented search tool that recursively searches directories for a regex pattern.
     - [Wget](https://www.gnu.org/software/wget/) - A free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS.
     - [Hack](https://sourcefoundry.org/hack/) - Terminal font.
