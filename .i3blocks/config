@@ -10,7 +10,7 @@ signal=10
 
 [ram]
 label=
-command=/usr/libexec/i3blocks/memory | grep -E -o '[0-9].[0-9]?G'
+command=/usr/libexec/i3blocks/memory | grep -E -o '[0-9]+.[0-9]?G'
 interval=30
 
 [disk-home]
