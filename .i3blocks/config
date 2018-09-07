@@ -1,21 +1,24 @@
-command=/usr/libexec/i3blocks/$BLOCK_NAME
-separator_block_width=15
 color=#f3f4f5
+separator_block_width=15
 markup=none
 
 [volume-pulseaudio]
-command=~/.local/src/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio -F 3 -f 3 -a -C '#f3f4f5' -m pulse -s Master
+command=~/.local/src/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio
 interval=1
 signal=10
+LONG_FORMAT="${SYMB}${VOL}%"
+SHORT_FORMAT="${SYMB}${VOL}%"
+DEFAULT_COLOR="#f3f4f5"
+USE_ALSA_NAME=1
 
 [ram]
 label=
-command=/usr/libexec/i3blocks/memory | grep -E -o '[0-9]+.[0-9]?G'
+command=~/.local/src/i3blocks-contrib/memory/memory | grep -E -o '[0-9]+.[0-9]?G'
 interval=30
 
 [disk-home]
 label=
-command=df -h -P -l $HOME | awk '/\/.*/ { print $3; exit 0 }'
+command=df -h -P -l "$HOME" | awk '/\/.*/ { print $3; exit 0 }'
 interval=30
 
 [time]
