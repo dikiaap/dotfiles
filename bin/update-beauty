@@ -68,7 +68,7 @@ i3blocks() {
     /usr/bin/i3blocks -V
     echo "───────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Updating i3blocks-contrib... \n"$white
-    cd ~/.local/bin/i3blocks-contrib
+    cd ~/.local/src/i3blocks-contrib
     git pull
 }
 
