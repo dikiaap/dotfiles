@@ -67,7 +67,7 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias st='syncthing'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date "+%a, %d %b %H:%M:%S" && time cat && date "+%a, %d %b %H:%M:%S"'
-alias weather='curl -s wttr.in/Ponorogo | sed -n "1,17p"'
+alias weather='curl -s "https://wttr.in/Ponorogo?2" | sed -n "1,27p"'
 
 # Developer shortcuts
 alias g='git'
