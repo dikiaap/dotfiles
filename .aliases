@@ -1,4 +1,4 @@
-# easy to navigation
+# Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
@@ -7,24 +7,27 @@ alias .5='cd ../../../../..'
 alias ~='cd ~'
 alias -- -='cd -'
 
-# easy report
-alias l='ls -lFh'
-alias la='ls -lAFh'
-alias lr='ls -tRFh'
-alias lf='ls -lFh | grep "^-"'
-alias l.f='ls -lFdh .* | grep "^-"'
-alias ld='ls -lFh | grep "^d"'
-alias l.d='ls -lFdh .* | grep "^d"'
+# Easy report
+alias ls='ls -Fh --color=auto --group-directories-first'
+alias grep='grep --color=auto'
+alias l='ls -l'
+alias la='ls -lA'
+alias lr='ls -tR'
+alias lf='ls -l | grep "^-"'
+alias l.f='ls -ld .* | grep "^-"'
+alias ld='ls -l | grep "^d"'
+alias l.d='ls -ld .* | grep "^d"'
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
 alias fdir='find . -type d -name'
 alias ff='find . -type f -name'
 alias h='history'
 alias hgrep='history | grep'
-alias lgrep='ls -lFh | grep'
+alias lgrep='ls -l | grep'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,.tldr,node_modules,Trash,vendor}'
 alias cp='cp -iv'
 alias mv='mv -iv'
+alias ln='ln -iv'
 alias mkdir='mkdir -v'
 alias rm='rm -i'
 alias rmf='rm -rf'
@@ -43,20 +46,19 @@ alias disk='df'
 alias alu='apt list --upgradable'
 alias preview='fzf --height=50% --layout=reverse --preview="bat --color=always {}"'
 
-# bookmarks
+# Bookmarks
 alias dl='cd ~/Downloads; la'
 alias doc='cd ~/Documents; la'
 alias docs='cd ~/Documents; la'
 alias tmp='cd ~/Temporary; la'
 
-# shortcuts
+# Shortcuts
 alias c='clear'
 alias cat='bat'
 alias ch='echo > ~/.bash_history && echo > ~/.zsh_history'
 alias cz='echo > ~/.z'
 alias e='exit'
 alias incognito='unset HISTFILE'
-alias ln='ln -s'
 alias mp3-dl='youtube-dl --ignore-config --extract-audio \
     --audio-format "mp3" --audio-quality 0 --embed-thumbnail \
     --add-metadata --metadata-from-title "%(artist)s - %(title)s" \
@@ -67,28 +69,19 @@ alias st='syncthing'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date "+%a, %d %b %H:%M:%S" && time cat && date "+%a, %d %b %H:%M:%S"'
 alias weather='curl -s wttr.in/Ponorogo | sed -n "1,17p"'
 
-# developer shortcuts
+# Developer shortcuts
 alias g='git'
 alias git-pull-dir='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;'
 alias python='python3.6'
 alias s='subl'
 alias v='nvim'
 
-# php
+# PHP
 alias art='php artisan'
 alias artisan='php artisan'
 
-# typos
+# Typos
 alias :q='exit'
 alias help='man'
 alias nano='vim'
 alias quit='exit'
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto --group-directories-first'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
