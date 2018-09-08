@@ -66,14 +66,14 @@ colors:
     white:   '0xc0c5ce'
 
   bright:
-    black:   '0x65737e'
+    black:   '0x5c5c5c'
     red:     '0xe57373'
     green:   '0xa6bc69'
     yellow:  '0xfac863'
     blue:    '0x6699cc'
     magenta: '0xc594c5'
     cyan:    '0x5fb3b3'
-    white:   '0xd8dee9'
+    white:   '0xf3f4f5'
 
   dim:
     black:   '0x333333'
