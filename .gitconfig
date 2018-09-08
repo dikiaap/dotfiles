@@ -1,10 +1,11 @@
 [alias]
-    a = !"git add -u; git add ."
-    c = commit -am
-    cs = commit -S -am
+    a = add
+    aa = add -A
+    c = commit -m
+    ca = commit -am
     co = checkout
     contributors = shortlog -n -s
-    d = "!git diff --patch-with-stat --color $@ | diff-so-fancy"
+    d = diff --patch-with-stat --color
     df = diff --patch-with-stat --color --color-words --abbrev
     fc = "!f() { git log --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%cn>%Creset' --decorate --date=relative --grep=$1; }; f"
     fs = "!f() { git log --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%cn>%Creset' --decorate --date=relative -S$1; }; f"
