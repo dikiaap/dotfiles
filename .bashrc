@@ -27,6 +27,11 @@ if ! shopt -oq posix; then
     fi
 fi
 
+# dircolors.
+if [ -x "$(command -v dircolors)" ]; then
+    eval "$(dircolors -b ~/.dircolors)"
+fi
+
 # Manage SSH with Keychain.
 if [ -x "$(command -v keychain)" ]; then
     eval "$(keychain --eval --quiet id_rsa_github id_rsa_gitlab)"
