@@ -27,7 +27,7 @@ plugins=(
 # Environment variables.
 source ~/.exports
 
-# Oh My Zsh time!
+# Oh My Zsh.
 source "$ZSH"/oh-my-zsh.sh
 
 # User config.
@@ -46,6 +46,11 @@ source ~/.zsh/plugins/z/z.sh
 
 # fzf key bindings.
 source ~/.fzf/shell/key-bindings.zsh
+
+# dircolors.
+if [ -x "$(command -v dircolors)" ]; then
+    eval "$(dircolors -b ~/.dircolors)"
+fi
 
 # Manage SSH with Keychain.
 if [ -x "$(command -v keychain)" ]; then
