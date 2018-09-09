@@ -21,8 +21,21 @@ readme() {
     done
 }
 
+# Git commit browser
+fshow() {
+    local commit_hash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
+    local view_commit="$commit_hash | xargs -I % sh -c 'git show --color=always % | diff-so-fancy'"
+    git log --color=always \
+        --format="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" "$@" | \
+    fzf --no-sort --tiebreak=index --no-multi --reverse --ansi \
+        --header="enter to view, alt-y to copy hash" --preview="$view_commit" \
+        --bind="enter:execute:$view_commit | less -R" \
+        --bind="alt-y:execute:$commit_hash | xclip -selection clipboard"
+}
+
 # Remove all commit in Git
 git-remove-all-commit() {
+    local branch
     branch=$(git symbolic-ref --short HEAD)
     echo -e "\\nDo you want to remove all your commit in \\033[1m$branch\\033[0m branch? [Y/n] "
     read -r response
