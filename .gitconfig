@@ -4,16 +4,16 @@
     c = commit -m
     ca = commit -am
     co = checkout
-    contributors = shortlog -n -s
-    d = diff --patch-with-stat --color
-    df = diff --patch-with-stat --color --color-words --abbrev
-    fc = "!f() { git log --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%cn>%Creset' --decorate --date=relative --grep=$1; }; f"
-    fs = "!f() { git log --pretty=format:'* %C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%cn>%Creset' --decorate --date=relative -S$1; }; f"
-    lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    contributors = shortlog -ns
+    d = diff --patch-with-stat
+    df = diff --patch-with-stat --color-words
+    fc = "!f() { git log --pretty='%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --grep=$1; }; f"
+    fs = "!f() { git log --pretty='%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' -S$1; }; f"
+    lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+    remotes = remote -v
     s = status -s
     sclone = clone --depth 1
     undo = reset HEAD~1
-    remotes = remote -v
 
 [user]
     email = diki1aap@gmail.com
@@ -35,6 +35,7 @@
 
 [color]
     ui = always
+    diff = always
 
 [color "diff"]
     meta = yellow bold
