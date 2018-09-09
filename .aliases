@@ -35,12 +35,12 @@ alias p='ps axo pid,user,pcpu,comm'
 alias sizeof='wget --no-config --spider'
 alias uptime='uptime -p'
 alias free='free -h'
-alias df='df -h | grep sd |\
-    sed -e "s_/dev/sda[1-9]_\x1b[34m&\x1b[0m_" |\
-    sed -e "s_/dev/sd[b-z][1-9]_\x1b[33m&\x1b[0m_" |\
-    sed -e "s_[,0-9]*[MG]_\x1b[36m&\x1b[0m_" |\
-    sed -e "s_[0-9]*%_\x1b[32m&\x1b[0m_" |\
-    sed -e "s_9[0-9]%_\x1b[31m&\x1b[0m_" |\
+alias df='df -h | grep sd | \
+    sed -e "s_/dev/sda[1-9]_\x1b[34m&\x1b[0m_" | \
+    sed -e "s_/dev/sd[b-z][1-9]_\x1b[33m&\x1b[0m_" | \
+    sed -e "s_[,0-9]*[MG]_\x1b[36m&\x1b[0m_" | \
+    sed -e "s_[0-9]*%_\x1b[32m&\x1b[0m_" | \
+    sed -e "s_9[0-9]%_\x1b[31m&\x1b[0m_" | \
     sed -e "s_/mnt/[-_A-Za-z0-9]*_\x1b[34;1m&\x1b[0m_"'
 alias disk='df'
 alias alu='apt list --upgradable'
