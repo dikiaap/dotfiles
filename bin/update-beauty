@@ -56,16 +56,18 @@ i3blocks() {
     echo -e $magenta"\n Updating & compiling i3blocks... \n"$white
     cd ~/.local/src/i3blocks
     git pull
-    make clean all
+    autoreconf -fi
+    ./configure
+    make
     echo -e $green"\n Previous i3blocks version: \n"$white
     echo "───────────────────────────────────────────────────────────────────"
-    /usr/bin/i3blocks -V
+    /usr/local/bin/i3blocks -V
     echo "───────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Installing i3blocks... \n"$white
-    sudo make PREFIX=/usr install
+    sudo make install
     echo -e $green"\n Current i3blocks version: \n"$white
     echo "───────────────────────────────────────────────────────────────────"
-    /usr/bin/i3blocks -V
+    /usr/local/bin/i3blocks -V
     echo "───────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Updating i3blocks-contrib... \n"$white
     cd ~/.local/src/i3blocks-contrib
