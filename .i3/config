@@ -123,6 +123,9 @@ bindsym $mod+Shift+m move position mouse
 # set a window to stick to the glass
 bindsym $mod+Shift+s sticky toggle
 
+# sticky preview for media
+bindsym $mod+Shift+p fullscreen disable; floating enable; resize set 350 px 197 px; sticky enable; move window to position 1006 px 537 px
+
 # shortcut to change window border
 bindsym $mod+t border normal    0
 bindsym $mod+y border pixel     1
