@@ -45,7 +45,7 @@
     - [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) - A script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
     - [Rofi](https://github.com/DaveDavenport/rofi) - A window switcher, application launcher and dmenu replacement.
     - [Dunst](https://github.com/dunst-project/dunst) - A highly configurable and lightweight notification daemon.
-    - [Compton](https://github.com/chjj/compton) - A compositor for X11.
+    - [Compton](https://github.com/yshui/compton) (Fork) - A compositor for X11.
     - [Alacritty](https://github.com/jwilm/alacritty) - A cross-platform, GPU-accelerated terminal emulator.
     - [Sublime Text](https://www.sublimetext.com) - A sophisticated text editor for code, markup and prose.
     - [Arc Theme](https://github.com/NicoHood/arc-theme) (Fork) - A flat theme with transparent elements for GTK 3, GTK 2, and GNOME Shell.
