@@ -12,6 +12,12 @@ window:
 
   decorations: true
 
+scrolling:
+  history: 2500
+  multiplier: 3
+  faux_multiplier: 3
+  auto_scroll: false
+
 tabspaces: 4
 
 draw_bold_text_with_bright_colors: true
@@ -97,7 +103,6 @@ mouse_bindings:
 mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
-  faux_scrollback_lines: 1
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
@@ -123,14 +128,16 @@ key_bindings:
   - { key: Key0,     mods: Control, action: ResetFontSize                }
   - { key: Equals,   mods: Control, action: IncreaseFontSize             }
   - { key: Subtract, mods: Control, action: DecreaseFontSize             }
+  - { key: Home,     mods: Shift,   action: ScrollToTop                  }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
+  - { key: End,      mods: Shift,   action: ScrollToBottom               }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
-  - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
+  - { key: PageUp,   mods: Shift,   action: ScrollPageUp                 }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
-  - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
+  - { key: PageDown, mods: Shift,   action: ScrollPageDown               }
   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
   - { key: PageDown,                chars: "\x1b[6~"                     }
   - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
