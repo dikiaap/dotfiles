@@ -10,7 +10,7 @@ window:
     x: 10
     y: 10
 
-  decorations: true
+  decorations: full
 
 scrolling:
   history: 2500
@@ -19,8 +19,6 @@ scrolling:
   auto_scroll: false
 
 tabspaces: 4
-
-draw_bold_text_with_bright_colors: true
 
 font:
   normal:
@@ -44,11 +42,11 @@ font:
 
   scale_with_dpi: false
 
-  use_thin_strokes: false
-
 render_timer: false
 
 custom_cursor_colors: false
+
+draw_bold_text_with_bright_colors: true
 
 # Oxide colors
 colors:
