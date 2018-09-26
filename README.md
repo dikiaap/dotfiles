@@ -22,6 +22,8 @@
     - [Bash](https://www.gnu.org/software/bash/) - A Unix shell and command language.
     - [Base16 Shell](https://github.com/chriskempson/base16-shell) - Syntax highlighting for hackers.
     - [tmux](https://github.com/tmux/tmux) - A terminal multiplexer.
+        - [tmux-better-mouse-mode](https://github.com/NHDaly/tmux-better-mouse-mode) - A tmux plugin to better manage the mouse.
+        - [tmux-copycat](https://github.com/tmux-plugins/tmux-copycat) - A tmux plugin that enhances tmux search.
     - [Neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability.
         - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Colorscheme Darker for Vim and inspired by Material Theme.
         - [vim-airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for Vim that's light as air.
