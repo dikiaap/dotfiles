@@ -16,7 +16,7 @@ mkd() {
 readme() {
     for readme in {readme,README}.{md,MD,markdown,txt,TXT,mkd}; do
         if [[ -f "$readme" ]]; then
-            cat $readme
+            cat "$readme"
         fi
     done
 }
@@ -40,7 +40,7 @@ git-remove-all-commit() {
     echo -e "\\nDo you want to remove all your commit in \\033[1m$branch\\033[0m branch? [Y/n] "
     read -r response
     case "$response" in
-        [yY][eE][sS]|[yY]|"")
+        [yY][eE][sS]|[yY])
             git checkout --orphan latest_branch
             git add -A
             git commit -am "Initial commit"
