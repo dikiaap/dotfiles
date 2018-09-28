@@ -106,7 +106,7 @@ OTHER_WRITABLE 30;46
 STICKY 38;5;54;44
 EXEC 1;31
 
-# Documentation & Stuff
+# Documentation
 .info 34
 .log 34
 .markdown 34
@@ -151,7 +151,8 @@ EXEC 1;31
 *TODO 1;34
 *VERSION 1;34
 
-# Programming & Stuff
+# Programming
+.ac 32
 .asm 32
 .aspx 32
 .bash 32
@@ -170,6 +171,7 @@ EXEC 1;31
 .el 32
 .erb 32
 .f90 32
+.fish 32
 .go 32
 .h 32
 .haml 32
@@ -223,13 +225,13 @@ EXEC 1;31
 .m4 38;5;246
 .editorconfig 38;5;246
 .env 38;5;246
-.env.example 38;5;246
+.example 38;5;246
 .gitignore 38;5;246
 .gitattributes 38;5;246
 .gitmodules 38;5;246
 *Makefile 32
 
-# Unix & Stuff
+# Unix
 .3des 34
 .aes 34
 .asc 34
@@ -401,7 +403,7 @@ EXEC 1;31
 .torrent 34
 .crdownload 37
 
-# Backup, Temporary, & Stuff
+# Backup, Temporary, etc.
 *~ 1;34
 *# 1;34
 .bak 38;5;246
