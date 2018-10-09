@@ -12,16 +12,13 @@ DEFAULT_COLOR="#f3f4f5"
 USE_ALSA_NAME=1
 
 [ram]
-label=
-command=echo -n "$label  "; ~/.local/src/i3blocks-contrib/memory/memory | grep -E -o '[0-9]+.[0-9]?G'
+command=echo -n "  "; ~/.local/src/i3blocks-contrib/memory/memory | grep -E -o '[0-9]+.[0-9]?G'
 interval=30
 
 [disk-home]
-label=
-command=echo -n "$label  "; df -h -P -l "$HOME" | awk '/\/.*/ { print $3; exit 0 }'
+command=echo -n "  "; df -h -P -l "$HOME" | awk '/\/.*/ { print $3; exit 0 }'
 interval=30
 
 [time]
-label=
-command=echo -n "$label  "; date '+%a, %d %b %H:%M'
+command=echo -n "  "; date '+%a, %d %b %H:%M'
 interval=5
