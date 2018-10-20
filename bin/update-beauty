@@ -141,16 +141,6 @@ dunst() {
     echo "──────────────────────────────────────────────────────────────────────────────────"
 }
 
-arc-theme() {
-    echo -e $magenta"\n Updating & compiling arc-theme... \n"$white
-    cd ~/.local/src/arc-theme
-    git pull
-    rm -rfv .idea autom4te.cache build-aux common/Makefile common/Makefile.in extra/Makefile extra/Makefile.in aclocal.m4 compile config.log config.status configure install-sh Makefile Makefile.in missing
-    sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
-    ./autogen.sh --prefix=/usr --disable-cinnamon --disable-gnome-shell --disable-unity --disable-xfwm --disable-plank
-    sudo make install
-}
-
 # Print help message.
 if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
     printusage
@@ -235,19 +225,6 @@ if [[ -z "$1" ]]; then
             echo "Cancelled."
             ;;
     esac
-
-    echo
-    read -r -p "Do you want to update arc-theme? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            arc-theme
-            exit 0
-            ;;
-        *)
-            echo "Cancelled."
-            exit 1
-            ;;
-    esac
 fi
 
 # Update all packages.
@@ -260,7 +237,6 @@ case "$CMD" in
         i3lock
         rofi
         dunst
-        arc-theme
         exit 0
         ;;
     *)
