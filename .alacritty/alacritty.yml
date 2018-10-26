@@ -102,6 +102,9 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
 
+  url:
+    launcher: xdg-open
+
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: false
