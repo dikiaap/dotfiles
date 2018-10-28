@@ -39,8 +39,3 @@ fi
 
 # Base16 Shell.
 [ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-# Start tmux.
-if [[ -x "$(command -v tmux)" && "$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))" = "alacritty" ]]; then
-    [ -z "$TMUX" ] && { tmux attach-session || exec tmux && exit; }
-fi
