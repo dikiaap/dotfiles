@@ -119,6 +119,12 @@ unfocused_hollow_cursor: true
 
 live_config_reload: false
 
+shell:
+  program: /bin/zsh
+  args:
+    - -c
+    - tmux attach-session || tmux
+
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
   - { key: C,        mods: Control|Shift,    action: Copy                }
