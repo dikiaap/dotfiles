@@ -44,8 +44,6 @@ font:
 
 render_timer: false
 
-custom_cursor_colors: false
-
 draw_bold_text_with_bright_colors: true
 
 # Oxide colors
@@ -102,6 +100,8 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
 
+  hide_when_typing: false
+
   url:
     launcher: xdg-open
 
@@ -111,11 +111,9 @@ selection:
 
 dynamic_title: true
 
-hide_cursor_when_typing: false
-
-cursor_style: Block
-
-unfocused_hollow_cursor: true
+cursor:
+  style: Block
+  unfocused_hollow: true
 
 live_config_reload: false
 
