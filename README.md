@@ -25,7 +25,7 @@
         - [tmux-better-mouse-mode](https://github.com/NHDaly/tmux-better-mouse-mode) - A tmux plugin to better manage the mouse.
         - [tmux-copycat](https://github.com/tmux-plugins/tmux-copycat) - A tmux plugin that enhances tmux search.
     - [Neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability.
-        - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Colorscheme Darker for Vim and inspired by Material Theme.
+        - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Color Scheme Darker for Vim and inspired by Material Theme.
         - [vim-airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for Vim that's light as air.
         - [More config](https://github.com/dikiaap/dotfiles/blob/master/init.vim).
     - [Git](https://git-scm.com) - A free and open source distributed version control system.
@@ -42,7 +42,7 @@
     - [Hack](https://sourcefoundry.org/hack/) - Terminal font.
 - GUI
     - [i3](https://github.com/i3/i3) - A tiling window manager.
-    - [i3blocks](https://github.com/vivien/i3blocks) - A flexible scheduler for your i3bar blocks.
+    - [i3blocks](https://github.com/vivien/i3blocks) - A minimalist scheduler for your status bar scripts.
         - [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib) - A set of scripts for i3blocks, contributed by the community.
     - [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) - A script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
     - [Rofi](https://github.com/DaveDavenport/rofi) - A window switcher, application launcher and dmenu replacement.
