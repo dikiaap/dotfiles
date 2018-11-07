@@ -38,7 +38,7 @@ i3-gaps() {
     rm -rf build
     mkdir build
     cd build
-    ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+    ../configure --prefix=/usr --sysconfdir=/etc --enable-debug=no --disable-sanitizers
     make
     echo -e $green"\n Previous i3-gaps version: \n"$white
     echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
@@ -82,7 +82,7 @@ i3lock() {
     rm -rf build
     mkdir build
     cd build
-    ../configure
+    ../configure --enable-debug=no --disable-sanitizers
     make
     echo -e $green"\n Previous i3lock version: \n"$white
     echo "───────────────────────────────────────────────────────────────────────────────────────────────"
@@ -109,7 +109,7 @@ rofi() {
     rm -rf build
     mkdir build
     cd build
-    ../configure
+    ../configure --disable-check
     make
     echo -e $green"\n Previous rofi version: \n"$white
     echo "───────────────────────────────────────"
@@ -129,12 +129,14 @@ dunst() {
     git pull
     make clean
     make
+    make dunstify
     echo -e $green"\n Previous dunst version: \n"$white
     echo "──────────────────────────────────────────────────────────────────────────────────"
     /usr/local/bin/dunst -v
     echo "──────────────────────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Installing dunst... \n"$white
     sudo make install
+    sudo install -Dm755 dunstify /usr/local/bin/dunstify
     echo -e $green"\n Current dunst version: \n"$white
     echo "──────────────────────────────────────────────────────────────────────────────────"
     /usr/local/bin/dunst -v
