@@ -1,5 +1,6 @@
 env:
   TERM: xterm-256color
+  WINIT_HIDPI_FACTOR: 1
 
 window:
   dimensions:
@@ -39,8 +40,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-
-  scale_with_dpi: false
 
 render_timer: false
 
