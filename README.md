@@ -16,10 +16,10 @@
 ## Details
 
 - CLI
-    - [Zsh](https://www.zsh.org) - A shell designed for interactive use, although it is also a powerful scripting language.
+    - [Zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
         - [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) - An open source, community-driven framework for managing your Zsh configuration.
         - [z](https://github.com/rupa/z) - Tracks your most used directories, based on frecency.
-    - [Bash](https://www.gnu.org/software/bash/) - A Unix shell and command language.
+    - [Bash](https://git.savannah.gnu.org/cgit/bash.git) - A Unix shell and command language.
     - [Base16 Shell](https://github.com/chriskempson/base16-shell) - Syntax highlighting for hackers.
     - [tmux](https://github.com/tmux/tmux) - A terminal multiplexer.
         - [tmux-better-mouse-mode](https://github.com/NHDaly/tmux-better-mouse-mode) - A tmux plugin to better manage the mouse.
@@ -28,18 +28,14 @@
         - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Color Scheme Darker for Vim and inspired by Material Theme.
         - [vim-airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for Vim that's light as air.
         - [More config](https://github.com/dikiaap/dotfiles/blob/master/init.vim).
-    - [Git](https://git-scm.com) - A free and open source distributed version control system.
+    - [Git](https://github.com/git/git) - A free and open source distributed version control system.
         - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - Make your diff's human readable instead of machine readable.
-    - [Composer](https://github.com/composer/composer) - Dependency Manager for PHP.
-    - [npm](https://github.com/npm/npm) - A package manager for JavaScript.
-    - [Cargo](https://github.com/rust-lang/cargo) - A package manager for Rust.
-    - [RubyGems](https://github.com/rubygems/rubygems) - A package manager for Ruby.
     - [htop](https://github.com/hishamhm/htop) - An interactive text-mode process viewer.
     - [bat](https://github.com/sharkdp/bat) - A cat(1) clone with syntax highlighting and Git integration.
     - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder.
     - [ripgrep](https://github.com/BurntSushi/ripgrep) - A line-oriented search tool that recursively searches directories for a regex pattern.
-    - [Wget](https://www.gnu.org/software/wget/) - A free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS.
-    - [Hack](https://sourcefoundry.org/hack/) - Terminal font.
+    - [Wget](https://git.savannah.gnu.org/cgit/wget.git) - A free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS.
+    - [Hack](https://github.com/source-foundry/Hack) - Terminal font.
 - GUI
     - [i3](https://github.com/i3/i3) - A tiling window manager.
     - [i3blocks](https://github.com/vivien/i3blocks) - A minimalist scheduler for your status bar scripts.
