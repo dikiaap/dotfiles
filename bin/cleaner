@@ -39,6 +39,7 @@ safecleaner() {
     rm -rfv ~/.local/share/Trash/*
     rm -fv ~/.local/share/recently-used.xbel
     rm -fv ~/.lesshst
+    rm -fv ~/.wget-hsts
     rm -fv ~/.xsession-errors*
 
     echo -e $magenta"\n Cleaning Vim... \n"$white
