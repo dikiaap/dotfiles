@@ -6,6 +6,8 @@ white='\e[0;37m'
 
 CMD="$1"
 
+shopt -s extglob
+
 printusage() {
     prog=$(basename "$0")
     echo "Usage: $prog [-option]" >&2
@@ -35,6 +37,9 @@ safecleaner() {
     echo -e $magenta"\n Cleaning Shell History... \n"$white
     echo > ~/.bash_history && echo > ~/.zsh_history && echo > ~/.z && rm -fv ~/.z.*
 
+    echo -e $magenta"\n Cleaning Cache... \n"$white
+    rm -rfv ~/.cache/!(chromium|fontconfig|mozilla|thumbnails)
+
     echo -e $magenta"\n Cleaning Junk Files... \n"$white
     rm -rfv ~/.local/share/Trash/*
     rm -fv ~/.local/share/recently-used.xbel
@@ -50,21 +55,24 @@ safecleaner() {
     rm -fv ~/.viminfo
 
     echo -e $magenta"\n Cleaning Log System... \n"$white
+    sudo sh -c "echo > /var/log/alternatives.log"
     sudo sh -c "echo > /var/log/dpkg.log"
-    sudo sh -c "echo > /var/log/wtmp"
     sudo sh -c "echo > /var/log/lastlog"
+    sudo sh -c "echo > /var/log/maillog"
     sudo sh -c "echo > /var/log/messages"
     sudo sh -c "echo > /var/log/secure"
-    sudo sh -c "echo > /var/log/maillog"
+    sudo sh -c "echo > /var/log/wtmp"
     sudo sh -c "echo > /var/log/xferlog"
 
     sudo rm -rfv /var/log/apt/*.log
-    sudo rm -rfv /var/log/mysql/*.log
-    sudo rm -rfv /var/log/mysql/*.gz
-    sudo rm -rfv /var/log/nginx/*.log.1
     sudo rm -rfv /var/log/lightdm/*.log
-    sudo rm -rfv /var/log/lightdm/*.old
     sudo rm -rfv /var/log/lightdm/*.log.1.gz
+    sudo rm -rfv /var/log/lightdm/*.old
+    sudo rm -rfv /var/log/mysql/*.gz
+    sudo rm -rfv /var/log/mysql/*.log
+    sudo rm -rfv /var/log/nginx/*.log.1
+    sudo rm -rfv /var/log/postgresql/*.log
+    sudo rm -rfv /var/log/postgresql/*.log.1
 
     sudo rm -rfv /var/log/*.old &> /dev/null
     sudo rm -rfv /var/log/*.0 &> /dev/null
