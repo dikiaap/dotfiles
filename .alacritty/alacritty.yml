@@ -11,7 +11,11 @@ window:
     x: 10
     y: 10
 
+  dynamic_padding: false
+
   decorations: full
+
+  start_maximized: false
 
 scrolling:
   history: 2500
@@ -42,6 +46,8 @@ font:
     y: 0
 
 render_timer: false
+
+persistent_logging: false
 
 draw_bold_text_with_bright_colors: true
 
@@ -116,12 +122,6 @@ cursor:
 
 live_config_reload: false
 
-shell:
-  program: /bin/zsh
-  args:
-    - -c
-    - tmux attach-session || tmux
-
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
   - { key: C,        mods: Control|Shift,    action: Copy                }
@@ -133,6 +133,8 @@ key_bindings:
   - { key: Key0,     mods: Control, action: ResetFontSize                }
   - { key: Equals,   mods: Control, action: IncreaseFontSize             }
   - { key: Subtract, mods: Control, action: DecreaseFontSize             }
+  - { key: L,        mods: Control, action: ClearLogNotice               }
+  - { key: L,        mods: Control, chars: "\x0c"                        }
   - { key: Home,     mods: Shift,   action: ScrollToTop                  }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
