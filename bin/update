@@ -24,7 +24,7 @@ apt() {
 
 composer() {
     echo -e $magenta"\n Updating Composer Installer... \n"$white
-    ~/.local/bin/composer self-update --snapshot
+    ~/.local/bin/composer self-update --stable
 
     echo -e $magenta"\n Updating Composer Packages... \n"$white
     ~/.local/bin/composer global update
