@@ -302,4 +302,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
 exec --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
+exec --no-startup-id compton
