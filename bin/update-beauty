@@ -4,6 +4,7 @@ magenta='\e[1;35m'
 green='\e[1;32m'
 white='\e[0;37m'
 
+row=$(seq -s '─' 0 "$(tput cols)" | tr -d '[:digit:]')
 CMD="$1"
 
 printusage() {
@@ -41,15 +42,15 @@ i3-gaps() {
     ../configure --prefix=/usr --sysconfdir=/etc --enable-debug=no --disable-sanitizers
     make
     echo -e $green"\n Previous i3-gaps version: \n"$white
-    echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     /usr/bin/i3 -v
-    echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     echo -e $magenta"\n Installing i3-gaps... \n"$white
     sudo make install
     echo -e $green"\n Current i3-gaps version: \n"$white
-    echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     /usr/bin/i3 -v
-    echo "─────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
 }
 
 i3blocks() {
@@ -60,15 +61,15 @@ i3blocks() {
     ./configure
     make
     echo -e $green"\n Previous i3blocks version: \n"$white
-    echo "───────────────────────────────────────────────────────────────────"
+    echo "$row"
     /usr/local/bin/i3blocks -V
-    echo "───────────────────────────────────────────────────────────────────"
+    echo "$row"
     echo -e $magenta"\n Installing i3blocks... \n"$white
     sudo make install
     echo -e $green"\n Current i3blocks version: \n"$white
-    echo "───────────────────────────────────────────────────────────────────"
+    echo "$row"
     /usr/local/bin/i3blocks -V
-    echo "───────────────────────────────────────────────────────────────────"
+    echo "$row"
     echo -e $magenta"\n Updating i3blocks-contrib... \n"$white
     cd ~/.local/src/i3blocks-contrib
     git pull
@@ -85,15 +86,15 @@ i3lock() {
     ../configure --enable-debug=no --disable-sanitizers
     make
     echo -e $green"\n Previous i3lock version: \n"$white
-    echo "───────────────────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     /usr/local/bin/i3lock -v
-    echo "───────────────────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     echo -e $magenta"\n Installing i3lock... \n"$white
     sudo make install
     echo -e $green"\n Current i3lock version: \n"$white
-    echo "───────────────────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     /usr/local/bin/i3lock -v
-    echo "───────────────────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     echo -e $magenta"\n Updating i3lock-fancy... \n"$white
     cd ~/.local/src/i3lock-fancy
     git pull
@@ -112,15 +113,15 @@ rofi() {
     ../configure --disable-check
     make
     echo -e $green"\n Previous rofi version: \n"$white
-    echo "───────────────────────────────────────"
+    echo "$row"
     /usr/local/bin/rofi -v
-    echo "───────────────────────────────────────"
+    echo "$row"
     echo -e $magenta"\n Installing rofi... \n"$white
     sudo make install
     echo -e $green"\n Current rofi version: \n"$white
-    echo "───────────────────────────────────────"
+    echo "$row"
     /usr/local/bin/rofi -v
-    echo "───────────────────────────────────────"
+    echo "$row"
 }
 
 dunst() {
@@ -131,16 +132,35 @@ dunst() {
     make
     make dunstify
     echo -e $green"\n Previous dunst version: \n"$white
-    echo "──────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     /usr/local/bin/dunst -v
-    echo "──────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     echo -e $magenta"\n Installing dunst... \n"$white
     sudo make install
-    sudo install -Dm755 dunstify /usr/local/bin/dunstify
+    sudo install -Dm755 --verbose dunstify /usr/local/bin/dunstify
     echo -e $green"\n Current dunst version: \n"$white
-    echo "──────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
     /usr/local/bin/dunst -v
-    echo "──────────────────────────────────────────────────────────────────────────────────"
+    echo "$row"
+}
+
+compton() {
+    echo -e $magenta"\n Updating & compiling compton... \n"$white
+    cd ~/.local/src/compton
+    git pull
+    rm -rf build
+    meson --buildtype=release . build -Dbuild_docs=false
+    ninja -C build
+    echo -e $green"\n Previous compton version: \n"$white
+    echo "$row"
+    /usr/local/bin/compton --version
+    echo "$row"
+    echo -e $magenta"\n Installing compton... \n"$white
+    sudo install -Dm755 --verbose build/src/compton /usr/local/bin/compton
+    echo -e $green"\n Current compton version: \n"$white
+    echo "$row"
+    /usr/local/bin/compton --version
+    echo "$row"
 }
 
 # Print help message.
@@ -227,6 +247,17 @@ if [[ -z "$1" ]]; then
             echo "Cancelled."
             ;;
     esac
+
+    echo
+    read -r -p "Do you want to update compton? [y/n] " response
+    case $response in
+        [yY][eE][sS]|[yY])
+            compton
+            ;;
+        *)
+            echo "Cancelled."
+            ;;
+    esac
 fi
 
 # Update all packages.
@@ -239,6 +270,7 @@ case "$CMD" in
         i3lock
         rofi
         dunst
+        compton
         exit 0
         ;;
     *)
