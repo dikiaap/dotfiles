@@ -24,7 +24,8 @@
 		"Package Control",
 		"Sass",
 		"SASS Snippets",
-		"SideBarEnhancements"
+		"SideBarEnhancements",
+		"Vue Syntax Highlight"
 	],
 	"submit_usage": false
 }
