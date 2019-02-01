@@ -33,7 +33,6 @@ alias mkdir='mkdir -v'
 alias rm='rm -i'
 alias rmf='rm -rf'
 alias p='ps axo pid,user,pcpu,comm'
-alias sizeof='wget --no-config --spider'
 alias uptime='uptime -p'
 alias free='free -h'
 alias df='df -h | grep sd | \
@@ -59,6 +58,7 @@ alias ch='echo > ~/.bash_history && echo > ~/.zsh_history'
 alias cz='echo > ~/.z'
 alias e='exit'
 alias incognito='unset HISTFILE'
+alias ip-address='curl -s -H "Accept: application/json" https://ipinfo.io/json | jq "del(.loc, .postal)"'
 alias mp3-dl='youtube-dl --ignore-config --extract-audio \
     --audio-format "mp3" --audio-quality 0 --embed-thumbnail \
     --add-metadata --metadata-from-title "%(artist)s - %(title)s" \
@@ -67,7 +67,6 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date "+%a, %d %b %H:%M:%S" && time cat && date "+%a, %d %b %H:%M:%S"'
 alias tldr='tldr -t base16'
-alias weather='curl -s "https://wttr.in/Ponorogo?m2" | sed -n "1,27p"'
 
 # Developer shortcuts
 alias g='git'
@@ -83,5 +82,4 @@ alias artisan='php artisan'
 # Typos
 alias :q='exit'
 alias help='man'
-alias nano='nvim'
 alias quit='exit'
