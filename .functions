@@ -21,6 +21,11 @@ readme() {
     done
 }
 
+# Weather
+weather() {
+    curl -s "https://wttr.in/${1:-Ponorogo}?m2" | sed -n "1,27p"
+}
+
 # Git commit browser
 fshow() {
     local commit_hash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
