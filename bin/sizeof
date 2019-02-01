@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+URL="$1"
+
+sizeof_fn() {
+    humanize_size() {
+        local SIZE=$1
+        local KiB=1024
+        local MiB=$((1024 ** 2))
+        local GiB=$((1024 ** 3))
+
+        if ((SIZE > GiB)); then
+            echo "scale=2; $SIZE/$GiB" | bc | xargs -I{} printf "%.1fG" "{}"
+        elif ((SIZE > MiB)); then
+            echo "scale=2; $SIZE/$MiB" | bc | xargs -I{} printf "%.1fM" "{}"
+        elif ((SIZE > KiB)); then
+            echo "scale=2; $SIZE/$KiB" | bc | xargs -I{} printf "%.1fK" "{}"
+        else
+            echo "${SIZE}B"
+        fi
+    }
+
+    # Get Content-Length
+    local curl_size
+    curl_size=$(curl -sLI "$URL" | grep "[Cc]ontent-[Ll]ength" | awk '{print $2}' | tr -d '\r')
+
+    if [ -z "$curl_size" ]; then
+        echo "File size not available"
+        exit 1
+    elif [[ "$curl_size" =~ ^[0-9]+$ ]]; then
+        humanize_size "$curl_size"
+    else
+        echo "Please provide a valid URL of a file"
+        exit 1
+    fi
+}
+
+if [ -z "$URL" ]; then
+    echo "$(basename "$0"): please provide the URL of a file"
+    exit 1
+else
+    sizeof_fn "$URL"
+fi
