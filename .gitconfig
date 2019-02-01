@@ -11,7 +11,7 @@
     fs = "!f() { git log --pretty='%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' -S$1; }; f"
     lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
     remotes = remote -v
-    s = status -s
+    s = status -sb
     sclone = clone --depth 1
     undo = reset HEAD~1
 
