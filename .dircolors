@@ -2,6 +2,7 @@
 # Modification from Solarized dircolors (https://github.com/seebi/dircolors-solarized)
 
 COLOR tty
+TERM alacritty
 TERM ansi
 TERM color_xterm
 TERM color-xterm
