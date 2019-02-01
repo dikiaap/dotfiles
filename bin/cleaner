@@ -48,7 +48,8 @@ safecleaner() {
     rm -fv ~/.wget-hsts
     rm -fv ~/.xsession-errors*
 
-    echo -e $magenta"\n Cleaning Vim... \n"$white
+    echo -e $magenta"\n Cleaning Editor... \n"$white
+    rm -rfv ~/.local/share/nano/search_history
     rm -rfv ~/.local/share/nvim/backup/*
     rm -rfv ~/.local/share/nvim/shada/*
     rm -rfv ~/.local/share/nvim/swap/*
