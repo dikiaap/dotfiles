@@ -28,12 +28,15 @@ tabspaces: 4
 font:
   normal:
     family: Hack
+    style: Regular
 
   bold:
     family: Hack
+    style: Bold
 
   italic:
     family: Hack
+    style: Italic
 
   size: 9.5
 
@@ -82,15 +85,7 @@ colors:
     cyan:    '0x5fb3b3'
     white:   '0xf3f4f5'
 
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+  indexed_colors: []
 
 visual_bell:
   animation: EaseOutExpo
@@ -110,6 +105,7 @@ mouse:
 
   url:
     launcher: xdg-open
+    modifiers: None
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
@@ -122,6 +118,8 @@ cursor:
   unfocused_hollow: true
 
 live_config_reload: false
+
+alt_send_esc: true
 
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
@@ -231,3 +229,4 @@ key_bindings:
   - { key: F10,      mods: Super,   chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Super,   chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                  }
+  - { key: NumpadEnter,             chars: "\n"                          }
