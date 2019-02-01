@@ -44,12 +44,14 @@ source ~/.functions_private
 # Tracks your most used directories, based on frecency with z.
 source ~/.zsh/plugins/z/z.sh
 
-# fzf key bindings.
-source ~/.fzf/shell/key-bindings.zsh
-
 # dircolors.
 if [ -x "$(command -v dircolors)" ]; then
     eval "$(dircolors -b ~/.dircolors)"
+fi
+
+# fzf key bindings.
+if [ -x "$(command -v fzf)" ]; then
+    source ~/.fzf/shell/key-bindings.zsh
 fi
 
 # Manage SSH with Keychain.
