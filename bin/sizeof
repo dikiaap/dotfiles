@@ -22,7 +22,7 @@ sizeof_fn() {
 
     # Get Content-Length
     local curl_size
-    curl_size=$(curl -sLI "$URL" | grep "[Cc]ontent-[Ll]ength" | awk '{print $2}' | tr -d '\r')
+    curl_size=$(curl -sLI "$URL" | grep "[Cc]ontent-[Ll]ength" | awk 'NR==1{print $2}' | tr -d '\r')
 
     if [ -z "$curl_size" ]; then
         echo "File size not available"
@@ -35,9 +35,23 @@ sizeof_fn() {
     fi
 }
 
-if [ -z "$URL" ]; then
-    echo "$(basename "$0"): please provide the URL of a file"
-    exit 1
-else
-    sizeof_fn "$URL"
-fi
+main() {
+    local program_name
+    program_name=${0##*/}
+
+    case "$URL" in
+        -h|--help)
+            echo "$program_name https://example.com/path/to/file.example"
+            exit 0
+            ;;
+        '')
+            echo "$program_name: please provide the URL of a file"
+            exit 1
+            ;;
+        *)
+            sizeof_fn "$URL"
+            ;;
+    esac
+}
+
+main "$@"
