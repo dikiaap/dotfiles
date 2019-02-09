@@ -4,43 +4,52 @@ magenta='\e[1;35m'
 red='\e[1;31m'
 white='\e[0;37m'
 
-CMD="$1"
-
 shopt -s extglob
 
-printusage() {
-    prog=$(basename "$0")
-    echo "Usage: $prog [-option]" >&2
-    echo "" >&2
-    echo "Options:" >&2
-    echo "    --help    Print this message" >&2
-    echo "    -s        Safe cleaner, except browser and image thumbnails" >&2
-    echo "    -a        Clean all junk folders and files" >&2
+# Since some programs are installed in non-root directories,
+# don't run this script as root to avoid permission conflict.
+if [[ $EUID -eq 0 ]]; then
+    echo "Don't run this script as root"
+    exit 1
+fi
+
+# Print usage message.
+usage() {
+    local program_name
+    program_name=${0##*/}
+    cat <<EOF
+Usage: $program_name [-option]
+
+Options:
+    --help    Print this message
+    -s        Safe cleaner, except browser and image thumbnails
+    -a        Clean all junk folders and files
+EOF
 }
 
-safecleaner() {
-    echo -e $magenta"\n Cleaning Debian Packages... \n"$white
+safe_cleaner() {
+    echo -e "$magenta\n Cleaning Debian Packages... \n$white"
     sudo apt-get clean
 
-    echo -e $magenta"\n Autocleaning Debian Packages... \n"$white
+    echo -e "$magenta\n Autocleaning Debian Packages... \n$white"
     sudo apt-get autoclean
 
-    echo -e $magenta"\n Autoremoving Debian Packages... \n"$white
+    echo -e "$magenta\n Autoremoving Debian Packages... \n$white"
     sudo apt-get autoremove
 
-    echo -e $magenta"\n Cleaning Composer Installer... \n"$white
-    rm -fv ~/.composer/20*
+    echo -e "$magenta\n Cleaning Composer Installer... \n$white"
+    rm -fv ~/.composer/20*.phar
 
-    echo -e $magenta"\n Cleaning Gems... \n"$white
-    /usr/bin/gem cleanup
+    echo -e "$magenta\n Cleaning Gems... \n$white"
+    gem cleanup
 
-    echo -e $magenta"\n Cleaning Shell History... \n"$white
+    echo -e "$magenta\n Cleaning Shell History... \n$white"
     echo > ~/.bash_history && echo > ~/.zsh_history && echo > ~/.z && rm -fv ~/.z.*
 
-    echo -e $magenta"\n Cleaning Cache... \n"$white
+    echo -e "$magenta\n Cleaning Cache... \n$white"
     rm -rfv ~/.cache/!(chromium|fontconfig|mozilla|thumbnails)
 
-    echo -e $magenta"\n Cleaning Junk Files... \n"$white
+    echo -e "$magenta\n Cleaning Junk Files... \n$white"
     rm -rfv ~/.local/share/Trash/*
     rm -fv ~/.local/share/recently-used.xbel
     rm -fv ~/.npm/_logs/*
@@ -48,7 +57,7 @@ safecleaner() {
     rm -fv ~/.wget-hsts
     rm -fv ~/.xsession-errors*
 
-    echo -e $magenta"\n Cleaning Editor... \n"$white
+    echo -e "$magenta\n Cleaning Editor... \n$white"
     rm -rfv ~/.local/share/nano/search_history
     rm -rfv ~/.local/share/nvim/backup/*
     rm -rfv ~/.local/share/nvim/shada/*
@@ -56,7 +65,7 @@ safecleaner() {
     rm -rfv ~/.local/share/nvim/undo/*
     rm -fv ~/.viminfo
 
-    echo -e $magenta"\n Cleaning Log System... \n"$white
+    echo -e "$magenta\n Cleaning Log System... \n$white"
     sudo sh -c "echo > /var/log/alternatives.log"
     sudo sh -c "echo > /var/log/dpkg.log"
     sudo sh -c "echo > /var/log/lastlog"
@@ -91,27 +100,28 @@ safecleaner() {
     sudo rm -rfv /var/log/apt/*.gz &> /dev/null
 }
 
-if [[ -z "$1" ]] || [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
-    printusage
-    exit 0
-fi
+main() {
+    case "$1" in
+        ''|-h|--help)
+            usage
+            exit 0
+            ;;
+        -s)
+            sudo echo -e "$red\n Executing a safe cleaner. \n$white"
+            safe_cleaner
+            ;;
+        -a)
+            sudo echo -e "$red\n Executing a whole cleaner. \n$white"
+            safe_cleaner
+            echo -e "$magenta\n Cleaning Thumbnails... \n$white"
+            rm -rfv ~/.cache/thumbnails/*
+            rm -rfv ~/.thumbnails/*
+            ;;
+        *)
+            echo "Command not found"
+            exit 1
+            ;;
+    esac
+}
 
-case "$CMD" in
-    -s)
-        sudo echo -e $red"\n Executing a safe cleaner. \n"$white
-        safecleaner
-        exit 0
-        ;;
-    -a)
-        sudo echo -e $red"\n Executing a whole cleaner. \n"$white
-        safecleaner
-        echo -e $magenta"\n Cleaning Thumbnails... \n"$white
-        rm -rfv ~/.cache/thumbnails/*
-        rm -rfv ~/.thumbnails/*
-        exit 0
-        ;;
-    *)
-        echo "Command not found"
-        exit 1
-        ;;
-esac
+main "$@"

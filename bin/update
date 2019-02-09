@@ -3,151 +3,112 @@
 magenta='\e[1;35m'
 white='\e[0;37m'
 
-CMD="$1"
+# Since some programs are installed in non-root directories,
+# don't run this script as root to avoid permission conflict.
+if [[ $EUID -eq 0 ]]; then
+    echo "Don't run this script as root"
+    exit 1
+fi
 
-printusage() {
-    prog=$(basename "$0")
-    echo "Usage: $prog [-option]" >&2
-    echo "" >&2
-    echo "Options:" >&2
-    echo "    --help    Print this message" >&2
-    echo "    -a        Update all packages" >&2
+# Print usage message.
+usage() {
+    local program_name
+    program_name=${0##*/}
+    cat <<EOF
+Usage: $program_name [-option]
+
+Options:
+    --help    Print this message
+    -a        Update all packages
+EOF
 }
 
-apt() {
-    echo -e $magenta"\n Updating List System Packages... \n"$white
+# Installer.
+update_apt() {
+    echo -e "$magenta\n Updating List System Packages... \n$white"
     sudo apt-get update
 
-    echo -e $magenta"\n List System Packages... \n"$white
+    echo -e "$magenta\n List System Packages... \n$white"
     sudo apt-get dist-upgrade
 }
 
-composer() {
-    echo -e $magenta"\n Updating Composer Installer... \n"$white
-    ~/.local/bin/composer self-update --stable
+update_composer() {
+    echo -e "$magenta\n Updating Composer Installer... \n$white"
+    composer self-update --stable
 
-    echo -e $magenta"\n Updating Composer Packages... \n"$white
-    ~/.local/bin/composer global update
+    echo -e "$magenta\n Updating Composer Packages... \n$white"
+    composer global update
 }
 
-npm() {
-    echo -e $magenta"\n Updating npm... \n"$white
-    ~/.npm-global/bin/npm install npm -g
+update_npm() {
+    echo -e "$magenta\n Updating npm... \n$white"
+    npm install npm -g
 
-    echo -e $magenta"\n Updating npm Packages... \n"$white
-    ~/.npm-global/bin/npm update -g
+    echo -e "$magenta\n Updating npm Packages... \n$white"
+    npm update -g
 }
 
-rustup() {
-    echo -e $magenta"\n Updating rustup... \n"$white
-    ~/.cargo/bin/rustup self update
+update_rustup() {
+    echo -e "$magenta\n Updating rustup... \n$white"
+    rustup self update
 
-    echo -e $magenta"\n Updating Rust... \n"$white
-    ~/.cargo/bin/rustup update
+    echo -e "$magenta\n Updating Rust... \n$white"
+    rustup update
 }
 
-gem() {
-    echo -e $magenta"\n Updating Gem System... \n"$white
+update_gem() {
+    echo -e "$magenta\n Updating Gem System... \n$white"
     sudo gem update --system
 
-    echo -e $magenta"\n Updating Gems... \n"$white
-    /usr/bin/gem update
+    echo -e "$magenta\n Updating Gems... \n$white"
+    gem update
 }
 
-vim() {
-    echo -e $magenta"\n Updating Vim Plugins... \n"$white
-    /usr/bin/nvim +PlugUpdate +qall
+update_vim() {
+    echo -e "$magenta\n Updating Vim Plugins... \n$white"
+    nvim +PlugUpdate +qall
 }
 
-# Print help message.
-if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
-    printusage
-    exit 0
-fi
+update_one_by_one() {
+    declare -a arr=("update_apt" "update_composer" "update_npm"
+                    "update_rustup" "update_gem" "update_vim")
 
-# Update one by one.
-if [[ -z "$1" ]]; then
-    echo
-    read -r -p "Do you want to upgrade debian packages? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            apt
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
+    for update_command in "${arr[@]}"; do
+        echo
+        read -r -p "Do you want to ${update_command//_/ } packages? [y/n] " response
+        case $response in
+            [yY][eE][sS]|[yY])
+                $update_command
+                ;;
+            *)
+                echo "Cancelled."
+                ;;
+        esac
+    done
+}
 
-    echo
-    read -r -p "Do you want to upgrade composer packages? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            composer
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to upgrade npm packages? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            npm
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to upgrade rustup packages? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            rustup
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to upgrade gem packages? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            gem
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to upgrade vim plugins? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            vim
+main() {
+    case "$1" in
+        -h|--help)
+            usage
             exit 0
             ;;
+        '')
+            update_one_by_one
+            ;;
+        -a)
+            update_apt
+            update_composer
+            update_npm
+            update_rustup
+            update_gem
+            update_vim
+            ;;
         *)
-            echo "Cancelled."
+            echo "Command not found"
             exit 1
             ;;
     esac
-fi
+}
 
-# Update all packages.
-case "$CMD" in
-    -a)
-        apt
-        composer
-        npm
-        rustup
-        gem
-        vim
-        exit 0
-        ;;
-    *)
-        exit 1
-        ;;
-esac
+main "$@"

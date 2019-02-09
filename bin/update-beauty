@@ -3,277 +3,215 @@
 magenta='\e[1;35m'
 green='\e[1;32m'
 white='\e[0;37m'
+source_dir="$HOME/.local/src"
 
-row=$(seq -s '─' 0 "$(tput cols)" | tr -d '[:digit:]')
-CMD="$1"
+# Since some programs are installed in non-root directories,
+# don't run this script as root to avoid permission conflict.
+if [[ $EUID -eq 0 ]]; then
+    echo "Don't run this script as root"
+    exit 1
+fi
 
-printusage() {
-    prog=$(basename "$0")
-    echo "Usage: $prog [-option]" >&2
-    echo "" >&2
-    echo "Options:" >&2
-    echo "    --help    Print this message" >&2
-    echo "    -a        Update all packages" >&2
+# Print usage message.
+usage() {
+    local program_name
+    program_name=${0##*/}
+    cat <<EOF
+Usage: $program_name [-option]
+
+Options:
+    --help    Print this message
+    -a        Update all packages
+EOF
 }
 
-oh-my-zsh() {
-    echo -e $magenta"\n Updating oh-my-zsh... \n"$white
-    /bin/sh ~/.oh-my-zsh/tools/upgrade.sh
-    echo -e $magenta"\n Updating zsh plugins... \n"$white
-    cd ~/.zsh/plugins
+# Tools.
+row() {
+    seq -s '─' 0 "$(tput cols)" | tr -d '[:digit:]'
+}
+
+# Installer.
+update_oh-my-zsh() {
+    echo -e "$magenta\n Updating oh-my-zsh... \n$white"
+    sh "$HOME/.oh-my-zsh/tools/upgrade.sh"
+    echo -e "$magenta\n Updating zsh plugins... \n$white"
+    cd "$HOME/.zsh/plugins" || exit
     find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
 }
 
-base16-shell() {
-    echo -e $magenta"\n Updating base16-shell... \n"$white
-    cd ~/.config/base16-shell
-    git pull
-    ./colortest
-}
-
-i3-gaps() {
-    echo -e $magenta"\n Updating & compiling i3-gaps... \n"$white
-    cd ~/.local/src/i3-gaps
+update_i3-gaps() {
+    echo -e "$magenta\n Updating & compiling i3-gaps... \n$white"
+    cd "$source_dir/i3-gaps" || exit
     git pull
     autoreconf -fi
     rm -rf build
     mkdir build
-    cd build
+    cd build || exit
     ../configure --prefix=/usr --sysconfdir=/etc --enable-debug=no --disable-sanitizers
     make
-    echo -e $green"\n Previous i3-gaps version: \n"$white
-    echo "$row"
-    /usr/bin/i3 -v
-    echo "$row"
-    echo -e $magenta"\n Installing i3-gaps... \n"$white
+    echo -e "$green\n Previous i3-gaps version: \n$white"
+    row
+    i3 -v
+    row
+    echo -e "$magenta\n Installing i3-gaps... \n$white"
     sudo make install
-    echo -e $green"\n Current i3-gaps version: \n"$white
-    echo "$row"
-    /usr/bin/i3 -v
-    echo "$row"
+    echo -e "$green\n Current i3-gaps version: \n$white"
+    row
+    i3 -v
+    row
 }
 
-i3blocks() {
-    echo -e $magenta"\n Updating & compiling i3blocks... \n"$white
-    cd ~/.local/src/i3blocks
+update_i3blocks() {
+    echo -e "$magenta\n Updating & compiling i3blocks... \n$white"
+    cd "$source_dir/i3blocks" || exit
     git pull
     autoreconf -fi
     ./configure
     make
-    echo -e $green"\n Previous i3blocks version: \n"$white
-    echo "$row"
-    /usr/local/bin/i3blocks -V
-    echo "$row"
-    echo -e $magenta"\n Installing i3blocks... \n"$white
+    echo -e "$green\n Previous i3blocks version: \n$white"
+    row
+    i3blocks -V
+    row
+    echo -e "$magenta\n Installing i3blocks... \n$white"
     sudo make install
-    echo -e $green"\n Current i3blocks version: \n"$white
-    echo "$row"
-    /usr/local/bin/i3blocks -V
-    echo "$row"
-    echo -e $magenta"\n Updating i3blocks-contrib... \n"$white
-    cd ~/.local/src/i3blocks-contrib
+    echo -e "$green\n Current i3blocks version: \n$white"
+    row
+    i3blocks -V
+    row
+    echo -e "$magenta\n Updating i3blocks-contrib... \n$white"
+    cd "$source_dir/i3blocks-contrib" || exit
     git pull
 }
 
-i3lock() {
-    echo -e $magenta"\n Updating & compiling i3lock... \n"$white
-    cd ~/.local/src/i3lock-color
+update_i3lock() {
+    echo -e "$magenta\n Updating & compiling i3lock... \n$white"
+    cd "$source_dir/i3lock-color" || exit
     git pull
     autoreconf -i
     rm -rf build
     mkdir build
-    cd build
+    cd build || exit
     ../configure --enable-debug=no --disable-sanitizers
     make
-    echo -e $green"\n Previous i3lock version: \n"$white
-    echo "$row"
-    /usr/local/bin/i3lock -v
-    echo "$row"
-    echo -e $magenta"\n Installing i3lock... \n"$white
+    echo -e "$green\n Previous i3lock version: \n$white"
+    row
+    i3lock -v
+    row
+    echo -e "$magenta\n Installing i3lock... \n$white"
     sudo make install
-    echo -e $green"\n Current i3lock version: \n"$white
-    echo "$row"
-    /usr/local/bin/i3lock -v
-    echo "$row"
-    echo -e $magenta"\n Updating i3lock-fancy... \n"$white
-    cd ~/.local/src/i3lock-fancy
+    echo -e "$green\n Current i3lock version: \n$white"
+    row
+    i3lock -v
+    row
+    echo -e "$magenta\n Updating i3lock-fancy... \n$white"
+    cd "$source_dir/i3lock-fancy" || exit
     git pull
     sudo make install
 }
 
-rofi() {
-    echo -e $magenta"\n Updating & compiling rofi... \n"$white
-    cd ~/.local/src/rofi
+update_rofi() {
+    echo -e "$magenta\n Updating & compiling rofi... \n$white"
+    cd "$source_dir/rofi" || exit
     git pull
     git submodule update --init
     autoreconf -i
     rm -rf build
     mkdir build
-    cd build
+    cd build || exit
     ../configure --disable-check
     make
-    echo -e $green"\n Previous rofi version: \n"$white
-    echo "$row"
-    /usr/local/bin/rofi -v
-    echo "$row"
-    echo -e $magenta"\n Installing rofi... \n"$white
+    echo -e "$green\n Previous rofi version: \n$white"
+    row
+    rofi -v
+    row
+    echo -e "$magenta\n Installing rofi... \n$white"
     sudo make install
-    echo -e $green"\n Current rofi version: \n"$white
-    echo "$row"
-    /usr/local/bin/rofi -v
-    echo "$row"
+    echo -e "$green\n Current rofi version: \n$white"
+    row
+    rofi -v
+    row
 }
 
-dunst() {
-    echo -e $magenta"\n Updating & compiling dunst... \n"$white
-    cd ~/.local/src/dunst
+update_dunst() {
+    echo -e "$magenta\n Updating & compiling dunst... \n$white"
+    cd "$source_dir/dunst" || exit
     git pull
     make clean
     make
     make dunstify
-    echo -e $green"\n Previous dunst version: \n"$white
-    echo "$row"
-    /usr/local/bin/dunst -v
-    echo "$row"
-    echo -e $magenta"\n Installing dunst... \n"$white
+    echo -e "$green\n Previous dunst version: \n$white"
+    row
+    dunst -v
+    row
+    echo -e "$magenta\n Installing dunst... \n$white"
     sudo make install
     sudo install -Dm755 --verbose dunstify /usr/local/bin/dunstify
-    echo -e $green"\n Current dunst version: \n"$white
-    echo "$row"
-    /usr/local/bin/dunst -v
-    echo "$row"
+    echo -e "$green\n Current dunst version: \n$white"
+    row
+    dunst -v
+    row
 }
 
-compton() {
-    echo -e $magenta"\n Updating & compiling compton... \n"$white
-    cd ~/.local/src/compton
+update_compton() {
+    echo -e "$magenta\n Updating & compiling compton... \n$white"
+    cd "$source_dir/compton" || exit
     git pull
     rm -rf build
     meson --buildtype=release . build -Dbuild_docs=false
     ninja -C build
-    echo -e $green"\n Previous compton version: \n"$white
-    echo "$row"
-    /usr/local/bin/compton --version
-    echo "$row"
-    echo -e $magenta"\n Installing compton... \n"$white
+    echo -e "$green\n Previous compton version: \n$white"
+    row
+    compton --version
+    row
+    echo -e "$magenta\n Installing compton... \n$white"
     sudo install -Dm755 --verbose build/src/compton /usr/local/bin/compton
-    echo -e $green"\n Current compton version: \n"$white
-    echo "$row"
-    /usr/local/bin/compton --version
-    echo "$row"
+    echo -e "$green\n Current compton version: \n$white"
+    row
+    compton --version
+    row
 }
 
-# Print help message.
-if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
-    printusage
-    exit 0
-fi
+update_one_by_one() {
+    declare -a arr=("update_oh-my-zsh" "update_i3-gaps" "update_i3blocks"
+                    "update_i3lock" "update_rofi" "update_dunst" "update_compton")
 
-# Update one by one.
-if [[ -z "$1" ]]; then
-    echo
-    read -r -p "Do you want to update oh-my-zsh & zsh plugins? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            oh-my-zsh
+    for update_command in "${arr[@]}"; do
+        echo
+        read -r -p "Do you want to ${update_command//_/ }? [y/n] " response
+        case $response in
+            [yY][eE][sS]|[yY])
+                $update_command
+                ;;
+            *)
+                echo "Cancelled."
+                ;;
+        esac
+    done
+}
+
+main() {
+    case "$1" in
+        -h|--help)
+            usage
+            exit 0
+            ;;
+        '')
+            update_one_by_one
+            ;;
+        -a)
+            update_oh-my-zsh
+            update_i3-gaps
+            update_i3blocks
+            update_i3lock
+            update_rofi
+            update_dunst
+            update_compton
             ;;
         *)
-            echo "Cancelled."
+            echo "Command not found"
+            exit 1
             ;;
     esac
+}
 
-    echo
-    read -r -p "Do you want to update base16-shell? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            base16-shell
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to update i3-gaps? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            i3-gaps
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to update i3blocks? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            i3blocks
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to update i3lock? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            i3lock
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to update rofi? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            rofi
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to update dunst? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            dunst
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-
-    echo
-    read -r -p "Do you want to update compton? [y/n] " response
-    case $response in
-        [yY][eE][sS]|[yY])
-            compton
-            ;;
-        *)
-            echo "Cancelled."
-            ;;
-    esac
-fi
-
-# Update all packages.
-case "$CMD" in
-    -a)
-        oh-my-zsh
-        base16-shell
-        i3-gaps
-        i3blocks
-        i3lock
-        rofi
-        dunst
-        compton
-        exit 0
-        ;;
-    *)
-        exit 1
-        ;;
-esac
+main "$@"
