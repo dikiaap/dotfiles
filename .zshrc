@@ -28,7 +28,7 @@ plugins=(
 source ~/.exports
 
 # Oh My Zsh.
-source "$ZSH"/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 # User config.
 source ~/.zsh/setopt.zsh
@@ -60,4 +60,6 @@ if [ -x "$(command -v keychain)" ]; then
 fi
 
 # Base16 Shell.
-[ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
+if [ -f ~/.local/bin/base16-oxide ]; then
+    source ~/.local/bin/base16-oxide
+fi
