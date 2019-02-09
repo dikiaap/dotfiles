@@ -1,52 +1,38 @@
-! Base16 Oxide
-! Scheme: Diki Ananta (https://github.com/dikiaap)
+! Oxide Color scheme
+! Diki Ananta (https://github.com/dikiaap/dotfiles)
 
-#define base00 #212121
-#define base01 #363636
-#define base02 #424242
-#define base03 #5c5c5c
-#define base04 #b4b6ba
-#define base05 #c0c5ce
-#define base06 #cdd3de
-#define base07 #f3f4f5
-#define base08 #e57373
-#define base09 #f99157
-#define base0A #fac863
-#define base0B #a6bc69
-#define base0C #5fb3b3
-#define base0D #6699cc
-#define base0E #c594c5
-#define base0F #ab7967
+#define oxide_00_black      #212121
+#define oxide_01_red        #e57373
+#define oxide_02_green      #a6bc69
+#define oxide_03_yellow     #fac863
+#define oxide_04_blue       #6699cc
+#define oxide_05_magenta    #c594c5
+#define oxide_06_cyan       #5fb3b3
+#define oxide_07_white      #c0c5ce
+#define oxide_08_bright_black   #5c5c5c
+#define oxide_15_bright_white   #f3f4f5
 
-*foreground:   base05
+*foreground:   oxide_07_white
 #ifdef background_opacity
-*background:   [background_opacity]base00
+*background:   [background_opacity]oxide_00_black
 #else
-*background:   base00
+*background:   oxide_00_black
 #endif
-*cursorColor:  base05
+*cursorColor:  oxide_07_white
 
-*color0:       base00
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
-
-*color8:       base03
-*color9:       base08
-*color10:      base0B
-*color11:      base0A
-*color12:      base0D
-*color13:      base0E
-*color14:      base0C
-*color15:      base07
-
-*color16:      base09
-*color17:      base0F
-*color18:      base01
-*color19:      base02
-*color20:      base04
-*color21:      base06
+*color0:       oxide_00_black
+*color1:       oxide_01_red
+*color2:       oxide_02_green
+*color3:       oxide_03_yellow
+*color4:       oxide_04_blue
+*color5:       oxide_05_magenta
+*color6:       oxide_06_cyan
+*color7:       oxide_07_white
+*color8:       oxide_08_bright_black
+*color9:       oxide_01_red
+*color10:      oxide_02_green
+*color11:      oxide_03_yellow
+*color12:      oxide_04_blue
+*color13:      oxide_05_magenta
+*color14:      oxide_06_cyan
+*color15:      oxide_15_bright_white
