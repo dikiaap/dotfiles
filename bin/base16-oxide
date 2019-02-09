@@ -1,0 +1,104 @@
+#!/usr/bin/env sh
+# Base16 Shell (https://github.com/chriskempson/base16-shell)
+# Oxide scheme by Diki Ananta (https://github.com/dikiaap/dotfiles)
+
+color00="21/21/21"  # Black
+color01="e5/73/73"  # Red
+color02="a6/bc/69"  # Green
+color03="fa/c8/63"  # Yellow
+color04="66/99/cc"  # Blue
+color05="c5/94/c5"  # Magenta
+color06="5f/b3/b3"  # Cyan
+color07="c0/c5/ce"  # White
+color08="5c/5c/5c"  # Bright Black
+color09=$color01    # Bright Red
+color10=$color02    # Bright Green
+color11=$color03    # Bright Yellow
+color12=$color04    # Bright Blue
+color13=$color05    # Bright Magenta
+color14=$color06    # Bright Cyan
+color15="f3/f4/f5"  # Bright White
+color_foreground=$color07 # White
+color_background=$color00 # Black
+
+if [ -n "$TMUX" ]; then
+    # Tell tmux to pass the escape sequences through
+    put_template() { printf '\033Ptmux;\033\033]4;%d;rgb:%s\033\033\\\033'\\'' "$@"; }
+    put_template_var() { printf '\033Ptmux;\033\033]%d;rgb:%s\033\033\\\033'\\'' "$@"; }
+    put_template_custom() { printf '\033Ptmux;\033\033]%s%s\033\033\\\033'\\'' "$@"; }
+elif [ "${TERM%%[-.]*}" = "screen" ]; then
+    # GNU screen (screen, screen-256color, and screen-256color-bce)
+    put_template() { printf '\033P\033]4;%d;rgb:%s\007\033'\\'' "$@"; }
+    put_template_var() { printf '\033P\033]%d;rgb:%s\007\033'\\'' "$@"; }
+    put_template_custom() { printf '\033P\033]%s%s\007\033'\\'' "$@"; }
+elif [ "${TERM%%-*}" = "linux" ]; then
+    put_template() { [ "$1" -lt 16 ] && printf "\e]P%x%s" "$1" "$(echo "$2" | sed 's/\///g')"; }
+    put_template_var() { true; }
+    put_template_custom() { true; }
+else
+    put_template() { printf '\033]4;%d;rgb:%s\033'\\'' "$@"; }
+    put_template_var() { printf '\033]%d;rgb:%s\033'\\'' "$@"; }
+    put_template_custom() { printf '\033]%s%s\033'\\'' "$@"; }
+fi
+
+# 16 color palette
+put_template 0  $color00
+put_template 1  $color01
+put_template 2  $color02
+put_template 3  $color03
+put_template 4  $color04
+put_template 5  $color05
+put_template 6  $color06
+put_template 7  $color07
+put_template 8  $color08
+put_template 9  $color09
+put_template 10 $color10
+put_template 11 $color11
+put_template 12 $color12
+put_template 13 $color13
+put_template 14 $color14
+put_template 15 $color15
+
+# Foreground / Background / Cursor color
+if [ -n "$ITERM_SESSION_ID" ]; then
+    # iTerm2 proprietary escape codes
+    put_template_custom Pg c0c5ce # Foreground
+    put_template_custom Ph 212121 # Background
+    put_template_custom Pi c0c5ce # Bold color
+    put_template_custom Pj 424242 # Selection color
+    put_template_custom Pk c0c5ce # Selected text color
+    put_template_custom Pl c0c5ce # Cursor
+    put_template_custom Pm 212121 # Cursor text
+else
+    put_template_var 10 $color_foreground
+    if [ "$BASE16_SHELL_SET_BACKGROUND" != false ]; then
+        put_template_var 11 $color_background
+        if [ "${TERM%%-*}" = "rxvt" ]; then
+            put_template_var 708 $color_background # Internal border (rxvt)
+        fi
+    fi
+    put_template_custom 12 ";7" # Cursor (reverse video)
+fi
+
+# Clean up
+unset -f put_template
+unset -f put_template_var
+unset -f put_template_custom
+unset color00
+unset color01
+unset color02
+unset color03
+unset color04
+unset color05
+unset color06
+unset color07
+unset color08
+unset color09
+unset color10
+unset color11
+unset color12
+unset color13
+unset color14
+unset color15
+unset color_foreground
+unset color_background
