@@ -4,7 +4,26 @@ rvm:
   - 2.6
 before_script:
   - gem install awesome_bot
+  - wget "https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz"
+  - tar -xvf shellcheck-stable.linux.x86_64.tar.xz
+  - sudo cp shellcheck-stable/shellcheck /usr/bin/
+  - shellcheck --version
 script:
+  # Check valid links in the README file.
   - awesome_bot README.md
+  # Check for bugs, warnings, and errors in shell scripts.
+  - shellcheck bin/*
+  - shellcheck install.sh
+  # Read more the details of exceptions on ShellCheck Wiki.
+  # Example of SC1000:
+  # https://github.com/koalaman/shellcheck/wiki/SC1000
+  - export SHELLCHECK_OPTS="-e SC1090,SC2148"
+  - shellcheck -e SC1004 .aliases
+  - shellcheck .bash_profile
+  - shellcheck -e SC1091,SC2154 .bashrc
+  - shellcheck .exports
+  - shellcheck -e SC2164 .functions
+  - shellcheck -e SC2034 .zshrc
+  # Install the dotfiles.
   - ./install.sh -i
   - ./install.sh -r
