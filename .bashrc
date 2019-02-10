@@ -18,6 +18,7 @@ shopt -s cmdhist
 # update the values of lines and columns.
 shopt -s checkwinsize
 
+# Bash prompt.
 if [ "$color_prompt" = yes ]; then
     PS1='\n\[\e[36m\]\w$(__git_ps1 "\[\033[00m\] on \[\e[35m\] %s")\[\033[00m\]\n$ '
 else
