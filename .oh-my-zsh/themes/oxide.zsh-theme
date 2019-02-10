@@ -1,92 +1,72 @@
-# Oxide theme for Oh My Zsh
+# Oxide theme for Zsh
 #
 # Author: Diki Ananta <diki1aap@gmail.com>
 # Repository: https://github.com/dikiaap/dotfiles
 # License: MIT
 
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-virtualenv_info() {
-    [ "$VIRTUAL_ENV" ] && echo '('"%F{blue}$(basename "$VIRTUAL_ENV")"%f') '
-}
-PR_GIT_UPDATE=1
+# Prompt:
+# %F => Color codes
+# %f => Reset color
+# %~ => Current path
+# %(x.true.false) => Specifies a ternary expression
+#   ! => True if the shell is running with root privileges
+#   ? => True if the exit status of the last command was success
+#
+# Git:
+# %a => Current action (rebase/merge)
+# %b => Current branch
+# %c => Staged changes
+# %u => Unstaged changes
+#
+# Terminal:
+# \n => Newline/Line Feed (LF)
 
-setopt prompt_subst
+setopt PROMPT_SUBST
 
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
-# use extended color palette if available.
+# Use True color (24-bit) if available.
 if [[ "${terminfo[colors]}" -ge 256 ]]; then
-    turquoise="%F{73}"
-    orange="%F{179}"
-    purple="%F{140}"
-    red="%F{167}"
-    limegreen="%F{107}"
+    oxide_turquoise="%F{73}"
+    oxide_orange="%F{179}"
+    oxide_red="%F{167}"
+    oxide_limegreen="%F{107}"
 else
-    turquoise="%F{cyan}"
-    orange="%F{yellow}"
-    purple="%F{magenta}"
-    red="%F{hotpink}"
-    limegreen="%F{green}"
+    oxide_turquoise="%F{cyan}"
+    oxide_orange="%F{yellow}"
+    oxide_red="%F{red}"
+    oxide_limegreen="%F{green}"
 fi
 
-# enable VCS systems you use.
+# Reset color.
+oxide_reset_color="%f"
+
+# VCS style formats.
+FMT_UNSTAGED="${oxide_reset_color} %{$oxide_orange%}●"
+FMT_STAGED="${oxide_reset_color} %{$oxide_limegreen%}✚"
+FMT_ACTION="(%{$oxide_limegreen%}%a${oxide_reset_color})"
+FMT_VCS_STATUS="on %{$oxide_turquoise%} %b%u%c${oxide_reset_color}"
+
 zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr    "${FMT_UNSTAGED}"
+zstyle ':vcs_info:*' stagedstr      "${FMT_STAGED}"
+zstyle ':vcs_info:*' actionformats  "${FMT_VCS_STATUS}${FMT_ACTION}"
+zstyle ':vcs_info:*' formats        "${FMT_VCS_STATUS}"
+zstyle ':vcs_info:*' nvcsformats    ""
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
-# check-for-changes can be really slow.
-# you should disable it, if you work with large repositories.
-zstyle ':vcs_info:*:prompt:*' check-for-changes true
-
-# set formats.
-PR_RST="%f"
-FMT_BRANCH="(%{$turquoise%}%b%u%c${PR_RST})"
-FMT_ACTION="(%{$limegreen%}%a${PR_RST})"
-FMT_UNSTAGED="%{$orange%} ●"
-FMT_STAGED="%{$limegreen%} ✚"
-
-zstyle ':vcs_info:*:prompt:*' unstagedstr   "${FMT_UNSTAGED}"
-zstyle ':vcs_info:*:prompt:*' stagedstr     "${FMT_STAGED}"
-zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
-zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
-zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
-
-oxide_preexec() {
-    case "$2" in
-        *git*)
-            PR_GIT_UPDATE=1
-            ;;
-        *hub*)
-            PR_GIT_UPDATE=1
-            ;;
-        *svn*)
-            PR_GIT_UPDATE=1
-            ;;
-    esac
-}
-add-zsh-hook preexec oxide_preexec
-
-oxide_chpwd() {
-    PR_GIT_UPDATE=1
-}
-add-zsh-hook chpwd oxide_chpwd
-
-oxide_precmd() {
-    if [[ -n "$PR_GIT_UPDATE" ]] ; then
-        # check for untracked files or updated submodules, since vcs_info doesn't.
-        if git ls-files --other --exclude-standard 2> /dev/null | grep -q "."; then
-            PR_GIT_UPDATE=1
-            FMT_BRANCH="on %{$turquoise%} %b%u%c%F{red} ● ${PR_RST}"
-        else
-            FMT_BRANCH="on %{$turquoise%} %b%u%c${PR_RST}"
-        fi
-        zstyle ':vcs_info:*:prompt:*' formats "${FMT_BRANCH} "
-
-        vcs_info 'prompt'
-        PR_GIT_UPDATE=
+# Check for untracked files.
++vi-git-untracked() {
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+            git status --porcelain | grep --max-count=1 '^??' &> /dev/null; then
+        hook_com[staged]+="${oxide_reset_color} %{$oxide_red%}●${oxide_reset_color} "
     fi
 }
-add-zsh-hook precmd oxide_precmd
 
-PROMPT=$'
-%{$limegreen%}%~${PR_RST} $vcs_info_msg_0_$(virtualenv_info)
-%(?.%F{white}.%F{red})$%f '
+# Executed before each prompt.
+add-zsh-hook precmd vcs_info
+
+# Oxide prompt style.
+PROMPT=$'\n%{$oxide_limegreen%}%~${oxide_reset_color} ${vcs_info_msg_0_}\n%(?.%F{white}.%{$oxide_red%})%(!.#.$)%{$oxide_reset_color%} '
