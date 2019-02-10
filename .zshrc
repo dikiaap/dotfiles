@@ -21,7 +21,6 @@ plugins=(
     archive
     extract
     git
-    ubuntu
 )
 
 # Environment variables.
