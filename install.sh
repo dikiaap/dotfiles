@@ -105,6 +105,7 @@ uninstall_dotfiles() {
 
     if ! [ -f "$backup_dir/check-backup.txt" ]; then
         echo -e "${red}You have not installed this dotfiles yet.${white}" >&2
+        exit 1
     else
         echo -e "${blue}Your old config has been restored!\n${white}" >&2
         echo "Thanks for using my dotfiles." >&2
