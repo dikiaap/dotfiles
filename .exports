@@ -1,31 +1,50 @@
-# Main exports.
-export ZSH="$HOME/.oh-my-zsh"
+# Initialize $PATH with system and user binaries.
 export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/.gem/bin:$HOME/.local/bin"
-export LANG="en_US.UTF-8"
-export EDITOR="subl"
-export TERM="xterm-256color"
-export PROMPT_EOL_MARK=""
 
-# User settings.
+# Locale.
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
+# Term.
+export TERM="xterm-256color"
+
+# Default Editor.
+export EDITOR="subl"
+
+# Zsh.
+if [ "$(ps -p $$ -ocomm=)" = "zsh" ]; then
+    # Oh My Zsh.
+    export ZSH="$HOME/.oh-my-zsh"
+    # Set a character at the end of partial lines to none.
+    export PROMPT_EOL_MARK=""
+fi
+
+# Bash.
+if [ "$(ps -p $$ -ocomm=)" = "bash" ]; then
+    # History settings.
+    export HISTTIMEFORMAT="%F %T "
+    export HISTCONTROL=ignoredups
+    export HISTSIZE=10000
+    # Save and reload the history after each command finishes in another bash session.
+    export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+fi
+
+# bat.
 export BAT_THEME="Material-Theme-Darker"
-export FZF_DEFAULT_OPTS="
-    --color=fg:#c0c5ce,bg:#212121,hl:#808080,fg+:#e6e6e6,bg+:#3b3b3b,hl+:#f7c662
-    --color=info:#f7c662,prompt:#6699cc,pointer:#a6bc69,marker:#a6bc69,spinner:#f7c662,header:#6699cc
-"
+
+# fzf.
+export FZF_DEFAULT_OPTS=" \
+    --color=fg:#c0c5ce,bg:#212121,hl:#808080,fg+:#e6e6e6,bg+:#3b3b3b,hl+:#f7c662 \
+    --color=info:#f7c662,prompt:#6699cc,pointer:#a6bc69,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
+
+# ripgrep.
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
-# Bash history settings.
-export HISTTIMEFORMAT="%F %T "      # the format is from date command
-export HISTCONTROL=ignoredups       # no duplicate entries
-export HISTSIZE=2000                # big history (default is 500)
-# Save and reload the history after each command finishes in another bash session.
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-
-# Highlighting inside manpages and elsewhere.
-export LESS_TERMCAP_mb=$'\e[1;31m'          # start blinking
-export LESS_TERMCAP_md=$'\e[1;34m'          # start bold mode
-export LESS_TERMCAP_me=$'\e[0m'             # end all mode
-export LESS_TERMCAP_so=$'\e[38;5;215m'      # start standout mode
-export LESS_TERMCAP_se=$'\e[0m'             # end standout mode
-export LESS_TERMCAP_us=$'\e[4;35m'          # start underline
-export LESS_TERMCAP_ue=$'\e[0m'             # end underline
+# Less.
+export LESS_TERMCAP_mb=$'\e[1;31m'      # Start blinking
+export LESS_TERMCAP_md=$'\e[1;34m'      # Start bold mode
+export LESS_TERMCAP_me=$'\e[0m'         # End all mode
+export LESS_TERMCAP_so=$'\e[38;5;215m'  # Start standout mode
+export LESS_TERMCAP_se=$'\e[0m'         # End standout mode
+export LESS_TERMCAP_us=$'\e[4;35m'      # Start underline
+export LESS_TERMCAP_ue=$'\e[0m'         # End underline
