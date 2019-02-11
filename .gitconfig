@@ -1,12 +1,17 @@
 [alias]
     a = add
     aa = add -A
+    b = branch
+    ba = branch -a
     c = commit -m
     ca = commit -am
     co = checkout
-    contributors = shortlog -ns
+    contributors = shortlog -nse
     d = diff --patch-with-stat
     df = diff --patch-with-stat --color-words
+    ds = diff --patch-with-stat --staged
+    dt = difftool
+    dts = difftool --staged
     fc = "!f() { git log --pretty='%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --grep=$1; }; f"
     fs = "!f() { git log --pretty='%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' -S$1; }; f"
     lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
@@ -67,3 +72,15 @@
 
 [gpg]
     program = gpg
+
+[url "git@github.com:"]
+    insteadOf = "gh:"
+    pushInsteadOf = "gh:"
+
+[url "git@gist.github.com:"]
+    insteadOf = "gist:"
+    pushInsteadOf = "gist:"
+
+[url "git@gitlab.com:"]
+    insteadOf = "gl:"
+    pushInsteadOf = "gl:"
