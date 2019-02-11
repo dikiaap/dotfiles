@@ -1,0 +1,8 @@
+# Download the best file format available.
+--format best
+
+# Do not use the Last-modified header to set the file modification time.
+--no-mtime
+
+# Save to ~/Downloads directory.
+--output "$HOME/Downloads/%(title)s.%(ext)s"
