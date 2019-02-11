@@ -43,16 +43,16 @@ fi
 oxide_reset_color="%f"
 
 # VCS style formats.
-FMT_UNSTAGED="${oxide_reset_color} %{$oxide_orange%}●"
-FMT_STAGED="${oxide_reset_color} %{$oxide_limegreen%}✚"
-FMT_ACTION="(%{$oxide_limegreen%}%a${oxide_reset_color})"
-FMT_VCS_STATUS="on %{$oxide_turquoise%} %b%u%c${oxide_reset_color}"
+FMT_UNSTAGED="%{$oxide_reset_color%} %{$oxide_orange%}●"
+FMT_STAGED="%{$oxide_reset_color%} %{$oxide_limegreen%}✚"
+FMT_ACTION="(%{$oxide_limegreen%}%a%{$oxide_reset_color%})"
+FMT_VCS_STATUS="on %{$oxide_turquoise%} %b%u%c%{$oxide_reset_color%}"
 
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr    "${FMT_UNSTAGED}"
 zstyle ':vcs_info:*' stagedstr      "${FMT_STAGED}"
-zstyle ':vcs_info:*' actionformats  "${FMT_VCS_STATUS}${FMT_ACTION}"
+zstyle ':vcs_info:*' actionformats  "${FMT_VCS_STATUS} ${FMT_ACTION}"
 zstyle ':vcs_info:*' formats        "${FMT_VCS_STATUS}"
 zstyle ':vcs_info:*' nvcsformats    ""
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
@@ -61,7 +61,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 +vi-git-untracked() {
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
             git status --porcelain | grep --max-count=1 '^??' &> /dev/null; then
-        hook_com[staged]+="${oxide_reset_color} %{$oxide_red%}●${oxide_reset_color} "
+        hook_com[staged]+="%{$oxide_reset_color%} %{$oxide_red%}●"
     fi
 }
 
@@ -69,4 +69,4 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 add-zsh-hook precmd vcs_info
 
 # Oxide prompt style.
-PROMPT=$'\n%{$oxide_limegreen%}%~${oxide_reset_color} ${vcs_info_msg_0_}\n%(?.%F{white}.%{$oxide_red%})%(!.#.$)%{$oxide_reset_color%} '
+PROMPT=$'\n%{$oxide_limegreen%}%~%{$oxide_reset_color%} ${vcs_info_msg_0_}\n%(?.%{%F{white}%}.%{$oxide_red%})%(!.#.$)%{$oxide_reset_color%} '
