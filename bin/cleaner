@@ -63,6 +63,9 @@ safe_cleaner() {
     rm -rfv ~/.local/share/nvim/shada/*
     rm -rfv ~/.local/share/nvim/swap/*
     rm -rfv ~/.local/share/nvim/undo/*
+    rm -rfv ~/.config/sublime-text-3/Cache/*
+    rm -rfv ~/.config/sublime-text-3/Index/*
+    rm -rfv ~/.config/sublime-text-3/Local/*.sublime_session
     rm -fv ~/.viminfo
 
     echo -e "$magenta\n Cleaning Log System... \n$white"
