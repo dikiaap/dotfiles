@@ -2,6 +2,7 @@
 
 magenta='\e[1;35m'
 green='\e[1;32m'
+red='\e[0;31m'
 white='\e[0;37m'
 source_dir="$HOME/.local/src"
 
@@ -30,23 +31,45 @@ row() {
     seq -s '─' 0 "$(tput cols)" | tr -d '[:digit:]'
 }
 
+# Get latest release.
+get_latest_release() {
+    local regex_to_remove_url='sed -re ''s#(http://|https://|git@|git://)github.com(/|:)##'' -e ''s#(/|.git)$##'''
+    local username_and_repo
+    username_and_repo=$(git config --get remote.origin.url | $regex_to_remove_url)
+    curl -s "https://api.github.com/repos/$username_and_repo/releases/latest" | awk -F '"' '/tag_name/{print $4}'
+}
+
+# Use latest release.
+use_latest_release() {
+    local get_version
+    get_version=$(get_latest_release)
+    if ! [[ -z "$get_version" ]]; then
+        git clean -fd
+        git fetch origin tag "$get_version" --no-tags
+        git checkout "$get_version"
+    else
+        echo -e "$red[!] Error: There is an internet connection issue.$white"
+        return 1
+    fi
+}
+
 # Installer.
 update_oh-my-zsh() {
     echo -e "$magenta\n Updating oh-my-zsh... \n$white"
     sh "$HOME/.oh-my-zsh/tools/upgrade.sh"
     echo -e "$magenta\n Updating zsh plugins... \n$white"
-    cd "$HOME/.zsh/plugins" || exit
+    cd "$HOME/.zsh/plugins" || return
     find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
 }
 
 update_i3-gaps() {
     echo -e "$magenta\n Updating & compiling i3-gaps... \n$white"
-    cd "$source_dir/i3-gaps" || exit
-    git pull
-    autoreconf -fi
+    cd "$source_dir/i3-gaps" || return
     rm -rf build
+    use_latest_release || return 1
+    autoreconf -fi
     mkdir build
-    cd build || exit
+    cd build || return
     ../configure --prefix=/usr --sysconfdir=/etc --enable-debug=no --disable-sanitizers
     make
     echo -e "$green\n Previous i3-gaps version: \n$white"
@@ -61,9 +84,10 @@ update_i3-gaps() {
     row
 }
 
+# TODO: Use the next release (^v1.4).
 update_i3blocks() {
     echo -e "$magenta\n Updating & compiling i3blocks... \n$white"
-    cd "$source_dir/i3blocks" || exit
+    cd "$source_dir/i3blocks" || return
     git pull
     autoreconf -fi
     ./configure
@@ -79,18 +103,18 @@ update_i3blocks() {
     i3blocks -V
     row
     echo -e "$magenta\n Updating i3blocks-contrib... \n$white"
-    cd "$source_dir/i3blocks-contrib" || exit
+    cd "$source_dir/i3blocks-contrib" || return
     git pull
 }
 
 update_i3lock() {
     echo -e "$magenta\n Updating & compiling i3lock... \n$white"
-    cd "$source_dir/i3lock-color" || exit
-    git pull
-    autoreconf -i
+    cd "$source_dir/i3lock-color" || return
     rm -rf build
+    use_latest_release || return 1
+    autoreconf -i
     mkdir build
-    cd build || exit
+    cd build || return
     ../configure --enable-debug=no --disable-sanitizers
     make
     echo -e "$green\n Previous i3lock version: \n$white"
@@ -104,20 +128,20 @@ update_i3lock() {
     i3lock -v
     row
     echo -e "$magenta\n Updating i3lock-fancy... \n$white"
-    cd "$source_dir/i3lock-fancy" || exit
+    cd "$source_dir/i3lock-fancy" || return
     git pull
     sudo make install
 }
 
 update_rofi() {
     echo -e "$magenta\n Updating & compiling rofi... \n$white"
-    cd "$source_dir/rofi" || exit
-    git pull
+    cd "$source_dir/rofi" || return
+    rm -rf build
+    use_latest_release || return 1
     git submodule update --init
     autoreconf -i
-    rm -rf build
     mkdir build
-    cd build || exit
+    cd build || return
     ../configure --disable-check
     make
     echo -e "$green\n Previous rofi version: \n$white"
@@ -134,9 +158,9 @@ update_rofi() {
 
 update_dunst() {
     echo -e "$magenta\n Updating & compiling dunst... \n$white"
-    cd "$source_dir/dunst" || exit
-    git pull
+    cd "$source_dir/dunst" || return
     make clean
+    use_latest_release || return 1
     make
     make dunstify
     echo -e "$green\n Previous dunst version: \n$white"
@@ -154,9 +178,9 @@ update_dunst() {
 
 update_compton() {
     echo -e "$magenta\n Updating & compiling compton... \n$white"
-    cd "$source_dir/compton" || exit
-    git pull
+    cd "$source_dir/compton" || return
     rm -rf build
+    use_latest_release || return 1
     meson --buildtype=release . build -Dbuild_docs=false
     ninja -C build
     echo -e "$green\n Previous compton version: \n$white"
