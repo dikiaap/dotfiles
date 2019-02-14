@@ -45,7 +45,7 @@ use_latest_release() {
     get_version=$(get_latest_release)
     if [ -n "$get_version" ]; then
         git clean -fd
-        git fetch origin tag "$get_version" --no-tags
+        git fetch origin tag "$get_version" --no-tags || return 1
         git checkout "$get_version"
     else
         echo -e "${red}[!] Error: There is an internet connection issue.${white}"
