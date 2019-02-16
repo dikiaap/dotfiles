@@ -11,6 +11,9 @@ export TERM="xterm-256color"
 # Default Editor.
 export EDITOR="subl"
 
+# Default Pager.
+export PAGER="less"
+
 # Zsh.
 if [ "$(ps -p $$ -ocomm=)" = "zsh" ]; then
     # Oh My Zsh.
@@ -41,6 +44,7 @@ export FZF_DEFAULT_OPTS=" \
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Less.
+export LESS="--RAW-CONTROL-CHARS"
 export LESS_TERMCAP_mb=$'\e[1;31m'      # Start blinking
 export LESS_TERMCAP_md=$'\e[1;34m'      # Start bold mode
 export LESS_TERMCAP_me=$'\e[0m'         # End all mode
