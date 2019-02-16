@@ -63,7 +63,7 @@ safe_cleaner() {
     rm -rfv ~/.local/share/nvim/shada/*
     rm -rfv ~/.local/share/nvim/swap/*
     rm -rfv ~/.local/share/nvim/undo/*
-    rm -rfv ~/.config/sublime-text-3/Cache/*
+    rm -rfv ~/.config/sublime-text-3/Cache/* &> /dev/null
     rm -rfv ~/.config/sublime-text-3/Index/*
     rm -rfv ~/.config/sublime-text-3/Local/*.sublime_session
     rm -fv ~/.viminfo
