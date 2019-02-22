@@ -1,15 +1,15 @@
 <h1 align="center">dotfiles ❤ ~/</h1>
 
-![dikiaap's dotfiles](https://dikiaap.id/extras/dotfiles/i3.png)
+![dikiaap's dotfiles](https://files.dikiaap.id/img/dotfiles/i3.png)
 
 <p align="center">
     <b>Screenshots</b><br>
-    <a href="https://dikiaap.id/extras/dotfiles/rofi.png">Rofi</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://dikiaap.id/extras/dotfiles/dunst.png">Dunst</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://dikiaap.id/extras/dotfiles/zsh.png">Zsh</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://dikiaap.id/extras/dotfiles/tmux.png">tmux</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://dikiaap.id/extras/dotfiles/colors.png">Colors</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://dikiaap.id/extras/dotfiles/dircolors.png">dircolors</a>
+    <a href="https://files.dikiaap.id/img/dotfiles/rofi.png">Rofi</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://files.dikiaap.id/img/dotfiles/dunst.png">Dunst</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://files.dikiaap.id/img/dotfiles/zsh.png">Zsh</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://files.dikiaap.id/img/dotfiles/tmux.png">tmux</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://files.dikiaap.id/img/dotfiles/colors.png">Colors</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://files.dikiaap.id/img/dotfiles/dircolors.png">dircolors</a>
 </p>
 
 
