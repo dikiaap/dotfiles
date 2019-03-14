@@ -54,6 +54,9 @@ safe_cleaner() {
     rm -fv ~/.local/share/recently-used.xbel
     rm -fv ~/.npm/_logs/*
     rm -fv ~/.lesshst
+    rm -fv ~/.node_repl_history
+    rm -fv ~/.php_history
+    rm -fv ~/.python_history
     rm -fv ~/.wget-hsts
     rm -fv ~/.xsession-errors*
 
