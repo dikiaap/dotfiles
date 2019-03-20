@@ -40,15 +40,19 @@ export FZF_DEFAULT_OPTS=" \
     --color=fg:#c0c5ce,bg:#212121,hl:#808080,fg+:#e6e6e6,bg+:#3b3b3b,hl+:#f7c662 \
     --color=info:#f7c662,prompt:#6699cc,pointer:#a6bc69,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
 
+# nnn.
+export NNN_BMS="d:~/Downloads;D:~/Documents;t:~/Temporary" # Bookmarks
+export NNN_RESTRICT_NAV_OPEN=1 # Disable file open on → or l keys
+
 # ripgrep.
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Less.
 export LESS="--RAW-CONTROL-CHARS"
-export LESS_TERMCAP_mb=$'\e[1;31m'      # Start blinking
-export LESS_TERMCAP_md=$'\e[1;34m'      # Start bold mode
-export LESS_TERMCAP_me=$'\e[0m'         # End all mode
-export LESS_TERMCAP_so=$'\e[38;5;215m'  # Start standout mode
-export LESS_TERMCAP_se=$'\e[0m'         # End standout mode
-export LESS_TERMCAP_us=$'\e[4;35m'      # Start underline
-export LESS_TERMCAP_ue=$'\e[0m'         # End underline
+export LESS_TERMCAP_mb=$'\e[1;31m' # Start blinking
+export LESS_TERMCAP_md=$'\e[1;34m' # Start bold mode
+export LESS_TERMCAP_me=$'\e[0m' # End all mode
+export LESS_TERMCAP_so=$'\e[38;5;215m' # Start standout mode
+export LESS_TERMCAP_se=$'\e[0m' # End standout mode
+export LESS_TERMCAP_us=$'\e[4;35m' # Start underline
+export LESS_TERMCAP_ue=$'\e[0m' # End underline
