@@ -6,6 +6,7 @@
     <b>Screenshots</b><br>
     <a href="https://files.dikiaap.id/img/dotfiles/rofi.png">Rofi</a>&nbsp;&nbsp;&nbsp;
     <a href="https://files.dikiaap.id/img/dotfiles/dunst.png">Dunst</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://files.dikiaap.id/img/dotfiles/i3blocks.png">i3blocks</a>&nbsp;&nbsp;&nbsp;
     <a href="https://files.dikiaap.id/img/dotfiles/zsh.png">Zsh</a>&nbsp;&nbsp;&nbsp;
     <a href="https://files.dikiaap.id/img/dotfiles/tmux.png">tmux</a>&nbsp;&nbsp;&nbsp;
     <a href="https://files.dikiaap.id/img/dotfiles/colors.png">Colors</a>&nbsp;&nbsp;&nbsp;
