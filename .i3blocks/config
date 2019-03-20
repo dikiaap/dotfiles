@@ -12,13 +12,13 @@ DEFAULT_COLOR="#f3f4f5"
 USE_ALSA_NAME=1
 
 [ram]
-command=echo -n "  "; ~/.local/src/i3blocks-contrib/memory/memory | grep -E -o '[0-9]+.[0-9]?G'
+command=echo -n '  '; ~/.local/src/i3blocks-contrib/memory/memory | grep -E -o '^[0-9]+.[0-9]G'
 interval=30
 
 [disk-home]
-command=echo -n "  "; df -h -P -l "$HOME" | awk '/\/.*/ { print $3; exit 0 }'
+command=echo -n '  '; df -h -l --output='used' "$HOME" | grep -E -o '[0-9]+G'
 interval=30
 
-[time]
-command=echo -n "  "; date '+%a, %d %b %H:%M'
+[rofi-calendar]
+command=~/.local/bin/rofi-calendar
 interval=5
