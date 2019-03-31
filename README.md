@@ -41,7 +41,7 @@
     - [i3blocks](https://github.com/vivien/i3blocks) - A minimalist scheduler for your status bar scripts.
         - [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib) - A set of scripts for i3blocks, contributed by the community.
     - [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) - A script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
-    - [Rofi](https://github.com/DaveDavenport/rofi) - A window switcher, application launcher and dmenu replacement.
+    - [Rofi](https://github.com/davatorium/rofi) - A window switcher, application launcher and dmenu replacement.
     - [Dunst](https://github.com/dunst-project/dunst) - A highly configurable and lightweight notification daemon.
     - [Compton](https://github.com/yshui/compton) (Fork) - A compositor for X11.
     - [Alacritty](https://github.com/jwilm/alacritty) - A cross-platform, GPU-accelerated terminal emulator.
