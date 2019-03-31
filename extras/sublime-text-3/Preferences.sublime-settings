@@ -1,6 +1,7 @@
 {
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"enable_tab_scrolling": false,
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
