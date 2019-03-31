@@ -61,6 +61,7 @@ alias cat='bat'
 alias ch='echo > ~/.bash_history && echo > ~/.zsh_history'
 alias cz='echo > ~/.z'
 alias e='exit'
+alias htop-user='htop -u "$USER"'
 alias incognito='unset HISTFILE'
 alias ip-address='curl -s -H "Accept: application/json" https://ipinfo.io/json | jq "del(.loc, .postal)"'
 alias mp3-dl='youtube-dl --ignore-config --extract-audio \
