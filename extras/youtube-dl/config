@@ -4,5 +4,9 @@
 # Do not use the Last-modified header to set the file modification time.
 --no-mtime
 
+# Download English subtitle.
+--write-sub
+--sub-lang en
+
 # Save to ~/Downloads directory.
 --output "$HOME/Downloads/%(title)s.%(ext)s"
