@@ -20,6 +20,8 @@ if [ "$(ps -p $$ -ocomm=)" = "zsh" ]; then
     export ZSH="$HOME/.oh-my-zsh"
     # Set a character at the end of partial lines to none.
     export PROMPT_EOL_MARK=""
+    # History settings.
+    export HISTORY_IGNORE="([bf]g|c|clear|e|exit|h|history|l|l[adfls]|pwd|z)"
 fi
 
 # Bash.
@@ -27,6 +29,7 @@ if [ "$(ps -p $$ -ocomm=)" = "bash" ]; then
     # History settings.
     export HISTTIMEFORMAT="%F %T "
     export HISTCONTROL=ignoredups
+    export HISTIGNORE="[bf]g:c:clear:e:exit:h:history:l:l[adfls]:pwd"
     export HISTSIZE=10000
     # Save and reload the history after each command finishes in another bash session.
     export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
