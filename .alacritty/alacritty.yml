@@ -1,6 +1,6 @@
 env:
   TERM: xterm-256color
-  WINIT_HIDPI_FACTOR: 1
+  WINIT_HIDPI_FACTOR: "1"
 
 window:
   dimensions:
@@ -15,7 +15,7 @@ window:
 
   decorations: full
 
-  start_maximized: false
+  startup_mode: Windowed
 
 scrolling:
   history: 2500
@@ -47,10 +47,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-
-render_timer: false
-
-persistent_logging: false
 
 draw_bold_text_with_bright_colors: true
 
@@ -121,7 +117,16 @@ cursor:
 
 live_config_reload: false
 
+working_directory: None
+
 alt_send_esc: true
+
+debug:
+  render_timer: false
+  persistent_logging: false
+  log_level: Warn
+  print_events: false
+  ref_test: false
 
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste                   }
@@ -134,6 +139,7 @@ key_bindings:
   - { key: Add,      mods: Control, action: IncreaseFontSize                 }
   - { key: Subtract, mods: Control, action: DecreaseFontSize                 }
   - { key: Minus,    mods: Control, action: DecreaseFontSize                 }
+  - { key: Return,   mods: Alt,     action: ToggleFullscreen                 }
   - { key: L,        mods: Control, action: ClearLogNotice                   }
   - { key: L,        mods: Control, chars: "\x0c"                            }
   - { key: Home,     mods: Shift,   action: ScrollToTop                      }
