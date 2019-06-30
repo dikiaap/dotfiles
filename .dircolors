@@ -313,6 +313,7 @@ EXEC 1;31
 .3gp 33
 .anx 33
 .asf 33
+.ass 33
 .avi 33
 .axv 33
 .flc 33
@@ -339,6 +340,7 @@ EXEC 1;31
 .srt 33
 .swf 33
 .vob 33
+.vtt 33
 .webm 33
 .wmv 33
 .xspf 33
