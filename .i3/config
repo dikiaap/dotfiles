@@ -166,6 +166,7 @@ bindsym $mod+F7 workspace $ws7; exec gcolor2
 bindsym $mod+F8 workspace $ws8; exec telegram
 bindsym $mod+F9 workspace $ws9; exec go-for-it
 bindsym Print                   exec --no-startup-id gnome-screenshot
+bindsym $mod+Print              exec --no-startup-id gnome-screenshot -a
 bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
 
 # volume
