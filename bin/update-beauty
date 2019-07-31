@@ -181,6 +181,7 @@ update_compton() {
     cd "$source_dir/compton" || return
     rm -rf build
     use_latest_release || return 1
+    git submodule update --init
     meson --buildtype=release . build -Dbuild_docs=false
     ninja -C build
     echo -e "$green\n Previous compton version: \n$white"
