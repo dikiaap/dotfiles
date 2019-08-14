@@ -84,11 +84,10 @@ update_i3-gaps() {
     row
 }
 
-# TODO: Use the next release (^v1.4).
 update_i3blocks() {
     echo -e "$magenta\n Updating & compiling i3blocks... \n$white"
     cd "$source_dir/i3blocks" || return
-    git pull
+    use_latest_release || return 1
     autoreconf -fi
     ./configure
     make
