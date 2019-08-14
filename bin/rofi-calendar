@@ -34,12 +34,12 @@ case "$BLOCK_BUTTON" in
         ;;
     2)
         # Middle-click: Previous month
-        ((month_number == 1)) && month_number=12 && year_number=$((year_number - 1)) || month_number=$((month_number - 1))
+        ((10#$month_number == 1)) && month_number=12 && year_number=$((year_number - 1)) || month_number=$((10#$month_number - 1))
         custom_month
         ;;
     3)
         # Right-click: Next month
-        ((month_number == 12)) && month_number=1 && year_number=$((year_number + 1)) || month_number=$((month_number + 1))
+        ((10#$month_number == 12)) && month_number=1 && year_number=$((year_number + 1)) || month_number=$((10#$month_number + 1))
         custom_month
         ;;
 esac
