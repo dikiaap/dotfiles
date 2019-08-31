@@ -63,7 +63,7 @@ alias cz='echo > ~/.z'
 alias e='exit'
 alias htop-user='htop -u "$USER"'
 alias incognito='unset HISTFILE'
-alias ip-address='curl -s -H "Accept: application/json" https://ipinfo.io/json | jq "del(.loc, .postal)"'
+alias ip-address='curl -s -H "Accept: application/json" https://ipinfo.io/json | jq "del(.loc, .postal, .readme)"'
 alias mp3-dl='youtube-dl --ignore-config --extract-audio \
     --audio-format "mp3" --audio-quality 0 --embed-thumbnail \
     --add-metadata --metadata-from-title "%(artist)s - %(title)s" \
