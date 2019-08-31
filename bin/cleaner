@@ -44,7 +44,7 @@ safe_cleaner() {
     gem cleanup
 
     echo -e "$magenta\n Cleaning Shell History... \n$white"
-    echo > ~/.bash_history && echo > ~/.zsh_history && echo > ~/.z && rm -fv ~/.z.*
+    echo > ~/.{bash,zsh}_history && echo > ~/.z && rm -fv ~/.z.*
 
     echo -e "$magenta\n Cleaning Cache... \n$white"
     rm -rfv ~/.cache/!(chromium|fontconfig|mozilla|thumbnails)
@@ -54,9 +54,7 @@ safe_cleaner() {
     rm -fv ~/.local/share/recently-used.xbel
     rm -fv ~/.npm/_logs/*
     rm -fv ~/.lesshst
-    rm -fv ~/.node_repl_history
-    rm -fv ~/.php_history
-    rm -fv ~/.python_history
+    rm -fv ~/.{node_repl,php,python,units}_history
     rm -fv ~/.wget-hsts
     rm -fv ~/.xsession-errors*
 
