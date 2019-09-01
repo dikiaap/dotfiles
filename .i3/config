@@ -46,7 +46,7 @@ hide_edge_borders none
 popup_during_fullscreen smart
 
 # start a terminal
-bindsym $mod+Return workspace number $ws1; exec --no-startup-id alacritty
+bindsym $mod+Return workspace $ws1; exec --no-startup-id alacritty
 
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2b83a6' -sf '#ffffff'"
@@ -132,42 +132,42 @@ bindsym $mod+y border pixel     1
 bindsym $mod+u border none
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # shortcut applications
-bindsym $mod+F1                        exec gkamus
-bindsym $mod+F2 workspace number $ws2; exec subl
-bindsym $mod+F3 workspace number $ws3; exec chromium-browser
-bindsym $mod+F4 workspace number $ws4; exec pcmanfm
-bindsym $mod+F5 workspace number $ws5; exec evince
-bindsym $mod+F6 workspace number $ws6; exec audacious
-bindsym $mod+F7 workspace number $ws7; exec gcolor2
-bindsym $mod+F8 workspace number $ws8; exec telegram
-bindsym $mod+F9 workspace number $ws9; exec go-for-it
-bindsym Print                          exec --no-startup-id gnome-screenshot
-bindsym $mod+Print                     exec --no-startup-id gnome-screenshot -a
-bindsym $mod+Shift+x                   exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
+bindsym $mod+F1                 exec gkamus
+bindsym $mod+F2 workspace $ws2; exec subl
+bindsym $mod+F3 workspace $ws3; exec chromium-browser
+bindsym $mod+F4 workspace $ws4; exec pcmanfm
+bindsym $mod+F5 workspace $ws5; exec evince
+bindsym $mod+F6 workspace $ws6; exec audacious
+bindsym $mod+F7 workspace $ws7; exec gcolor2
+bindsym $mod+F8 workspace $ws8; exec telegram
+bindsym $mod+F9 workspace $ws9; exec go-for-it
+bindsym Print                   exec --no-startup-id gnome-screenshot
+bindsym $mod+Print              exec --no-startup-id gnome-screenshot -a
+bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
 
 # volume
 bindsym XF86AudioLowerVolume    exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
