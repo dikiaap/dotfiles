@@ -44,7 +44,7 @@ safe_cleaner() {
     gem cleanup
 
     echo -e "$magenta\n Cleaning Shell History... \n$white"
-    echo > ~/.{bash,zsh}_history && echo > ~/.z && rm -fv ~/.z.*
+    echo > ~/.bash_history && echo > ~/.zsh_history && echo > ~/.z && rm -fv ~/.z.*
 
     echo -e "$magenta\n Cleaning Cache... \n$white"
     rm -rfv ~/.cache/!(chromium|fontconfig|mozilla|thumbnails)
