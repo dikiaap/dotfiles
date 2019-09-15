@@ -46,7 +46,7 @@
     - [Compton](https://github.com/yshui/compton) (Fork) - A compositor for X11.
     - [Alacritty](https://github.com/jwilm/alacritty) - A cross-platform, GPU-accelerated terminal emulator.
     - [Sublime Text](https://www.sublimetext.com) - A sophisticated text editor for code, markup and prose.
-    - [Arc Theme](https://github.com/NicoHood/arc-theme) (Fork) - A flat theme with transparent elements for GTK 3, GTK 2, and GNOME Shell.
+    - [Arc Theme](https://github.com/arc-design/arc-theme) (Fork) - A flat theme with transparent elements for GTK 3, GTK 2, and GNOME Shell.
     - [Paper Icon Theme](https://github.com/snwh/paper-icon-theme) - An open source Freedesktop icon theme and inspired by Material Design.
     - [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) - User Interface font.
     - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - Iconic font.
