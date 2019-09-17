@@ -1,0 +1,47 @@
+name: Schedule
+
+on:
+  schedule:
+    # On the 1st and 15th
+    - cron: '0 0 1,15 * *'
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+      - name: Install packages
+        run: |
+          gem install awesome_bot
+          wget "https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz"
+          tar -xvf shellcheck-stable.linux.x86_64.tar.xz
+          sudo cp shellcheck-stable/shellcheck /usr/bin/
+          shellcheck --version
+      - name: Check links in the README file
+        run: awesome_bot README.md
+      - name: Check bugs, warnings, and errors in shell scripts
+        # Read more the details of exceptions on ShellCheck Wiki.
+        # Example of SC1000:
+        # https://github.com/koalaman/shellcheck/wiki/SC1000
+        run: |
+          shellcheck bin/*
+          shellcheck install.sh
+          export SHELLCHECK_OPTS="-e SC1090,SC2148"
+          shellcheck -e SC1004 .aliases
+          shellcheck .bash_profile
+          shellcheck -e SC1091,SC2154 .bashrc
+          shellcheck .exports
+          shellcheck -e SC2164 .functions
+          shellcheck -e SC1008,SC1115,SC1128,SC2034,SC2096,SC2154,SC2239 .oh-my-zsh/themes/oxide.zsh-theme
+          shellcheck -e SC2034 .zshrc
+      - name: Install dikiaap/dotfiles
+        run: |
+          ./install.sh -i
+          ./install.sh -r
