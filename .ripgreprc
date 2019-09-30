@@ -22,6 +22,9 @@
 # Searches case insensitively.
 --smart-case
 
+# Sort by file path.
+--sort=path
+
 # Configure color settings and styles.
 --colors=path:bg:0x3b,0x3b,0x3b
 --colors=path:fg:white
