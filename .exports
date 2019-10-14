@@ -45,7 +45,7 @@ export FZF_DEFAULT_OPTS=" \
 
 # nnn.
 export NNN_BMS="d:~/Downloads;D:~/Documents;t:~/Temporary" # Bookmarks
-export NNN_RESTRICT_NAV_OPEN=1 # Disable file open on → or l keys
+export NNN_PLUG="D:mediainf" # Plugins
 export NNN_TRASH=1 # Trash instead of delete the files
 
 # ripgrep.
