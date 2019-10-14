@@ -22,6 +22,7 @@ Steps to reproduce the behavior:
 <!-- If applicable, add screenshots to help explain your problem. -->
 
 ### Desktop
+<!-- Don't forget to add the version. -->
  - OS: 
  - Package: 
 
