@@ -17,9 +17,8 @@
 ## Details
 
 - CLI
-    - [Zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
-        - [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) - An open source, community-driven framework for managing your Zsh configuration.
-        - [z](https://github.com/rupa/z) - Tracks your most used directories, based on frecency.
+    - [Fish](https://github.com/fish-shell/fish-shell) - fish is a smart and user-friendly command line shell for macOS, Linux, and the rest of the family. fish includes features like syntax highlighting, autosuggest-as-you-type, and fancy tab completions that just work, with no configuration required.
+        - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) - Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's fast, extensible and easy to use.
     - [Bash](https://git.savannah.gnu.org/cgit/bash.git) - A Unix shell and command language.
     - [tmux](https://github.com/tmux/tmux) - A terminal multiplexer.
         - [tmux-better-mouse-mode](https://github.com/NHDaly/tmux-better-mouse-mode) - A tmux plugin to better manage the mouse.
@@ -43,7 +42,7 @@
     - [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) - A script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
     - [Rofi](https://github.com/davatorium/rofi) - A window switcher, application launcher and dmenu replacement.
     - [Dunst](https://github.com/dunst-project/dunst) - A highly configurable and lightweight notification daemon.
-    - [Compton](https://github.com/yshui/compton) (Fork) - A compositor for X11.
+    - [Picom](https://github.com/yshui/picom) (Fork) - A compositor for X11.
     - [Alacritty](https://github.com/jwilm/alacritty) - A cross-platform, GPU-accelerated terminal emulator.
     - [Sublime Text](https://www.sublimetext.com) - A sophisticated text editor for code, markup and prose.
     - [Arc Theme](https://github.com/arc-design/arc-theme) (Fork) - A flat theme with transparent elements for GTK 3, GTK 2, and GNOME Shell.
