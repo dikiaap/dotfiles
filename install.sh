@@ -20,6 +20,7 @@ Options:
     --help    Print this message
     -i        Install all config
     -r        Restore old config
+    -s        install components
 EOF
 }
 
