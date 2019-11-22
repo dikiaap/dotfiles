@@ -121,9 +121,13 @@ uninstall_dotfiles() {
 
 
 install_comps() {
-    for pack in "${pacman_packs[@]}"
+    # for pack in "${pacman_packs[@]}"
+    # do
+        # sudo pacman -S "${pack}" --noconfirm
+    # done
+    for pack in "${yay_packs[@]}"
     do
-        sudo pacman -S "${pack}" --noconfirm
+        yay -S --nodiffmenu "$pack" 
     done
 }
 
