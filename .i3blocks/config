@@ -2,6 +2,7 @@ color=#f3f4f5
 separator_block_width=15
 markup=none
 
+
 [volume-pulseaudio]
 command=~/.local/src/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio
 interval=1
@@ -16,9 +17,28 @@ command=echo -n '  '; ~/.local/src/i3blocks-contrib/memory/memory | grep -E -
 interval=30
 
 [disk-home]
-command=echo -n '  '; df -h -l --output='used' "$HOME" | grep -E -o '[0-9]+G'
+command=echo -n '  '; df -h -l --output='used' "$HOME" | grep -E -o '[0-9]+.[0-9]G'
 interval=30
 
 [rofi-calendar]
-command=~/.local/bin/rofi-calendar
+command=~/.local/src/i3blocks-contrib/rofi-calendar/rofi-calendar
 interval=5
+
+[battery2]
+command=~/.local/src/i3blocks-contrib/battery2/battery2
+markup=pango
+interval=30
+
+[key_layout]
+command=~/.local/src/i3blocks-contrib/key_layout/key_layout
+label=Layout
+interval=30
+
+[calendar]
+command=~/.local/src/i3blocks-contrib/calendar/calendar
+interval=1
+LABEL= 
+DATEFMT=+%H:%M:%S
+# SHORTFMT=+%H:%M:%S
+HEIGHT=180
+WIDTH=220
