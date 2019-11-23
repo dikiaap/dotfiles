@@ -12,10 +12,10 @@ font pango:Source Sans Pro 10
 set $mod Mod4
 
 # use these keys for focus, movement, and resize directions
-set $left   j
-set $down   k
-set $up     l
-set $right  semicolon
+set $left   d
+set $down   s
+set $up     w
+set $right  a
 
 # define names for workspaces
 set $ws1    "1:   Terminal "
@@ -57,9 +57,10 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym Mod1+F4 kill
 
 # change focus
-bindsym $mod+$left  focus left
+# bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down
 bindsym $mod+$up    focus up
 bindsym $mod+$right focus right
@@ -92,9 +93,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+z layout stacking
+# bindsym $mod+f layout tabbed
+# bindsym $mod+q layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -103,10 +104,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
-bindsym $mod+Shift+a focus child
+# bindsym $mod+Shift+a focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -121,7 +122,7 @@ bindsym $mod+Shift+h move absolute position center
 bindsym $mod+Shift+m move position mouse
 
 # set a window to stick to the glass
-bindsym $mod+Shift+s sticky toggle
+# bindsym $mod+Shift+s sticky toggle
 
 # sticky preview for media
 bindsym $mod+Shift+p fullscreen disable; floating enable; resize set 350 px 197 px; sticky enable; move window to position 1006 px 537 px
@@ -156,12 +157,12 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # shortcut applications
-bindsym $mod+F1                 exec gkamus
+bindsym $mod+F1                 exec terminal
 bindsym $mod+F2 workspace $ws2; exec subl
-bindsym $mod+F3 workspace $ws3; exec chromium-browser
+bindsym $mod+F3 workspace $ws3; exec chromium
 bindsym $mod+F4 workspace $ws4; exec pcmanfm
-bindsym $mod+F5 workspace $ws5; exec evince
-bindsym $mod+F6 workspace $ws6; exec audacious
+bindsym $mod+F5 workspace $ws5; exec libreoffice
+bindsym $mod+F6 workspace $ws6; exec spotify
 bindsym $mod+F7 workspace $ws7; exec gcolor2
 bindsym $mod+F8 workspace $ws8; exec telegram
 bindsym $mod+F9 workspace $ws9; exec go-for-it
@@ -170,9 +171,10 @@ bindsym $mod+Print              exec --no-startup-id gnome-screenshot -a
 bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
 
 # volume
-bindsym XF86AudioLowerVolume    exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
-bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
-bindsym XF86AudioMute           exec --no-startup-id amixer -q -D pulse sset Master toggle
+bindsym XF86AudioLowerVolume    exec --no-startup-id amixer -q sset Master 2%- unmute
+bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer -q sset Master 2%+ unmute
+bindsym XF86AudioMute           exec --no-startup-id amixer -q sset Master toggle
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -235,6 +237,8 @@ assign [class="ghostwriter"]        → $ws5
 assign [class="libreoffice"]        → $ws5
 assign [class="Audacious"]          → $ws6
 assign [class="vlc"]                → $ws6
+assign [class="Spotify"]            → $ws6
+assign [class="spotify"]            → $ws6
 assign [class="Gimp"]               → $ws7
 assign [class="Inkscape"]           → $ws7
 assign [class="Hexchat"]            → $ws8
@@ -295,14 +299,18 @@ bar {
 }
 
 # i3-gaps
-smart_gaps on
-gaps inner 8
-gaps outer 2
+#smart_gaps on
+#gaps inner 8
+#gaps outer 2
 
 # startup applications
 exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
-exec --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
+exec --no-startup-id feh --bg-fill --randomize ~/Pictures/*
 exec --no-startup-id compton
+
+# languages
+exec --no-startup-id setxkbmap -layout us,il
+exec --no-startup-id setxkbmap -option 'grp:alt_shift_toggle'

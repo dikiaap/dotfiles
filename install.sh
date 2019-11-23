@@ -5,9 +5,12 @@ red='\e[1;31m'
 white='\e[0;37m'
 dotfiles_repo_dir=$(pwd)
 backup_dir="$HOME/.dotfiles.orig"
-dotfiles_home_dir=(.zsh .aliases .bash_profile .bashrc .dircolors .editorconfig .exports
+dotfiles_home_dir=(.aliases .bash_profile .bashrc .dircolors .editorconfig .exports
                    .functions .gemrc .ripgreprc .tmux.conf .wgetrc .Xresources .zshrc)
-dotfiles_xdg_config_dir=(.alacritty .compton .dunst .htop .i3 .i3blocks .rofi)
+dotfiles_xdg_config_dir=(.alacritty .compton .dunst .htop .i3 .i3blocks .rofi fish)
+pacman_packs=(fish git tmux neovim htop fzf bat ripgrep feh xautolock wget ttf-hack rofi picom alacritty arc-gtk-theme arc-solid-gtk-theme adobe-source-sans-pro-fonts vlc libreoffice file-roller)
+yay_packs=(i3lock-fancy-git dunst-git  paper-icon-theme-git )
+
 
 # Print usage message.
 usage() {
@@ -20,6 +23,7 @@ Options:
     --help    Print this message
     -i        Install all config
     -r        Restore old config
+    -s        install components
 EOF
 }
 
@@ -71,6 +75,10 @@ install_dotfiles() {
         env ln -fs "$dotfiles_repo_dir/${dots_xdg_conf}" "$HOME/.config/${dots_xdg_conf[*]//./}"
     done
 
+    # i3blobk-contrib
+    mkdir ~/.local/src
+    git clone https://github.com/vivien/i3blocks-contrib.git ~/.local/src/i3blocks-contrib
+
     echo -e "${blue}New dotfiles is installed!\n${white}" >&2
     echo "There may be some errors when Terminal is restarted." >&2
     echo "Please read carefully the error messages and make sure all packages are installed. See more info in README.md." >&2
@@ -115,6 +123,21 @@ uninstall_dotfiles() {
     env rm -rf "$backup_dir/check-backup.txt"
 }
 
+
+install_comps() {
+    # official packages
+    for pack in "${pacman_packs[@]}"
+    do
+        sudo pacman -S "${pack}" --noconfirm
+    done
+    
+    # aur packages
+    for pack in "${yay_packs[@]}"
+    do
+        yay -S --nodiffmenu "$pack" 
+    done
+}
+
 main() {
     case "$1" in
         ''|-h|--help)
@@ -126,6 +149,9 @@ main() {
             ;;
         -r)
             uninstall_dotfiles
+            ;;
+        -s)
+            install_comps
             ;;
         *)
             echo "Command not found" >&2
