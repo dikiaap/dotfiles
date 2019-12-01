@@ -244,7 +244,7 @@ assign [class="Galculator"]         → $ws9
 assign [class="Gnome-font-viewer"]  → $ws9
 assign [class="Go-for-it"]          → $ws9
 assign [class="Gucharmap"]          → $ws9
-assign [class="keepassxc"]          → $ws9
+assign [class="KeePassXC"]          → $ws9
 assign [class="Transmission-gtk"]   → $ws9
 assign [class="Bleachbit"]          → $ws10
 assign [class="Bum"]                → $ws10
@@ -305,4 +305,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
 exec --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
-exec --no-startup-id compton
+exec --no-startup-id picom
