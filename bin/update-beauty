@@ -175,29 +175,29 @@ update_dunst() {
     row
 }
 
-update_compton() {
-    echo -e "$magenta\n Updating & compiling compton... \n$white"
-    cd "$source_dir/compton" || return
+update_picom() {
+    echo -e "$magenta\n Updating & compiling picom... \n$white"
+    cd "$source_dir/picom" || return
     rm -rf build
     use_latest_release || return 1
     git submodule update --init
     meson --buildtype=release . build -Dbuild_docs=false
     ninja -C build
-    echo -e "$green\n Previous compton version: \n$white"
+    echo -e "$green\n Previous picom version: \n$white"
     row
-    compton --version
+    picom --version
     row
-    echo -e "$magenta\n Installing compton... \n$white"
-    sudo install -Dm755 --verbose build/src/compton /usr/local/bin/compton
-    echo -e "$green\n Current compton version: \n$white"
+    echo -e "$magenta\n Installing picom... \n$white"
+    sudo install -Dm755 --verbose build/src/picom /usr/local/bin/picom
+    echo -e "$green\n Current picom version: \n$white"
     row
-    compton --version
+    picom --version
     row
 }
 
 update_one_by_one() {
     declare -a arr=("update_oh-my-zsh" "update_i3-gaps" "update_i3blocks"
-                    "update_i3lock" "update_rofi" "update_dunst" "update_compton")
+                    "update_i3lock" "update_rofi" "update_dunst" "update_picom")
 
     for update_command in "${arr[@]}"; do
         echo
@@ -229,7 +229,7 @@ main() {
             update_i3lock
             update_rofi
             update_dunst
-            update_compton
+            update_picom
             ;;
         *)
             echo "Command not found"
