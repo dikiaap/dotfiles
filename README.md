@@ -44,7 +44,7 @@
     - [Rofi](https://github.com/davatorium/rofi) - A window switcher, application launcher and dmenu replacement.
     - [Dunst](https://github.com/dunst-project/dunst) - A highly configurable and lightweight notification daemon.
     - [picom](https://github.com/yshui/picom) - A lightweight compositor for X11.
-    - [Alacritty](https://github.com/jwilm/alacritty) - A cross-platform, GPU-accelerated terminal emulator.
+    - [Alacritty](https://github.com/alacritty/alacritty) - A cross-platform, GPU-accelerated terminal emulator.
     - [Sublime Text](https://www.sublimetext.com) - A sophisticated text editor for code, markup and prose.
     - [Arc Theme](https://github.com/arc-design/arc-theme) (Fork) - A flat theme with transparent elements for GTK 3, GTK 2, and GNOME Shell.
     - [Paper Icon Theme](https://github.com/snwh/paper-icon-theme) - An open source Freedesktop icon theme and inspired by Material Design.
