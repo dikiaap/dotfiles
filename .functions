@@ -21,7 +21,7 @@ readme() {
 
 # Weather
 weather() {
-    curl -s "https://wttr.in/${1:-Ponorogo}?m2" | sed -n "1,27p"
+    curl -s "https://wttr.in/${1:-Ponorogo}?m2F&format=v2"
 }
 
 # Git commit browser
