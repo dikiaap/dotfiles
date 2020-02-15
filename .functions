@@ -12,8 +12,10 @@ mkd() {
 
 # Print README file
 readme() {
-    for readme in {readme,README}.{md,MD,markdown,txt,TXT,mkd}; do
-        if [[ -f "$readme" ]]; then
+    for readme in {readme,README}.{md,MD,markdown,mkd,txt,TXT}; do
+        if [[ -x "$(command -v glow)" ]] && [[ -f "$readme" ]]; then
+            mdv "$readme"
+        elif [[ -f "$readme" ]]; then
             cat "$readme"
         fi
     done
