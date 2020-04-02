@@ -1,6 +1,6 @@
 env:
   TERM: xterm-256color
-  WINIT_HIDPI_FACTOR: "1"
+  WINIT_X11_SCALE_FACTOR: "1"
 
 window:
   dimensions:
@@ -20,9 +20,6 @@ window:
 scrolling:
   history: 2500
   multiplier: 3
-  auto_scroll: false
-
-tabspaces: 4
 
 font:
   normal:
@@ -56,40 +53,40 @@ draw_bold_text_with_bright_colors: true
 # Oxide colors
 colors:
   primary:
-    background: '0x212121'
-    foreground: '0xc0c5ce'
-    bright_foreground: '0xf3f4f5'
+    background: '#212121'
+    foreground: '#c0c5ce'
+    bright_foreground: '#f3f4f5'
 
   cursor:
-    text: '0x212121'
-    cursor: '0xc0c5ce'
+    text: '#212121'
+    cursor: '#c0c5ce'
 
   normal:
-    black:   '0x212121'
-    red:     '0xe57373'
-    green:   '0xa6bc69'
-    yellow:  '0xfac863'
-    blue:    '0x6699cc'
-    magenta: '0xc594c5'
-    cyan:    '0x5fb3b3'
-    white:   '0xc0c5ce'
+    black:   '#212121'
+    red:     '#e57373'
+    green:   '#a6bc69'
+    yellow:  '#fac863'
+    blue:    '#6699cc'
+    magenta: '#c594c5'
+    cyan:    '#5fb3b3'
+    white:   '#c0c5ce'
 
   bright:
-    black:   '0x5c5c5c'
-    red:     '0xe57373'
-    green:   '0xa6bc69'
-    yellow:  '0xfac863'
-    blue:    '0x6699cc'
-    magenta: '0xc594c5'
-    cyan:    '0x5fb3b3'
-    white:   '0xf3f4f5'
+    black:   '#5c5c5c'
+    red:     '#e57373'
+    green:   '#a6bc69'
+    yellow:  '#fac863'
+    blue:    '#6699cc'
+    magenta: '#c594c5'
+    cyan:    '#5fb3b3'
+    white:   '#f3f4f5'
 
   indexed_colors: []
 
 visual_bell:
   animation: EaseOutExpo
   duration: 0
-  color: '0xffffff'
+  color: '#ffffff'
 
 background_opacity: 1.0
 
@@ -108,13 +105,6 @@ live_config_reload: false
 working_directory: None
 
 alt_send_esc: true
-
-debug:
-  render_timer: false
-  persistent_logging: false
-  log_level: Warn
-  print_events: false
-  ref_test: false
 
 mouse:
   double_click: { threshold: 300 }
@@ -149,3 +139,9 @@ key_bindings:
   - { key: PageDown, mods: Shift,         action: ScrollPageDown, mode: ~Alt }
   - { key: Home,     mods: Shift,         action: ScrollToTop,    mode: ~Alt }
   - { key: End,      mods: Shift,         action: ScrollToBottom, mode: ~Alt }
+
+debug:
+  render_timer: false
+  persistent_logging: false
+  log_level: Warn
+  print_events: false
