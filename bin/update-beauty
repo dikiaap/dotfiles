@@ -181,7 +181,7 @@ update_picom() {
     rm -rf build
     use_latest_release || return 1
     git submodule update --init
-    meson --buildtype=release . build -Dbuild_docs=false
+    meson --buildtype=release . build -Dwith_docs=false
     ninja -C build
     echo -e "$green\n Previous picom version: \n$white"
     row
