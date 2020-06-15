@@ -227,7 +227,6 @@ assign [class="terminal"]           → $ws1
 assign [class="Sublime"]            → $ws2
 assign [class="Chromium"]           → $ws3
 assign [class="Firefox"]            → $ws3
-assign [class="Authy"]              → $ws3
 assign [class="File-roller"]        → $ws4
 assign [class="Pcmanfm"]            → $ws4
 assign [class="Evince"]             → $ws5
@@ -300,9 +299,9 @@ gaps inner 8
 gaps outer 2
 
 # startup applications
-exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
-exec --no-startup-id nm-applet
-exec --no-startup-id pulseaudio --start
-exec --no-startup-id lxpolkit
-exec --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
-exec --no-startup-id picom
+exec_always --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id pulseaudio --start
+exec_always --no-startup-id lxpolkit
+exec_always --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
+exec_always --no-startup-id picom
