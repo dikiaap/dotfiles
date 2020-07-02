@@ -26,6 +26,11 @@ weather() {
     curl -s "https://wttr.in/${1:-Ponorogo}?m2F&format=v2"
 }
 
+# Get an information of IP address
+ip-address() {
+    curl -s -H "Accept: application/json" "https://ipinfo.io/${1:-}" | jq "del(.loc, .postal, .readme)"
+}
+
 # Git commit browser
 fshow() {
     local commit_hash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
