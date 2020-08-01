@@ -168,7 +168,6 @@ update_dunst() {
     row
     echo -e "$magenta\n Installing dunst... \n$white"
     sudo make install
-    sudo install -Dm755 --verbose dunstify /usr/local/bin/dunstify
     echo -e "$green\n Current dunst version: \n$white"
     row
     dunst -v
