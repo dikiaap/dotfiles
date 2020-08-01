@@ -19,6 +19,7 @@
     markup = full
     format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
     alignment = left
+    vertical_alignment = center
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
@@ -35,9 +36,10 @@
     startup_notification = false
     verbosity = mesg
     corner_radius = 0
+    ignore_dbusclose = false
     force_xinerama = false
     mouse_left_click = close_current
-    mouse_middle_click = do_action
+    mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
 
 [shortcuts]
