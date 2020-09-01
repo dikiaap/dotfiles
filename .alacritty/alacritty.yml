@@ -17,6 +17,8 @@ window:
 
   startup_mode: Windowed
 
+  dynamic_title: true
+
 scrolling:
   history: 2500
   multiplier: 3
@@ -83,7 +85,7 @@ colors:
 
   indexed_colors: []
 
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '#ffffff'
@@ -94,11 +96,11 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: false
 
-dynamic_title: true
-
 cursor:
   style: Block
+  vi_mode_style: None
   unfocused_hollow: true
+  thickness: 0.15
 
 live_config_reload: false
 
@@ -122,23 +124,25 @@ mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
 key_bindings:
-  - { key: V,        mods: Control|Shift, action: Paste            }
-  - { key: C,        mods: Control|Shift, action: Copy             }
-  - { key: Insert,   mods: Shift,         action: PasteSelection   }
-  - { key: Key0,     mods: Control,       action: ResetFontSize    }
-  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Add,      mods: Control,       action: IncreaseFontSize }
-  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: Return,   mods: Alt,           action: ToggleFullscreen }
-  - { key: Paste,                         action: Paste            }
-  - { key: Copy,                          action: Copy             }
-  - { key: L,        mods: Control,       action: ClearLogNotice   }
-  - { key: L,        mods: Control,       chars: "\x0c"            }
-  - { key: PageUp,   mods: Shift,         action: ScrollPageUp,   mode: ~Alt }
-  - { key: PageDown, mods: Shift,         action: ScrollPageDown, mode: ~Alt }
-  - { key: Home,     mods: Shift,         action: ScrollToTop,    mode: ~Alt }
-  - { key: End,      mods: Shift,         action: ScrollToBottom, mode: ~Alt }
+  - { key: Paste,                                   action: Paste            }
+  - { key: Copy,                                    action: Copy             }
+  - { key: L,        mods: Control,                 action: ClearLogNotice   }
+  - { key: L,        mods: Control, mode: ~Vi,      chars: "\x0c"            }
+  - { key: PageUp,   mods: Shift,   mode: ~Alt,     action: ScrollPageUp,    }
+  - { key: PageDown, mods: Shift,   mode: ~Alt,     action: ScrollPageDown   }
+  - { key: Home,     mods: Shift,   mode: ~Alt,     action: ScrollToTop,     }
+  - { key: End,      mods: Shift,   mode: ~Alt,     action: ScrollToBottom   }
+  - { key: V,        mods: Control|Shift,           action: Paste            }
+  - { key: C,        mods: Control|Shift,           action: Copy             }
+  - { key: F,        mods: Control|Shift,           action: SearchForward    }
+  - { key: B,        mods: Control|Shift,           action: SearchBackward   }
+  - { key: C,        mods: Control|Shift, mode: Vi, action: ClearSelection   }
+  - { key: Insert,   mods: Shift,                   action: PasteSelection   }
+  - { key: Key0,     mods: Control,                 action: ResetFontSize    }
+  - { key: Equals,   mods: Control,                 action: IncreaseFontSize }
+  - { key: Add,      mods: Control,                 action: IncreaseFontSize }
+  - { key: Subtract, mods: Control,                 action: DecreaseFontSize }
+  - { key: Minus,    mods: Control,                 action: DecreaseFontSize }
 
 debug:
   render_timer: false
