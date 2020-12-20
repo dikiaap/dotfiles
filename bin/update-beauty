@@ -67,17 +67,27 @@ update_i3-gaps() {
     cd "$source_dir/i3-gaps" || return
     rm -rf build
     use_latest_release || return 1
-    autoreconf -fi
     mkdir build
-    cd build || return
-    ../configure --prefix=/usr --sysconfdir=/etc --enable-debug=no --disable-sanitizers
-    make
+    meson --buildtype=release . build
+    ninja -C build
     echo -e "$green\n Previous i3-gaps version: \n$white"
     row
     i3 -v
     row
     echo -e "$magenta\n Installing i3-gaps... \n$white"
-    sudo make install
+    sudo install -Dm755 --verbose build/i3 /usr/bin/i3
+    sudo install -Dm755 --verbose build/i3bar /usr/bin/i3bar
+    sudo install -Dm755 --verbose build/i3-config-wizard /usr/bin/i3-config-wizard
+    sudo install -Dm755 --verbose build/i3-dump-log /usr/bin/i3-dump-log
+    sudo install -Dm755 --verbose build/i3-input /usr/bin/i3-input
+    sudo install -Dm755 --verbose build/i3-msg /usr/bin/i3-msg
+    sudo install -Dm755 --verbose build/i3-nagbar /usr/bin/i3-nagbar
+    sudo install -Dm755 --verbose i3-dmenu-desktop /usr/bin/i3-dmenu-desktop
+    sudo install -Dm755 --verbose i3-migrate-config-to-v4 /usr/bin/i3-migrate-config-to-v4
+    sudo install -Dm755 --verbose i3-save-tree /usr/bin/i3-save-tree
+    sudo install -Dm755 --verbose i3-sensible-editor /usr/bin/i3-sensible-editor
+    sudo install -Dm755 --verbose i3-sensible-pager /usr/bin/i3-sensible-pager
+    sudo install -Dm755 --verbose i3-sensible-terminal /usr/bin/i3-sensible-terminal
     echo -e "$green\n Current i3-gaps version: \n$white"
     row
     i3 -v
