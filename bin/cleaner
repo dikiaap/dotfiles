@@ -38,7 +38,7 @@ safe_cleaner() {
     sudo apt-get autoremove
 
     echo -e "$magenta\n Cleaning Composer Installer... \n$white"
-    rm -fv ~/.composer/20*.phar
+    rm -fv ~/.config/composer/20*.phar
 
     echo -e "$magenta\n Cleaning Gems... \n$white"
     gem cleanup
@@ -47,7 +47,7 @@ safe_cleaner() {
     echo > ~/.bash_history && echo > ~/.zsh_history && echo > ~/.z && rm -fv ~/.z.*
 
     echo -e "$magenta\n Cleaning Cache... \n$white"
-    rm -rfv ~/.cache/!(chromium|fontconfig|mozilla|thumbnails)
+    rm -rfv ~/.cache/!(chromium|composer|fontconfig|mozilla|thumbnails)
 
     echo -e "$magenta\n Cleaning Junk Files... \n$white"
     rm -rfv ~/.local/share/Trash/*
