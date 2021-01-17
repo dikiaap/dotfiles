@@ -1,5 +1,5 @@
 # Initialize $PATH with system and user binaries.
-export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/.gem/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/.gem/bin:$HOME/.local/bin"
 
 # Locale.
 export LANG="en_US.UTF-8"
