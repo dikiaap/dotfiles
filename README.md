@@ -30,7 +30,7 @@
         - [More config](https://github.com/dikiaap/dotfiles/blob/master/init.vim).
     - [Git](https://github.com/git/git) - A free and open source distributed version control system.
         - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - Make your diffs human readable instead of machine readable.
-    - [htop](https://github.com/hishamhm/htop) - An interactive text-mode process viewer.
+    - [htop](https://github.com/htop-dev/htop) - An interactive process viewer.
     - [bat](https://github.com/sharkdp/bat) - A cat clone with syntax highlighting and Git integration.
     - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder.
     - [ripgrep](https://github.com/BurntSushi/ripgrep) - A line-oriented search tool that recursively searches directories for a regex pattern.
