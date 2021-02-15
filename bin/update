@@ -42,7 +42,7 @@ update_composer() {
 
 update_npm() {
     echo -e "$magenta\n Updating npm... \n$white"
-    npm install npm -g
+    npm install npm@latest-6 -g
 
     echo -e "$magenta\n Updating npm Packages... \n$white"
     npm update -g
