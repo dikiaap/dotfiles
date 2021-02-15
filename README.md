@@ -48,7 +48,7 @@
     - [Sublime Text](https://www.sublimetext.com) - A sophisticated text editor for code, markup and prose.
     - [Arc Theme](https://github.com/arc-design/arc-theme) (Fork) - A flat theme with transparent elements for GTK 3, GTK 2, and GNOME Shell.
     - [Paper Icon Theme](https://github.com/snwh/paper-icon-theme) - An open source Freedesktop icon theme and inspired by Material Design.
-    - [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) - User Interface font.
+    - [Source Sans](https://github.com/adobe-fonts/source-sans) - User Interface font.
     - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - Iconic font.
     - [Dark Planet](https://www.pling.com/p/1163924/) - Wallpaper.
 
