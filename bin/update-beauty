@@ -170,7 +170,7 @@ update_dunst() {
     cd "$source_dir/dunst" || return
     make clean
     use_latest_release || return 1
-    make
+    make WAYLAND=0
     make dunstify
     echo -e "$green\n Previous dunst version: \n$white"
     row
