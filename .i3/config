@@ -174,6 +174,12 @@ bindsym XF86AudioLowerVolume    exec --no-startup-id amixer -q -D pulse sset Mas
 bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
 bindsym XF86AudioMute           exec --no-startup-id amixer -q -D pulse sset Master toggle
 
+# notification
+bindsym Ctrl+space              exec --no-startup-id dunstctl close
+bindsym Ctrl+Shift+space        exec --no-startup-id dunstctl close-all
+bindsym Ctrl+grave              exec --no-startup-id dunstctl history-pop
+bindsym Ctrl+Shift+period       exec --no-startup-id dunstctl context
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
