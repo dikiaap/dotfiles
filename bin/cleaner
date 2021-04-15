@@ -38,7 +38,7 @@ safe_cleaner() {
     sudo apt-get autoremove
 
     echo -e "$magenta\n Cleaning Composer Installer... \n$white"
-    rm -fv ~/.config/composer/20*.phar
+    rm -fv ~/.local/share/composer/20*.phar
 
     echo -e "$magenta\n Cleaning Gems... \n$white"
     gem cleanup
