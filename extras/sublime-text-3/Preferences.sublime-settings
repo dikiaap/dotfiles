@@ -70,5 +70,6 @@
 	"preview_on_click": false,
 	"show_encoding": true,
 	"theme": "Material-Theme-Darker.sublime-theme",
+	"update_check": false,
 	"word_wrap": true
 }
