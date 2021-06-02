@@ -114,12 +114,6 @@ mouse:
 
   hide_when_typing: false
 
-  url:
-    launcher:
-      program: xdg-open
-
-    modifiers: None
-
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
