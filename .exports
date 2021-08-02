@@ -46,7 +46,7 @@ export FZF_DEFAULT_OPTS=" \
 # nnn.
 export NNN_BMS="d:~/Downloads;D:~/Documents;t:~/Temporary" # Bookmarks
 export NNN_FCOLORS="03040601000205f7d204d9f7" # File colors
-export NNN_PLUG="D:mediainf" # Plugins
+export NNN_PLUG="D:-!mediainfo \$nnn" # Plugins
 export NNN_TRASH=1 # Trash instead of delete the files
 
 # ripgrep.
