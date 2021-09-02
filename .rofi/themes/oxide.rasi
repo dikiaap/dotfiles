@@ -35,6 +35,7 @@
     selected-active-background:  rgba ( 39, 141, 182, 100 % );
 }
 element {
+    cursor:  pointer;
     border:  0;
     spacing: 4px;
     padding: 1px;
@@ -78,11 +79,13 @@ element alternate.active {
 element-text {
     background-color: rgba ( 0, 0, 0, 0 % );
     highlight:        inherit;
+    cursor:           inherit;
     text-color:       inherit;
 }
 element-icon {
     background-color: rgba ( 0, 0, 0, 0 % );
     size:             21px;
+    cursor:           inherit;
     text-color:       inherit;
 }
 window {
@@ -122,6 +125,7 @@ sidebar {
     border-color: var(separatorcolor);
 }
 button {
+    cursor:     pointer;
     spacing:    0;
     text-color: var(normal-foreground);
 }
@@ -154,6 +158,7 @@ case-indicator {
 }
 entry {
     placeholder:       "";
+    cursor:            text;
     spacing:           0;
     text-color:        var(normal-foreground);
     placeholder-color: rgba ( 128, 128, 128, 100 % );
