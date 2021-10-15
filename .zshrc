@@ -5,7 +5,7 @@ ZSH_THEME="oxide"
 CASE_SENSITIVE="true"
 
 # Disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+zstyle ':omz:update' mode disabled
 
 # Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
