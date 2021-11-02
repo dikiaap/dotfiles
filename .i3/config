@@ -156,15 +156,6 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # shortcut applications
-bindsym $mod+F1                 exec gkamus
-bindsym $mod+F2 workspace $ws2; exec subl
-bindsym $mod+F3 workspace $ws3; exec chromium-browser
-bindsym $mod+F4 workspace $ws4; exec pcmanfm
-bindsym $mod+F5 workspace $ws5; exec evince
-bindsym $mod+F6 workspace $ws6; exec audacious
-bindsym $mod+F7 workspace $ws7; exec gcolor2
-bindsym $mod+F8 workspace $ws8; exec telegram
-bindsym $mod+F9 workspace $ws9; exec go-for-it
 bindsym Print                   exec --no-startup-id gnome-screenshot
 bindsym $mod+Print              exec --no-startup-id gnome-screenshot -a
 bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
@@ -215,57 +206,6 @@ for_window [window_role="app"]                      floating enable
 for_window [window_role="pop-up"]                   floating enable
 for_window [window_role="task_dialog"]              floating enable
 for_window [title="Preferences$"]                   floating enable
-for_window [class="File-roller"]                    floating enable
-for_window [class="Galculator"]                     floating enable
-for_window [class="Gcolor2"]                        floating enable
-for_window [class="Gkamus"]                         floating enable
-for_window [class="Go-for-it"]                      floating enable
-for_window [class="KBBI-Qt"]                        floating enable
-for_window [class="Lightdm-gtk-greeter-settings"]   floating enable
-for_window [class="Lxappearance"]                   floating enable
-for_window [class="Menu"]                           floating enable
-for_window [class="Nm-connection-editor"]           floating enable
-for_window [class="Software-properties-gtk"]        floating enable
-
-# assign program to workspace
-assign [class="Alacritty"]          → $ws1
-assign [class="terminal"]           → $ws1
-assign [class="Sublime"]            → $ws2
-assign [class="Chromium"]           → $ws3
-assign [class="Firefox"]            → $ws3
-assign [class="File-roller"]        → $ws4
-assign [class="Pcmanfm"]            → $ws4
-assign [class="Evince"]             → $ws5
-assign [class="ghostwriter"]        → $ws5
-assign [class="libreoffice"]        → $ws5
-assign [class="Audacious"]          → $ws6
-assign [class="vlc"]                → $ws6
-assign [class="Gimp"]               → $ws7
-assign [class="Inkscape"]           → $ws7
-assign [class="Hexchat"]            → $ws8
-assign [class="Telegram"]           → $ws8
-assign [class="Upwork"]             → $ws8
-assign [class="Galculator"]         → $ws9
-assign [class="Gnome-font-viewer"]  → $ws9
-assign [class="Go-for-it"]          → $ws9
-assign [class="Gucharmap"]          → $ws9
-assign [class="KeePassXC"]          → $ws9
-assign [class="Transmission-gtk"]   → $ws9
-assign [class="Bleachbit"]          → $ws10
-assign [class="Bum"]                → $ws10
-assign [class="Dconf-editor"]       → $ws10
-assign [class="Gnome-disks"]        → $ws10
-assign [class="GParted"]            → $ws10
-assign [class="Grub-customizer"]    → $ws10
-assign [class="Hardinfo"]           → $ws10
-assign [class="Lxappearance"]       → $ws10
-assign [class="Lxinput"]            → $ws10
-assign [class="Lxrandr"]            → $ws10
-assign [class="Lxtask"]             → $ws10
-assign [class="Menu"]               → $ws10
-assign [class="Obconf"]             → $ws10
-assign [class="Lightdm-gtk-greeter-settings"]   → $ws10
-assign [class="Software-properties-gtk"]        → $ws10
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #2b83a6 #2b83a6 #ffffff #dddddd   #2b83a6
@@ -303,6 +243,9 @@ bar {
 smart_gaps on
 gaps inner 8
 gaps outer 2
+
+# local config file
+include local.conf
 
 # startup applications
 exec_always --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
