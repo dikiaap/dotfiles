@@ -29,7 +29,7 @@
     urgent-background:           var(red);
     alternate-active-foreground: var(active-foreground);
     alternate-urgent-foreground: var(urgent-foreground);
-    background-color:            rgba ( 0, 0, 0, 0 % );
+    background-color:            transparent;
     selected-urgent-background:  rgba ( 214, 78, 78, 100 % );
     active-background:           var(blue);
     selected-active-background:  rgba ( 39, 141, 182, 100 % );
@@ -77,13 +77,13 @@ element alternate.active {
     text-color:       var(alternate-active-foreground);
 }
 element-text {
-    background-color: rgba ( 0, 0, 0, 0 % );
+    background-color: transparent;
     highlight:        inherit;
     cursor:           inherit;
     text-color:       inherit;
 }
 element-icon {
-    background-color: rgba ( 0, 0, 0, 0 % );
+    background-color: transparent;
     size:             21px;
     cursor:           inherit;
     text-color:       inherit;
