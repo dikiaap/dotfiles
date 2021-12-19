@@ -20,7 +20,7 @@ set $right  semicolon
 # define names for workspaces
 set $ws1    "1:   Terminal "
 set $ws2    "2:   Code "
-set $ws3    "3:   Browser "
+set $ws3    "3:   Chromium "
 set $ws4    "4:   Files "
 set $ws5    "5:   Documents "
 set $ws6    "6:   Media "
@@ -28,46 +28,6 @@ set $ws7    "7:   Design "
 set $ws8    "8:   Chat "
 set $ws9    "9:   General "
 set $ws10   "10:   Settings "
-
-# assign program to workspace
- assign [class="Alacritty"]          → $ws1
- assign [class="terminal"]           → $ws1
- assign [class="Sublime"]            → $ws2
- assign [class="Chromium"]           → $ws3
- assign [class="Firefox"]            → $ws3
- assign [class="File-roller"]        → $ws4
- assign [class="Files"]            → $ws4
- assign [class="Evince"]             → $ws5
- assign [class="ghostwriter"]        → $ws5
- assign [class="libreoffice"]        → $ws5
- assign [class="Audacious"]          → $ws6
- assign [class="vlc"]                → $ws6
- assign [class="Gimp"]               → $ws7
- assign [class="Inkscape"]           → $ws7
- assign [class="Hexchat"]            → $ws8
- assign [class="Telegram"]           → $ws8
- assign [class="Upwork"]             → $ws8
- assign [class="Galculator"]         → $ws9
- assign [class="Gnome-font-viewer"]  → $ws9
- assign [class="Go-for-it"]          → $ws9
- assign [class="Gucharmap"]          → $ws9
- assign [class="KeePassXC"]          → $ws9
- assign [class="Transmission-gtk"]   → $ws9
- assign [class="Bleachbit"]          → $ws10
- assign [class="Bum"]                → $ws10
- assign [class="Dconf-editor"]       → $ws10
- assign [class="Gnome-disks"]        → $ws10
- assign [class="GParted"]            → $ws10
- assign [class="Grub-customizer"]    → $ws10
- assign [class="Hardinfo"]           → $ws10
- assign [class="Lxappearance"]       → $ws10
- assign [class="Lxinput"]            → $ws10
- assign [class="Lxrandr"]            → $ws10
- assign [class="Lxtask"]             → $ws10
- assign [class="Menu"]               → $ws10
- assign [class="Obconf"]             → $ws10
- assign [class="Lightdm-gtk-greeter-settings"]   → $ws10
- assign [class="Software-properties-gtk"]        → $ws10
 
 # use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
@@ -285,14 +245,12 @@ gaps inner 8
 gaps outer 2
 
 # local config file
-# include .config/i3/local.conf
+include local.conf
 
 # startup applications
 exec_always --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id pulseaudio --start
 exec_always --no-startup-id lxpolkit
-exec_always --no-startup-id feh --bg-fill ~/Images/wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
 exec_always --no-startup-id picom
-exec_always --no-startup-id megasync
-
