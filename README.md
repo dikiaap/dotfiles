@@ -37,6 +37,7 @@
     - [Wget](https://git.savannah.gnu.org/cgit/wget.git) - A free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS.
     - [Hack](https://github.com/source-foundry/Hack) - Terminal font.
 - GUI
+    - [Redshift](https://github.com/jonls/redshift) - Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. 
     - [i3](https://github.com/i3/i3) - A tiling window manager.
     - [i3blocks](https://github.com/vivien/i3blocks) - A feed generator for text based status bars.
         - [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib) - A set of scripts for i3blocks, contributed by the community.
