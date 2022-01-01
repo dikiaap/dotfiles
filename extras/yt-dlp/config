@@ -6,7 +6,7 @@
 
 # Download English subtitle.
 --write-sub
---sub-lang en
+--sub-langs en
 --convert-subs srt
 
 # Save to ~/Downloads directory.
