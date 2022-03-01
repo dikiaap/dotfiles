@@ -62,7 +62,6 @@ alias ch='echo > ~/.bash_history && echo > ~/.zsh_history'
 alias cz='echo > ~/.z'
 alias e='exit'
 alias htop-user='htop -u "$USER"'
-alias incognito='unset HISTFILE'
 alias mdv='glow -p -s ~/.config/glow/Material-Theme-Darker.json'
 alias mp3-dl='yt-dlp --ignore-config --extract-audio \
     --audio-format "mp3" --audio-quality 0 --embed-thumbnail --embed-metadata \
