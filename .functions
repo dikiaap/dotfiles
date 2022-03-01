@@ -31,6 +31,14 @@ ip-address() {
     curl -s -H "Accept: application/json" "https://ipinfo.io/${1:-}" | jq "del(.loc, .postal, .readme)"
 }
 
+# Incognito mode
+incognito() {
+    unset HISTFILE
+    if [ -x "$(command -v tmux)" ]; then
+        tmux set-option window-status-current-format "#[fg=brightwhite,bg=#b487b4] #I #[fg=brightwhite,bg=#966396] #W "
+    fi
+}
+
 # Git commit browser
 fshow() {
     local commit_hash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
