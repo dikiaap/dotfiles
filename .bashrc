@@ -1,5 +1,5 @@
 # Load our dotfiles.
-for file in ~/.{aliases,aliases_private,exports,functions,functions_private}; do
+for file in ~/.{aliases,aliases_private,exports,functions,functions_private,privaterc}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
@@ -38,11 +38,6 @@ fi
 # dircolors.
 if [ -x "$(command -v dircolors)" ]; then
     eval "$(dircolors -b ~/.dircolors)"
-fi
-
-# Manage SSH with Keychain.
-if [ -x "$(command -v keychain)" ]; then
-    eval "$(keychain --eval --quiet id_rsa_github id_rsa_gitlab)"
 fi
 
 # Base16 Shell.
