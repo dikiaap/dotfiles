@@ -40,6 +40,9 @@ source ~/.aliases_private
 source ~/.functions
 source ~/.functions_private
 
+# Private config.
+source ~/.privaterc
+
 # Tracks your most used directories, based on frecency with z.
 source ~/.zsh/plugins/z/z.sh
 
@@ -51,11 +54,6 @@ fi
 # fzf key bindings.
 if [ -x "$(command -v fzf)" ]; then
     source ~/.fzf/shell/key-bindings.zsh
-fi
-
-# Manage SSH with Keychain.
-if [ -x "$(command -v keychain)" ]; then
-    eval "$(keychain --eval --quiet id_rsa_github id_rsa_gitlab)"
 fi
 
 # Base16 Shell.
