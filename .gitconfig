@@ -88,3 +88,6 @@
 [url "git@gitlab.com:"]
     insteadOf = "gl:"
     pushInsteadOf = "gl:"
+
+[include]
+    path = ~/.config/git/config.local
