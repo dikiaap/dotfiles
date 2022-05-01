@@ -52,7 +52,6 @@ safe_cleaner() {
     echo -e "$magenta\n Cleaning Junk Files... \n$white"
     rm -rfv ~/.local/share/Trash/*
     rm -fv ~/.local/share/recently-used.xbel
-    rm -fv ~/.npm/_logs/*
     rm -fv ~/.lesshst
     rm -fv ~/.{node_repl,php,python,units}_history
     rm -fv ~/.wget-hsts
