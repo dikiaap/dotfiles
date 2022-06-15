@@ -58,7 +58,7 @@ update_rustup() {
 
 update_gem() {
     echo -e "$magenta\n Updating Gem System... \n$white"
-    sudo gem update --system
+    gem update --system
 
     echo -e "$magenta\n Updating Gems... \n$white"
     gem update
