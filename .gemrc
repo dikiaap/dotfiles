@@ -4,4 +4,4 @@
 - http://rubygems.org/
 :update_sources: true
 :verbose: true
-gem: --user-install --no-document
+gem: --no-document
