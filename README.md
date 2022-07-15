@@ -50,7 +50,7 @@
     - [Paper Icon Theme](https://github.com/snwh/paper-icon-theme) - An open source Freedesktop icon theme and inspired by Material Design.
     - [Source Sans](https://github.com/adobe-fonts/source-sans) - User Interface font.
     - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - Iconic font.
-    - [Dark Planet](https://www.pling.com/p/1163924/) - Wallpaper.
+    - [Dark Planet](https://files.dikiaap.id/img/dotfiles/dark_planet_minimalist.png) - Wallpaper.
 
 
 ## Links
