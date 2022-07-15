@@ -16,6 +16,7 @@
     text_icon_padding = 0
     frame_width = 1
     frame_color = "#232323"
+    gap_size = 0
     separator_color = frame
     sort = yes
     idle_threshold = 120
@@ -32,6 +33,7 @@
     hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
+    min_icon_size = 0
     max_icon_size = 32
     icon_path = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
     sticky_history = yes
