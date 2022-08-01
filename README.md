@@ -51,8 +51,3 @@
     - [Source Sans](https://github.com/adobe-fonts/source-sans) - User Interface font.
     - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - Iconic font.
     - [Dark Planet](https://files.dikiaap.id/img/dotfiles/dark_planet_minimalist.png) - Wallpaper.
-
-
-## Links
-
-[DotShare.it](http://dotshare.it/~dikiaap/)
