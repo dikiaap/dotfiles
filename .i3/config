@@ -32,6 +32,9 @@ set $ws10   "10:   Settings "
 # use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
 
+# move tiling windows via drag & drop by left-clicking into the title bar
+tiling_drag modifier titlebar
+
 # control focused window when follows the mouse movements
 focus_follows_mouse no
 
