@@ -19,7 +19,7 @@
 - CLI
     - [Zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
         - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) - An open source, community-driven framework for managing your Zsh configuration.
-        - [z](https://github.com/rupa/z) - Tracks your most used directories, based on frecency.
+        - [z](https://github.com/rupa/z) - Tracks your most used directories, based on frequency.
     - [Bash](https://git.savannah.gnu.org/cgit/bash.git) - A Unix shell and command language.
     - [tmux](https://github.com/tmux/tmux) - A terminal multiplexer.
         - [tmux-better-mouse-mode](https://github.com/NHDaly/tmux-better-mouse-mode) - A tmux plugin to better manage the mouse.
