@@ -36,7 +36,14 @@ get_latest_release() {
     local regex_to_remove_url='sed -re ''s#(http://|https://|git@|git://)github.com(/|:)##'' -e ''s#(/|.git)$##'''
     local username_and_repo
     username_and_repo=$(git config --get remote.origin.url | $regex_to_remove_url)
-    curl -s "https://api.github.com/repos/$username_and_repo/releases/latest" | awk -F '"' '/tag_name/{print $4}'
+    check_latest_release() {
+        curl -s "https://api.github.com/repos/$username_and_repo/releases/latest" | awk -F '"' '/tag_name/{print $4}'
+    }
+    if [ -n "$(check_latest_release)" ]; then
+        check_latest_release
+    else
+        curl -s "https://api.github.com/repos/$username_and_repo/tags" | jq -r '.[] | select(.name|test("^(|v)[0-9]")) | .name' | head -n 1
+    fi
 }
 
 # Use latest release.
@@ -62,19 +69,19 @@ update_oh-my-zsh() {
     find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
 }
 
-update_i3-gaps() {
-    echo -e "$magenta\n Updating & compiling i3-gaps... \n$white"
-    cd "$source_dir/i3-gaps" || return
+update_i3() {
+    echo -e "$magenta\n Updating & compiling i3... \n$white"
+    cd "$source_dir/i3" || return
     rm -rf build
     use_latest_release || return 1
     mkdir build
     meson --buildtype=release . build
     ninja -C build
-    echo -e "$green\n Previous i3-gaps version: \n$white"
+    echo -e "$green\n Previous i3 version: \n$white"
     row
     i3 -v
     row
-    echo -e "$magenta\n Installing i3-gaps... \n$white"
+    echo -e "$magenta\n Installing i3... \n$white"
     sudo install -Dm755 --verbose build/i3 /usr/bin/i3
     sudo install -Dm755 --verbose build/i3bar /usr/bin/i3bar
     sudo install -Dm755 --verbose build/i3-config-wizard /usr/bin/i3-config-wizard
@@ -88,7 +95,7 @@ update_i3-gaps() {
     sudo install -Dm755 --verbose i3-sensible-editor /usr/bin/i3-sensible-editor
     sudo install -Dm755 --verbose i3-sensible-pager /usr/bin/i3-sensible-pager
     sudo install -Dm755 --verbose i3-sensible-terminal /usr/bin/i3-sensible-terminal
-    echo -e "$green\n Current i3-gaps version: \n$white"
+    echo -e "$green\n Current i3 version: \n$white"
     row
     i3 -v
     row
@@ -205,7 +212,7 @@ update_picom() {
 }
 
 update_one_by_one() {
-    declare -a arr=("update_oh-my-zsh" "update_i3-gaps" "update_i3blocks"
+    declare -a arr=("update_oh-my-zsh" "update_i3" "update_i3blocks"
                     "update_i3lock" "update_rofi" "update_dunst" "update_picom")
 
     for update_command in "${arr[@]}"; do
@@ -233,7 +240,7 @@ main() {
             ;;
         -a)
             update_oh-my-zsh
-            update_i3-gaps
+            update_i3
             update_i3blocks
             update_i3lock
             update_rofi
