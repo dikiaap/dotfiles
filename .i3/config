@@ -45,6 +45,11 @@ default_floating_border none
 # hiding borders adjacent to the screen edges
 hide_edge_borders none
 
+# window gaps
+smart_gaps on
+gaps inner 8
+gaps outer 2
+
 # set popups during fullscreen mode
 popup_during_fullscreen smart
 
@@ -241,11 +246,6 @@ bar {
         binding_mode        #229c56 #229c56 #ffffff
     }
 }
-
-# i3-gaps
-smart_gaps on
-gaps inner 8
-gaps outer 2
 
 # local config file
 include local.conf
