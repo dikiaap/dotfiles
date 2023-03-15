@@ -1,16 +1,16 @@
 <h1 align="center">dotfiles ❤ ~/</h1>
 
-![dikiaap's dotfiles](https://files.dikiaap.id/img/dotfiles/i3.png)
+![dikiaap's dotfiles](https://dikiaap.pages.dev/img/dotfiles/i3.png)
 
 <p align="center">
     <b>Screenshots</b><br>
-    <a href="https://files.dikiaap.id/img/dotfiles/rofi.png">Rofi</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://files.dikiaap.id/img/dotfiles/dunst.png">Dunst</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://files.dikiaap.id/img/dotfiles/i3blocks.png">i3blocks</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://files.dikiaap.id/img/dotfiles/zsh.png">Zsh</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://files.dikiaap.id/img/dotfiles/tmux.png">tmux</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://files.dikiaap.id/img/dotfiles/colors.png">Colors</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://files.dikiaap.id/img/dotfiles/dircolors.png">dircolors</a>
+    <a href="https://dikiaap.pages.dev/img/dotfiles/rofi.png">Rofi</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.pages.dev/img/dotfiles/dunst.png">Dunst</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.pages.dev/img/dotfiles/i3blocks.png">i3blocks</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.pages.dev/img/dotfiles/zsh.png">Zsh</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.pages.dev/img/dotfiles/tmux.png">tmux</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.pages.dev/img/dotfiles/colors.png">Colors</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://dikiaap.pages.dev/img/dotfiles/dircolors.png">dircolors</a>
 </p>
 
 
@@ -50,4 +50,4 @@
     - [Paper Icon Theme](https://github.com/snwh/paper-icon-theme) - An open source Freedesktop icon theme and inspired by Material Design.
     - [Source Sans](https://github.com/adobe-fonts/source-sans) - User Interface font.
     - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - Iconic font.
-    - [Dark Planet](https://files.dikiaap.id/img/dotfiles/dark_planet_minimalist.png) - Wallpaper.
+    - [Dark Planet](https://dikiaap.pages.dev/img/dotfiles/dark_planet_minimalist.png) - Wallpaper.
