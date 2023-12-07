@@ -63,7 +63,7 @@ use_latest_release() {
 # Installer.
 update_oh-my-zsh() {
     echo -e "$magenta\n Updating oh-my-zsh... \n$white"
-    sh "$HOME/.oh-my-zsh/tools/upgrade.sh"
+    zsh "$HOME/.oh-my-zsh/tools/upgrade.sh"
     echo -e "$magenta\n Updating zsh plugins... \n$white"
     cd "$HOME/.zsh/plugins" || return
     find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;
