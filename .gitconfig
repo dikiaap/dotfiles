@@ -21,11 +21,6 @@
     sclone = clone --depth 1
     undo = reset HEAD~1
 
-[user]
-    email = diki1aap@gmail.com
-    name = Diki Ananta
-    signingKey = 833E0D264B13927C
-
 [core]
     editor = vim
     autocrlf = false
@@ -38,9 +33,6 @@
 
 [merge]
     tool = vimdiff
-
-[commit]
-    gpgSign = true
 
 [color]
     ui = always
