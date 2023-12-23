@@ -66,7 +66,7 @@ alias mdv='glow -p -s ~/.config/glow/Material-Theme-Darker.json'
 alias mp3-dl='yt-dlp --ignore-config --extract-audio \
     --audio-format "mp3" --audio-quality 0 --embed-thumbnail --embed-metadata \
     --output "$HOME/Downloads/%(title)s.%(ext)s"'
-alias n='nnn -deo'
+alias n='nnn'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date "+%a, %d %b %H:%M:%S" && time cat && date "+%a, %d %b %H:%M:%S"'
