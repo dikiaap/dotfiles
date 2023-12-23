@@ -44,6 +44,7 @@ export FZF_DEFAULT_OPTS=" \
     --color=info:#f7c662,prompt:#6699cc,pointer:#a6bc69,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
 
 # nnn.
+export NNN_OPTS="deo" # Default command-line options
 export NNN_BMS="d:~/Downloads;D:~/Documents;t:~/Temporary" # Bookmarks
 export NNN_FCOLORS="03040601000205f7d204d9f7" # File colors
 export NNN_PLUG="D:-!mediainfo \$nnn" # Plugins
