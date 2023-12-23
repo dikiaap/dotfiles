@@ -47,7 +47,7 @@ safe_cleaner() {
     echo > ~/.bash_history && echo > ~/.zsh_history && echo > ~/.z && rm -fv ~/.z.*
 
     echo -e "$magenta\n Cleaning Cache... \n$white"
-    rm -rfv ~/.cache/!(chromium|composer|fontconfig|mozilla|pnpm|thumbnails)
+    rm -rfv ~/.cache/!(chromium|composer|fontconfig|mozilla|pnpm|thumbnails|thunderbird)
 
     echo -e "$magenta\n Cleaning Junk Files... \n$white"
     rm -rfv ~/.local/share/Trash/*
