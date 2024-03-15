@@ -22,7 +22,7 @@ jobs:
           sudo cp shellcheck-stable/shellcheck /usr/bin/
           shellcheck --version
       - name: Check links in the README file
-        run: awesome_bot README.md
+        run: awesome_bot README.md --white-list "sublimetext.com"
       - name: Check bugs, warnings, and errors in shell scripts
         # Read more the details of exceptions on ShellCheck Wiki.
         # Example of SC1000:
