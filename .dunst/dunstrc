@@ -55,10 +55,12 @@
     background = "#232323"
     foreground = "#a8a8a8"
     timeout = 10
+    override_pause_level = 30
 
 [urgency_critical]
     background = "#d64e4e"
     foreground = "#f0e0e0"
     frame_color = "#d64e4e"
     timeout = 0
+    override_pause_level = 60
     default_icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
