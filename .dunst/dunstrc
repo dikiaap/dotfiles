@@ -2,9 +2,9 @@
     monitor = 0
     follow = mouse
     width = 320
-    height = 320
+    height = (0, 320)
     origin = top-right
-    offset = 15x15
+    offset = (15, 15)
     scale = 0
     notification_limit = 0
     progress_bar = false
@@ -50,12 +50,14 @@
     background = "#232323"
     foreground = "#a8a8a8"
     timeout = 10
+    default_icon = dialog-information
 
 [urgency_normal]
     background = "#232323"
     foreground = "#a8a8a8"
     timeout = 10
     override_pause_level = 30
+    default_icon = dialog-information
 
 [urgency_critical]
     background = "#d64e4e"
@@ -63,4 +65,4 @@
     frame_color = "#d64e4e"
     timeout = 0
     override_pause_level = 60
-    default_icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
+    default_icon = dialog-warning
