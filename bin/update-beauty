@@ -155,17 +155,15 @@ update_rofi() {
     rm -rf build
     use_latest_release || return 1
     git submodule update --init
-    autoreconf -i
     mkdir build
-    cd build || return
-    ../configure --disable-check
-    make
+    meson --buildtype=release . build
+    ninja -C build
     echo -e "$green\n Previous rofi version: \n$white"
     row
     rofi -v
     row
     echo -e "$magenta\n Installing rofi... \n$white"
-    sudo make install
+    sudo install -Dm755 --verbose build/rofi /usr/local/bin/rofi
     echo -e "$green\n Current rofi version: \n$white"
     row
     rofi -v
