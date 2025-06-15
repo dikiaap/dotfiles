@@ -20,7 +20,7 @@
     - [Zsh](https://github.com/zsh-users/zsh) - A shell designed for interactive use, although it is also a powerful scripting language.
         - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) - An open source, community-driven framework for managing your Zsh configuration.
         - [z](https://github.com/rupa/z) - Tracks your most used directories, based on frecency.
-    - [Bash](https://git.savannah.gnu.org/cgit/bash.git) - A Unix shell and command language.
+    - [Bash](https://cgit.git.savannah.gnu.org/cgit/bash.git) - A Unix shell and command language.
     - [tmux](https://github.com/tmux/tmux) - A terminal multiplexer.
         - [tmux-better-mouse-mode](https://github.com/NHDaly/tmux-better-mouse-mode) - A tmux plugin to better manage the mouse.
         - [tmux-copycat](https://github.com/tmux-plugins/tmux-copycat) - A tmux plugin that enhances tmux search.
@@ -34,7 +34,7 @@
     - [bat](https://github.com/sharkdp/bat) - A cat clone with syntax highlighting and Git integration.
     - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder.
     - [ripgrep](https://github.com/BurntSushi/ripgrep) - A line-oriented search tool that recursively searches directories for a regex pattern.
-    - [Wget](https://git.savannah.gnu.org/cgit/wget.git) - A free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS.
+    - [Wget](https://cgit.git.savannah.gnu.org/cgit/wget.git) - A free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS.
     - [Hack](https://github.com/source-foundry/Hack) - Terminal font.
 - GUI
     - [i3](https://github.com/i3/i3) - A tiling window manager.
