@@ -152,6 +152,13 @@ inputbar {
     padding:    1px;
     children:   [ "prompt","textbox-prompt-colon","entry","overlay","case-indicator" ];
 }
+overlay {
+    padding:          0px 0.2000em;
+    background-color: var(normal-foreground);
+    foreground-color: var(normal-background);
+    margin:           0px 0.2000em;
+    text-color:       var(normal-background);
+}
 case-indicator {
     spacing:    0;
     text-color: var(normal-foreground);
